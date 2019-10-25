@@ -130,16 +130,12 @@ public class Player extends Tank{
         g2d.fill(rect);
         g2d.rotate(Math.toRadians(-(rotateHead)), centerX, centerY);
         g2d.drawString(""+rotateHead+" "+rotate+" "+speedH, 200, 220);
+        g2d.drawString(""+tag.getHead()[0]+" "+tag.getHead()[1], 250, 300);
         for (int i = 0; i < shoot.size(); i++) {
             shoot.get(i).draw(g2d);
         }
         if(count!=super.getReload())
             count++;
-        
-        g2d.drawString(""+tag.getHead()[0]+" "+tag.getHead()[1], 250, 300);
-        
-        
-        
     }
     
     public void keyPressed(KeyEvent e){
