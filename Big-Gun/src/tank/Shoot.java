@@ -28,8 +28,8 @@ public class Shoot {
         cenY = player.getCenterY()-10;
     }
     public void draw(Graphics2D g2d){
-        aX += Math.sin(Math.toRadians(rotate))*5;
-        aY += Math.cos(Math.toRadians(rotate))*-5;
+        aX += Math.sin(Math.toRadians(rotate))*20;
+        aY += Math.cos(Math.toRadians(rotate))*-20;
         g2d.setColor(Color.black);
         //เก็บสถานะปากกา
         AffineTransform old = g2d.getTransform();
