@@ -19,8 +19,8 @@ public class Shoot {
     
     public Shoot(Player player){
         this.player = player;
-        aX = player.getTag().getHead()[0];
-        aY = player.getTag().getHead()[1];
+        aX = player.getCenterX();
+        aY = player.getCenterY();
         rotate = player.getRotateHead();
         cenX = player.getCenterX();
         cenY = player.getCenterY();
