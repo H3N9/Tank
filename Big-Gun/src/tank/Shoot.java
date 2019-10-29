@@ -19,6 +19,7 @@ public class Shoot {
         this.player = player;
         aX = player.getTag().getHead()[0];
         aY = player.getTag().getHead()[1];
+        rotate = player.getRotateHead();
     }
     public void draw(Graphics2D g2d){
         aX += Math.sin(Math.toRadians(rotate))*30;
