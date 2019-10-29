@@ -61,7 +61,7 @@ public class Player extends Tank{
     }
 
     public Player(){
-        this("m26");
+        this("tiger");
     }
     public Player(String name){
         super(name);
