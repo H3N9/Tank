@@ -11,7 +11,7 @@ public class Player extends Tank{
     private double positionX;
     private double positionY;
     private double rotate;
-    private double rotateHead;
+    private double rotateHead, isBack;
     private Tag tag;
     private double centerX;
     private double centerY;
@@ -61,11 +61,12 @@ public class Player extends Tank{
     }
 
     public Player(){
-        this("tiger");
+        this("m4");
     }
     public Player(String name){
         super(name);
         this.speedX = 0;
+        positionX = 0;
         this.speedY = 0;
         this.speedH = 0;
         this.centerX = positionX+super.getWidthTank()/2;
@@ -109,8 +110,8 @@ public class Player extends Tank{
     }
     
     public void Draw(Graphics2D g2d){
-        rotate += speedR;
-        rotateHead += speedH+speedR;
+        rotate += speedR*isBack;
+        rotateHead += speedH+speedR*isBack;
         positionX += Math.sin(Math.toRadians(rotate))*speedX;
         positionY += Math.cos(Math.toRadians(rotate))*speedY;
         setCenterX(positionX);
@@ -143,6 +144,7 @@ public class Player extends Tank{
         if(key==KeyEvent.VK_W){
             speedX = super.getSpeed();
             speedY = -super.getSpeed();
+            isBack = 1;
             
             tag.setTagFont(this);
             tag.setHead(this);
@@ -160,6 +162,7 @@ public class Player extends Tank{
         if(key==KeyEvent.VK_S){
             speedX = -super.getSpeed();
             speedY = super.getSpeed();
+            isBack =  -1;
             tag.setTagFont(this);
             tag.setHead(this);
 
