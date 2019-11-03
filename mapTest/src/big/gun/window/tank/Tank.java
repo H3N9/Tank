@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import Calculate.Calculate;
+import big.gun.window.map.*;
+import java.util.LinkedList;
 
         
 public class Tank extends GameObject implements Moveable{
@@ -26,6 +28,8 @@ public class Tank extends GameObject implements Moveable{
     public Tank(String name){
         super();
         tanks = new CollectionTanks();
+        setPosX(350);
+        setPosY(400);
         setWidth(tanks.getTanks(name)[9]);
         setHeight(tanks.getTanks(name)[10]);
         setCenterX(getPosX()+getHeight()/2);
