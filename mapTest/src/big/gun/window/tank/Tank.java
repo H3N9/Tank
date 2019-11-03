@@ -68,7 +68,15 @@ public class Tank extends GameObject implements Moveable{
         setReload(getReload());
     }
     
-    
+    //ให้รถหยุด
+    public void moveStop(){
+        setPosX(getPosX()-Calculate.calculateMoveX(getRotate(), getSpeedX()));
+        setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
+        setCenterX(getPosX()+getWidth()/2); 
+        setCenterY(getPosY()+getHeight()/2);
+        turret.update(getPosX()+getWidth()/4, getPosY()+getHeight()/4, getCenterX(), getCenterY());
+        shell.move();
+    }
     
     
     

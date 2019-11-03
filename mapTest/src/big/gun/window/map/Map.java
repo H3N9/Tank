@@ -57,8 +57,7 @@ public class Map {
         for (int i=0; i < builds.size(); i++){
             build = builds.get(i);
             if (player.getMyTank().getBounds().intersects(build.getBounds())){
-                pTank.setPosX(pTank.getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
-                pTank.setPosY(pTank.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
+                pTank.moveStop();
             }
         }
     }
@@ -83,8 +82,7 @@ public class Map {
         }
         
         if (check == 1){
-            pTank.setPosX(pTank.getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
-            pTank.setPosY(pTank.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
+            pTank.moveStop();
             posX -= Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX());
             posY -= Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY());
             Builds.updatePos(posX, posY);
