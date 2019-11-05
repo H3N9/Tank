@@ -11,7 +11,7 @@ public class Player {
     private Tank myTank;
     
     public Player(){
-        this("m4");
+        this("m26s");
     }
 
     

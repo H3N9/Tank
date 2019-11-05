@@ -15,11 +15,43 @@ public class CollectionTanks {
 
     public CollectionTanks() {
         tanks = new HashMap<>();
-        tanks.put("m4", new double[] {30, 10, 10, 5, 600, 160, 35, 400, 4, 50, 60});
-        tanks.put("m26", new double[] {60, 40, 40, 15, 700, 200, 60, 10, 3, 50, 60});
-        tanks.put("tiger2", new double[] {70, 50, 50 ,20, 1000, 240, 50, 700, 1, 80, 100});
-        tanks.put("tiger", new double[] {40, 40, 40, 10, 800, 180, 58, 400, 3, 60, 70});
-        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 200, 65, 600, 2, 50, 60});
+        
+        tanks.put("m4", new double[] {30, 10, 10, 5, 600, 160, 30, 4, 3.5, 50, 60}); // class1
+        
+        tanks.put("ez8", new double[] {35, 40, 40, 10, 800, 180, 58, 4, 2.5, 60, 70}); //class2
+        
+        tanks.put("m26", new double[] {40, 40, 40, 10, 800, 180, 58, 4, 2.7, 60, 70}); //class3
+        
+        tanks.put("m26s", new double[] {68, 40, 40, 20, 800, 200, 63, 4.2, 2.8, 60, 70}); //class4
+        
+        //Germany Tank
+        tanks.put("panzer4", new double[] {32, 12, 12, 5, 600, 160, 35, 4.2, 3.2, 50, 60});
+        
+        tanks.put("panther", new double[] {40, 20, 20, 10, 800, 160, 45, 4.5, 3, 55, 70});
+        
+        tanks.put("tiger", new double[] {57, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 60, 75});
+        
+        tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 7, 1, 80, 100});
+        
+        //Britan Tank
+        tanks.put("cromwell", new double[] {25, 8, 8, 2, 400, 145, 28, 4, 3, 40, 50});
+        
+        tanks.put("churchill", new double[] {50, 40, 40, 30, 800, 160, 3, 400, 2.5, 55, 75});
+        
+        tanks.put("comet", new double[] {40, 20, 20, 15, 800, 160, 42, 4, 3, 55, 70});
+        
+        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 230, 67, 6, 1.5, 50, 60});
+        
+        //Soviet Tank
+        tanks.put("t34", new double[] {28, 10, 10, 5, 600, 150, 29, 3, 3.8, 50, 60});
+        
+        tanks.put("kv1", new double[] {45, 32, 32, 20, 800, 160, 42, 4.1, 2.8, 55, 70});
+        
+        tanks.put("is2", new double[] {58, 40, 40, 20, 800, 180, 55, 4, 2.5, 60, 70});
+        
+        tanks.put("is3", new double[] {72, 40, 40, 25, 800, 200, 65, 5, 2.8, 50, 60});
+        
+        
     }
     
     
