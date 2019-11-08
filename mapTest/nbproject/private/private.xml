@@ -5,12 +5,9 @@
         <group>
             <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/map/Map.java</file>
             <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/tank/Tank.java</file>
-            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/tank/allPlayer/Player.java</file>
-            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/Window.java</file>
             <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/BigGun.java</file>
-            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/Game.java</file>
             <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/map/Builds.java</file>
-            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/tank/Shell.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/Game.java</file>
         </group>
     </open-files>
 </project-private>

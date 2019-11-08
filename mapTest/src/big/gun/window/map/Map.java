@@ -13,6 +13,7 @@ import Calculate.Calculate;
 import big.gun.window.Window;
 import big.gun.window.tank.allPlayer.Player;
 import big.gun.window.tank.Tank;
+import java.awt.Color;
 
 import java.util.LinkedList;
 import java.awt.Graphics2D;
@@ -26,9 +27,11 @@ public class Map {
     public Map(Player player){
         builds = new LinkedList<Builds>();
         builds.add(new Builds(200, 200));
+        builds.add(new Builds(200, 200));
         builds.add(new Builds(400, 200));
         builds.add(new Builds(700, 200));
         builds.add(new Builds(200, 20));
+        builds.add(new Builds(-200, 0, 50, 720, Color.BLACK));
         this.player = player;
         posX = 0;
         posY = 0;
@@ -40,6 +43,7 @@ public class Map {
             build = getBuilds().get(i);
             build.draw(g2d);
         }
+        g2d.drawString(posX+", "+posY, (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-10);
     }
     
     public void update(){
@@ -65,19 +69,19 @@ public class Map {
     public void moveMap(){
         int check = 0;
         Tank pTank = player.getMyTank();
-        if (pTank.getPosX()+pTank.getWidth()+140 >= Window.width){
+        if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
             check = 1;
         }
         
-        if (pTank.getPosY()+pTank.getHeight()+140 >= Window.height){
+        if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
             check = 1;
         }
         
-        if (pTank.getPosX()<= 100){
+        if (pTank.getPosX()<= 170){
             check = 1;;
         }
         
-        if (pTank.getPosY() <= 100){
+        if (pTank.getPosY() <= 170){
             check = 1;
         }
         

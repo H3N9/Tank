@@ -22,14 +22,18 @@ public class Builds extends GameObject implements Moveable{
     private Rectangle2D rect;
     
     public Builds(double posX, double posY){
+        this(posX, posY, 50.0, 50.0, Color.green);
+    }
+    
+    public Builds(double posX, double posY, double width, double height, Color color){
         super();
         this.setPosX(posX);
         this.setPosY(posY);
         myPosX = posX;
         myPosY = posY;
-        this.color = Color.yellow;
-        this.setWidth(50.0);
-        this.setHeight(50.0);
+        this.color = color;
+        this.setWidth(width);
+        this.setHeight(height);
     }
     
     public static void updatePos(double posX, double posY){
@@ -40,7 +44,7 @@ public class Builds extends GameObject implements Moveable{
     public void draw(Graphics2D g2d){
         AffineTransform old = g2d.getTransform();
         g2d.setColor(color);
-        rect = new Rectangle2D.Double(this.getPosX(), this.getPosY(), this.getWidth(), this.getWidth());
+        rect = new Rectangle2D.Double(this.getPosX(), this.getPosY(), this.getWidth(), this.getHeight());
         g2d.fill(rect);
         g2d.setTransform(old);
     }
