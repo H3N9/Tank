@@ -19,14 +19,13 @@ public class Shell extends GameObject implements Moveable{
     
     public void draw(Graphics2D g2d){
         g2d.setColor(Color.CYAN);
-        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
-        g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
     }
     
     public void move() {
-        setPosX(getPosX()-Calculate.calculateMoveX(this.getRotate(), 1)); 
-        setPosY(getPosY()-Calculate.calculateMoveY(this.getRotate(), 1));
+        System.out.println(getPosX()+" , "+getPosY());
+        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 5)); 
+        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -5));
     }
     
 }

@@ -42,10 +42,10 @@ public class Player {
             myTank.setIsBack(-1);
         }
         if(key==KeyEvent.VK_Q){
-            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()*myTank.getIsBack()/1.5);
+            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
         }
         if(key==KeyEvent.VK_E){
-            myTank.getTurret().setRotateSpeed(myTank.getSpeed()*myTank.getIsBack()/1.5);
+            myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
         }
         if(key==KeyEvent.VK_SPACE){
             myTank.shoot();
