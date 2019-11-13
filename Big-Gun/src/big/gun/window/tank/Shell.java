@@ -8,13 +8,12 @@ import java.awt.Graphics2D;
 public class Shell extends GameObject implements Moveable{
     private double damage;
     private double penetration;
-    private Tank tank;
     
     public Shell(Tank tank){
-        this.tank = tank;
-        setWidth(this.tank.getWidth()/4); setHeight(this.tank.getHeight()/4);
+        setPosX(tank.getPosX()+tank.getWidth()/4+getWidth()/2); setPosY(tank.getPosY());
+        setWidth(tank.getWidth()/4); setHeight(tank.getHeight()/4);
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
-        setRotate(this.tank.getTurret().getRotate());
+        setRotate(tank.getTurret().getRotate());
     }
 
     
@@ -26,9 +25,8 @@ public class Shell extends GameObject implements Moveable{
     }
     
     public void move() {
-        setPosX(tank.getPosX()+tank.getWidth()/4+getWidth()/2); setPosY(tank.getPosY());
-        setRotate(tank.getTurret().getRotate());
-        setCenterX(tank.getCenterX()); setCenterY(tank.getCenterY());
+        setPosX(getPosX()-Calculate.calculateMoveX(this.getRotate(), 1)); 
+        setPosY(getPosY()-Calculate.calculateMoveY(this.getRotate(), 1));
     }
     
 }

@@ -47,6 +47,9 @@ public class Player {
         if(key==KeyEvent.VK_E){
             myTank.getTurret().setRotateSpeed(myTank.getSpeed()*myTank.getIsBack()/1.5);
         }
+        if(key==KeyEvent.VK_SPACE){
+            myTank.shoot();
+        }
     }
     
     public void keyReleased(KeyEvent e){
