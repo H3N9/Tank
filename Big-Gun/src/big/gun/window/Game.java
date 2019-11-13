@@ -9,11 +9,14 @@ import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 public class Game extends JPanel implements ActionListener{
     private Timer start;
     private Player player;
+    private BufferedImage tankImg;
     
     public Game(){
         start = new Timer(10, this);

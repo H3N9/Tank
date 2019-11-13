@@ -10,6 +10,13 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import Calculate.Calculate;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
         
 public class Tank extends GameObject implements Moveable{
@@ -21,8 +28,8 @@ public class Tank extends GameObject implements Moveable{
     private Turret turret;
     private CollectionTanks tanks;
     private String nameTank;
-    
-    
+//    private BufferedImage tankImg;
+
     public Tank(String name){
         super();
         tanks = new CollectionTanks();
@@ -43,9 +50,15 @@ public class Tank extends GameObject implements Moveable{
     }
 
     public void draw(Graphics2D g2d){
+//        try {
+//            tankImg = ImageIO.read(getClass().getResource("/tiger_hull.png"));
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
         g2d.setColor(Color.red);
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
+//        g2d.drawImage(tankImg, (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
         turret.draw(g2d);
         shell.draw(g2d);
