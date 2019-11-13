@@ -8,7 +8,6 @@ import java.awt.Graphics2D;
 public class Turret extends GameObject{
     private double rotateSpeed;
     private double PosHeadX, PosHeadY;
-    private double[] tag;
     
     public Turret(double px, double py, double cx, double cy, double w, double h){
         super();
@@ -19,7 +18,6 @@ public class Turret extends GameObject{
         setWidth(w);
         setHeight(h);
         rotateSpeed = 0;
-        tag = new double[] {};
     }
     
     public void update(double px, double py, double cx, double cy){

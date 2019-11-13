@@ -11,6 +11,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import Calculate.Calculate;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,7 +22,7 @@ import javax.imageio.ImageIO;
         
 public class Tank extends GameObject implements Moveable{
     private double hp;
-    private Armour[] armour;
+    private double[][] armour;
     private double[] thickness;
     private double reload, rotateSpeed, isBack, speed, speedReload;
     private Shell shell;
@@ -44,7 +45,15 @@ public class Tank extends GameObject implements Moveable{
         rotateSpeed = 0; isBack = 1; reload = speedReload;
         speed = tanks.getTanks(name)[8];
         turret = new Turret(getPosX()+getWidth()/4, getPosY()+getHeight()/4, getCenterX(), getCenterY(), getWidth()/2, getHeight()/2);
-        armour = new Armour[4];
+        armour = new double[4][2];
+        armour[0][0] = getPosX();
+        armour[0][1] = getPosY();
+        armour[1][0] = getPosX()+getWidth();
+        armour[1][1] = getPosY();
+        armour[2][0] = getPosX()+getWidth();
+        armour[2][1] = getPosY()+getHeight();
+        armour[3][0] = getPosX();
+        armour[3][1] = getPosY()+getHeight();
         shell = new Shell(this);
         nameTank = name;
     }
@@ -71,6 +80,14 @@ public class Tank extends GameObject implements Moveable{
         turret.setRotate(turret.getRotate()+(turret.getRotateSpeed()+getRotateSpeed())*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()+Calculate.calculateMoveY(getRotate(), getSpeedY()));
+        armour[0][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
+        armour[0][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
+        armour[1][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
+        armour[1][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
+        armour[2][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
+        armour[2][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
+        armour[3][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
+        armour[3][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
         turret.update(getPosX()+getWidth()/4, getPosY()+getHeight()/4, getCenterX(), getCenterY());
