@@ -10,8 +10,9 @@ public class Shell extends GameObject implements Moveable{
     private double penetration;
     
     public Shell(Tank tank){
-        setPosX(tank.getPosX()+tank.getWidth()/4+getWidth()/2); setPosY(tank.getPosY());
         setWidth(tank.getWidth()/4); setHeight(tank.getHeight()/4);
+        setPosX(tank.getPosX()+tank.getWidth()/2-getWidth()/2);
+        setPosY(tank.getPosY()+tank.getHeight()/2-getHeight()/2);
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
         setRotate(tank.getTurret().getRotate());
     }
@@ -23,9 +24,8 @@ public class Shell extends GameObject implements Moveable{
     }
     
     public void move() {
-        System.out.println(getPosX()+" , "+getPosY());
-        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 5)); 
-        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -5));
+        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 50)); 
+        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -50));
     }
     
 }

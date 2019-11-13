@@ -69,8 +69,8 @@ public class Tank extends GameObject implements Moveable{
         g2d.fill(getBounds());
 //        g2d.drawImage(tankImg, (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
-        turret.draw(g2d);
         shell.draw(g2d);
+        turret.draw(g2d);
     }
 
     

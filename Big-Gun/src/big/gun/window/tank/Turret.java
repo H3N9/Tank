@@ -3,6 +3,7 @@ package big.gun.window.tank;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 
 
 public class Turret extends GameObject{
@@ -31,6 +32,7 @@ public class Turret extends GameObject{
         g2d.setColor(Color.yellow);
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
+        g2d.fill(new Rectangle2D.Double(getPosX()+getWidth()/2-10, getPosY()-50, 20, 50));
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
     }
     
