@@ -2,6 +2,7 @@
 package big.gun.window.tank;
 
 import Calculate.Calculate;
+import big.gun.window.Import;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
@@ -10,7 +11,7 @@ public class Shell extends GameObject implements Moveable{
     private double penetration;
     
     public Shell(Tank tank){
-        setWidth(tank.getWidth()/4); setHeight(tank.getHeight()/4);
+        setWidth(Import.tankImg.get(tank.getNameTank())[2].getWidth()/2); setHeight(getWidth());
         setPosX(tank.getPosX()+tank.getWidth()/2-getWidth()/2);
         setPosY(tank.getPosY()+tank.getHeight()/2-getHeight()/2);
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
