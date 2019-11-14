@@ -16,9 +16,10 @@ import javax.swing.Timer;
 public class Game extends JPanel implements ActionListener{
     private Timer start;
     private Player player;
-    private BufferedImage tankImg;
+    private Import importImg;
     
     public Game(){
+        importImg = new Import();
         start = new Timer(10, this);
         start.start();
         player = new Player();

@@ -44,6 +44,7 @@ public class Map {
             build.draw(g2d);
         }
         g2d.drawString(posX+", "+posY, (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-10);
+        g2d.drawString(player.getMyTank().getPosX()+", "+player.getMyTank().getPosY(), (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-40);
     }
     
     public void update(){

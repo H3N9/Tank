@@ -1,6 +1,7 @@
 
 package big.gun.window.tank;
 
+import big.gun.window.Import;
 import java.util.HashMap;
 
 
@@ -15,6 +16,7 @@ public class CollectionTanks {
 
     public CollectionTanks() {
         tanks = new HashMap<>();
+        //{0frontArmor, 1LeftArmor, 2RightArmor, 3BackArmor, 4HP, 5Damage, 6Penetration, 7ReloadTime, 8Speed, 9Width, 10Height}
         
         tanks.put("m4", new double[] {30, 10, 10, 5, 600, 160, 30, 4, 3.5, 50, 60}); // class1
         
@@ -29,7 +31,7 @@ public class CollectionTanks {
         
         tanks.put("panther", new double[] {40, 20, 20, 10, 800, 160, 45, 4.5, 3, 55, 70});
         
-        tanks.put("tiger", new double[] {57, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 60, 75});
+        tanks.put("tiger", new double[] {57, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 0.5, 0.5});
         
         tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 7, 1, 80, 100});
         
