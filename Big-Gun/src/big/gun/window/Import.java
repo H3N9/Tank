@@ -15,16 +15,17 @@ import java.util.HashMap;
  */
 public class Import {
     public static HashMap<String, BufferedImage[]> tankImg;
-    private BufferedImage hull, turret;
+    private BufferedImage hull, turret, gun;
     
     public Import(){
         tankImg = new HashMap<>();
         try {
             hull = ImageIO.read(getClass().getResource("/res/tiger_hull.png"));
             turret = ImageIO.read(getClass().getResource("/res/tiger_turret.png"));
+            gun = ImageIO.read(getClass().getResource("/res/tiger_gun.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        tankImg.put("tiger", new BufferedImage[] {hull, turret});
+        tankImg.put("tiger", new BufferedImage[] {hull, turret, gun});
     }   
 }

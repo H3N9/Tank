@@ -11,6 +11,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import Calculate.Calculate;
 import big.gun.window.Import;
+import static big.gun.window.tank.CollectionTanks.tanks;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
@@ -28,25 +29,23 @@ public class Tank extends GameObject implements Moveable{
     private double reload, rotateSpeed, isBack, speed, speedReload;
     private Shell shell;
     private Turret turret;
-    private CollectionTanks tanks;
     private String nameTank;
 //    private BufferedImage tankImg;
 
     public Tank(String name){
         super();
         nameTank = name;
-        tanks = new CollectionTanks();
         setWidth(Import.tankImg.get(nameTank)[0].getWidth()/**tanks.getTanks(name)[9]*/);
         setHeight(Import.tankImg.get(nameTank)[0].getHeight()/**tanks.getTanks(name)[10]*/);
         setCenterX(getPosX()+getHeight()/2);
         setCenterY(getPosY()+getHeight()/2);
         // front left right back
-        thickness = new double[] {tanks.getTanks(name)[0], tanks.getTanks(name)[1], tanks.getTanks(name)[2], tanks.getTanks(name)[3]};
-        speedReload = tanks.getTanks(name)[7];
-        hp = tanks.getTanks(name)[4];
+        thickness = new double[] {CollectionTanks.tanks.get(name)[0], CollectionTanks.tanks.get(name)[1], CollectionTanks.tanks.get(name)[2], CollectionTanks.tanks.get(name)[3]};
+        speedReload = CollectionTanks.tanks.get(name)[7];
+        hp = CollectionTanks.tanks.get(name)[4];
         rotateSpeed = 0; isBack = 1; reload = speedReload;
-        speed = tanks.getTanks(name)[8];
-        turret = new Turret(getPosX(), getPosY()+getHeight()/2-Import.tankImg.get(nameTank)[1].getHeight()/**tanks.getTanks(name)[10]*//2, getCenterX(), getCenterY(), Import.tankImg.get(nameTank)[1].getWidth()/**tanks.getTanks(name)[9]*/, Import.tankImg.get(nameTank)[1].getHeight()/**tanks.getTanks(name)[10]*/, nameTank);
+        speed = CollectionTanks.tanks.get(name)[8];
+        turret = new Turret(getPosX(), getPosY(), getCenterX(), getCenterY(), nameTank);
         armour = new double[4][2];
         armour[0][0] = getPosX();
         armour[0][1] = getPosY();
@@ -126,10 +125,6 @@ public class Tank extends GameObject implements Moveable{
         return reload;
     }
 
-    public CollectionTanks getTanks() {
-        return tanks;
-    }
-
     public Shell getShell() {
         return shell;
     }
@@ -140,10 +135,6 @@ public class Tank extends GameObject implements Moveable{
 
     public void setHp(double hp) {
         this.hp = hp;
-    }
-
-    public void setTanks(CollectionTanks tanks) {
-        this.tanks = tanks;
     }
 
     public void setReload(double reload) {

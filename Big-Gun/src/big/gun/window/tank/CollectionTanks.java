@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 
 public class CollectionTanks {
-    private HashMap<String, double[]> tanks;
+    public static HashMap<String, double[]> tanks;
     public static double amount = 5;
 
     public static double getAmount() {

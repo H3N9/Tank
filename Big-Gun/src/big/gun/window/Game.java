@@ -2,6 +2,7 @@
 package big.gun.window;
 
 
+import big.gun.window.tank.CollectionTanks;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,9 +18,11 @@ public class Game extends JPanel implements ActionListener{
     private Timer start;
     private Player player;
     private Import importImg;
+    private CollectionTanks collection;
     
     public Game(){
         importImg = new Import();
+        collection = new CollectionTanks();
         start = new Timer(10, this);
         start.start();
         player = new Player();
