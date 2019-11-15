@@ -1,6 +1,7 @@
 
 package big.gun.window.tank;
 
+import static Calculate.Calculate.*;
 import big.gun.window.Import;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -12,28 +13,34 @@ public class Turret extends GameObject{
     private double posHeadX, posHeadY, centerHeadX, centerHeadY;
     private double gunPosX, gunPosY, gunWidth, gunHeight;
     private String nameTank;
+    private double save;
     
     public Turret(Tank tank){
         super();
-        setWidth(Import.tankImg.get(tank.getNameTank())[1].getWidth());
-        setHeight(Import.tankImg.get(tank.getNameTank())[1].getHeight());
-        gunWidth = (Import.tankImg.get(tank.getNameTank())[2].getWidth());
-        gunHeight = (Import.tankImg.get(tank.getNameTank())[2].getHeight());
+        this.nameTank = tank.getNameTank();
+        setWidth(Import.tankImg.get(nameTank)[1].getWidth());
+        setHeight(Import.tankImg.get(nameTank)[1].getHeight());
+        gunWidth = (Import.tankImg.get(nameTank)[2].getWidth());
+        gunHeight = (Import.tankImg.get(nameTank)[2].getHeight());
         setPosX(tank.getPosX()+tank.getWidth()/2-getWidth()/2);
-        setPosY(tank.getPosY()+tank.getHeight()/2-getHeight()/2);
+        setPosY(tank.getPosY()+tank.getHeight()/3-getHeight()/2);
         setCenterX(tank.getCenterX());
         setCenterY(tank.getCenterY());
-        centerHeadX = getCenterX();
-        centerHeadY = getCenterY();
-        this.nameTank = tank.getNameTank();
+        centerHeadX = getPosX()+getWidth()/2;
+        centerHeadY = getPosY()+getHeight()/2;
         rotateSpeed = 0;
     }
     
     public void update(double px, double py, double cx, double cy, double tankWidth, double tankHeight, double tankRotate){
         setPosX(px+tankWidth/2-getWidth()/2);
-        setPosY(py+tankHeight/2-getHeight()/2);
+        setPosY(py+tankHeight/3-getHeight()/2);
         setCenterX(cx);
         setCenterY(cy);
+        centerHeadX = getPosX()+getWidth()/2;
+        centerHeadY = getPosY()+getHeight()/2;
+        save = centerHeadX;
+        centerHeadX = calculateRotateX(centerHeadX, centerHeadY, cx, cy, tankRotate);
+        centerHeadY = calculateRotateY(save, centerHeadY, cx, cy, tankRotate);
     }
     
     public void draw(Graphics2D g2d){
@@ -43,6 +50,8 @@ public class Turret extends GameObject{
         g2d.drawImage(Import.tankImg.get(nameTank)[1], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.drawImage(Import.tankImg.get(nameTank)[2], (int)(getPosX()+getWidth()/2-gunWidth/2), (int)(getPosY()-gunHeight), (int)gunWidth, (int)gunHeight, null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+        g2d.fill(new Rectangle2D.Double(centerHeadX, centerHeadY, 10, 10));
+        
     }
     
     public double getRotateSpeed() {
