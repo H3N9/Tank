@@ -9,27 +9,29 @@ import java.awt.geom.Rectangle2D;
 
 public class Turret extends GameObject{
     private double rotateSpeed;
-    private double PosHeadX, PosHeadY;
-    private double gunWidth, gunHeight;
+    private double posHeadX, posHeadY, centerHeadX, centerHeadY;
+    private double gunPosX, gunPosY, gunWidth, gunHeight;
     private String nameTank;
     
-    public Turret(double px, double py, double cx, double cy, String nameTank){
+    public Turret(Tank tank){
         super();
-        setPosX(px);
-        setPosY(py);
-        setCenterX(cx);
-        setCenterY(cy);
-        setWidth(Import.tankImg.get(nameTank)[1].getWidth());
-        setHeight(Import.tankImg.get(nameTank)[1].getHeight());
-        gunWidth = (Import.tankImg.get(nameTank)[2].getWidth());
-        gunHeight = (Import.tankImg.get(nameTank)[2].getHeight());
-        this.nameTank = nameTank;
+        setWidth(Import.tankImg.get(tank.getNameTank())[1].getWidth());
+        setHeight(Import.tankImg.get(tank.getNameTank())[1].getHeight());
+        gunWidth = (Import.tankImg.get(tank.getNameTank())[2].getWidth());
+        gunHeight = (Import.tankImg.get(tank.getNameTank())[2].getHeight());
+        setPosX(tank.getPosX()+tank.getWidth()/2-getWidth()/2);
+        setPosY(tank.getPosY()+tank.getHeight()/2-getHeight()/2);
+        setCenterX(tank.getCenterX());
+        setCenterY(tank.getCenterY());
+        centerHeadX = getCenterX();
+        centerHeadY = getCenterY();
+        this.nameTank = tank.getNameTank();
         rotateSpeed = 0;
     }
     
-    public void update(double px, double py, double cx, double cy){
-        setPosX(px+Import.tankImg.get(nameTank)[0].getWidth()/2-getWidth()/2);
-        setPosY(py+Import.tankImg.get(nameTank)[0].getHeight()/2-getHeight()/2);
+    public void update(double px, double py, double cx, double cy, double tankWidth, double tankHeight, double tankRotate){
+        setPosX(px+tankWidth/2-getWidth()/2);
+        setPosY(py+tankHeight/2-getHeight()/2);
         setCenterX(cx);
         setCenterY(cy);
     }
@@ -52,19 +54,19 @@ public class Turret extends GameObject{
     }
 
     public double getPosHeadX() {
-        return PosHeadX;
+        return posHeadX;
     }
 
-    public void setPosHeadX(double PosHeadX) {
-        this.PosHeadX = PosHeadX;
+    public void setPosHeadX(double posHeadX) {
+        this.posHeadX = posHeadX;
     }
 
-    public void setPosHeadY(double PosHeadY) {
-        this.PosHeadY = PosHeadY;
+    public void setPosHeadY(double posHeadY) {
+        this.posHeadY = posHeadY;
     }
 
     public double getPosHeadY() {
-        return PosHeadY;
+        return posHeadY;
     }
 
     public void setGunWidth(double gunWidth) {

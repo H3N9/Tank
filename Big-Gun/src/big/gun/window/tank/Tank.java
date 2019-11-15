@@ -45,7 +45,6 @@ public class Tank extends GameObject implements Moveable{
         hp = CollectionTanks.tanks.get(name)[4];
         rotateSpeed = 0; isBack = 1; reload = speedReload;
         speed = CollectionTanks.tanks.get(name)[8];
-        turret = new Turret(getPosX(), getPosY(), getCenterX(), getCenterY(), nameTank);
         armour = new double[4][2];
         armour[0][0] = getPosX();
         armour[0][1] = getPosY();
@@ -55,6 +54,7 @@ public class Tank extends GameObject implements Moveable{
         armour[2][1] = getPosY()+getHeight();
         armour[3][0] = getPosX();
         armour[3][1] = getPosY()+getHeight();
+        turret = new Turret(this);
         shell = new Shell(this);
     }
 
@@ -90,7 +90,7 @@ public class Tank extends GameObject implements Moveable{
         armour[3][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
-        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY());
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         setReload(getReload());
     }
     
@@ -99,7 +99,7 @@ public class Tank extends GameObject implements Moveable{
         setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
-        turret.update(getPosX()+getWidth()/2, getPosY()+getHeight()/2, getCenterX(), getCenterY());
+        turret.update(getPosX()+getWidth()/2, getPosY()+getHeight()/2, getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         shell.move();
     }
     public void shoot(){
