@@ -11,22 +11,22 @@ public class Shell extends GameObject implements Moveable{
     private double penetration;
     
     public Shell(Tank tank){
-        setWidth(Import.tankImg.get(tank.getNameTank())[2].getWidth()/2); setHeight(getWidth());
-        setPosX(tank.getPosX()+tank.getWidth()/2-getWidth()/2);
-        setPosY(tank.getPosY()+tank.getHeight()/2-getHeight()/2);
+        setWidth(Import.tankImg.get(tank.getNameTank())[2].getWidth()/4); setHeight(getWidth());
+        setPosX(tank.getTurret().getGunPosX()-getWidth()*0.5);
+        setPosY(tank.getTurret().getGunPosY());
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
-        setRotate(tank.getTurret().getRotate());
+        setRotate(tank.getTurret().getRotate()+tank.getTurret().getRotateHead());
     }
 
     
     public void draw(Graphics2D g2d){
-        g2d.setColor(Color.CYAN);
+        g2d.setColor(Color.red);
         g2d.fill(getBounds());
     }
     
     public void move() {
-        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 50)); 
-        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -50));
+        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 20)); 
+        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -20));
     }
     
 }

@@ -16,7 +16,7 @@ public class CollectionTanks {
 
     public CollectionTanks() {
         tanks = new HashMap<>();
-        //{0frontArmor, 1LeftArmor, 2RightArmor, 3BackArmor, 4HP, 5Damage, 6Penetration, 7ReloadTime, 8Speed, 9Width, 10Height}
+        //{0frontArmor, 1LeftArmor, 2RightArmor, 3BackArmor, 4HP, 5Damage, 6Penetration, 7ReloadTime, 8Speed, 9sizeRatio, 10turretPos}
         
         tanks.put("m4", new double[] {30, 10, 10, 5, 600, 160, 30, 4, 3.5, 50, 60}); // class1
         
