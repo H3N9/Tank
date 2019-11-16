@@ -29,13 +29,12 @@ public class Tank extends GameObject implements Moveable{
     private Shell shell;
     private Turret turret;
     private String nameTank;
-//    private BufferedImage tankImg;
 
     public Tank(String name){
         super();
         nameTank = name;
-        setWidth(Import.tankImg.get(nameTank)[0].getWidth()/**tanks.getTanks(name)[9]*/);
-        setHeight(Import.tankImg.get(nameTank)[0].getHeight()/**tanks.getTanks(name)[10]*/);
+        setWidth(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(name)[9]);
+        setHeight(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(name)[9]);
         setCenterX(getPosX()+getHeight()/2);
         setCenterY(getPosY()+getHeight()/2);
         // front left right back
@@ -44,7 +43,6 @@ public class Tank extends GameObject implements Moveable{
         hp = CollectionTanks.tanks.get(name)[4];
         rotateSpeed = 0; isBack = 1; reload = speedReload;
         speed = CollectionTanks.tanks.get(name)[8];
-        turret = new Turret(getPosX(), getPosY(), getCenterX(), getCenterY(), nameTank);
         armour = new double[4][2];
         armour[0][0] = getPosX();
         armour[0][1] = getPosY();
@@ -54,15 +52,11 @@ public class Tank extends GameObject implements Moveable{
         armour[2][1] = getPosY()+getHeight();
         armour[3][0] = getPosX();
         armour[3][1] = getPosY()+getHeight();
+        turret = new Turret(this);
         shell = new Shell(this);
     }
 
     public void draw(Graphics2D g2d){
-//        try {
-//            tankImg = ImageIO.read(getClass().getResource("/tiger_hull.png"));
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
         g2d.setColor(Color.red);
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
@@ -76,7 +70,7 @@ public class Tank extends GameObject implements Moveable{
     @Override
     public void move() {
         setRotate(getRotate()+getRotateSpeed()*isBack);
-        turret.setRotate(turret.getRotate()+(turret.getRotateSpeed()+getRotateSpeed()*isBack));
+        turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()+Calculate.calculateMoveY(getRotate(), getSpeedY()));
         armour[0][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
@@ -89,7 +83,7 @@ public class Tank extends GameObject implements Moveable{
         armour[3][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
-        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY());
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         setReload(getReload());
     }
     
@@ -98,7 +92,7 @@ public class Tank extends GameObject implements Moveable{
         setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
-        turret.update(getPosX()+getWidth()/2, getPosY()+getHeight()/2, getCenterX(), getCenterY());
+        turret.update(getPosX()+getWidth()/2, getPosY()+getHeight()/2, getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         shell.move();
     }
     public void shoot(){
