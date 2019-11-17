@@ -76,16 +76,16 @@ public class Map {
     public void moveMap(){
         int check = 0;
         Tank pTank = player.getMyTank();
-        if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
+        if (pTank.getPosX()+pTank.getWidth()+0 >= Window.width){
             check = 1;
         }
         
-        if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
+        if (pTank.getPosY()+pTank.getHeight()+0 >= Window.height){
             check = 1;
         }
         
         if (pTank.getPosX()<= 170){
-            check = 1;;
+            check = 1;
         }
         
         if (pTank.getPosY() <= 170){

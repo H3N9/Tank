@@ -9,7 +9,6 @@ package big.gun.window.tank;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-import Calculate.Calculate;
 import big.gun.window.Import;
 import static big.gun.window.tank.CollectionTanks.tanks;
 import java.awt.geom.AffineTransform;
@@ -133,9 +132,10 @@ public class Tank extends GameObject implements Moveable{
 
     public void setReload(double reload) {
         if(reload<speedReload)
-            this.reload += 1;
+            this.reload += 0.001;
         else
             this.reload = reload;
+        System.out.println(this.reload);
     }
     public Turret getTurret() {
         return turret;

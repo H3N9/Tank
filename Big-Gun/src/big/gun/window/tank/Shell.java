@@ -1,7 +1,6 @@
 
 package big.gun.window.tank;
 
-import Calculate.Calculate;
 import big.gun.window.Import;
 import java.awt.Color;
 import java.awt.Graphics2D;

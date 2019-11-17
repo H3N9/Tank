@@ -1,4 +1,4 @@
-package Calculate;
+package big.gun.window.tank;
 
 public class Calculate {
     public Calculate(){}
