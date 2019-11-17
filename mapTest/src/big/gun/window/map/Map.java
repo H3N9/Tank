@@ -17,24 +17,26 @@ import java.awt.Color;
 
 import java.util.LinkedList;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 
 public class Map {
     private LinkedList<Builds> builds;
     private double posX;
     private double posY;
     private Player player;
+    private Person person1, person2;
     
-    public Map(Player player){
+    public Map(double posX, double posY, Player player){
         builds = new LinkedList<Builds>();
-        builds.add(new Builds(200, 200));
-        builds.add(new Builds(200, 200));
-        builds.add(new Builds(400, 200));
-        builds.add(new Builds(700, 200));
-        builds.add(new Builds(200, 20));
-        builds.add(new Builds(-200, 0, 50, 720, Color.BLACK));
+        this.addBuilds();
         this.player = player;
-        posX = 0;
-        posY = 0;
+        this.person1 = new Person(200, 200, "m4");
+        this.person2 = new Person(500, 1800, "tiger");
+        
+        this.posX = posX;
+        this.posY = posY;
+        Person.updatePos(posX, posY);
+        Builds.updatePos(posX, posY);
     }
     
     public void draw(Graphics2D g2d){
@@ -43,12 +45,16 @@ public class Map {
             build = getBuilds().get(i);
             build.draw(g2d);
         }
+        person1.draw(g2d);
+        person2.draw(g2d);
+        g2d.setColor(Color.BLACK);
         g2d.drawString(posX+", "+posY, (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-10);
-        g2d.drawString(player.getMyTank().getPosX()+", "+player.getMyTank().getPosY(), (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-40);
     }
     
     public void update(){
         this.moveMap();
+        person1.update();
+        person2.update();
         Builds build;
         for (int i=0; i < getBuilds().size(); i++){
             build = getBuilds().get(i);
@@ -91,7 +97,60 @@ public class Map {
             posX -= Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX());
             posY -= Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY());
             Builds.updatePos(posX, posY);
+            Person.updatePos(posX, posY);
         }
+    }
+    
+    private void addBuilds(){
+        builds.add(new Builds(0, 0, 5000, 5000, null, "image/ground3.jpg"){
+            @Override
+            public Rectangle2D getBounds(){
+                return new Rectangle2D.Double(posX,posY,0,0);
+            }
+        });
+        builds.add(new Builds(0, 0, 5000, 50, Color.BLACK, ""));
+        builds.add(new Builds(0, 50, 50, 4900, Color.BLACK, ""));
+        builds.add(new Builds(4950, 50, 50, 4900, Color.BLACK, ""));
+        builds.add(new Builds(0, 4950, 5000, 50, Color.BLACK, ""));
+        
+        builds.add(new Builds(800, 400));
+        builds.add(new Builds(400, 1000));
+        builds.add(new Builds(1200, 1600));
+        builds.add(new Builds(100, 1800));
+        builds.add(new Builds(800, 2400));
+        builds.add(new Builds(1000, 2600));
+        builds.add(new Builds(200, 3000));
+        builds.add(new Builds(800, 3600));
+        builds.add(new Builds(400, 4000));
+        builds.add(new Builds(4000, 4400));
+        builds.add(new Builds(4400, 3800));
+        builds.add(new Builds(3800, 2200));
+        builds.add(new Builds(4000, 2400));
+        builds.add(new Builds(4600, 1800));
+        builds.add(new Builds(4000, 1200));
+        builds.add(new Builds(4400, 800));
+        
+        builds.add(new Builds(1400, 600, 1000, 200, Color.GRAY, ""));
+        builds.add(new Builds(2600, 600, 1000, 200, Color.GRAY, ""));
+        builds.add(new Builds(1400, 800, 200, 3400, Color.GRAY, ""));
+        builds.add(new Builds(1400, 4200, 1000, 200, Color.GRAY, ""));
+        builds.add(new Builds(2600, 4200, 1000, 200, Color.GRAY, ""));
+        builds.add(new Builds(3400, 800, 200, 3400, Color.GRAY, ""));
+        
+        builds.add(new Builds(2000, 1000, 300, 600, Color.GRAY, ""));
+        builds.add(new Builds(2700, 1000, 300, 600, Color.GRAY, ""));
+        
+        builds.add(new Builds(2000, 2000, 300, 300, Color.GRAY, ""));
+        builds.add(new Builds(2700, 2000, 300, 300, Color.GRAY, ""));
+        
+        builds.add(new Builds(1800, 2600, 600, 200, Color.GRAY, ""));
+        builds.add(new Builds(2600, 2600, 600, 200, Color.GRAY, ""));
+        
+        builds.add(new Builds(2000, 2900, 300, 300, Color.GRAY, ""));
+        builds.add(new Builds(2700, 2900, 300, 300, Color.GRAY, ""));
+        
+        builds.add(new Builds(2000, 3400, 300, 600, Color.GRAY, ""));
+        builds.add(new Builds(2700, 3400, 300, 600, Color.GRAY, ""));
     }
     
     public double getPosX() {

@@ -11,12 +11,12 @@ public class Player {
     private Tank myTank;
     
     public Player(){
-        this("m4");
+        this("m4", 350, 400);
     }
 
     
-    public Player(String name){
-        myTank = new Tank(name);
+    public Player(String name, double posX, double posY){
+        myTank = new Tank(name, posX, posY);
     }
     
     public void draw(Graphics2D g2d){

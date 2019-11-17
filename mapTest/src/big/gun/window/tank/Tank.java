@@ -25,11 +25,11 @@ public class Tank extends GameObject implements Moveable{
     private String nameTank;
     
     
-    public Tank(String name){
+    public Tank(String name, double posX, double posY){
         super();
         tanks = new CollectionTanks();
-        setPosX(350);
-        setPosY(400);
+        setPosX(posX);
+        setPosY(posY);
         setWidth(tanks.getTanks(name)[9]);
         setHeight(tanks.getTanks(name)[10]);
         setCenterX(getPosX()+getHeight()/2);

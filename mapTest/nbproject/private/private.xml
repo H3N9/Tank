@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USER/Desktop/Tank/mapTest/src/big/gun/window/tank/Shell.java</file>
-            <file>file:/C:/Users/USER/Desktop/Tank/mapTest/src/big/gun/window/map/Builds.java</file>
-            <file>file:/C:/Users/USER/Desktop/Tank/mapTest/src/big/gun/window/map/Map.java</file>
-            <file>file:/C:/Users/USER/Desktop/Tank/mapTest/src/big/gun/window/tank/allPlayer/Player.java</file>
-            <file>file:/C:/Users/USER/Desktop/Tank/mapTest/src/big/gun/BigGun.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/map/Map.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/map/Person.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/tank/Tank.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/tank/allPlayer/Player.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/BigGun.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/Game.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/maptest/src/big/gun/window/map/MapObject.java</file>
         </group>
     </open-files>
 </project-private>
