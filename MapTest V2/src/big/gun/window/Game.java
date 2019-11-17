@@ -28,7 +28,7 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("m4a3e8", 510, 250);
+        player = new Player("kv1", 510, 250);
         map = new Map(250, 1750, player);
         start.start();
         addKeyListener(new Input(player));
@@ -50,7 +50,7 @@ public class Game extends JPanel implements ActionListener{
         //Draw below this
         map.draw(g2d);
         player.draw(g2d);
-        g2d.drawRect(170, 170, 700, 340);
+        g2d.drawRect(170, 170, Window.width-170-210, Window.height-170-210);
         //tdt = new TestDrawTank(g2d);
         
     }
