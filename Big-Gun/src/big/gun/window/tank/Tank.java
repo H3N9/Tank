@@ -58,8 +58,8 @@ public class Tank extends GameObject implements Moveable{
 
     public void draw(Graphics2D g2d){
         g2d.setColor(Color.red);
-        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
+        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
         shell.draw(g2d);
