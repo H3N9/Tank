@@ -58,10 +58,31 @@ public class Tank extends GameObject implements Moveable{
 
     public void draw(Graphics2D g2d){
         g2d.setColor(Color.red);
+        
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
-        g2d.fill(getBounds());
         g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+        
+        //test 9 bounds
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX(), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX(), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()/3), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()/3), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()*2/3), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()*2/3), getPosY(), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX(), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX(), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3),getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3),getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()*2/3), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()*2/3), getPosY()+(getHeight()/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX(), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX(), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()/3), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()/3), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        g2d.fill(new Rectangle2D.Double(Calculate.calculateRotateX(getPosX()+(getWidth()*2/3), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()),
+                                        Calculate.calculateRotateY(getPosX()+(getWidth()*2/3), getPosY()+(getHeight()*2/3), getPosX()+(getWidth()/3), getPosY()+(getHeight()/3), getRotate()), getWidth()/3, getHeight()/3));
+        
         shell.draw(g2d);
         turret.draw(g2d);
     }
