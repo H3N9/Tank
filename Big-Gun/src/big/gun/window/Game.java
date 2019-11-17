@@ -3,6 +3,7 @@ package big.gun.window;
 
 
 import big.gun.window.tank.CollectionTanks;
+import big.gun.window.tank.TestDrawTank;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -19,6 +20,7 @@ public class Game extends JPanel implements ActionListener{
     private Player player;
     private Import importImg;
     private CollectionTanks collection;
+    //private TestDrawTank tdt;
     
     public Game(){
         importImg = new Import();
@@ -44,7 +46,7 @@ public class Game extends JPanel implements ActionListener{
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         //Draw below this
         player.draw(g2d);
-        
+        //tdt = new TestDrawTank(g2d);
         
     }
     
