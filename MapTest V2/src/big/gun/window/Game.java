@@ -10,7 +10,9 @@ import big.gun.window.tank.CollectionTanks;
 import big.gun.window.tank.Tank;
 import big.gun.window.tank.TestDrawTank;
 import big.gun.window.tank.allPlayer.Player;
-import big.gun.window.tank.enemies.Ai;
+import big.gun.window.tank.allPlayer.Ai;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -29,6 +31,8 @@ public class Game extends JPanel implements ActionListener{
     private Import importImg;
     private CollectionTanks collection;
     private Ai bot;
+    private static long lastFPS;
+    private static int currentFPS, totalFrames;
     
     //private TestDrawTank tdt;
     
@@ -36,7 +40,7 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("m4", 510, 250);
+        player = new Player("firefly", 510, 250);
         bot = new Ai(5, 5, player);
         map = new Map(2000, 0, bot.getPersons());
         start.start();
@@ -56,6 +60,14 @@ public class Game extends JPanel implements ActionListener{
             
         }
     }
+    public void FPS(){
+       totalFrames++;
+        if(System.nanoTime()>lastFPS+1000000000){
+            lastFPS = System.nanoTime();
+            currentFPS = totalFrames;
+            totalFrames = 0;
+        } 
+    }
     
     
     public void paint(Graphics g){
@@ -66,7 +78,10 @@ public class Game extends JPanel implements ActionListener{
         map.draw(g2d);
         player.draw(g2d);
         g2d.drawRect(170, 170, Window.width-170-210, Window.height-170-210);
-        //tdt = new TestDrawTank(g2d);
+        //FPS
+        g2d.setColor(Color.BLACK);
+        g2d.setFont(new Font("", 20,20));
+        g2d.drawString("FPS: "+currentFPS, 10, 20);
         
     }
     
@@ -188,6 +203,7 @@ public class Game extends JPanel implements ActionListener{
         map.update();
         this.moveMap();
         playerColison();
+        FPS();
         repaint();
     }
     

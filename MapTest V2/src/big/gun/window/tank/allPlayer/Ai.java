@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package big.gun.window.tank.enemies;
+package big.gun.window.tank.allPlayer;
 
 import big.gun.window.map.Person;
 import big.gun.window.tank.*;
@@ -29,7 +29,8 @@ public class Ai implements ActionListener{
         persons = new LinkedList<Person>();
         time = new Timer(20, this);
         //spanw Alline
-        for(int i=0;i<alline;i++){
+        int spawn = alline>max? max: alline;
+        for(int i=0;i<spawn;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
@@ -46,7 +47,8 @@ public class Ai implements ActionListener{
         
         
         //spawn Axis
-        for(int i=0;i<axis;i++){
+        spawn = axis>max? max: axis;
+        for(int i=0;i<spawn;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
@@ -67,7 +69,7 @@ public class Ai implements ActionListener{
         LinkedList<String> event = new LinkedList<String>();
         event.add("W");
         event.add("A");
-        persons.get(0).behavior(event);
+        persons.get(1).behavior(event);
     }
     
     public LinkedList<Person> getPersons() {

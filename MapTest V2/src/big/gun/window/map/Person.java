@@ -11,8 +11,8 @@ package big.gun.window.map;
  */
 import big.gun.window.tank.*;
 import java.awt.Graphics2D;
+
 import java.util.LinkedList;
-import big.gun.window.tank.enemies.*;
 
 public class Person extends MapObject {
 
