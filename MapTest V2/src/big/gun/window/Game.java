@@ -96,8 +96,6 @@ public class Game extends JPanel implements ActionListener{
             map.setPosX(map.getPosX()-Calculate.calculateMoveX(player.getMyTank().getRotate(), player.getMyTank().getSpeedX()));
             map.setPosY(map.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
             pTank.moveStop();
-            
-            
         }
     }
     public void playerColison(){
@@ -108,7 +106,7 @@ public class Game extends JPanel implements ActionListener{
             for(int n=0; n < pTank.getArmours().length; n++){
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
-                        pTank.moveStop();
+                        pTank.moveStop("non-Rotate");
                         break;
                     }
                 }

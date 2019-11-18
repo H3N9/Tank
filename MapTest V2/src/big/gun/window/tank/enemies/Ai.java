@@ -13,15 +13,18 @@ import java.awt.Graphics2D;
  * @author h3n9
  */
 public class Ai {
-    private Tank tank;
-    public Ai(){
-        tank = new Tank("tiger", 0, 0);
+    private Tank myTank;
+    public Ai(double posX, double posY, String name){
+        myTank = new Tank(name, posX, posY);
     }
     
-    
-    
-    public void draw(Graphics2D g2d){
-        
-        
+    public void draw(Graphics2D g2d){  
     }
+//    public Tank getTank() {
+//        return tank;
+//    }
+//    
+//    public void setTank(Tank tank) {
+//        this.tank = tank;
+//    }
 }

@@ -23,8 +23,6 @@ public class Map {
     private double posY;
     private LinkedList<Builds> builds;
     private LinkedList<Person> enemys;
-    private Person person1, person2;
-    
     
     public Map(double posX, double posY){
         builds = new LinkedList<Builds>();
@@ -151,24 +149,8 @@ public class Map {
         this.enemys = enemys;
     }
 
-    public void setPerson1(Person person1) {
-        this.person1 = person1;
-    }
-
-    public void setPerson2(Person person2) {
-        this.person2 = person2;
-    }
-
     public LinkedList<Person> getEnemys() {
         return enemys;
-    }
-
-    public Person getPerson1() {
-        return person1;
-    }
-
-    public Person getPerson2() {
-        return person2;
     }
     
 }

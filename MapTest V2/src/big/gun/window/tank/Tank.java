@@ -113,6 +113,18 @@ public class Tank extends GameObject implements Moveable{
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
     }
+    
+    public void moveStop(String check){
+        if (getRotateSpeed() != 0){
+            setRotate(getRotate()-getRotateSpeed()*isBack);
+            turret.setRotate(turret.getRotate()-getRotateSpeed()*isBack);
+            
+        }
+        setPosX(getPosX()-Calculate.calculateMoveX(getRotate(), getSpeedX()));
+        setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
+        setCenterX(getPosX()+getWidth()/2); 
+        setCenterY(getPosY()+getHeight()/2);
+    }
     public void shoot(){
         shell = new Shell(this);
     }

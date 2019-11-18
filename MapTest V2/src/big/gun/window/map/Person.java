@@ -11,17 +11,19 @@ package big.gun.window.map;
  */
 import big.gun.window.tank.*;
 import java.awt.Graphics2D;
+import big.gun.window.tank.enemies.*;
 
 public class Person extends MapObject{
     private Tank myTank;
-    private double count;
+    private Ai ai;
+    //private double count;
     
     public Person(double posX, double posY, String name) {
         super(posX, posY, 0, 0);
         myTank = new Tank(name, posX, posY);
         this.setWidth(myTank.getWidth());
         this.setHeight(myTank.getHeight());
-        count = 5;
+        //count = 5;
     }
     
     public static void updatePos(double posX, double posY){
@@ -64,7 +66,7 @@ public class Person extends MapObject{
     
     //กำหนดพฤติกรรม
     private void behavior(){
-        //เดินหน้า W
+//        เดินหน้า W
         myTank.setSpeedX(myTank.getSpeed());  
         myTank.setSpeedY(-myTank.getSpeed());
         myTank.setIsBack(1);
@@ -72,7 +74,7 @@ public class Person extends MapObject{
         //ถอยหลัง
 //        myTank.setSpeedX(-myTank.getSpeed());  
 //        myTank.setSpeedY(myTank.getSpeed());
-//        myTank.setIsBack(0);
+        //myTank.setIsBack(0);
         
 
         //เลี้ยวขวา A
