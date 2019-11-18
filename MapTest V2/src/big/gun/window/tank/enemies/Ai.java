@@ -22,19 +22,20 @@ public class Ai {
     
     public Ai(int alline, int axis, Player player){
         this.player = player;
-        
+        person = new LinkedList<Person>();
         //spanw Alline
         for(int i=0;i<alline;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
-            if(level-1<0){
-                int num = Calculate.randomNumber(level , level+1);
-                person.add(new Person(2400+i*10, 100, CollectionTanks.getName(flag, num)));
+            if(level==4){
+                int num = 4;
+                person.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num)));
             }
-            else if(level+1>4){
-                int num = Calculate.randomNumber(level-1, level);
-                person.add(new Person(2400+i*10, 100, CollectionTanks.getName(flag, num)));
+            else{
+                int num = Calculate.randomNumber(level, level+1);
+                System.out.println(level+","+flag);
+                person.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num)));
             }
         }
         
@@ -44,13 +45,13 @@ public class Ai {
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
-            if(level-1<0){
-                int num = Calculate.randomNumber(level , level+1);
-                person.add(new Person(2400+i*10, 4900, CollectionTanks.getName(flag, num)));
+            if(level==4){
+                int num = 4;
+                person.add(new Person(2400+i*100, 4500, CollectionTanks.getName(flag, num)));
             }
-            else if(level+1>4){
-                int num = Calculate.randomNumber(level-1, level);
-                person.add(new Person(2400+i*10, 4900, CollectionTanks.getName(flag, num)));
+            else{
+                int num = Calculate.randomNumber(level, level+1);
+                person.add(new Person(2600+i*100, 4500, CollectionTanks.getName(flag, num)));
             }
         }
         

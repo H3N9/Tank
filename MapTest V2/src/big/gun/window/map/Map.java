@@ -33,6 +33,7 @@ public class Map {
         this.posY = -posY;
         Builds.updatePos(this.posX, this.posY);
         this.bot = bot;
+        enemys = new LinkedList<Person>();
         enemys = this.bot.getPerson();
         Person.updatePos(getPosX(), getPosY());
     }

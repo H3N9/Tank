@@ -19,7 +19,7 @@ public class Calculate {
         return (y2-y1)/(x2-x1);
     }
     public static int randomNumber(int min, int max){
-        int range = (min-max)+1;
+        int range = (max-min)+1;
         return (int)(Math.random() * range) + min;
     }
 }
