@@ -22,10 +22,45 @@ public class Ai {
     
     public Ai(int alline, int axis, Player player){
         this.player = player;
+        
+        //spanw Alline
         for(int i=0;i<alline;i++){
-            
+            String name = player.getMyTank().getNameTank();
+            int level = (int) CollectionTanks.tanks.get(name)[12];
+            int flag = Calculate.randomNumber(1, 4);
+            if(level-1<0){
+                int num = Calculate.randomNumber(level , level+1);
+                person.add(new Person(2400+i*10, 100, CollectionTanks.getName(flag, num)));
+            }
+            else if(level+1>4){
+                int num = Calculate.randomNumber(level-1, level);
+                person.add(new Person(2400+i*10, 100, CollectionTanks.getName(flag, num)));
+            }
+        }
+        
+        
+        //spawn Axis
+        for(int i=0;i<alline;i++){
+            String name = player.getMyTank().getNameTank();
+            int level = (int) CollectionTanks.tanks.get(name)[12];
+            int flag = Calculate.randomNumber(1, 4);
+            if(level-1<0){
+                int num = Calculate.randomNumber(level , level+1);
+                person.add(new Person(2400+i*10, 4900, CollectionTanks.getName(flag, num)));
+            }
+            else if(level+1>4){
+                int num = Calculate.randomNumber(level-1, level);
+                person.add(new Person(2400+i*10, 4900, CollectionTanks.getName(flag, num)));
+            }
         }
         
     }
+
+    public LinkedList<Person> getPerson() {
+        return person;
+    }
+    
+    
+    
     
 }

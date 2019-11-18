@@ -12,6 +12,7 @@ package big.gun.window.map;
 import big.gun.window.tank.*;
 import big.gun.window.Window;
 import big.gun.window.tank.allPlayer.Player;
+import big.gun.window.tank.enemies.Ai;
 import java.awt.Color;
 
 import java.util.LinkedList;
@@ -23,18 +24,16 @@ public class Map {
     private double posY;
     private LinkedList<Builds> builds;
     private LinkedList<Person> enemys;
+    private Ai bot;
     
-    public Map(double posX, double posY){
+    public Map(double posX, double posY, Ai bot){
         builds = new LinkedList<Builds>();
-        
         this.addBuilds();
         this.posX = -posX;
         this.posY = -posY;
         Builds.updatePos(this.posX, this.posY);
-        
-        enemys = new LinkedList<Person>();
-        enemys.add(new Person(200, 200, "m4"));
-        enemys.add(new Person(299, 1800, "tiger"));
+        this.bot = bot;
+        enemys = this.bot.getPerson();
         Person.updatePos(getPosX(), getPosY());
     }
     

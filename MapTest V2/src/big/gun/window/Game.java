@@ -10,6 +10,7 @@ import big.gun.window.tank.CollectionTanks;
 import big.gun.window.tank.Tank;
 import big.gun.window.tank.TestDrawTank;
 import big.gun.window.tank.allPlayer.Player;
+import big.gun.window.tank.enemies.Ai;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -27,6 +28,7 @@ public class Game extends JPanel implements ActionListener{
     private Map map;
     private Import importImg;
     private CollectionTanks collection;
+    private Ai bot;
     
     
     //private TestDrawTank tdt;
@@ -36,7 +38,8 @@ public class Game extends JPanel implements ActionListener{
         collection = new CollectionTanks();
         start = new Timer(10, this);
         player = new Player("tiger", 510, 250);
-        map = new Map(250, 1750);
+        bot = new Ai(5, 5, player);
+        map = new Map(250, 1750, bot);
         start.start();
         addKeyListener(new Input(player));
         setFocusable(true);

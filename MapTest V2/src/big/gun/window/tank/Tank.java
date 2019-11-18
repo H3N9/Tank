@@ -75,6 +75,7 @@ public class Tank extends GameObject implements Moveable{
         }
         shell.draw(g2d);
         turret.draw(g2d);
+        CollectionTanks.getName(3, 1);
     }
 
     
