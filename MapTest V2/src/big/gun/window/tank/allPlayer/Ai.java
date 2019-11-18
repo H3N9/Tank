@@ -70,6 +70,9 @@ public class Ai implements ActionListener{
         event.add("W");
         event.add("A");
         persons.get(1).behavior(event);
+        event.remove("A");
+        event.add("D");
+        persons.get(4).behavior(event);
     }
     
     public LinkedList<Person> getPersons() {
