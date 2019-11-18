@@ -30,6 +30,7 @@ public class Game extends JPanel implements ActionListener{
         player = new Player();
         addKeyListener(new Input(player));
         setFocusable(true);
+        
     }
     
     public void updateTank(){
