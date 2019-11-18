@@ -35,7 +35,7 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("tiger2", 510, 250);
+        player = new Player("tiger", 510, 250);
         map = new Map(250, 1750);
         start.start();
         addKeyListener(new Input(player));
@@ -109,6 +109,7 @@ public class Game extends JPanel implements ActionListener{
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
                         pTank.moveStop();
+                        break;
                     }
                 }
             }
