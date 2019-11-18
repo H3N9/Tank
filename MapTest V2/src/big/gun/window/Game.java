@@ -40,7 +40,7 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("m4", 510, 250);
+        player = new Player("firefly", 510, 250);
         bot = new Ai(5, 5, player);
         map = new Map(0, 0, bot.getPersons());
         start.start();

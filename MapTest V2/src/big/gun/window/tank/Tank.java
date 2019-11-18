@@ -110,7 +110,7 @@ public class Tank extends GameObject implements Moveable{
             }
         }
         turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
-        setReload(getReload());
+        setReload(getReload()+0.01);
     }
     
     public void moveStop(){
@@ -132,7 +132,11 @@ public class Tank extends GameObject implements Moveable{
         setCenterY(getPosY()+getHeight()/2);
     }
     public void shoot(){
-        shell = new Shell(this);
+        if(reload==speedReload){
+            shell = new Shell(this);
+            setReload(0);
+        }
+            
     }
     
     
@@ -168,9 +172,9 @@ public class Tank extends GameObject implements Moveable{
 
     public void setReload(double reload) {
         if(reload<speedReload)
-            this.reload += 0.001;
-        else
             this.reload = reload;
+        else
+            this.reload = speedReload;
     }
     public Turret getTurret() {
         return turret;
