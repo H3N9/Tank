@@ -34,7 +34,6 @@ public class Game extends JPanel implements ActionListener{
     private static long lastFPS;
     private static int currentFPS, totalFrames;
     
-    
     //private TestDrawTank tdt;
     
     public Game(){
@@ -42,9 +41,10 @@ public class Game extends JPanel implements ActionListener{
         collection = new CollectionTanks();
         start = new Timer(10, this);
         player = new Player("m4", 510, 250);
-        bot = new Ai(5, 25, player);
-        map = new Map(250, 1750, bot);
+        bot = new Ai(5, 5, player);
+        map = new Map(0, 0, bot.getPersons());
         start.start();
+        bot.getTime().start();
         addKeyListener(new Input(player));
         setFocusable(true);
         
@@ -87,7 +87,6 @@ public class Game extends JPanel implements ActionListener{
     
     
     private void moveMap(){
-        playerColison();
         int check = 0;
         Tank pTank = player.getMyTank();
         if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
@@ -125,7 +124,7 @@ public class Game extends JPanel implements ActionListener{
                     }
                 }
             }
-            for (Person enemy: map.getEnemys()){
+            for (Person enemy: map.getPersons()){
                 if (enemy.getMyTank().getBounds().intersects(build.getBounds())){
                     enemy.moveStop();
                 }

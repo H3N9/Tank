@@ -23,34 +23,34 @@ public class Map {
     private double posX;
     private double posY;
     private LinkedList<Builds> builds;
-    private LinkedList<Person> enemys;
-    private Ai bot;
+    private LinkedList<Person> persons;
     
-    public Map(double posX, double posY, Ai bot){
+    public Map(double posX, double posY, LinkedList<Person> persons){
         builds = new LinkedList<Builds>();
         this.addBuilds();
         this.posX = -posX;
         this.posY = -posY;
         Builds.updatePos(this.posX, this.posY);
-        this.bot = bot;
-        enemys = new LinkedList<Person>();
-        enemys = this.bot.getPerson();
+        this.persons = persons;
         Person.updatePos(getPosX(), getPosY());
+//        for (Person person: getPersons()){
+//            person.update();
+//        }
     }
     
     public void draw(Graphics2D g2d){
-        for (Builds build: builds){
+        for (Builds build: getBuilds()){
             build.draw(g2d);
         }
-        for (Person enemy: enemys){
-            enemy.draw(g2d);
+        for (Person person: getPersons()){
+            person.draw(g2d);
         }
         g2d.setColor(Color.BLACK);
     }
     
     public void update(){
         
-        builds.forEach((build) ->{
+        getBuilds().forEach((build) ->{
             build.update();
         });
         
@@ -58,67 +58,64 @@ public class Map {
 //            build = getBuilds().get(i);
 //            build.update();
 //        }
-        enemys.forEach((enemy) -> {
-            enemy.update();
-        });
-        Builds.updatePos(posX, posY);
-        Person.updatePos(posX, posY);
+        for (Person person: getPersons()){
+            person.update();
+        }
+        Builds.updatePos(getPosX(), getPosY());
+        Person.updatePos(getPosX(), getPosY());
     }
     
     
-    
-    
-    
     private void addBuilds(){
-        builds.add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
+        getBuilds().add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
             @Override
             public Rectangle2D getBounds(){
-                return new Rectangle2D.Double(posX,posY,0,0);
+                return new Rectangle2D.Double(getPosX(), getPosY(),0,0);
             }
         });
-        builds.add(new Builds(0, 0, 5000, 50, Color.BLACK, ""));
-        builds.add(new Builds(0, 50, 50, 4900, Color.BLACK, ""));
-        builds.add(new Builds(4950, 50, 50, 4900, Color.BLACK, ""));
-        builds.add(new Builds(0, 4950, 5000, 50, Color.BLACK, ""));
+        getBuilds().add(new Builds(0, 0, 5000, 50, Color.BLACK, ""));
+        getBuilds().add(new Builds(0, 50, 50, 4900, Color.BLACK, ""));
+        getBuilds().add(new Builds(4950, 50, 50, 4900, Color.BLACK, ""));
+        getBuilds().add(new Builds(0, 4950, 5000, 50, Color.BLACK, ""));
         
-        builds.add(new Builds(800, 400));
-        builds.add(new Builds(400, 1000));
-        builds.add(new Builds(1200, 1600));
-        builds.add(new Builds(100, 1800));
-        builds.add(new Builds(800, 2400));
-        builds.add(new Builds(1000, 2600));
-        builds.add(new Builds(200, 3000));
-        builds.add(new Builds(800, 3600));
-        builds.add(new Builds(400, 4000));
-        builds.add(new Builds(4000, 4400));
-        builds.add(new Builds(4400, 3800));
-        builds.add(new Builds(3800, 2200));
-        builds.add(new Builds(4000, 2400));
-        builds.add(new Builds(4600, 1800));
-        builds.add(new Builds(4000, 1200));
-        builds.add(new Builds(4400, 800));
+        getBuilds().add(new Builds(800, 400));
+        getBuilds().add(new Builds(400, 1000));
+        getBuilds().add(new Builds(1200, 1600));
+        getBuilds().add(new Builds(100, 1800));
+        getBuilds().add(new Builds(800, 2400));
+        getBuilds().add(new Builds(1000, 2600));
+        getBuilds().add(new Builds(200, 3000));
+        getBuilds().add(new Builds(800, 3600));
+        getBuilds().add(new Builds(400, 4000));
+        getBuilds().add(new Builds(4000, 4400));
+        getBuilds().add(new Builds(4400, 3800));
+        getBuilds().add(new Builds(3800, 2200));
+        getBuilds().add(new Builds(4000, 2400));
+        getBuilds().add(new Builds(4600, 1800));
+        getBuilds().add(new Builds(4000, 1200));
+        getBuilds().add(new Builds(4400, 800));
         
-        builds.add(new Builds(1400, 600, 1000, 200, Color.GRAY, ""));
-        builds.add(new Builds(2600, 600, 1000, 200, Color.GRAY, ""));
-        builds.add(new Builds(1400, 800, 200, 3400, Color.GRAY, ""));
-        builds.add(new Builds(1400, 4200, 1000, 200, Color.GRAY, ""));
-        builds.add(new Builds(2600, 4200, 1000, 200, Color.GRAY, ""));
-        builds.add(new Builds(3400, 800, 200, 3400, Color.GRAY, ""));
+        getBuilds().add(new Builds(1400, 600, 1000, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(2600, 600, 1000, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(1400, 800, 200, 3400, Color.GRAY, ""));
+        getBuilds().add(new Builds(1400, 4200, 1000, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(2600, 4200, 1000, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(3400, 800, 200, 3400, Color.GRAY, ""));
         
-        builds.add(new Builds(2000, 1000, 300, 600, Color.GRAY, ""));
-        builds.add(new Builds(2700, 1000, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 1000, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2700, 1000, 300, 600, Color.GRAY, ""));
         
-        builds.add(new Builds(2000, 2000, 300, 300, Color.GRAY, ""));
-        builds.add(new Builds(2700, 2000, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 2000, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2700, 2000, 300, 300, Color.GRAY, ""));
         
-        builds.add(new Builds(1800, 2600, 600, 200, Color.GRAY, ""));
-        builds.add(new Builds(2600, 2600, 600, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(1800, 2600, 600, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(2600, 2600, 600, 200, Color.GRAY, ""));
         
-        builds.add(new Builds(2000, 2900, 300, 300, Color.GRAY, ""));
-        builds.add(new Builds(2700, 2900, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 2900, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2700, 2900, 300, 300, Color.GRAY, ""));
         
-        builds.add(new Builds(2000, 3400, 300, 600, Color.GRAY, ""));
-        builds.add(new Builds(2700, 3400, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 3400, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2700, 3400, 300, 600, Color.GRAY, ""));
     }
     
     public double getPosX() {
@@ -145,12 +142,13 @@ public class Map {
         this.builds = builds;
     }
 
-    public void setEnemys(LinkedList<Person> enemys) {
-        this.enemys = enemys;
+    public LinkedList<Person> getPersons() {
+        return persons;
     }
 
-    public LinkedList<Person> getEnemys() {
-        return enemys;
+    public void setPersons(LinkedList<Person> persons) {
+        this.persons = persons;
     }
+
     
 }
