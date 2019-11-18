@@ -38,7 +38,7 @@ public class Game extends JPanel implements ActionListener{
         start = new Timer(10, this);
         player = new Player("m4", 510, 250);
         bot = new Ai(5, 5, player);
-        map = new Map(0, 0, bot.getPersons());
+        map = new Map(2000, 0, bot.getPersons());
         start.start();
         bot.getTime().start();
         addKeyListener(new Input(player));
@@ -99,26 +99,86 @@ public class Game extends JPanel implements ActionListener{
     public void playerColison(){
         Builds build;
         Tank pTank = player.getMyTank();
+        int breakall = 0;
+        
+        //เช็คชนสิ่งของ
         for (int i=0; i < map.getBuilds().size(); i++){
             build = map.getBuilds().get(i);
+            //player ชนสิ่งของ
             for(int n=0; n < pTank.getArmours().length; n++){
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
-                        pTank.moveStop("non-Rotate");
+                        pTank.moveStop();
+                        breakall = 1;
                         break;
                     }
                 }
+                if(breakall == 1){break;}
             }
-            for (Person enemy: map.getPersons()){
-                if (enemy.getMyTank().getBounds().intersects(build.getBounds())){
-                    enemy.moveStop();
+            //bot ชนสิ่งของ
+            breakall = 0;
+            for (Person ebot: bot.getPersons()){
+                for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
+                    for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
+                        if( ebot.getMyTank().getArmours()[n][m].getBounds().intersects(build.getBounds())){
+                            ebot.moveStop();
+                            breakall = 1;
+                            break;
+                        }
+                    }
+                    if(breakall == 1){break;}
                 }
-                
-//                  บัคไรก็ไม่รู้
-//                if (enemy.getMyTank().getBounds().intersects(pTank.getBounds())){
-//                    enemy.moveStop();
-//                }
             }
+        }
+        
+        
+        //player ชนคนอื่น
+        breakall = 0;
+        for(int n=0; n < pTank.getArmours().length; n++){
+                for(int m=0; m < pTank.getArmours()[n].length; m++){
+                    for(Person ebot: bot.getPersons()){
+                        for(int p=0; p < ebot.getMyTank().getArmours().length; p++){
+                            for(int q=0; q < ebot.getMyTank().getArmours()[p].length; q++){
+                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds())){
+                                    pTank.moveStop();
+                                    ebot.moveStop();
+                                    breakall = 1;
+                                    break;
+                                }
+                            }
+                            if(breakall == 1){break;}
+                        }
+                        if(breakall == 1){break;}
+                    }
+                    if(breakall == 1){break;}
+                }
+                if(breakall == 1){break;}
+            }
+        
+        //bot ชน bot
+        breakall = 0;
+        for(Person ebot: bot.getPersons()){
+            for(int m=0; m < ebot.getMyTank().getArmours().length; m++){
+                for(int n=0; n < ebot.getMyTank().getArmours()[m].length; n++){
+                    for(Person ebot2: bot.getPersons()){
+                        for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
+                            for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
+                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                    ebot.moveStop();
+                                    ebot2.moveStop();
+                                    breakall = 1;
+                                    break;
+                                }
+                            }
+                            if(breakall == 1){break;}
+                        }
+                        if(breakall == 1){break;}
+                    }
+                    if(breakall == 1){break;}
+                }
+                if(breakall == 1){break;}
+            }
+            if(breakall == 1){break;}
         }
     }
     
