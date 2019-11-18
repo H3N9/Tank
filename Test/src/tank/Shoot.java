@@ -12,11 +12,9 @@ public class Shoot {
     private double aY;
     private double rotate;
     private Rectangle2D rect;
-    private Player player;
     
     
     public Shoot(Player player){
-        this.player = player;
         aX = player.getTag().getHead()[0];
         aY = player.getTag().getHead()[1];
         rotate = player.getRotateHead();

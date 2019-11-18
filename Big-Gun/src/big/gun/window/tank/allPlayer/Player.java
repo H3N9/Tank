@@ -11,7 +11,8 @@ public class Player {
     private Tank myTank;
     
     public Player(){
-        this("m4");
+        this("churchill");
+
     }
 
     
@@ -47,6 +48,9 @@ public class Player {
         if(key==KeyEvent.VK_E){
             myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
         }
+        if(key==KeyEvent.VK_SPACE){
+            myTank.shoot();
+        }
     }
     
     public void keyReleased(KeyEvent e){
@@ -64,6 +68,7 @@ public class Player {
         if(key==KeyEvent.VK_S){
             myTank.setSpeedX(0);  
             myTank.setSpeedY(0);
+            myTank.setIsBack(1);
         }
         if(key==KeyEvent.VK_Q){
             myTank.getTurret().setRotateSpeed(0);

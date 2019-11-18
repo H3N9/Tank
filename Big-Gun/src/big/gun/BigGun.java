@@ -7,6 +7,6 @@ import big.gun.window.Window;
 public class BigGun {
 
     public static void main(String[] args) {
-        new Window(800, 600);
+        new Window(1600, 1080);
     }
 }
