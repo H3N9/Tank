@@ -185,6 +185,40 @@ public class Tank extends GameObject implements Moveable{
     public void setShell(Shell shell) {
         this.shell = shell;
     }
+
+    public void setSizeOfArmoursArray(int sizeOfArmoursArray) {
+        this.sizeOfArmoursArray = sizeOfArmoursArray;
+    }
+
+    public void setArmours(Armour[][] armours) {
+        this.armours = armours;
+    }
+
+    public void setThickness(double[] thickness) {
+        this.thickness = thickness;
+    }
+
+    public void setTurret(Turret turret) {
+        this.turret = turret;
+    }
+
+    public int getSizeOfArmoursArray() {
+        return sizeOfArmoursArray;
+    }
+
+    public Armour[][] getArmours() {
+        return armours;
+    }
+
+    public double[] getThickness() {
+        return thickness;
+    }
+
+    public double getSpeedReload() {
+        return speedReload;
+    }
+    
+    
     
     private void createArmours(){
         for(int i=0; i < armours.length; i++){

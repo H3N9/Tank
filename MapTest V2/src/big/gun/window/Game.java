@@ -2,8 +2,12 @@
 package big.gun.window;
 
 
+import big.gun.window.map.Builds;
 import big.gun.window.map.Map;
+import big.gun.window.map.Person;
+import big.gun.window.tank.Calculate;
 import big.gun.window.tank.CollectionTanks;
+import big.gun.window.tank.Tank;
 import big.gun.window.tank.TestDrawTank;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Graphics;
@@ -13,6 +17,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.util.LinkedList;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
@@ -22,17 +27,20 @@ public class Game extends JPanel implements ActionListener{
     private Map map;
     private Import importImg;
     private CollectionTanks collection;
+    
+    
     //private TestDrawTank tdt;
     
     public Game(){
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("kv1", 510, 250);
-        map = new Map(250, 1750, player);
+        player = new Player("tiger2", 510, 250);
+        map = new Map(250, 1750);
         start.start();
         addKeyListener(new Input(player));
         setFocusable(true);
+        
     }
     
     public void updateTank(){
@@ -60,8 +68,61 @@ public class Game extends JPanel implements ActionListener{
         updateTank();
         updateBullet();
         map.update();
-        map.playerColison();
+        this.moveMap();
+        playerColison();
         repaint();
+    }
+    
+    private void moveMap(){
+        int check = 0;
+        Tank pTank = player.getMyTank();
+        if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
+            check = 1;
+        }
+        
+        if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
+            check = 1;
+        }
+        
+        if (pTank.getPosX()<= 170){
+            check = 1;;
+        }
+        
+        if (pTank.getPosY() <= 170){
+            check = 1;
+        }
+        
+        if (check == 1){
+            map.setPosX(map.getPosX()-Calculate.calculateMoveX(player.getMyTank().getRotate(), player.getMyTank().getSpeedX()));
+            map.setPosY(map.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
+            pTank.moveStop();
+            
+            
+        }
+    }
+    public void playerColison(){
+        Builds build;
+        Tank pTank = player.getMyTank();
+        for (int i=0; i < map.getBuilds().size(); i++){
+            build = map.getBuilds().get(i);
+            for(int n=0; n < pTank.getArmours().length; n++){
+                for(int m=0; m < pTank.getArmours()[n].length; m++){
+                    if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
+                        pTank.moveStop();
+                    }
+                }
+            }
+            for (Person enemy: map.getEnemys()){
+                if (enemy.getMyTank().getBounds().intersects(build.getBounds())){
+                    enemy.moveStop();
+                }
+                
+//                  บัคไรก็ไม่รู้
+//                if (enemy.getMyTank().getBounds().intersects(pTank.getBounds())){
+//                    enemy.moveStop();
+//                }
+            }
+        }
     }
     
 }

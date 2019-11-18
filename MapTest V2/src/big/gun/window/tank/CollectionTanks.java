@@ -33,7 +33,7 @@ public class CollectionTanks {
         
         tanks.put("tiger", new double[] {57, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 0.7, 0.5});
         
-        tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 7, 1, 0.45, 0.5});
+        tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 7, 3, 0.15, 0.5});
         
         //Britan Tank
         tanks.put("cromwell", new double[] {25, 8, 8, 2, 400, 145, 28, 4, 3, 0.6, 0.4});

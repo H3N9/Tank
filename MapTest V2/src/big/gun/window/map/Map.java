@@ -23,21 +23,21 @@ public class Map {
     private double posY;
     private LinkedList<Builds> builds;
     private LinkedList<Person> enemys;
-    private Player player;
     private Person person1, person2;
     
-    public Map(double posX, double posY, Player player){
+    
+    public Map(double posX, double posY){
         builds = new LinkedList<Builds>();
-        enemys = new LinkedList<Person>();
-        this.addBuilds();
-        this.player = player;
-        enemys.add(new Person(200, 200, "m4"));
-        enemys.add(new Person(299, 1800, "tiger"));
         
+        this.addBuilds();
         this.posX = -posX;
         this.posY = -posY;
-        Person.updatePos(this.posX, this.posY);
         Builds.updatePos(this.posX, this.posY);
+        
+        enemys = new LinkedList<Person>();
+        enemys.add(new Person(200, 200, "m4"));
+        enemys.add(new Person(299, 1800, "tiger"));
+        Person.updatePos(getPosX(), getPosY());
     }
     
     public void draw(Graphics2D g2d){
@@ -51,7 +51,6 @@ public class Map {
     }
     
     public void update(){
-        this.moveMap();
         
         builds.forEach((build) ->{
             build.update();
@@ -64,56 +63,13 @@ public class Map {
         enemys.forEach((enemy) -> {
             enemy.update();
         });
+        Builds.updatePos(posX, posY);
+        Person.updatePos(posX, posY);
     }
     
-    public void playerColison(){
-        Builds build;
-        Tank pTank = player.getMyTank();
-        for (int i=0; i < builds.size(); i++){
-            build = builds.get(i);
-            if (player.getMyTank().getBounds().intersects(build.getBounds())){
-                pTank.moveStop();
-            }
-            for (Person enemy: enemys){
-                if (enemy.getMyTank().getBounds().intersects(build.getBounds())){
-                    enemy.moveStop();
-                }
-                
-//                  บัคไรก็ไม่รู้
-//                if (enemy.getMyTank().getBounds().intersects(pTank.getBounds())){
-//                    enemy.moveStop();
-//                }
-            }
-        }
-    }
     
-    private void moveMap(){
-        int check = 0;
-        Tank pTank = player.getMyTank();
-        if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
-            check = 1;
-        }
-        
-        if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
-            check = 1;
-        }
-        
-        if (pTank.getPosX()<= 170){
-            check = 1;;
-        }
-        
-        if (pTank.getPosY() <= 170){
-            check = 1;
-        }
-        
-        if (check == 1){
-            posX -= Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX());
-            posY -= Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY());
-            pTank.moveStop();
-            Builds.updatePos(posX, posY);
-            Person.updatePos(posX, posY);
-        }
-    }
+    
+    
     
     private void addBuilds(){
         builds.add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
@@ -190,4 +146,29 @@ public class Map {
     public void setBuilds(LinkedList<Builds> builds) {
         this.builds = builds;
     }
+
+    public void setEnemys(LinkedList<Person> enemys) {
+        this.enemys = enemys;
+    }
+
+    public void setPerson1(Person person1) {
+        this.person1 = person1;
+    }
+
+    public void setPerson2(Person person2) {
+        this.person2 = person2;
+    }
+
+    public LinkedList<Person> getEnemys() {
+        return enemys;
+    }
+
+    public Person getPerson1() {
+        return person1;
+    }
+
+    public Person getPerson2() {
+        return person2;
+    }
+    
 }
