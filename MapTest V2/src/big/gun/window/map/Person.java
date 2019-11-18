@@ -11,12 +11,14 @@ package big.gun.window.map;
  */
 import big.gun.window.tank.*;
 import java.awt.Graphics2D;
+import java.util.LinkedList;
 import big.gun.window.tank.enemies.*;
 
-public class Person extends MapObject{
+public class Person extends MapObject {
+
     private Tank myTank;
     //private double count;
-    
+
     public Person(double posX, double posY, String name) {
         super(posX, posY, 0, 0);
         myTank = new Tank(name, posX, posY);
@@ -24,79 +26,90 @@ public class Person extends MapObject{
         this.setHeight(myTank.getHeight());
         //count = 5;
     }
-    
-    public static void updatePos(double posX, double posY){
+
+    public static void updatePos(double posX, double posY) {
         MapObject.updatePos(posX, posY);
     }
-    
-    public void draw(Graphics2D g2d){
+
+    public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
-        g2d.drawString(myTank.getPosX()+", "+myTank.getPosY(), 
-                (float)myTank.getPosX()+50, (float)myTank.getPosY()-10);
+        g2d.drawString(myTank.getNameTank(),
+                (float) myTank.getPosX() + 50, (float) myTank.getPosY() - 10);
     }
-    
+
     @Override
-    public void update(){
+    public void update() {
         //พฤติกรรม
-        behavior();
+        //behavior();
 
         //จุดเกิดเคลื่อนที่
-        setMyPosX(getMyPosX()+Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
-        setMyPosY(getMyPosY()+Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
-        
+        setMyPosX(getMyPosX() + Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
+        setMyPosY(getMyPosY() + Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
+
         //อัพเดทตำแหน่งจาก viewpoint
-        myTank.setPosX(getMyPosX()+mapX);
-        myTank.setPosY(getMyPosY()+mapY);
-        
+        myTank.setPosX(getMyPosX() + mapX);
+        myTank.setPosY(getMyPosY() + mapY);
+
         //รถเคลื่อนที่
         this.move();
     }
-    
+
     @Override
-    public void move(){
+    public void move() {
         myTank.move();
-        try{
+        try {
             myTank.getShell().move();
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
     }
-    
-    public void moveStop(){
-        setMyPosX(getMyPosX()-Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
-        setMyPosY(getMyPosY()-Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
+
+    public void moveStop() {
+        setMyPosX(getMyPosX() - Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
+        setMyPosY(getMyPosY() - Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
     }
-    
+
     //กำหนดพฤติกรรม
-    private void behavior(){
-////        เดินหน้า W
-//        myTank.setSpeedX(myTank.getSpeed());  
-//        myTank.setSpeedY(-myTank.getSpeed());
-//        myTank.setIsBack(1);
-//        
-//        //ถอยหลัง
-////        myTank.setSpeedX(-myTank.getSpeed());  
-////        myTank.setSpeedY(myTank.getSpeed());
-//        //myTank.setIsBack(0);
-//        
-//
-//        //เลี้ยวขวา A
-//        myTank.setRotateSpeed(myTank.getSpeed()/2);
+    public void behavior(LinkedList<String> event) {
+        if (event.contains("W")) {
+            myTank.setSpeedX(myTank.getSpeed());
+            myTank.setSpeedY(-myTank.getSpeed());
+            myTank.setIsBack(1);
+        }
 
-          
+        if (event.contains("A")) {
+            myTank.setRotateSpeed(-myTank.getSpeed() / 2);
+        }
 
+        if (event.contains("D")) {
+            myTank.setRotateSpeed(myTank.getSpeed() / 2);
+        }
+        
+        if (event.contains("S")) {
+            myTank.setSpeedX(-myTank.getSpeed());  
+            myTank.setSpeedY(myTank.getSpeed());
+            myTank.setIsBack(-1);
+        }
+        
+        if(event.contains("Q")){
+            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+        }
+        if(event.contains("E")){
+            myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+        }
+        
+        if(event.contains("shoot")){
+            myTank.shoot();
+        }
 
     }
-
 
     public Tank getMyTank() {
         return myTank;
     }
 
-
     public void setMyTank(Tank myTank) {
         this.myTank = myTank;
     }
 
-    
 }
