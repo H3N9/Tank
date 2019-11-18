@@ -50,7 +50,6 @@ public class Tank extends GameObject implements Moveable{
         armours = new Armour[sizeOfArmoursArray][];
         createArmours();
         turret = new Turret(this);
-        shell = new Shell(this);
     }
 
     public void draw(Graphics2D g2d){
@@ -73,7 +72,12 @@ public class Tank extends GameObject implements Moveable{
                 }
             }
         }
-        shell.draw(g2d);
+        
+        try{
+            shell.draw(g2d);
+        }catch(Exception e){
+            
+        }
         turret.draw(g2d);
     }
 

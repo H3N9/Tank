@@ -36,7 +36,7 @@ public class Game extends JPanel implements ActionListener{
         collection = new CollectionTanks();
         start = new Timer(10, this);
         player = new Player("tiger", 510, 250);
-        map = new Map(250, 1750);
+        map = new Map(4000, 2400);
         start.start();
         addKeyListener(new Input(player));
         setFocusable(true);
@@ -47,7 +47,11 @@ public class Game extends JPanel implements ActionListener{
         player.getMyTank().move();
     }
     public void updateBullet(){
-        player.getMyTank().getShell().move();
+        try{
+            player.getMyTank().getShell().move();
+        }catch(Exception e){
+            
+        }
     }
     
     
@@ -65,26 +69,26 @@ public class Game extends JPanel implements ActionListener{
     
     
     private void moveMap(){
+        playerColison();
         int check = 0;
         Tank pTank = player.getMyTank();
         if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
             check = 1;
         }
         
-        if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
+        else if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
             check = 1;
         }
         
-        if (pTank.getPosX()<= 170){
+        else if (pTank.getPosX()<= 170){
             check = 1;
         }
         
-        if (pTank.getPosY() <= 170){
+        else if (pTank.getPosY() <= 170){
             check = 1;
         }
         
         if (check == 1){
-            playerColison();
             map.setPosX(map.getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
             map.setPosY(map.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
             pTank.moveStop();
