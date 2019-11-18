@@ -30,6 +30,8 @@ public class Person extends MapObject{
     
     public void draw(Graphics2D g2d){
         myTank.draw(g2d);
+        g2d.drawString(myTank.getPosX()+", "+myTank.getPosY(), 
+                (float)myTank.getPosX()+50, (float)myTank.getPosY()-10);
     }
     
     @Override

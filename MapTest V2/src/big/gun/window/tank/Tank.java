@@ -23,7 +23,8 @@ import javax.imageio.ImageIO;
         
 public class Tank extends GameObject implements Moveable{
     private double hp;
-    private double[][] armour;
+    private int sizeOfArmoursArray;
+    private Armour[][] armours;
     private double[] thickness;
     private double reload, rotateSpeed, isBack, speed, speedReload;
     private Shell shell;
@@ -45,15 +46,9 @@ public class Tank extends GameObject implements Moveable{
         hp = CollectionTanks.tanks.get(name)[4];
         rotateSpeed = 0; isBack = 1; reload = speedReload;
         speed = CollectionTanks.tanks.get(name)[8];
-        armour = new double[4][2];
-        armour[0][0] = getPosX();
-        armour[0][1] = getPosY();
-        armour[1][0] = getPosX()+getWidth();
-        armour[1][1] = getPosY();
-        armour[2][0] = getPosX()+getWidth();
-        armour[2][1] = getPosY()+getHeight();
-        armour[3][0] = getPosX();
-        armour[3][1] = getPosY()+getHeight();
+        sizeOfArmoursArray = (int)(getHeight()/(getWidth()/3));
+        armours = new Armour[sizeOfArmoursArray][];
+        createArmours();
         turret = new Turret(this);
         shell = new Shell(this);
     }
@@ -64,6 +59,20 @@ public class Tank extends GameObject implements Moveable{
         g2d.fill(getBounds());
         g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+        for(int i=0; i < armours.length; i++){
+            if(i==0 || i==armours.length-1){
+                for(int j=0; j<3; j++){
+                    g2d.setColor(Color.red);
+                    g2d.fill(armours[i][j].getBounds());
+                }
+            }
+            else{
+                for(int j=0; j<2; j++){
+                    g2d.setColor(Color.cyan);
+                    g2d.fill(armours[i][j].getBounds());
+                }
+            }
+        }
         shell.draw(g2d);
         turret.draw(g2d);
     }
@@ -75,16 +84,25 @@ public class Tank extends GameObject implements Moveable{
         turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()+Calculate.calculateMoveY(getRotate(), getSpeedY()));
-        armour[0][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
-        armour[0][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
-        armour[1][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
-        armour[1][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
-        armour[2][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
-        armour[2][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
-        armour[3][0] += Calculate.calculateMoveX(getRotate(), getSpeedX());
-        armour[3][1] += Calculate.calculateMoveY(getRotate(), getSpeedY());
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
+        for(int i=0; i < armours.length; i++){
+            if(i==0 || i==armours.length-1){
+                for(int j=0; j<3; j++){
+                    armours[i][j].update(getPosX()+(getWidth()/3*j), getPosY()+(getWidth()/3*i), getCenterX()-getWidth()/6, getCenterY()-getHeight()/sizeOfArmoursArray/2, getRotate());
+                }
+            }
+            else{
+                for(int j=0; j<2; j++){
+                    if(j == 0){
+                        armours[i][j].update(getPosX()+(getWidth()/3*j), getPosY()+(getWidth()/3*i), getCenterX()-getWidth()/6, getCenterY()-getHeight()/sizeOfArmoursArray/2, getRotate());
+                    }
+                    else{
+                        armours[i][j].update(getPosX()+(getWidth()/3*2), getPosY()+(getWidth()/3*i), getCenterX()-getWidth()/6, getCenterY()-getHeight()/sizeOfArmoursArray/2, getRotate());
+                    }
+                }
+            }
+        }
         turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         setReload(getReload());
     }
@@ -168,4 +186,25 @@ public class Tank extends GameObject implements Moveable{
         this.shell = shell;
     }
     
+    private void createArmours(){
+        for(int i=0; i < armours.length; i++){
+            if(i==0 || i==armours.length-1){
+                armours[i] = new Armour[3];
+                for(int j=0; j<3; j++){
+                    armours[i][j] = new Armour(getPosX()+(getWidth()/3*j), getPosY()+(getWidth()/3*i), getWidth()/3);
+                }
+            }
+            else{
+                armours[i] = new Armour[2];
+                for(int j=0; j<2; j++){
+                    if(j == 0){
+                        armours[i][j] = new Armour(getPosX()+(getWidth()/3*j), getPosY()+(getWidth()/3*i), getWidth()/3);
+                    }
+                    else{
+                        armours[i][j] = new Armour(getPosX()+(getWidth()/3*2), getPosY()+(getWidth()/3*i), getWidth()/3);
+                    }
+                }
+            }
+        }
+    }
 }

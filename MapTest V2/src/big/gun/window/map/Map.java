@@ -48,7 +48,6 @@ public class Map {
             enemy.draw(g2d);
         }
         g2d.setColor(Color.BLACK);
-        g2d.drawString(posX+", "+posY, (float)player.getMyTank().getPosX()+50, (float)player.getMyTank().getPosY()-10);
     }
     
     public void update(){
@@ -76,9 +75,14 @@ public class Map {
                 pTank.moveStop();
             }
             for (Person enemy: enemys){
-                if (enemy.getMyTank().getBounds().intersects(build.getBounds()) || enemy.getMyTank().getBounds().intersects(pTank.getBounds())){
+                if (enemy.getMyTank().getBounds().intersects(build.getBounds())){
                     enemy.moveStop();
                 }
+                
+//                  บัคไรก็ไม่รู้
+//                if (enemy.getMyTank().getBounds().intersects(pTank.getBounds())){
+//                    enemy.moveStop();
+//                }
             }
         }
     }
@@ -112,7 +116,7 @@ public class Map {
     }
     
     private void addBuilds(){
-        builds.add(new Builds(0, 0, 5000, 5000, null, "/res/ground3.jpg"){
+        builds.add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
             @Override
             public Rectangle2D getBounds(){
                 return new Rectangle2D.Double(posX,posY,0,0);
