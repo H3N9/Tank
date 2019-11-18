@@ -12,7 +12,7 @@ package big.gun.window.map;
 import big.gun.window.tank.*;
 import big.gun.window.Window;
 import big.gun.window.tank.allPlayer.Player;
-import big.gun.window.tank.enemies.Ai;
+import big.gun.window.tank.allPlayer.Ai;
 import java.awt.Color;
 
 import java.util.LinkedList;
