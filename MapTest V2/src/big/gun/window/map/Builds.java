@@ -22,7 +22,7 @@ public class Builds extends MapObject{
     private Rectangle2D rect;
     
     public Builds(double posX, double posY){
-        this(posX, posY, 200, 200, null, "/res/tree1.png");
+        this(posX, posY, 200, 200, null, "/res/tree2.png");
     }
     
     public Builds(double posX, double posY, String path){

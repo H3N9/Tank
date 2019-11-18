@@ -63,15 +63,6 @@ public class Game extends JPanel implements ActionListener{
         
     }
     
-   
-    public void actionPerformed(ActionEvent ae) {
-        updateTank();
-        updateBullet();
-        map.update();
-        this.moveMap();
-        playerColison();
-        repaint();
-    }
     
     private void moveMap(){
         int check = 0;
@@ -85,7 +76,7 @@ public class Game extends JPanel implements ActionListener{
         }
         
         if (pTank.getPosX()<= 170){
-            check = 1;;
+            check = 1;
         }
         
         if (pTank.getPosY() <= 170){
@@ -93,7 +84,8 @@ public class Game extends JPanel implements ActionListener{
         }
         
         if (check == 1){
-            map.setPosX(map.getPosX()-Calculate.calculateMoveX(player.getMyTank().getRotate(), player.getMyTank().getSpeedX()));
+            playerColison();
+            map.setPosX(map.getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
             map.setPosY(map.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
             pTank.moveStop();
         }
@@ -122,6 +114,15 @@ public class Game extends JPanel implements ActionListener{
 //                }
             }
         }
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        updateTank();
+        updateBullet();
+        map.update();
+        this.moveMap();
+        playerColison();
+        repaint();
     }
     
 }

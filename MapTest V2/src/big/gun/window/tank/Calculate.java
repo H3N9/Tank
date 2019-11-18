@@ -18,4 +18,8 @@ public class Calculate {
     public static double calculateSlope(double x1, double y1, double x2, double y2){
         return (y2-y1)/(x2-x1);
     }
+    public int randomNumber(int min, int max){
+        int range = (min-max)+1;
+        return (int)(Math.random() * range) + min;
+    }
 }

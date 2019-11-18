@@ -15,7 +15,6 @@ import big.gun.window.tank.enemies.*;
 
 public class Person extends MapObject{
     private Tank myTank;
-    private Ai ai;
     //private double count;
     
     public Person(double posX, double posY, String name) {
@@ -66,19 +65,23 @@ public class Person extends MapObject{
     
     //กำหนดพฤติกรรม
     private void behavior(){
-//        เดินหน้า W
-        myTank.setSpeedX(myTank.getSpeed());  
-        myTank.setSpeedY(-myTank.getSpeed());
-        myTank.setIsBack(1);
-        
-        //ถอยหลัง
-//        myTank.setSpeedX(-myTank.getSpeed());  
-//        myTank.setSpeedY(myTank.getSpeed());
-        //myTank.setIsBack(0);
-        
+////        เดินหน้า W
+//        myTank.setSpeedX(myTank.getSpeed());  
+//        myTank.setSpeedY(-myTank.getSpeed());
+//        myTank.setIsBack(1);
+//        
+//        //ถอยหลัง
+////        myTank.setSpeedX(-myTank.getSpeed());  
+////        myTank.setSpeedY(myTank.getSpeed());
+//        //myTank.setIsBack(0);
+//        
+//
+//        //เลี้ยวขวา A
+//        myTank.setRotateSpeed(myTank.getSpeed()/2);
 
-        //เลี้ยวขวา A
-        myTank.setRotateSpeed(myTank.getSpeed()/2);
+          
+
+
     }
 
 

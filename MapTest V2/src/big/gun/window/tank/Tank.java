@@ -165,7 +165,6 @@ public class Tank extends GameObject implements Moveable{
             this.reload += 0.001;
         else
             this.reload = reload;
-        System.out.println(this.reload);
     }
     public Turret getTurret() {
         return turret;
