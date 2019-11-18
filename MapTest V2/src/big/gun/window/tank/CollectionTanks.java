@@ -35,16 +35,18 @@ public class CollectionTanks {
         
         tanks.put("tiger", new double[] {57, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 0.31, 0.5, 2, 3});
         
-        tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 7, 1, 0.2, 0.5, 2, 4});
+        tanks.put("tiger2", new double[] {70, 50, 50 ,30, 1000, 240, 64, 8, 1.5, 0.2, 0.5, 2, 4});
         
         //Britan Tank
-        tanks.put("cromwell", new double[] {25, 8, 8, 2, 400, 145, 28, 4, 3, 0.26, 0.4, 3, 1});
+        tanks.put("cromwell", new double[] {25, 8, 8, 2, 400, 145, 28, 4, 4, 0.26, 0.4, 3, 1});
         
         tanks.put("churchill", new double[] {50, 40, 40, 30, 800, 160, 3, 400, 2.5, 0.19, 0.5, 3, 2});
         
-        tanks.put("comet", new double[] {40, 20, 20, 15, 800, 160, 42, 4, 3, 0.21, 0.4, 3, 3});
+        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 230, 67, 6, 2, 0.19, 0.5, 3, 3});
         
-        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 230, 67, 6, 1.5, 0.19, 0.5, 3, 4});
+        tanks.put("comet", new double[] {65, 50, 50, 30, 800, 180, 64, 4, 3, 0.21, 0.4, 3, 4});
+        
+        
         
         //Soviet Tank
         tanks.put("t34", new double[] {28, 10, 10, 5, 600, 150, 29, 3, 3.8, 0.2, 0.4, 4, 1});
