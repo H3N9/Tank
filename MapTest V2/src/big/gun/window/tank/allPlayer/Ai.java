@@ -47,7 +47,8 @@ public class Ai implements ActionListener{
         
         
         //spawn Axis
-        for(int i=0;i<axis;i++){
+        spawn = axis>max? max: axis;
+        for(int i=0;i<spawn;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);

@@ -11,11 +11,8 @@ package big.gun.window.map;
  */
 import big.gun.window.tank.*;
 import java.awt.Graphics2D;
-<<<<<<< HEAD
-=======
+
 import java.util.LinkedList;
-import big.gun.window.tank.enemies.*;
->>>>>>> 42cc2ee3db2ab752680c1c16361499e474e33998
 
 public class Person extends MapObject {
 
@@ -73,31 +70,12 @@ public class Person extends MapObject {
     }
 
     //กำหนดพฤติกรรม
-<<<<<<< HEAD
-    private void behavior(){
-////        เดินหน้า W
-        myTank.setSpeedX(myTank.getSpeed());  
-        myTank.setSpeedY(-myTank.getSpeed());
-        myTank.setIsBack(1);
-        
-        //ถอยหลัง
-//        myTank.setSpeedX(-myTank.getSpeed());  
-//        myTank.setSpeedY(myTank.getSpeed());
-        //myTank.setIsBack(0);
-        
-
-        //เลี้ยวขวา A
-        myTank.setRotateSpeed(myTank.getSpeed()/2);
-
-          
-=======
     public void behavior(LinkedList<String> event) {
         if (event.contains("W")) {
             myTank.setSpeedX(myTank.getSpeed());
             myTank.setSpeedY(-myTank.getSpeed());
             myTank.setIsBack(1);
         }
->>>>>>> 42cc2ee3db2ab752680c1c16361499e474e33998
 
         if (event.contains("A")) {
             myTank.setRotateSpeed(-myTank.getSpeed() / 2);
