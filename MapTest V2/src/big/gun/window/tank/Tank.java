@@ -30,6 +30,7 @@ public class Tank extends GameObject implements Moveable{
     private Shell shell;
     private Turret turret;
     private String nameTank;
+    public int count=0;
 
     public Tank(String name, double posX, double posY){
         super();
