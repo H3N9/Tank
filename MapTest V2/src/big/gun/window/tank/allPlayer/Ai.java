@@ -83,42 +83,32 @@ public class Ai implements ActionListener{
 
           for(int i=0;i<spawnAlli;i++){
              if(persons.get(i).veiwOfBot(player)){
-//                move.get(i).add("W");
-                double myx = persons.get(i).getMyTank().getCenterX();
-                double myy = persons.get(i).getMyTank().getCenterY();
-                double tx = player.getMyTank().getCenterX();
-                double ty = player.getMyTank().getCenterY();
-                double degree = 90-Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
-                double realDegree = 0;
-                if(tx < myx && ty < myy){
-                    realDegree = 360-degree;
-                }
-                else if(tx < myx && ty > myy){
-                    realDegree = 180+degree;
-                }
-                else if(tx > myx && ty > myy){
-                    realDegree = 180-degree;
-                }
-                else if(tx > myx && ty < myy){
-                    realDegree = degree;
-                }
-                if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree-5){
+                if(persons.get(i).shootOnTarGet(player).equals("right")){
                     move.get(i).add("E");
+                    move.get(i).add("D");
                     move.get(i).remove("Q");
+                    move.get(i).remove("A");
                 }
-                else if(persons.get(i).getMyTank().getTurret().getRotateHead() > realDegree+5){
+                else if(persons.get(i).shootOnTarGet(player).equals("left")){
                     move.get(i).add("Q");
+                    move.get(i).add("A");
                     move.get(i).remove("E");
+                    move.get(i).remove("D");
                 }
-                else{
+                else if(persons.get(i).shootOnTarGet(player).equals("shoot")){
                     move.get(i).remove("Q");
                     move.get(i).remove("E");
+                    move.get(i).remove("D");
+                    move.get(i).remove("A");
+                    move.get(i).add("shoot");
                 }
              }
              else{
-                 move.get(i).remove("W");
+                 move.get(i).remove("shoot");
                  move.get(i).remove("Q");
                  move.get(i).remove("E");
+                 move.get(i).remove("D");
+                 move.get(i).remove("A");
              }
             persons.get(i).behavior(move.get(i));
           }
