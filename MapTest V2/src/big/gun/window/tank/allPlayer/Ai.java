@@ -102,7 +102,6 @@ public class Ai implements ActionListener{
                 else if(tx > myx && ty < myy){
                     realDegree = degree;
                 }
-                 System.out.println(realDegree+", "+degree+":RotateHead:"+persons.get(i).getMyTank().getTurret().getRotateHead());
                 if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree-5){
                     move.get(i).add("E");
                     move.get(i).remove("Q");
