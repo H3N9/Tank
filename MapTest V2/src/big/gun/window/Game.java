@@ -41,9 +41,9 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        nameTank = "firefly";
+        nameTank = "m26s";
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
-        bot = new Ai(5, 5, player);
+        bot = new Ai(1, 1, player);
         map = new Map(2000, 0, bot.getPersons());
         start.start();
         bot.getTime().start();
@@ -61,8 +61,8 @@ public class Game extends JPanel implements ActionListener{
         }catch(Exception e){
             
         }
-        System.out.println(player.getMyTank().getReload());
     }
+    
     public void FPS(){
        totalFrames++;
         if(System.nanoTime()>lastFPS+1000000000){
