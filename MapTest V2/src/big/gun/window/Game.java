@@ -123,7 +123,7 @@ public class Game extends JPanel implements ActionListener{
             for(int n=0; n < pTank.getArmours().length; n++){
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
-                        pTank.moveStop();
+                        pTank.moveRotateStop();
                         breakall = 1;
                         break;
                     }

@@ -20,6 +20,7 @@ import javax.swing.Timer;
  */
 public class Ai implements ActionListener{
     private LinkedList<Person> persons;
+    LinkedList<String> event;
     private Player player;
     private final int max = 20;
     private Timer time;
@@ -66,7 +67,7 @@ public class Ai implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        LinkedList<String> event = new LinkedList<String>();
+        event = new LinkedList<String>();
         event.add("W");
         event.add("A");
         persons.get(1).behavior(event);

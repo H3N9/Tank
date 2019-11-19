@@ -21,7 +21,7 @@ public class Player {
     
     public void draw(Graphics2D g2d){
         myTank.draw(g2d);
-        g2d.drawString(myTank.getPosX()+", "+myTank.getPosY(), 
+        g2d.drawString(myTank.getNameTank(), 
                 (float)myTank.getPosX()+50, (float)myTank.getPosY()-10);
     }
     
