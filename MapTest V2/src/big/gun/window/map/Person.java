@@ -84,7 +84,6 @@ public class Person extends MapObject {
 
     //กำหนดพฤติกรรม
     public void behavior(HashSet<String> event) {
-            System.out.println(event);
             if (event.contains("W")) {
                 myTank.setSpeedX(myTank.getSpeed());
                 myTank.setSpeedY(-myTank.getSpeed());
@@ -103,7 +102,6 @@ public class Person extends MapObject {
 
             if (event.contains("A")) {
                 myTank.setRotateSpeed(-myTank.getSpeed() / 2);
-                System.out.println("1");
             }
 
             else if (event.contains("D")) {
@@ -111,7 +109,6 @@ public class Person extends MapObject {
             }
             else{
                 myTank.setRotateSpeed(0);
-                System.out.println("2");
             }
 
             

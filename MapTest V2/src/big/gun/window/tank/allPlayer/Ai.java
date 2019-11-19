@@ -83,15 +83,38 @@ public class Ai implements ActionListener{
 
           for(int i=0;i<spawnAlli;i++){
              if(persons.get(i).veiwOfBot(player)){
-                move.get(i).add("W");
-                move.get(i).add("A");
-                persons.get(i).behavior(move.get(i));
+                move.get(i).add("S");
+                double myx = persons.get(i).getMyTank().getTurret().getGunPosX();
+                double myy = persons.get(i).getMyTank().getTurret().getGunPosY();
+                double tx = player.getMyTank().getCenterX();
+                double ty = player.getMyTank().getCenterY();
+                double degree = Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
+                double realDegree = 0;
+                if(tx < myx && ty < myy){
+                    realDegree = degree;
+                }
+                else if(tx < myx && ty > myy){
+                    realDegree = 180-degree;
+                }
+                else if(tx > myx && ty > myy){
+                    realDegree = 180+degree;
+                }
+                else if(tx > myx && ty < myy){
+                    realDegree = 360-degree;
+                }
+                if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree){
+                    move.get(i).add("Q");
+                    move.get(i).remove("E");
+                }
+                else{
+                    move.get(i).add("E");
+                    move.get(i).remove("Q");
+                }
              }
              else{
-                 move.get(i).remove("A");
+                 move.get(i).remove("S");
              }
-             
-              
+              persons.get(i).behavior(move.get(i));
           }
           
           
@@ -105,5 +128,5 @@ public class Ai implements ActionListener{
     public Timer getTime(){
         return this.time;
     }
-    
+
 }

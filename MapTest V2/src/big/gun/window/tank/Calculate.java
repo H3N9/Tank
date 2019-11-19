@@ -22,4 +22,13 @@ public class Calculate {
         int range = (max-min)+1;
         return (int)(Math.random() * range) + min;
     }
+    public static double calculateArcTan(double x1, double y1, double x2, double y2){
+        return Math.atan(Math.abs(y2-y1)/Math.abs(x2-x1));
+    }
+    public static double calculateArcSin(double x1, double y1, double x2, double y2){
+        return Math.asin((y2-y1)/((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)));
+    }
+    public static double calculateArcCos(double x1, double y1, double x2, double y2){
+        return Math.acos((x2-x1)/((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)));
+    }
 }

@@ -55,7 +55,7 @@ public class Game extends JPanel implements ActionListener{
     }
     
     public void updateTank(){
-        player.getMyTank().move();
+        player.getMyTank().move(); 
     }
     public void updateBullet(){
         try{
