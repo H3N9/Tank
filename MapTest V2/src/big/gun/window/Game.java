@@ -61,7 +61,6 @@ public class Game extends JPanel implements ActionListener{
         }catch(Exception e){
             
         }
-        System.out.println(player.getMyTank().getReload());
     }
     public void FPS(){
        totalFrames++;
@@ -114,7 +113,7 @@ public class Game extends JPanel implements ActionListener{
             pTank.moveStop();
         }
     }
-    public void playerColison(){
+    public void playerCollision(){
         Builds build;
         Tank pTank = player.getMyTank();
         int breakall = 0;
@@ -200,12 +199,41 @@ public class Game extends JPanel implements ActionListener{
         }
     }
     
+    public void bulletCollision(){
+        
+            for (int i=0; i < map.getBuilds().size(); i++){
+                //player's bullet
+                try{
+                    if(player.getMyTank().getShell().getBounds().intersects(map.getBuilds().get(i).getBounds())){
+                        System.out.println("myhit");
+                        player.getMyTank().setShell(null);
+                    }
+                }catch(NullPointerException e){
+                    
+                }
+                
+                //bot's bullets
+                for(Person ebot: bot.getPersons()){
+                    try{
+                        if(ebot.getMyTank().getShell().getBounds().intersects(map.getBuilds().get(i).getBounds())){
+                            System.out.println("ebothit");
+                            ebot.getMyTank().setShell(null);
+                        }
+                    }catch(NullPointerException e){
+            
+                    }
+                }
+            }
+
+    }
+    
     public void actionPerformed(ActionEvent ae) {
         updateTank();
         updateBullet();
         map.update();
         this.moveMap();
-        playerColison();
+        playerCollision();
+        bulletCollision();
         FPS();
         repaint();
     }
