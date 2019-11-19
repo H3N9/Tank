@@ -163,6 +163,7 @@ public class Game extends JPanel implements ActionListener{
                                 if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds())){
                                     pTank.moveStop();
                                     ebot.moveStop();
+                                    isMoveMap = false;
                                     breakall = 1;
                                     break;
                                 }
