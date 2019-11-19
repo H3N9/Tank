@@ -134,6 +134,36 @@ public class Person extends MapObject {
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         return veiw.getBounds().intersects(player.getMyTank().getBounds());
     }
+    
+    public String shootOnTarGet(Player player){
+        double myx = getMyTank().getCenterX();
+        double myy = getMyTank().getCenterY();
+        double tx = player.getMyTank().getCenterX();
+        double ty = player.getMyTank().getCenterY();
+        double degree = 90-Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
+        double realDegree = 0;
+        if(tx < myx && ty < myy){
+            realDegree = 360-degree;
+        }
+        else if(tx < myx && ty > myy){
+            realDegree = 180+degree;
+        }
+        else if(tx > myx && ty > myy){
+            realDegree = 180-degree;
+        }
+        else if(tx > myx && ty < myy){
+            realDegree = degree;
+        }
+        if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() < realDegree-5){
+            return "right";
+        }
+        else if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() > realDegree+5){
+            return "left";
+        }
+        else{
+            return "shoot";
+        }
+    }
 
     public Tank getMyTank() {
         return myTank;

@@ -24,6 +24,7 @@ public class Map {
     private double posY;
     private LinkedList<Builds> builds;
     private LinkedList<Person> persons;
+    private boolean isMoveMap;
     
     public Map(double posX, double posY, LinkedList<Person> persons){
         builds = new LinkedList<Builds>();
@@ -32,6 +33,7 @@ public class Map {
         this.posY = -posY;
         Builds.updatePos(this.posX, this.posY);
         this.persons = persons;
+        isMoveMap = true;
         Person.updatePos(getPosX(), getPosY());
 //        for (Person person: getPersons()){
 //            person.update();
@@ -66,7 +68,7 @@ public class Map {
     }
     
     
-    private void addBuilds(){
+    public void addBuilds(){
         getBuilds().add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
             @Override
             public Rectangle2D getBounds(){
@@ -116,6 +118,120 @@ public class Map {
         
         getBuilds().add(new Builds(2000, 3400, 300, 600, Color.GRAY, ""));
         getBuilds().add(new Builds(2700, 3400, 300, 600, Color.GRAY, ""));
+    }
+    
+    public void moveMap(Player player){
+        Tank pTank = player.getMyTank();
+//        if (pTank.getPosX()+pTank.getWidth()+(Window.width*0.3) >= Window.width){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosY()+pTank.getHeight()+(Window.width*0.3) >= Window.height){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosX()<= (Window.width*0.3)){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosY() <= (Window.height*0.3)){
+//            check = 1;
+//        }
+        
+        if (isMoveMap){
+            setPosX(getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
+            setPosY(getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
+            pTank.moveStop();
+        }
+    }
+    
+    public void playerCollision(Player player, Ai bot){
+        Builds build;
+        Tank pTank = player.getMyTank();
+        int breakall = 0;
+        
+        isMoveMap = true;
+        //เช็คชนสิ่งของ
+        for (int i=0; i < getBuilds().size(); i++){
+            build = getBuilds().get(i);
+            //player ชนสิ่งของ
+            for(int n=0; n < pTank.getArmours().length; n++){
+                for(int m=0; m < pTank.getArmours()[n].length; m++){
+                    if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
+                        pTank.moveRotateStop();
+                        isMoveMap = false;
+                        breakall = 1;
+                        break;
+                    }
+                }
+                if(breakall == 1){break;}
+            }
+            //bot ชนสิ่งของ
+            breakall = 0;
+            for (Person ebot: bot.getPersons()){
+                for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
+                    for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
+                        if( ebot.getMyTank().getArmours()[n][m].getBounds().intersects(build.getBounds())){
+                            ebot.moveStop();
+                            breakall = 1;
+                            break;
+                        }
+                    }
+                    if(breakall == 1){break;}
+                }
+            }
+        }
+        
+        
+        //player ชนคนอื่น
+        breakall = 0;
+        for(int n=0; n < pTank.getArmours().length; n++){
+                for(int m=0; m < pTank.getArmours()[n].length; m++){
+                    for(Person ebot: bot.getPersons()){
+                        for(int p=0; p < ebot.getMyTank().getArmours().length; p++){
+                            for(int q=0; q < ebot.getMyTank().getArmours()[p].length; q++){
+                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds())){
+                                    pTank.moveStop();
+                                    ebot.moveStop();
+                                    isMoveMap = false;
+                                    breakall = 1;
+                                    break;
+                                }
+                            }
+                            if(breakall == 1){break;}
+                        }
+                        if(breakall == 1){break;}
+                    }
+                    if(breakall == 1){break;}
+                }
+                if(breakall == 1){break;}
+            }
+        
+        //bot ชน bot
+        breakall = 0;
+        for(Person ebot: bot.getPersons()){
+            for(int m=0; m < ebot.getMyTank().getArmours().length; m++){
+                for(int n=0; n < ebot.getMyTank().getArmours()[m].length; n++){
+                    for(Person ebot2: bot.getPersons()){
+                        for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
+                            for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
+                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                    ebot.moveStop();
+                                    ebot2.moveStop();
+                                    breakall = 1;
+                                    break;
+                                }
+                            }
+                            if(breakall == 1){break;}
+                        }
+                        if(breakall == 1){break;}
+                    }
+                    if(breakall == 1){break;}
+                }
+                if(breakall == 1){break;}
+            }
+            if(breakall == 1){break;}
+        }
     }
     
     public double getPosX() {
