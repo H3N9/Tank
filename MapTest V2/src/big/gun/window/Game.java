@@ -113,12 +113,9 @@ public class Game extends JPanel implements ActionListener{
             pTank.moveStop();
         }
     }
-<<<<<<< HEAD
+
     public void playerCollision(){
-=======
-    public void playerColison(){
         System.out.println(isMoveMap);
->>>>>>> f8cb7914a18c375bdd909a191c566636d87a119b
         Builds build;
         Tank pTank = player.getMyTank();
         int breakall = 0;
