@@ -31,7 +31,7 @@ public class Ai implements ActionListener{
         this.player = player;
         persons = new LinkedList<Person>();
         move = new LinkedList<>();
-        time = new Timer(20, this);
+        time = new Timer(10, this);
         //spanw Alline
         spawnAlli = alline>max? max: alline;
         for(int i=0;i<spawnAlli;i++){
