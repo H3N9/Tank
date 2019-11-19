@@ -42,7 +42,7 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        nameTank = "firefly";
+        nameTank = "cromwell";
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         bot = new Ai(5, 5, player);
         map = new Map(2000, 0, bot.getPersons());
@@ -210,7 +210,6 @@ public class Game extends JPanel implements ActionListener{
                 //player's bullet
                 try{
                     if(player.getMyTank().getShell().getBounds().intersects(map.getBuilds().get(i).getBounds())){
-                        System.out.println("myhit");
                         player.getMyTank().setShell(null);
                     }
                 }catch(NullPointerException e){
@@ -221,7 +220,6 @@ public class Game extends JPanel implements ActionListener{
                 for(Person ebot: bot.getPersons()){
                     try{
                         if(ebot.getMyTank().getShell().getBounds().intersects(map.getBuilds().get(i).getBounds())){
-                            System.out.println("ebothit");
                             ebot.getMyTank().setShell(null);
                         }
                     }catch(NullPointerException e){
@@ -231,11 +229,32 @@ public class Game extends JPanel implements ActionListener{
             }
             
         //player shoots bottank's armours
+        breakall = 0;
         for(Person ebot: bot.getPersons()){
             for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
                     for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
                         try{
                             if( player.getMyTank().getShell().getBounds().intersects(ebot.getMyTank().getArmours()[n][m].getBounds())){
+                                double thickness;
+                                if(n==0){
+                                    thickness = ebot.getMyTank().getThickness()[0];
+                                }
+                                else if(n==ebot.getMyTank().getSizeOfArmoursArray()-1){
+                                    thickness = ebot.getMyTank().getThickness()[3];
+                                }
+                                else{
+                                    thickness = ebot.getMyTank().getThickness()[1];
+                                }
+                                
+                                if(player.getMyTank().getShell().getPenetration() >= thickness){
+                                    ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                                    System.out.println(ebot.getMyTank().getHp());
+                                }
+                                else{
+                                    System.out.println("not penetrate");
+                                }
+                                
+
                                 player.getMyTank().setShell(null);
                                 breakall = 1;
                                 break;
@@ -247,6 +266,7 @@ public class Game extends JPanel implements ActionListener{
                     }
                     if(breakall == 1){break;}
                 }
+            if(breakall == 1){break;}
         }
         
         //bot shoots armours
@@ -257,6 +277,21 @@ public class Game extends JPanel implements ActionListener{
                 for(int j=0; j < player.getMyTank().getArmours()[i].length; j++){
                     try{
                         if(ebot.getMyTank().getShell().getBounds().intersects(player.getMyTank().getArmours()[i][j].getBounds())){
+                            double thickness;
+                            if(i==0){
+                                thickness = player.getMyTank().getThickness()[0];
+                            }
+                            else if(i==player.getMyTank().getSizeOfArmoursArray()-1){
+                                thickness = player.getMyTank().getThickness()[3];
+                            }
+                            else{
+                                thickness = player.getMyTank().getThickness()[1];
+                            }
+                            
+                            if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                                player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                            }
+                            
                             ebot.getMyTank().setShell(null);
                             breakall = 1;
                             break;
@@ -267,15 +302,28 @@ public class Game extends JPanel implements ActionListener{
                 }
                 if(breakall == 1){break;}
             }
-            
+            if(breakall == 1){continue;}
             
             //bot shoot bot
-            breakall = 0;
             for(Person ebot2: bot.getPersons()){
                 for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
                     for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
                         try{
                             if(ebot.getMyTank().getShell().getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                double thickness;
+                                if(p==0){
+                                    thickness = ebot2.getMyTank().getThickness()[0];
+                                }
+                                else if(p==player.getMyTank().getSizeOfArmoursArray()-1){
+                                    thickness = ebot2.getMyTank().getThickness()[3];
+                                }
+                                else{
+                                    thickness = ebot2.getMyTank().getThickness()[1];
+                                }
+                                
+                                if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                                    ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                }
                                 ebot.getMyTank().setShell(null);
                                 breakall = 1;
                                 break;

@@ -20,6 +20,8 @@ public class Shell extends GameObject implements Moveable,ActionListener{
         setPosY(tank.getTurret().getGunPosY());
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
         setRotate(tank.getTurret().getRotate()+tank.getTurret().getRotateHead());
+        this.damage = CollectionTanks.tanks.get(tank.getNameTank())[5];
+        this.penetration = CollectionTanks.tanks.get(tank.getNameTank())[6];
     }
 
     
