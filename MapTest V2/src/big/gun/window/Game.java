@@ -115,7 +115,6 @@ public class Game extends JPanel implements ActionListener{
     }
 
     public void playerCollision(){
-        System.out.println(isMoveMap);
         Builds build;
         Tank pTank = player.getMyTank();
         int breakall = 0;
@@ -205,7 +204,8 @@ public class Game extends JPanel implements ActionListener{
     }
     
     public void bulletCollision(){
-        
+        int breakall = 0;
+            //hit map's objects
             for (int i=0; i < map.getBuilds().size(); i++){
                 //player's bullet
                 try{
@@ -229,12 +229,69 @@ public class Game extends JPanel implements ActionListener{
                     }
                 }
             }
-
+            
+        //player shoots bottank's armours
+        for(Person ebot: bot.getPersons()){
+            for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
+                    for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
+                        try{
+                            if( player.getMyTank().getShell().getBounds().intersects(ebot.getMyTank().getArmours()[n][m].getBounds())){
+                                player.getMyTank().setShell(null);
+                                breakall = 1;
+                                break;
+                            }
+                        }catch(NullPointerException e){
+                            
+                        }
+                        
+                    }
+                    if(breakall == 1){break;}
+                }
+        }
+        
+        //bot shoots armours
+        for(Person ebot: bot.getPersons()){
+            //bot shoot player
+            breakall = 0;
+            for(int i=0; i < player.getMyTank().getArmours().length; i++){
+                for(int j=0; j < player.getMyTank().getArmours()[i].length; j++){
+                    try{
+                        if(ebot.getMyTank().getShell().getBounds().intersects(player.getMyTank().getArmours()[i][j].getBounds())){
+                            ebot.getMyTank().setShell(null);
+                            breakall = 1;
+                            break;
+                        }
+                    }catch(NullPointerException e){
+                        
+                    }
+                }
+                if(breakall == 1){break;}
+            }
+            
+            
+            //bot shoot bot
+            breakall = 0;
+            for(Person ebot2: bot.getPersons()){
+                for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
+                    for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
+                        try{
+                            if(ebot.getMyTank().getShell().getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                ebot.getMyTank().setShell(null);
+                                breakall = 1;
+                                break;
+                            }
+                        }catch(NullPointerException e){
+                            
+                        }
+                    }
+                    if(breakall == 1){break;}
+                }
+            }
+        }
     }
     
     public void actionPerformed(ActionEvent ae) {
         updateTank();
-        updateBullet();
         map.update();
         this.moveMap();
         playerCollision();
