@@ -19,7 +19,7 @@ public class Shell extends GameObject implements Moveable{
 
     
     public void draw(Graphics2D g2d){
-        g2d.setColor(Color.red);
+        g2d.setColor(Color.white);
         g2d.fill(getBounds());
     }
     

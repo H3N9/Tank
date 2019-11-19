@@ -33,6 +33,7 @@ public class Game extends JPanel implements ActionListener{
     private Ai bot;
     private static long lastFPS;
     private static int currentFPS, totalFrames;
+    private String nameTank;
     
     //private TestDrawTank tdt;
     
@@ -40,7 +41,8 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        player = new Player("firefly", 510, 250);
+        nameTank = "firefly";
+        player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         bot = new Ai(5, 5, player);
         map = new Map(2000, 0, bot.getPersons());
         start.start();
@@ -55,10 +57,11 @@ public class Game extends JPanel implements ActionListener{
     }
     public void updateBullet(){
         try{
-            player.getMyTank().getShell().move();
+            player.getMyTank().getShell().move(); 
         }catch(Exception e){
             
         }
+        System.out.println(player.getMyTank().getReload());
     }
     public void FPS(){
        totalFrames++;
@@ -89,19 +92,19 @@ public class Game extends JPanel implements ActionListener{
     private void moveMap(){
         int check = 0;
         Tank pTank = player.getMyTank();
-        if (pTank.getPosX()+pTank.getWidth()+210 >= Window.width){
+        if (pTank.getPosX()+pTank.getWidth()+(Window.width*0.3) >= Window.width){
             check = 1;
         }
         
-        else if (pTank.getPosY()+pTank.getHeight()+210 >= Window.height){
+        else if (pTank.getPosY()+pTank.getHeight()+(Window.width*0.3) >= Window.height){
             check = 1;
         }
         
-        else if (pTank.getPosX()<= 170){
+        else if (pTank.getPosX()<= (Window.width*0.3)){
             check = 1;
         }
         
-        else if (pTank.getPosY() <= 170){
+        else if (pTank.getPosY() <= (Window.width*0.3)){
             check = 1;
         }
         
@@ -123,7 +126,7 @@ public class Game extends JPanel implements ActionListener{
             for(int n=0; n < pTank.getArmours().length; n++){
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
-                        pTank.moveStop();
+                        pTank.moveRotateStop();
                         breakall = 1;
                         break;
                     }

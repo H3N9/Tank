@@ -113,26 +113,25 @@ public class Tank extends GameObject implements Moveable{
         setReload(getReload()+0.01);
     }
     
-//    public void moveStop(){
-//        setPosX(getPosX()-Calculate.calculateMoveX(getRotate(), getSpeedX()));
-//        setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
-//        setCenterX(getPosX()+getWidth()/2); 
-//        setCenterY(getPosY()+getHeight()/2);
-//    }
-    
     public void moveStop(){
+        setPosX(getPosX()-Calculate.calculateMoveX(getRotate(), getSpeedX()));
+        setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
+        setCenterX(getPosX()+getWidth()/2); 
+        setCenterY(getPosY()+getHeight()/2);
+    }
+    
+    public void moveRotateStop(){
         setPosX(getPosX()-Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
         if (getRotateSpeed() != 0){
             setRotate(getRotate()-getRotateSpeed()*isBack);
-            turret.setRotate(turret.getRotate()-getRotateSpeed()*isBack);
-            
+            turret.setRotate(turret.getRotate()-getRotateSpeed()*isBack);      
         }
     }
     public void shoot(){
-        if(reload==speedReload){
+        if(reload>=speedReload){
             shell = new Shell(this);
             setReload(0);
         }
