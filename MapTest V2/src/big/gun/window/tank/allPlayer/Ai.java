@@ -81,19 +81,16 @@ public class Ai implements ActionListener{
 //        event.add("D");
 //        persons.get(4).behavior(event);
 
-          for(int i=0;i<spawnAlli;i++){
-             if(persons.get(i).veiwOfBot(player)){
-                move.get(i).add("W");
-                move.get(i).add("A");
-                persons.get(i).behavior(move.get(i));
-             }
-             else{
-                 move.get(i).remove("A");
-             }
-             
-              
-          }
-          
+        for(int i=0;i<spawnAlli;i++){
+            if(persons.get(i).veiwOfBot(player)){
+               move.get(i).add("W");
+               move.get(i).add("A");
+            }
+            else{
+                move.get(i).remove("A");
+            }
+            persons.get(i).behavior(move.get(i));
+        }
           
     }
     
