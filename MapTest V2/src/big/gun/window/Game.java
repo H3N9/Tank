@@ -34,6 +34,7 @@ public class Game extends JPanel implements ActionListener{
     private static long lastFPS;
     private static int currentFPS, totalFrames;
     private String nameTank;
+    private boolean isMoveMap;
     
     //private TestDrawTank tdt;
     
@@ -45,6 +46,7 @@ public class Game extends JPanel implements ActionListener{
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         bot = new Ai(5, 5, player);
         map = new Map(2000, 0, bot.getPersons());
+        isMoveMap = true;
         start.start();
         bot.getTime().start();
         addKeyListener(new Input(player));
@@ -80,7 +82,6 @@ public class Game extends JPanel implements ActionListener{
         //Draw below this
         map.draw(g2d);
         player.draw(g2d);
-        g2d.drawRect(170, 170, Window.width-170-210, Window.height-170-210);
         //FPS
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("", 20,20));
@@ -90,35 +91,36 @@ public class Game extends JPanel implements ActionListener{
     
     
     private void moveMap(){
-        int check = 0;
         Tank pTank = player.getMyTank();
-        if (pTank.getPosX()+pTank.getWidth()+(Window.width*0.3) >= Window.width){
-            check = 1;
-        }
+//        if (pTank.getPosX()+pTank.getWidth()+(Window.width*0.3) >= Window.width){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosY()+pTank.getHeight()+(Window.width*0.3) >= Window.height){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosX()<= (Window.width*0.3)){
+//            check = 1;
+//        }
+//        
+//        else if (pTank.getPosY() <= (Window.height*0.3)){
+//            check = 1;
+//        }
         
-        else if (pTank.getPosY()+pTank.getHeight()+(Window.width*0.3) >= Window.height){
-            check = 1;
-        }
-        
-        else if (pTank.getPosX()<= (Window.width*0.3)){
-            check = 1;
-        }
-        
-        else if (pTank.getPosY() <= (Window.width*0.3)){
-            check = 1;
-        }
-        
-        if (check == 1){
+        if (isMoveMap){
             map.setPosX(map.getPosX()-Calculate.calculateMoveX(pTank.getRotate(), pTank.getSpeedX()));
             map.setPosY(map.getPosY()-Calculate.calculateMoveY(pTank.getRotate(), pTank.getSpeedY()));
             pTank.moveStop();
         }
     }
     public void playerColison(){
+        System.out.println(isMoveMap);
         Builds build;
         Tank pTank = player.getMyTank();
         int breakall = 0;
         
+        isMoveMap = true;
         //เช็คชนสิ่งของ
         for (int i=0; i < map.getBuilds().size(); i++){
             build = map.getBuilds().get(i);
@@ -127,6 +129,7 @@ public class Game extends JPanel implements ActionListener{
                 for(int m=0; m < pTank.getArmours()[n].length; m++){
                     if( pTank.getArmours()[n][m].getBounds().intersects(build.getBounds())){
                         pTank.moveRotateStop();
+                        isMoveMap = false;
                         breakall = 1;
                         break;
                     }
