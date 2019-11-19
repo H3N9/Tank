@@ -117,7 +117,6 @@ public class Ai implements ActionListener{
               persons.get(i).behavior(move.get(i));
           }
           
-          
     }
     
     
