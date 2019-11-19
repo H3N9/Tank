@@ -83,38 +83,45 @@ public class Ai implements ActionListener{
 
           for(int i=0;i<spawnAlli;i++){
              if(persons.get(i).veiwOfBot(player)){
-                move.get(i).add("S");
-                double myx = persons.get(i).getMyTank().getTurret().getGunPosX();
-                double myy = persons.get(i).getMyTank().getTurret().getGunPosY();
+//                move.get(i).add("W");
+                double myx = persons.get(i).getMyTank().getCenterX();
+                double myy = persons.get(i).getMyTank().getCenterY();
                 double tx = player.getMyTank().getCenterX();
                 double ty = player.getMyTank().getCenterY();
-                double degree = Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
+                double degree = 90-Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
                 double realDegree = 0;
                 if(tx < myx && ty < myy){
-                    realDegree = degree;
-                }
-                else if(tx < myx && ty > myy){
-                    realDegree = 180-degree;
-                }
-                else if(tx > myx && ty > myy){
-                    realDegree = 180+degree;
-                }
-                else if(tx > myx && ty < myy){
                     realDegree = 360-degree;
                 }
-                if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree){
+                else if(tx < myx && ty > myy){
+                    realDegree = 180+degree;
+                }
+                else if(tx > myx && ty > myy){
+                    realDegree = 180-degree;
+                }
+                else if(tx > myx && ty < myy){
+                    realDegree = degree;
+                }
+                 System.out.println(realDegree+", "+degree+":RotateHead:"+persons.get(i).getMyTank().getTurret().getRotateHead());
+                if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree-5){
+                    move.get(i).add("E");
+                    move.get(i).remove("Q");
+                }
+                else if(persons.get(i).getMyTank().getTurret().getRotateHead() > realDegree+5){
                     move.get(i).add("Q");
                     move.get(i).remove("E");
                 }
                 else{
-                    move.get(i).add("E");
                     move.get(i).remove("Q");
+                    move.get(i).remove("E");
                 }
              }
              else{
-                 move.get(i).remove("S");
+                 move.get(i).remove("W");
+                 move.get(i).remove("Q");
+                 move.get(i).remove("E");
              }
-              persons.get(i).behavior(move.get(i));
+            persons.get(i).behavior(move.get(i));
           }
           
     }
