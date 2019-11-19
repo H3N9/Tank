@@ -12,6 +12,7 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.util.LinkedList;
 import java.awt.event.ActionListener;
+import java.util.HashSet;
 import javax.swing.Timer;
 
 /**
@@ -20,46 +21,51 @@ import javax.swing.Timer;
  */
 public class Ai implements ActionListener{
     private LinkedList<Person> persons;
-    LinkedList<String> event;
+    private LinkedList<HashSet<String>> move;
     private Player player;
     private final int max = 20;
     private Timer time;
+    private int spawnAxis, spawnAlli;
     
     public Ai(int alline, int axis, Player player){
         this.player = player;
         persons = new LinkedList<Person>();
+        move = new LinkedList<>();
         time = new Timer(10, this);
         //spanw Alline
-        int spawn = alline>max? max: alline;
-        for(int i=0;i<spawn;i++){
+        spawnAlli = alline>max? max: alline;
+        for(int i=0;i<spawnAlli;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num)));
+                persons.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                System.out.println(level+","+flag);
-                persons.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num)));
+                persons.add(new Person(2400+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                move.add(new HashSet<String>());
             }
         }
         
         
         //spawn Axis
-        spawn = axis>max? max: axis;
-        for(int i=0;i<spawn;i++){
+        spawnAxis = axis>max? max: axis;
+        for(int i=0;i<spawnAxis;i++){
             String name = player.getMyTank().getNameTank();
             int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2400+i*100, 4500, CollectionTanks.getName(flag, num)));
+                persons.add(new Person(2400+i*100, 4500, CollectionTanks.getName(flag, num), 2));
+                move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2600+i*100, 4500, CollectionTanks.getName(flag, num)));
+                persons.add(new Person(2600+i*100, 4500, CollectionTanks.getName(flag, num), 2));
+                move.add(new HashSet<String>());
             }
         }
         
@@ -67,15 +73,52 @@ public class Ai implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        event = new LinkedList<String>();
-        event.add("W");
-        event.add("A");
-        event.add("shoot");
-        persons.get(1).behavior(event);
-        event.remove("A");
-        event.add("D");
-        persons.get(4).behavior(event);
+//        event = new LinkedList<String>();
+//        event.add("W");
+//        event.add("A");
+//        persons.get(1).behavior(event);
+//        event.remove("A");
+//        event.add("D");
+//        persons.get(4).behavior(event);
+
+          for(int i=0;i<spawnAlli;i++){
+             if(persons.get(i).veiwOfBot(player)){
+                move.get(i).add("S");
+                double myx = persons.get(i).getMyTank().getTurret().getGunPosX();
+                double myy = persons.get(i).getMyTank().getTurret().getGunPosY();
+                double tx = player.getMyTank().getCenterX();
+                double ty = player.getMyTank().getCenterY();
+                double degree = Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
+                double realDegree = 0;
+                if(tx < myx && ty < myy){
+                    realDegree = degree;
+                }
+                else if(tx < myx && ty > myy){
+                    realDegree = 180-degree;
+                }
+                else if(tx > myx && ty > myy){
+                    realDegree = 180+degree;
+                }
+                else if(tx > myx && ty < myy){
+                    realDegree = 360-degree;
+                }
+                if(persons.get(i).getMyTank().getTurret().getRotateHead() < realDegree){
+                    move.get(i).add("Q");
+                    move.get(i).remove("E");
+                }
+                else{
+                    move.get(i).add("E");
+                    move.get(i).remove("Q");
+                }
+             }
+             else{
+                 move.get(i).remove("S");
+             }
+              persons.get(i).behavior(move.get(i));
+          }
+          
     }
+    
     
     public LinkedList<Person> getPersons() {
         return persons;
@@ -84,5 +127,5 @@ public class Ai implements ActionListener{
     public Timer getTime(){
         return this.time;
     }
-    
+
 }

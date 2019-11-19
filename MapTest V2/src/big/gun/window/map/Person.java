@@ -9,21 +9,29 @@ package big.gun.window.map;
  *
  * @author pooh
  */
+import big.gun.window.Window;
 import big.gun.window.tank.*;
+import big.gun.window.tank.allPlayer.Player;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+import java.util.HashSet;
 
 import java.util.LinkedList;
 
 public class Person extends MapObject {
 
     private Tank myTank;
+    private int tag;
+    private Rectangle2D veiw;
     //private double count;
 
-    public Person(double posX, double posY, String name) {
+    public Person(double posX, double posY, String name, int tag) {
         super(posX, posY, 0, 0);
         myTank = new Tank(name, posX, posY);
         this.setWidth(myTank.getWidth());
         this.setHeight(myTank.getHeight());
+        this.tag = tag;
+        veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         //count = 5;
     }
 
@@ -75,38 +83,56 @@ public class Person extends MapObject {
     }
 
     //กำหนดพฤติกรรม
-    public void behavior(LinkedList<String> event) {
-        if (event.contains("W")) {
-            myTank.setSpeedX(myTank.getSpeed());
-            myTank.setSpeedY(-myTank.getSpeed());
-            myTank.setIsBack(1);
-        }
+    public void behavior(HashSet<String> event) {
+            if (event.contains("W")) {
+                myTank.setSpeedX(myTank.getSpeed());
+                myTank.setSpeedY(-myTank.getSpeed());
+                myTank.setIsBack(1);
+            }
+            else if (event.contains("S")) {
+                myTank.setSpeedX(-myTank.getSpeed());  
+                myTank.setSpeedY(myTank.getSpeed());
+                myTank.setIsBack(-1);
+            }
+            else{
+                myTank.setSpeedX(0);  
+                myTank.setSpeedY(0);
+                myTank.setIsBack(1);
+            }
 
-        if (event.contains("A")) {
-            myTank.setRotateSpeed(-myTank.getSpeed() / 2);
-        }
+            if (event.contains("A")) {
+                myTank.setRotateSpeed(-myTank.getSpeed() / 2);
+            }
 
-        if (event.contains("D")) {
-            myTank.setRotateSpeed(myTank.getSpeed() / 2);
-        }
-        
-        if (event.contains("S")) {
-            myTank.setSpeedX(-myTank.getSpeed());  
-            myTank.setSpeedY(myTank.getSpeed());
-            myTank.setIsBack(-1);
-        }
-        
-        if(event.contains("Q")){
-            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
-        }
-        if(event.contains("E")){
-            myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
-        }
-        
-        if(event.contains("shoot")){
-            myTank.shoot();
-        }
+            else if (event.contains("D")) {
+                myTank.setRotateSpeed(myTank.getSpeed() / 2);
+            }
+            else{
+                myTank.setRotateSpeed(0);
+            }
 
+            
+
+            if(event.contains("Q")){
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+            }
+            else if(event.contains("E")){
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+            }
+            else{
+                myTank.getTurret().setRotateSpeed(0);
+            }
+
+            if(event.contains("shoot")){
+                myTank.shoot();
+            }
+        
+
+    }
+    
+    public boolean veiwOfBot(Player player){
+        veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
+        return veiw.getBounds().intersects(player.getMyTank().getBounds());
     }
 
     public Tank getMyTank() {
@@ -117,4 +143,5 @@ public class Person extends MapObject {
         this.myTank = myTank;
     }
 
+    
 }
