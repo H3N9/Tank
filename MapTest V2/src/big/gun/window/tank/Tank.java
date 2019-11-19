@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import big.gun.window.Import;
+import big.gun.window.sound.Sound;
 import static big.gun.window.tank.CollectionTanks.tanks;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
@@ -133,6 +134,7 @@ public class Tank extends GameObject implements Moveable{
     public void shoot(){
         if(reload>=speedReload){
             shell = new Shell(this);
+            new Sound("/res/sound/reload1.wav");
             shell.getTime().start();
             setReload(0);
         }
