@@ -30,7 +30,7 @@ public class Turret extends GameObject{
         centerHeadX = getPosX()+getWidth()/2;
         centerHeadY = getPosY()+getHeight()/2;
         gunPosX = centerHeadX;
-        gunPosY = centerHeadY - getHeight()/2 - gunHeight;
+        gunPosY = centerHeadY - getHeight()/2 - gunHeight + 15;
         rotateSpeed = 0;
         this.tank = tank;
     }
@@ -43,7 +43,7 @@ public class Turret extends GameObject{
         centerHeadX = getPosX()+getWidth()/2;
         centerHeadY = getPosY()+getHeight()/2;
         gunPosX = centerHeadX;
-        gunPosY = centerHeadY - getHeight()/2 - gunHeight;
+        gunPosY = centerHeadY - getHeight()/2 - gunHeight + 15;
         save = centerHeadX;
         centerHeadX = calculateRotateX(centerHeadX, centerHeadY, cx, cy, tankRotate);
         centerHeadY = calculateRotateY(save, centerHeadY, cx, cy, tankRotate);
