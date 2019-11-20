@@ -34,7 +34,6 @@ public class Builds extends MapObject{
         super(posX, posY, width, height);
         this.color = color;
         if (!"".equals(path)){
-            path = "/res/tree"+Calculate.randomNumber(1, 2)+".png";
             loadImage(path);
         }
     }
