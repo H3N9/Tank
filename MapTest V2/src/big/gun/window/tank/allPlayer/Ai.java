@@ -120,26 +120,37 @@ public class Ai implements ActionListener{
          }
             
             
-         if(persons.get(i).getDeadLock() < 300){
-             persons.get(i).setDeadLock(persons.get(i).getDeadLock()+1);
+         if(persons.get(i).getDeadLock() > 0){
+             persons.get(i).setDeadLock(persons.get(i).getDeadLock()-1);
              System.out.println(persons.get(i).getDeadLock());
          }
          else{
              move.get(i).remove("S");
          }
-            
+         for(Person ebot: persons){
+             if(persons.get(i).getCheckLeft().intersects(ebot.getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getBounds())){
+                 persons.get(i).setDeadLock(600);
+             }
+         }  
+         if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getBounds())){
+             persons.get(i).setDeadLock(600);
+         }
          //เลี้ยวเมื่อใกล้สิ่งของ
          move.get(i).remove("A");
          move.get(i).remove("D");
          move.get(i).add("W");
          for(Builds mObject: map.getBuilds()) {
             if(persons.get(i).getCheckLeft().intersects(mObject.getBounds()) && persons.get(i).getCheckRight().intersects(mObject.getBounds())){
-                persons.get(i).setDeadLock(0);
+                persons.get(i).setDeadLock(600);
             }
-            if(persons.get(i).getDeadLock() < 300){
+            if(persons.get(i).getDeadLock() > 300){
                 move.get(i).remove("W");
                 move.get(i).add("S");
                 move.get(i).add("D");
+            }else if(persons.get(i).getDeadLock() <= 300 && persons.get(i).getDeadLock() > 0){
+                move.get(i).remove("W");
+                move.get(i).add("S");
+                move.get(i).add("A");
             }
             else if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
                 move.get(i).remove("W");
