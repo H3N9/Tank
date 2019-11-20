@@ -136,11 +136,11 @@ public class Person extends MapObject {
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         for(int i=0;i<bot.size();i++){
             if(i!=origin){
-                if(bot.get(i).getTag()==1&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())){
+                if(bot.get(i).getTag()==1&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())&&bot.get(i).getMyTank().getHp()>0){
                     nearly = i;
                     return nearly; //bot
                 }
-                else if(veiw.getBounds().intersects(player.getMyTank().getBounds())){
+                else if(veiw.getBounds().intersects(player.getMyTank().getBounds())&&player.getMyTank().getHp()>0){
                     nearly = -1;
                     return nearly; //Player
                 }
