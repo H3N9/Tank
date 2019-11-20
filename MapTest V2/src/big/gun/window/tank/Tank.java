@@ -90,7 +90,7 @@ public class Tank extends GameObject implements Moveable{
         }
         turret.draw(g2d);
         CollectionTanks.getName(3, 1);
-        if(boomed == 1){
+        if(boomed == 1 && boom.getAlpha() != 0){
             boom.draw(g2d);
         }
     }
@@ -129,7 +129,7 @@ public class Tank extends GameObject implements Moveable{
         if(hp <= 0 && boomed == 0){
             boomed = 1;
             boom = new Boom(getCenterX(), getCenterY());
-        }else if(hp <= 0 && boomed == 1){
+        }else if(hp <= 0 && boomed == 1 && boom.getAlpha() != 0){
             boom.update(getCenterX(), getCenterY());
         }
         turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
