@@ -24,8 +24,8 @@ public class Person extends MapObject {
     private Tank myTank;
     private int tag;
     private Rectangle2D veiw;
-    private double cfx, cfy;
-    private Rectangle2D checkFront;
+    private double clx, cly, crx, cry;
+    private Rectangle2D checkLeft, checkRight;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -35,10 +35,13 @@ public class Person extends MapObject {
         this.setHeight(myTank.getHeight());
         this.tag = tag;
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
-        cfx = Calculate.calculateRotateX(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
-        cfy = Calculate.calculateRotateY(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
-        checkFront = new Rectangle2D.Double(cfx, cfy, myTank.getWidth(), myTank.getWidth());
-        //count = 5;
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getHeight(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getHeight(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        checkLeft = new Rectangle2D.Double(clx, cly, myTank.getHeight(), myTank.getHeight());
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        checkRight = new Rectangle2D.Double(crx, cry, myTank.getHeight(), myTank.getHeight());
+//count = 5;
     }
 
     public static void updatePos(double posX, double posY) {
@@ -48,7 +51,9 @@ public class Person extends MapObject {
     public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
         g2d.setColor(Color.PINK);
-        g2d.fill(checkFront);
+        g2d.fill(checkLeft);
+        g2d.setColor(Color.MAGENTA);
+        g2d.fill(checkRight);
         g2d.drawString(myTank.getNameTank(),
                 (float) myTank.getPosX() + 50, (float) myTank.getPosY() - 10);
     }
@@ -65,9 +70,12 @@ public class Person extends MapObject {
         //อัพเดทตำแหน่งจาก viewpoint
         myTank.setPosX(getMyPosX() + mapX);
         myTank.setPosY(getMyPosY() + mapY);
-        cfx = Calculate.calculateRotateX(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
-        cfy = Calculate.calculateRotateY(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
-        checkFront.setRect(cfx, cfy, myTank.getWidth(), myTank.getWidth()); 
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getHeight(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getHeight(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        checkLeft.setRect(clx, cly, myTank.getHeight(), myTank.getHeight()); 
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX()-myTank.getHeight()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
+        checkRight = new Rectangle2D.Double(crx, cry, myTank.getHeight(), myTank.getHeight());
         //รถเคลื่อนที่
         this.move();
     }
@@ -225,30 +233,55 @@ public class Person extends MapObject {
         this.veiw = veiw;
     }
 
-
-    public double getCfx() {
-        return cfx;
+    public double getClx() {
+        return clx;
     }
 
-    public void setCfx(double cfx) {
-        this.cfx = cfx;
+    public void setClx(double clx) {
+        this.clx = clx;
     }
 
-    public double getCfy() {
-        return cfy;
+    public double getCly() {
+        return cly;
     }
 
-    public void setCfy(double cfy) {
-        this.cfy = cfy;
+    public void setCly(double cly) {
+        this.cly = cly;
     }
 
-    public Rectangle2D getCheckFront() {
-        return checkFront;
+    public double getCrx() {
+        return crx;
     }
 
-    public void setCheckFront(Rectangle2D checkFront) {
-        this.checkFront = checkFront;
+    public void setCrx(double crx) {
+        this.crx = crx;
     }
+
+    public double getCry() {
+        return cry;
+    }
+
+    public void setCry(double cry) {
+        this.cry = cry;
+    }
+
+    public Rectangle2D getCheckLeft() {
+        return checkLeft;
+    }
+
+    public void setCheckLeft(Rectangle2D checkLeft) {
+        this.checkLeft = checkLeft;
+    }
+
+    public Rectangle2D getCheckRight() {
+        return checkRight;
+    }
+
+    public void setCheckRight(Rectangle2D checkRight) {
+        this.checkRight = checkRight;
+    }
+
+
 
     
 }

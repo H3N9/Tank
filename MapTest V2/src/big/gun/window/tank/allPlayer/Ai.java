@@ -119,18 +119,20 @@ public class Ai implements ActionListener{
                     default:
                         break;
                     }
+                
+                //เลี้ยวเมื่อใกล้สิ่งของ
                 for(Builds mObject: map.getBuilds()) {
-                    if(persons.get(i).getCheckFront().intersects(mObject.getBounds())){
-                        move.get(i).remove("W");
-                        move.get(i).add("S");
-                        if(move.get(i).contains("A")){
-                            move.get(i).remove("A");
-                            move.get(i).add("D");
-                        }
-                        else if(move.get(i).contains("D")){
-                            move.get(i).remove("D");
-                            move.get(i).add("A");
-                        }
+//                    if(persons.get(i).getCheckLeft().intersects(mObject.getBounds()) && persons.get(i).getCheckRight().intersects(mObject.getBounds())){
+//                        move.get(i).remove("A");
+//                        move.get(i).add("D");
+//                    }
+                    if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                    }
+                    else if(persons.get(i).getCheckRight().intersects(mObject.getBounds())){
+                        move.get(i).remove("D");
+                        move.get(i).add("A");
                     }
                 }
          }
