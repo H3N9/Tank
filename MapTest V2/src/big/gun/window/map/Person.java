@@ -12,6 +12,7 @@ package big.gun.window.map;
 import big.gun.window.Window;
 import big.gun.window.tank.*;
 import big.gun.window.tank.allPlayer.Player;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.util.HashSet;
@@ -23,6 +24,8 @@ public class Person extends MapObject {
     private Tank myTank;
     private int tag;
     private Rectangle2D veiw;
+    private double cfx, cfy;
+    private Rectangle2D checkFront;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -32,6 +35,9 @@ public class Person extends MapObject {
         this.setHeight(myTank.getHeight());
         this.tag = tag;
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
+        cfx = Calculate.calculateRotateX(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
+        cfy = Calculate.calculateRotateY(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
+        checkFront = new Rectangle2D.Double(cfx, cfy, myTank.getWidth(), myTank.getWidth());
         //count = 5;
     }
 
@@ -41,6 +47,8 @@ public class Person extends MapObject {
 
     public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
+        g2d.setColor(Color.PINK);
+        g2d.fill(checkFront);
         g2d.drawString(myTank.getNameTank(),
                 (float) myTank.getPosX() + 50, (float) myTank.getPosY() - 10);
     }
@@ -57,7 +65,9 @@ public class Person extends MapObject {
         //อัพเดทตำแหน่งจาก viewpoint
         myTank.setPosX(getMyPosX() + mapX);
         myTank.setPosY(getMyPosY() + mapY);
-
+        cfx = Calculate.calculateRotateX(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
+        cfy = Calculate.calculateRotateY(myTank.getPosX(), myTank.getPosY()-myTank.getWidth(), myTank.getCenterX(), myTank.getCenterY(), myTank.getRotate());
+        checkFront.setRect(cfx, cfy, myTank.getWidth(), myTank.getWidth()); 
         //รถเคลื่อนที่
         this.move();
     }
@@ -79,11 +89,16 @@ public class Person extends MapObject {
 //            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
 //            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
 //        }
+//        if (myTank.getRotateSpeed() != 0){
+//            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+//            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+//        }
 //        myTank.moveRotateStop();
     }
 
     //กำหนดพฤติกรรม
     public void behavior(HashSet<String> event) {
+        if(this.getMyTank().getHp() > 0){
             if (event.contains("W")) {
                 myTank.setSpeedX(myTank.getSpeed());
                 myTank.setSpeedY(-myTank.getSpeed());
@@ -126,7 +141,7 @@ public class Person extends MapObject {
             if(event.contains("shoot")){
                 myTank.shoot();
             }
-        
+        }
 
     }
     
@@ -195,6 +210,39 @@ public class Person extends MapObject {
     }
     public int getTag(){
         return tag;
+    }
+
+    public Rectangle2D getVeiw() {
+        return veiw;
+    }
+
+    public void setVeiw(Rectangle2D veiw) {
+        this.veiw = veiw;
+    }
+
+
+    public double getCfx() {
+        return cfx;
+    }
+
+    public void setCfx(double cfx) {
+        this.cfx = cfx;
+    }
+
+    public double getCfy() {
+        return cfy;
+    }
+
+    public void setCfy(double cfy) {
+        this.cfy = cfy;
+    }
+
+    public Rectangle2D getCheckFront() {
+        return checkFront;
+    }
+
+    public void setCheckFront(Rectangle2D checkFront) {
+        this.checkFront = checkFront;
     }
 
     

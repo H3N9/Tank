@@ -27,6 +27,16 @@ public class Boom extends GameObject{
         img = Import.boom;
         alpha = 1;
     }
+
+    public float getAlpha() {
+        return alpha;
+    }
+
+    public void setAlpha(float alpha) {
+        this.alpha = alpha;
+    }
+    
+    
     
     public void update(double posX, double posY){
         setPosX(posX-getWidth()/2);

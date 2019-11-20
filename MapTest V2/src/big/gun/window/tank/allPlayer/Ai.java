@@ -5,6 +5,8 @@
  */
 package big.gun.window.tank.allPlayer;
 
+import big.gun.window.map.Builds;
+import big.gun.window.map.Map;
 import big.gun.window.map.Person;
 import big.gun.window.tank.*;
 import big.gun.window.tank.allPlayer.Player;
@@ -27,6 +29,7 @@ public class Ai implements ActionListener{
     private Timer time;
     private int spawnAxis, spawnAlli;
     private String difficult;
+    private Map map;
     
     public Ai(int alline, int axis, Player player, String difficult){
         this.player = player;
@@ -86,10 +89,9 @@ public class Ai implements ActionListener{
             default:
                 break;
         }
+        
         //Alli
         for(int i=0;i<spawnAlli+spawnAxis;i++){
-
-          //Shot
             if(persons.get(i).veiwOfBot(player, persons, i)!=-2){
                 int target = persons.get(i).veiwOfBot(player, persons, i);
                 move.get(i).add("W");
@@ -117,6 +119,20 @@ public class Ai implements ActionListener{
                     default:
                         break;
                     }
+                for(Builds mObject: map.getBuilds()) {
+                    if(persons.get(i).getCheckFront().intersects(mObject.getBounds())){
+                        move.get(i).remove("W");
+                        move.get(i).add("S");
+                        if(move.get(i).contains("A")){
+                            move.get(i).remove("A");
+                            move.get(i).add("D");
+                        }
+                        else if(move.get(i).contains("D")){
+                            move.get(i).remove("D");
+                            move.get(i).add("A");
+                        }
+                    }
+                }
          }
          else{
              move.get(i).remove("shoot");
@@ -125,6 +141,9 @@ public class Ai implements ActionListener{
              move.get(i).remove("D");
              move.get(i).remove("A");
          }
+            
+        
+        
         persons.get(i).behavior(move.get(i));
       }
           
@@ -137,6 +156,10 @@ public class Ai implements ActionListener{
     
     public Timer getTime(){
         return this.time;
+    }
+    
+    public void throwMap(Map map){
+        this.map = map;
     }
 
 }
