@@ -42,7 +42,7 @@ public class CollectionTanks {
         
         tanks.put("churchill", new double[] {50, 40, 40, 30, 800, 160, 3, 400, 2.5, 0.19, 0.5, 3, 2});
         
-        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 230, 67, 6, 2, 0.19, 0.5, 3, 3});
+        tanks.put("firefly", new double[] {30, 10, 10, 5, 500, 2300, 67, 6, 2, 0.19, 0.5, 3, 3});
         
         tanks.put("comet", new double[] {65, 50, 50, 30, 800, 180, 64, 4, 3, 0.21, 0.4, 3, 4});
         
