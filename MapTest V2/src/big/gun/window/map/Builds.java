@@ -9,6 +9,7 @@ package big.gun.window.map;
  *
  * @author pooh
  */
+import big.gun.window.tank.Calculate;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
@@ -32,7 +33,8 @@ public class Builds extends MapObject{
     public Builds(double posX, double posY, double width, double height, Color color, String path){
         super(posX, posY, width, height);
         this.color = color;
-        if (path != ""){
+        if (!"".equals(path)){
+            path = "/res/tree"+Calculate.randomNumber(1, 2)+".png";
             loadImage(path);
         }
     }
