@@ -23,7 +23,6 @@ public class Person extends MapObject {
     private Tank myTank;
     private int tag;
     private Rectangle2D veiw;
-    private int nearly;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -32,7 +31,6 @@ public class Person extends MapObject {
         this.setWidth(myTank.getWidth());
         this.setHeight(myTank.getHeight());
         this.tag = tag;
-        nearly = -2;
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         //count = 5;
     }
@@ -136,19 +134,16 @@ public class Person extends MapObject {
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         for(int i=0;i<bot.size();i++){
             if(i!=origin){
-                if(bot.get(i).getTag()==1&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())&&bot.get(i).getMyTank().getHp()>0){
-                    nearly = i;
-                    return nearly; //bot
+                if(bot.get(i).getTag()!=tag&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())&&bot.get(i).getMyTank().getHp()>0){
+                    return i; //bot
                 }
-                else if(veiw.getBounds().intersects(player.getMyTank().getBounds())&&player.getMyTank().getHp()>0){
-                    nearly = -1;
-                    return nearly; //Player
+                else if(tag!=1&&veiw.getBounds().intersects(player.getMyTank().getBounds())&&player.getMyTank().getHp()>0){
+                    return -1; //Player
                 }
                     
             }
         }
-        nearly = -2;
-        return nearly; //notfound
+        return -2; //notfound
     }
     
     public String shootOnTarGet(Player player, LinkedList<Person> bot, int target){

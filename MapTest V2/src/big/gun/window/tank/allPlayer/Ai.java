@@ -42,12 +42,12 @@ public class Ai implements ActionListener{
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(4500+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2600+i*100, 100, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(4500+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2600+i*100, 100, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
         }
@@ -86,47 +86,8 @@ public class Ai implements ActionListener{
             default:
                 break;
         }
-          //Alli
-//        for(int i=spawnAlli;i<spawnAlli+spawnAxis;i++){
-//
-//          //Shot
-//            if(persons.get(i).veiwOfBot(player, persons.get(i))){
-//                switch (persons.get(i).shootOnTarGet(player)) {
-//                    case "right":
-//                        move.get(i).add("E");
-//                        move.get(i).add("D");
-//                        move.get(i).remove("Q");
-//                        move.get(i).remove("A");
-//                        break;
-//                    case "left":
-//                        move.get(i).add("Q");
-//                        move.get(i).add("A");
-//                        move.get(i).remove("E");
-//                        move.get(i).remove("D");
-//                        break;
-//                    case "shoot":
-//                        move.get(i).remove("Q");
-//                        move.get(i).remove("E");
-//                        move.get(i).remove("D");
-//                        move.get(i).remove("A");
-//                        move.get(i).add("shoot");
-//                        break;
-//                    default:
-//                        break;
-//                    }
-//         }
-//         else{
-//             move.get(i).remove("shoot");
-//             move.get(i).remove("Q");
-//             move.get(i).remove("E");
-//             move.get(i).remove("D");
-//             move.get(i).remove("A");
-//         }
-//        persons.get(i).behavior(move.get(i));
-//      }
-      
-      //Axis
-      for(int i=spawnAxis;i<spawnAlli+spawnAxis;i++){
+        //Alli
+        for(int i=0;i<spawnAlli+spawnAxis;i++){
 
           //Shot
             if(persons.get(i).veiwOfBot(player, persons, i)!=-2){
@@ -165,7 +126,6 @@ public class Ai implements ActionListener{
              move.get(i).remove("A");
          }
         persons.get(i).behavior(move.get(i));
-          System.out.println(persons.get(i).veiwOfBot(player, persons, i));
       }
           
     }
