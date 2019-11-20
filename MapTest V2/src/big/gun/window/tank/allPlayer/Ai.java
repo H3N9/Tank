@@ -109,18 +109,7 @@ public class Ai implements ActionListener{
                     default:
                         break;
                     }
-                
-                //เลี้ยวเมื่อใกล้สิ่งของ
-                for(Builds mObject: map.getBuilds()) {
-                    if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
-                        move.get(i).remove("A");
-                        move.get(i).add("D");
-                    }
-                    else if(persons.get(i).getCheckRight().intersects(mObject.getBounds())){
-                        move.get(i).remove("D");
-                        move.get(i).add("A");
-                    }
-                }
+
          }
          else{
              move.get(i).remove("shoot");
@@ -130,8 +119,41 @@ public class Ai implements ActionListener{
              move.get(i).remove("A");
          }
             
-        
-        
+            
+         if(persons.get(i).getDeadLock() < 300){
+             persons.get(i).setDeadLock(persons.get(i).getDeadLock()+1);
+             System.out.println(persons.get(i).getDeadLock());
+         }
+         else{
+             move.get(i).remove("S");
+         }
+            
+         //เลี้ยวเมื่อใกล้สิ่งของ
+         move.get(i).remove("A");
+         move.get(i).remove("D");
+         move.get(i).add("W");
+         for(Builds mObject: map.getBuilds()) {
+            if(persons.get(i).getCheckLeft().intersects(mObject.getBounds()) && persons.get(i).getCheckRight().intersects(mObject.getBounds())){
+                persons.get(i).setDeadLock(0);
+            }
+            if(persons.get(i).getDeadLock() < 300){
+                move.get(i).remove("W");
+                move.get(i).add("S");
+                move.get(i).add("D");
+            }
+            else if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
+                move.get(i).remove("W");
+                move.get(i).remove("A");
+                move.get(i).add("D");
+            }
+            else if(persons.get(i).getCheckRight().intersects(mObject.getBounds())){
+                move.get(i).remove("W");
+                move.get(i).remove("D");
+                move.get(i).add("A");
+            }
+
+        }   
+
         persons.get(i).behavior(move.get(i));
       }
           
