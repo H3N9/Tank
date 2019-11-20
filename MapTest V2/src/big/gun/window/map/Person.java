@@ -141,6 +141,11 @@ public class Person extends MapObject {
             if(event.contains("shoot")){
                 myTank.shoot();
             }
+        }else{
+            myTank.setSpeedX(0);  
+            myTank.setSpeedY(0);
+            myTank.setRotateSpeed(0);
+            myTank.getTurret().setRotateSpeed(0);
         }
 
     }

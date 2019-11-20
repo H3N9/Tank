@@ -22,13 +22,13 @@ public class Builds extends MapObject{
     private BufferedImage img;
     private Rectangle2D rect;
     
-    public Builds(double posX, double posY){
-        this(posX, posY, 200, 200, null, "/res/tree2.png");
+    public Builds(double posX, double posY, String name){
+        this(posX, posY, 200, 200, null, name);
     }
     
-    public Builds(double posX, double posY, String path){
-        this(posX, posY, 50.0, 50.0, null, path);
-    }
+//    public Builds(double posX, double posY, String path){
+//        this(posX, posY, 50.0, 50.0, null, path);
+//    }
     
     public Builds(double posX, double posY, double width, double height, Color color, String path){
         super(posX, posY, width, height);
@@ -57,7 +57,7 @@ public class Builds extends MapObject{
     private void loadImage(String path){
         //ImageIcon imgCon = null;
         try{
-            img = ImageIO.read(getClass().getResource(path));
+            img = ImageIO.read(getClass().getResource("/res/building/"+path+".png"));
         }catch(IOException ex){
             ex.printStackTrace();
         }

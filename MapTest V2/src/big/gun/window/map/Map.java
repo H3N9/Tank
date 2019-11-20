@@ -80,44 +80,44 @@ public class Map {
         getBuilds().add(new Builds(4950, 50, 50, 4900, Color.BLACK, ""));
         getBuilds().add(new Builds(0, 4950, 5000, 50, Color.BLACK, ""));
         
-        getBuilds().add(new Builds(800, 400));
-        getBuilds().add(new Builds(400, 1000));
-        getBuilds().add(new Builds(1200, 1600));
-        getBuilds().add(new Builds(100, 1800));
-        getBuilds().add(new Builds(800, 2400));
-        getBuilds().add(new Builds(1000, 2600));
-        getBuilds().add(new Builds(200, 3000));
-        getBuilds().add(new Builds(800, 3600));
-        getBuilds().add(new Builds(400, 4000));
-        getBuilds().add(new Builds(4000, 4400));
-        getBuilds().add(new Builds(4400, 3800));
-        getBuilds().add(new Builds(3800, 2200));
-        getBuilds().add(new Builds(4000, 2400));
-        getBuilds().add(new Builds(4600, 1800));
-        getBuilds().add(new Builds(4000, 1200));
-        getBuilds().add(new Builds(4400, 800));
+        getBuilds().add(new Builds(800, 400, "tree1"));
+        getBuilds().add(new Builds(400, 1000, "tree1"));
+        getBuilds().add(new Builds(1200, 1600, "tree1"));
+        getBuilds().add(new Builds(100, 1800, "tree2"));
+        getBuilds().add(new Builds(800, 2400, "tree1"));
+        getBuilds().add(new Builds(1000, 2600, "tree2"));
+        getBuilds().add(new Builds(200, 3000, "tree1"));
+        getBuilds().add(new Builds(800, 3600, "tree1"));
+        getBuilds().add(new Builds(400, 4000, "tree2"));
+        getBuilds().add(new Builds(4000, 4400, "tree1"));
+        getBuilds().add(new Builds(4400, 3800, "tree2"));
+        getBuilds().add(new Builds(3800, 2200, "tree1"));
+        getBuilds().add(new Builds(4000, 2400, "tree1"));
+        getBuilds().add(new Builds(4600, 1800, "tree2"));
+        getBuilds().add(new Builds(4000, 1200, "tree1"));
+        getBuilds().add(new Builds(4400, 800, "tree1"));
         
-        getBuilds().add(new Builds(1400, 600, 1000, 200, Color.GRAY, ""));
-        getBuilds().add(new Builds(2600, 600, 1000, 200, Color.GRAY, ""));
-        getBuilds().add(new Builds(1400, 800, 200, 3400, Color.GRAY, ""));
-        getBuilds().add(new Builds(1400, 4200, 1000, 200, Color.GRAY, ""));
-        getBuilds().add(new Builds(2600, 4200, 1000, 200, Color.GRAY, ""));
-        getBuilds().add(new Builds(3400, 800, 200, 3400, Color.GRAY, ""));
+        getBuilds().add(new Builds(1400, 600, 1000, 200, Color.GRAY, "horizontal1"));
+        getBuilds().add(new Builds(2600, 600, 1000, 200, Color.GRAY, "horizontal1"));
+        getBuilds().add(new Builds(1400, 800, 200, 3400, Color.GRAY, "vertical1"));
+        getBuilds().add(new Builds(1400, 4200, 1000, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(2600, 4200, 1000, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(3400, 800, 200, 3400, Color.GRAY, "vertical2"));
         
-        getBuilds().add(new Builds(2000, 1000, 300, 600, Color.GRAY, ""));
-        getBuilds().add(new Builds(2700, 1000, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 1000, 300, 600, Color.GRAY, "square1"));
+        getBuilds().add(new Builds(2700, 1000, 300, 600, Color.GRAY, "square2"));
         
-        getBuilds().add(new Builds(2000, 2000, 300, 300, Color.GRAY, ""));
-        getBuilds().add(new Builds(2700, 2000, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 2000, 300, 300, Color.GRAY, "square2"));
+        getBuilds().add(new Builds(2700, 2000, 300, 300, Color.GRAY, "square1"));
         
-        getBuilds().add(new Builds(1800, 2600, 600, 200, Color.GRAY, ""));
-        getBuilds().add(new Builds(2600, 2600, 600, 200, Color.GRAY, ""));
+        getBuilds().add(new Builds(1800, 2600, 600, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(2600, 2600, 600, 200, Color.GRAY, "horizontal1"));
         
-        getBuilds().add(new Builds(2000, 2900, 300, 300, Color.GRAY, ""));
-        getBuilds().add(new Builds(2700, 2900, 300, 300, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 2900, 300, 300, Color.GRAY, "square2"));
+        getBuilds().add(new Builds(2700, 2900, 300, 300, Color.GRAY, "square1"));
         
-        getBuilds().add(new Builds(2000, 3400, 300, 600, Color.GRAY, ""));
-        getBuilds().add(new Builds(2700, 3400, 300, 600, Color.GRAY, ""));
+        getBuilds().add(new Builds(2000, 3400, 300, 600, Color.GRAY, "square1"));
+        getBuilds().add(new Builds(2700, 3400, 300, 600, Color.GRAY, "square2"));
     }
     
     public void moveMap(Player player){
