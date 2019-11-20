@@ -26,12 +26,14 @@ public class Ai implements ActionListener{
     private final int max = 20;
     private Timer time;
     private int spawnAxis, spawnAlli;
+    private String difficult;
     
-    public Ai(int alline, int axis, Player player){
+    public Ai(int alline, int axis, Player player, String difficult){
         this.player = player;
         persons = new LinkedList<Person>();
         move = new LinkedList<>();
         time = new Timer(10, this);
+        this.difficult = difficult;
         //spanw Alline
         spawnAlli = alline>max? max: alline;
         for(int i=0;i<spawnAlli;i++){
@@ -59,12 +61,12 @@ public class Ai implements ActionListener{
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2400+i*100, 4500, CollectionTanks.getName(flag, num), 2));
+                persons.add(new Person(2500+i*100, 100, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2600+i*100, 4500, CollectionTanks.getName(flag, num), 2));
+                persons.add(new Person(2500+i*100, 100, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
             }
         }
@@ -73,45 +75,94 @@ public class Ai implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-//        event = new LinkedList<String>();
-//        event.add("W");
-//        event.add("A");
-//        persons.get(1).behavior(event);
-//        event.remove("A");
-//        event.add("D");
-//        persons.get(4).behavior(event);
+        switch(difficult){
+            case "easy":
+                time.setDelay(200);
+                break;
+            case "normal":
+                time.setDelay(150);
+            case "hard":
+                time.setDelay(0);
+            default:
+                break;
+        }
+          //Alli
+//        for(int i=spawnAlli;i<spawnAlli+spawnAxis;i++){
+//
+//          //Shot
+//            if(persons.get(i).veiwOfBot(player, persons.get(i))){
+//                switch (persons.get(i).shootOnTarGet(player)) {
+//                    case "right":
+//                        move.get(i).add("E");
+//                        move.get(i).add("D");
+//                        move.get(i).remove("Q");
+//                        move.get(i).remove("A");
+//                        break;
+//                    case "left":
+//                        move.get(i).add("Q");
+//                        move.get(i).add("A");
+//                        move.get(i).remove("E");
+//                        move.get(i).remove("D");
+//                        break;
+//                    case "shoot":
+//                        move.get(i).remove("Q");
+//                        move.get(i).remove("E");
+//                        move.get(i).remove("D");
+//                        move.get(i).remove("A");
+//                        move.get(i).add("shoot");
+//                        break;
+//                    default:
+//                        break;
+//                    }
+//         }
+//         else{
+//             move.get(i).remove("shoot");
+//             move.get(i).remove("Q");
+//             move.get(i).remove("E");
+//             move.get(i).remove("D");
+//             move.get(i).remove("A");
+//         }
+//        persons.get(i).behavior(move.get(i));
+//      }
+      
+      //Axis
+      for(int i=spawnAxis;i<spawnAlli+spawnAxis;i++){
 
-          for(int i=0;i<spawnAlli;i++){
-             if(persons.get(i).veiwOfBot(player)){
-                if(persons.get(i).shootOnTarGet(player).equals("right")){
-                    move.get(i).add("E");
-                    move.get(i).add("D");
-                    move.get(i).remove("Q");
-                    move.get(i).remove("A");
-                }
-                else if(persons.get(i).shootOnTarGet(player).equals("left")){
-                    move.get(i).add("Q");
-                    move.get(i).add("A");
-                    move.get(i).remove("E");
-                    move.get(i).remove("D");
-                }
-                else if(persons.get(i).shootOnTarGet(player).equals("shoot")){
-                    move.get(i).remove("Q");
-                    move.get(i).remove("E");
-                    move.get(i).remove("D");
-                    move.get(i).remove("A");
-                    move.get(i).add("shoot");
-                }
-             }
-             else{
-                 move.get(i).remove("shoot");
-                 move.get(i).remove("Q");
-                 move.get(i).remove("E");
-                 move.get(i).remove("D");
-                 move.get(i).remove("A");
-             }
-            persons.get(i).behavior(move.get(i));
-          }
+          //Shot
+            if(persons.get(i).veiwOfBot(player, persons, i)){
+                switch (persons.get(i).shootOnTarGet(player)) {
+                    case "right":
+                        move.get(i).add("E");
+                        move.get(i).add("D");
+                        move.get(i).remove("Q");
+                        move.get(i).remove("A");
+                        break;
+                    case "left":
+                        move.get(i).add("Q");
+                        move.get(i).add("A");
+                        move.get(i).remove("E");
+                        move.get(i).remove("D");
+                        break;
+                    case "shoot":
+                        move.get(i).remove("Q");
+                        move.get(i).remove("E");
+                        move.get(i).remove("D");
+                        move.get(i).remove("A");
+                        move.get(i).add("shoot");
+                        break;
+                    default:
+                        break;
+                    }
+         }
+         else{
+             move.get(i).remove("shoot");
+             move.get(i).remove("Q");
+             move.get(i).remove("E");
+             move.get(i).remove("D");
+             move.get(i).remove("A");
+         }
+        persons.get(i).behavior(move.get(i));
+      }
           
     }
     

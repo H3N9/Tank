@@ -130,7 +130,21 @@ public class Person extends MapObject {
 
     }
     
-    public boolean veiwOfBot(Player player){
+    public String veiwOfBot(Player player, LinkedList<Person> bot, int origin){
+        for(int i=0;i<bot.size();i++){
+            if(i!=origin&&tag==1){
+                double pospx = Math.abs(player.getMyTank().getCenterX()-getMyTank().getCenterX());
+                double pospy = Math.abs(player.getMyTank().getCenterY()-getMyTank().getCenterY());
+                double posbx = Math.abs(bot.get(i).getMyTank().getCenterX()-getMyTank().getCenterX());
+                double posby = Math.abs(bot.get(i).getMyTank().getCenterY()-getMyTank().getCenterY());
+                if(pospx+pospy>posbx+posby){
+                    return "bot"
+                }
+            }
+            
+            
+            
+        }
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         return veiw.getBounds().intersects(player.getMyTank().getBounds());
     }
