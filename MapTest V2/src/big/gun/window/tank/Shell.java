@@ -2,6 +2,10 @@
 package big.gun.window.tank;
 
 import big.gun.window.Import;
+import big.gun.window.map.Map;
+import big.gun.window.map.Person;
+import big.gun.window.tank.allPlayer.Ai;
+import big.gun.window.tank.allPlayer.Player;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;

@@ -234,6 +234,141 @@ public class Map {
         }
     }
     
+    public void bulletCollision(Ai bot, Player player){
+        int breakall = 0;
+            //hit map's objects
+            for (int i=0; i < getBuilds().size(); i++){
+                //player's bullet
+                try{
+                    if(player.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds())){
+                        player.getMyTank().setShell(null);
+                    }
+                }catch(NullPointerException e){
+                    
+                }
+                
+                //bot's bullets
+                for(Person ebot: bot.getPersons()){
+                    try{
+                        if(ebot.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds())){
+                            ebot.getMyTank().setShell(null);
+                        }
+                    }catch(NullPointerException e){
+            
+                    }
+                }
+            }
+            
+        //player shoots bottank's armours
+        breakall = 0;
+        for(Person ebot: bot.getPersons()){
+            for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
+                    for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
+                        try{
+                            if( player.getMyTank().getShell().getBounds().intersects(ebot.getMyTank().getArmours()[n][m].getBounds())){
+                                double thickness;
+                                if(n==0){
+                                    thickness = ebot.getMyTank().getThickness()[0];
+                                }
+                                else if(n==ebot.getMyTank().getSizeOfArmoursArray()-1){
+                                    thickness = ebot.getMyTank().getThickness()[3];
+                                }
+                                else{
+                                    thickness = ebot.getMyTank().getThickness()[1];
+                                }
+                                
+                                if(player.getMyTank().getShell().getPenetration() >= thickness){
+                                    ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                                    System.out.println(ebot.getMyTank().getHp());
+                                }
+                                else{
+                                    System.out.println("not penetrate");
+                                }
+                                
+
+                                player.getMyTank().setShell(null);
+                                breakall = 1;
+                                break;
+                            }
+                        }catch(NullPointerException e){
+                            
+                        }
+                        
+                    }
+                    if(breakall == 1){break;}
+                }
+            if(breakall == 1){break;}
+        }
+        
+        //bot shoots armours
+        for(Person ebot: bot.getPersons()){
+            //bot shoot player
+            breakall = 0;
+            for(int i=0; i < player.getMyTank().getArmours().length; i++){
+                for(int j=0; j < player.getMyTank().getArmours()[i].length; j++){
+                    try{
+                        if(ebot.getMyTank().getShell().getBounds().intersects(player.getMyTank().getArmours()[i][j].getBounds())){
+                            double thickness;
+                            if(i==0){
+                                thickness = player.getMyTank().getThickness()[0];
+                            }
+                            else if(i==player.getMyTank().getSizeOfArmoursArray()-1){
+                                thickness = player.getMyTank().getThickness()[3];
+                            }
+                            else{
+                                thickness = player.getMyTank().getThickness()[1];
+                            }
+                            
+                            if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                                player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                            }
+                            
+                            ebot.getMyTank().setShell(null);
+                            breakall = 1;
+                            break;
+                        }
+                    }catch(NullPointerException e){
+                        
+                    }
+                }
+                if(breakall == 1){break;}
+            }
+            if(breakall == 1){continue;}
+            
+            //bot shoot bot
+            for(Person ebot2: bot.getPersons()){
+                for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
+                    for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
+                        try{
+                            if(ebot.getMyTank().getShell().getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                double thickness;
+                                if(p==0){
+                                    thickness = ebot2.getMyTank().getThickness()[0];
+                                }
+                                else if(p==player.getMyTank().getSizeOfArmoursArray()-1){
+                                    thickness = ebot2.getMyTank().getThickness()[3];
+                                }
+                                else{
+                                    thickness = ebot2.getMyTank().getThickness()[1];
+                                }
+                                
+                                if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                                    ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                }
+                                ebot.getMyTank().setShell(null);
+                                breakall = 1;
+                                break;
+                            }
+                        }catch(NullPointerException e){
+                            
+                        }
+                    }
+                    if(breakall == 1){break;}
+                }
+            }
+        }
+    }
+    
     public double getPosX() {
         return posX;
     }
