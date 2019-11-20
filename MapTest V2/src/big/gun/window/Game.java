@@ -5,6 +5,7 @@ package big.gun.window;
 import big.gun.window.map.Builds;
 import big.gun.window.map.Map;
 import big.gun.window.map.Person;
+import big.gun.window.sound.Sound;
 import big.gun.window.tank.Calculate;
 import big.gun.window.tank.CollectionTanks;
 import big.gun.window.tank.Tank;
@@ -43,6 +44,8 @@ public class Game extends JPanel implements ActionListener{
         start = new Timer(10, this);
         nameTank = "m26";
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
+        Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
+        Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
         bot = new Ai(1, 1, player, "hard");
         map = new Map(2000, 0, bot.getPersons());
         bot.throwMap(map);
