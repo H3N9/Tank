@@ -23,6 +23,7 @@ public class Person extends MapObject {
     private Tank myTank;
     private int tag;
     private Rectangle2D veiw;
+    private int nearly;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -31,6 +32,7 @@ public class Person extends MapObject {
         this.setWidth(myTank.getWidth());
         this.setHeight(myTank.getHeight());
         this.tag = tag;
+        nearly = -2;
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         //count = 5;
     }
@@ -130,18 +132,38 @@ public class Person extends MapObject {
 
     }
     
-    public boolean veiwOfBot(Player player){
+    public int veiwOfBot(Player player, LinkedList<Person> bot, int origin){
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
-        return veiw.getBounds().intersects(player.getMyTank().getBounds());
+        for(int i=0;i<bot.size();i++){
+            if(i!=origin){
+                if(bot.get(i).getTag()==1&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())){
+                    nearly = i;
+                    return nearly; //bot
+                }
+                else if(veiw.getBounds().intersects(player.getMyTank().getBounds())){
+                    nearly = -1;
+                    return nearly; //Player
+                }
+                    
+            }
+        }
+        nearly = -2;
+        return nearly; //notfound
     }
     
-    public String shootOnTarGet(Player player){
+    public String shootOnTarGet(Player player, LinkedList<Person> bot, int target){
         double myx = getMyTank().getCenterX();
         double myy = getMyTank().getCenterY();
         double tx = player.getMyTank().getCenterX();
         double ty = player.getMyTank().getCenterY();
         double degree = 90-Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
         double realDegree = 0;
+        if(target!=-1){
+            tx = bot.get(target).getMyTank().getCenterX();
+            ty = bot.get(target).getMyTank().getCenterY();
+            degree = 90-Math.toDegrees(Calculate.calculateArcTan(myx, myy, tx, ty));
+        }
+        
         if(tx < myx && ty < myy){
             realDegree = 360-degree;
         }
@@ -171,6 +193,13 @@ public class Person extends MapObject {
 
     public void setMyTank(Tank myTank) {
         this.myTank = myTank;
+    }
+    
+    public void setTag(int i){
+        tag = i;
+    }
+    public int getTag(){
+        return tag;
     }
 
     
