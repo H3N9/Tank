@@ -31,6 +31,8 @@ public class Tank extends GameObject implements Moveable{
     private Shell shell;
     private Turret turret;
     private String nameTank;
+    private Boom boom;
+    private int boomed;
     public int count=0;
 
     public Tank(String name, double posX, double posY){
@@ -52,13 +54,19 @@ public class Tank extends GameObject implements Moveable{
         armours = new Armour[sizeOfArmoursArray][];
         createArmours();
         turret = new Turret(this);
+        boomed = 0;
     }
 
     public void draw(Graphics2D g2d){
         g2d.setColor(Color.red);
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.fill(getBounds());
-        g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        if(hp <= 0){
+            g2d.drawImage(Import.tankDImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        }
+        else{
+            g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        }
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
         for(int i=0; i < armours.length; i++){
             if(i==0 || i==armours.length-1){
@@ -82,11 +90,19 @@ public class Tank extends GameObject implements Moveable{
         }
         turret.draw(g2d);
         CollectionTanks.getName(3, 1);
+        if(boomed == 1){
+            boom.draw(g2d);
+        }
     }
 
     
     @Override
     public void move() {
+        if(hp <= 0){
+            setSpeedX(0);
+            setSpeedY(0);
+            setRotateSpeed(0);
+        }
         setRotate(getRotate()+getRotateSpeed()*isBack);
         turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
@@ -109,6 +125,12 @@ public class Tank extends GameObject implements Moveable{
                     }
                 }
             }
+        }
+        if(hp <= 0 && boomed == 0){
+            boomed = 1;
+            boom = new Boom(getCenterX(), getCenterY());
+        }else if(hp <= 0 && boomed == 1){
+            boom.update(getCenterX(), getCenterY());
         }
         turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         setReload(getReload()+0.01);

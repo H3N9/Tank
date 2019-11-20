@@ -26,31 +26,33 @@ public class Player {
     }
     
     public void keyPressed(KeyEvent e){
-        int key = e.getKeyCode();
-        if(key==KeyEvent.VK_W){
-            myTank.setSpeedX(myTank.getSpeed());  
-            myTank.setSpeedY(-myTank.getSpeed());
-            myTank.setIsBack(1);
-        }
-        if(key==KeyEvent.VK_A){
-            myTank.setRotateSpeed(-myTank.getSpeed()/2);
-        }
-        if(key==KeyEvent.VK_D){
-            myTank.setRotateSpeed(myTank.getSpeed()/2);
-        }
-        if(key==KeyEvent.VK_S){
-            myTank.setSpeedX(-myTank.getSpeed());  
-            myTank.setSpeedY(myTank.getSpeed());
-            myTank.setIsBack(-1);
-        }
-        if(key==KeyEvent.VK_Q){
-            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
-        }
-        if(key==KeyEvent.VK_E){
-            myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
-        }
-        if(key==KeyEvent.VK_SPACE){
-            myTank.shoot();
+        if(myTank.getHp() > 0){
+            int key = e.getKeyCode();
+            if(key==KeyEvent.VK_W){
+                myTank.setSpeedX(myTank.getSpeed());  
+                myTank.setSpeedY(-myTank.getSpeed());
+                myTank.setIsBack(1);
+            }
+            if(key==KeyEvent.VK_A){
+                myTank.setRotateSpeed(-myTank.getSpeed()/2);
+            }
+            if(key==KeyEvent.VK_D){
+                myTank.setRotateSpeed(myTank.getSpeed()/2);
+            }
+            if(key==KeyEvent.VK_S){
+                myTank.setSpeedX(-myTank.getSpeed());  
+                myTank.setSpeedY(myTank.getSpeed());
+                myTank.setIsBack(-1);
+            }
+            if(key==KeyEvent.VK_Q){
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+            }
+            if(key==KeyEvent.VK_E){
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+            }
+            if(key==KeyEvent.VK_SPACE){
+                myTank.shoot();
+            }
         }
     }
     

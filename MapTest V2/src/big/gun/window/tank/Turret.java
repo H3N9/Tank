@@ -14,6 +14,7 @@ public class Turret extends GameObject{
     private double gunPosX, gunPosY, gunWidth, gunHeight;
     private String nameTank;
     private double save;
+    private Tank tank;
     
     public Turret(Tank tank){
         super();
@@ -31,6 +32,7 @@ public class Turret extends GameObject{
         gunPosX = centerHeadX;
         gunPosY = centerHeadY - getHeight()/2 - gunHeight;
         rotateSpeed = 0;
+        this.tank = tank;
     }
     
     public void update(double px, double py, double cx, double cy, double tankWidth, double tankHeight, double tankRotate){
@@ -59,7 +61,12 @@ public class Turret extends GameObject{
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.rotate(Math.toRadians(rotateHead), getPosX()+getWidth()/2, getPosY()+getHeight()/2);
         g2d.fill(new Rectangle2D.Double(getPosX()+getWidth()/2-10, getPosY()-50, 20, 50));
-        g2d.drawImage(Import.tankImg.get(nameTank)[1], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        if(tank.getHp() <= 0){
+            g2d.drawImage(Import.tankDImg.get(nameTank)[1], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        }
+        else{
+            g2d.drawImage(Import.tankImg.get(nameTank)[1], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        }
         g2d.drawImage(Import.tankImg.get(nameTank)[2], (int)(getPosX()+getWidth()/2-gunWidth/2), (int)(getPosY()-gunHeight), (int)gunWidth, (int)gunHeight, null);
         g2d.rotate(Math.toRadians(-rotateHead), getPosX()+getWidth()/2, getPosY()+getHeight()/2);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
