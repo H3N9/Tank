@@ -282,7 +282,15 @@ public class Map {
                                     System.out.println(ebot.getMyTank().getHp());
                                 }
                                 else{
-                                    System.out.println("not penetrate");
+                                    double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
+                                    double got = Calculate.randomNumber(0, (int) want);
+                                    System.out.println(got);
+                                    if(player.getMyTank().getShell().getPenetration()+got >= thickness){
+                                        ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                                        System.out.println(ebot.getMyTank().getHp()+" Penetrate");
+                                        
+                                    }
+                                    
                                 }
                                 
 
@@ -322,6 +330,14 @@ public class Map {
                             if(ebot.getMyTank().getShell().getPenetration() >= thickness){
                                 player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
                             }
+                            else{
+                                double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
+                                double got = Calculate.randomNumber(0, (int) want);
+                                if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
+                                    player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+
+                                }
+                            }
                             
                             ebot.getMyTank().setShell(null);
                             breakall = 1;
@@ -355,6 +371,16 @@ public class Map {
                                 if(ebot.getMyTank().getShell().getPenetration() >= thickness){
                                     ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
                                 }
+                                else{
+                                    double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
+                                    double got = Calculate.randomNumber(0, (int) want);
+                                    if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
+                                        ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                        
+                                    }
+                                }
+                                
+                                
                                 ebot.getMyTank().setShell(null);
                                 breakall = 1;
                                 break;

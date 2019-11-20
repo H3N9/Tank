@@ -30,6 +30,7 @@ public class Ai implements ActionListener{
     private int spawnAxis, spawnAlli;
     private String difficult;
     private Map map;
+    private int level;
     
     public Ai(int alline, int axis, Player player, String difficult){
         this.player = player;
@@ -37,20 +38,19 @@ public class Ai implements ActionListener{
         move = new LinkedList<>();
         time = new Timer(10, this);
         this.difficult = difficult;
+        level = (int) CollectionTanks.tanks.get(player.getMyTank().getNameTank())[12];
         //spanw Alline
         spawnAlli = alline>max? max: alline;
         for(int i=0;i<spawnAlli;i++){
-            String name = player.getMyTank().getNameTank();
-            int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2600+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2800+i*100, 100, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2600+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2800+i*100, 100, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
         }
@@ -59,8 +59,6 @@ public class Ai implements ActionListener{
         //spawn Axis
         spawnAxis = axis>max? max: axis;
         for(int i=0;i<spawnAxis;i++){
-            String name = player.getMyTank().getNameTank();
-            int level = (int) CollectionTanks.tanks.get(name)[12];
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
@@ -90,30 +88,22 @@ public class Ai implements ActionListener{
                 break;
         }
         
-        //Alli
+        //Bot shoot on Target
         for(int i=0;i<spawnAlli+spawnAxis;i++){
             if(persons.get(i).veiwOfBot(player, persons, i)!=-2){
                 int target = persons.get(i).veiwOfBot(player, persons, i);
-                move.get(i).add("W");
-                move.get(i).add("A");
                 switch (persons.get(i).shootOnTarGet(player,  persons, target)) {
                     case "right":
                         move.get(i).add("E");
-                        move.get(i).add("D");
                         move.get(i).remove("Q");
-                        move.get(i).remove("A");
                         break;
                     case "left":
                         move.get(i).add("Q");
-                        move.get(i).add("A");
                         move.get(i).remove("E");
-                        move.get(i).remove("D");
                         break;
                     case "shoot":
                         move.get(i).remove("Q");
                         move.get(i).remove("E");
-                        move.get(i).remove("D");
-                        move.get(i).remove("A");
                         move.get(i).add("shoot");
                         break;
                     default:
