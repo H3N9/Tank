@@ -35,18 +35,20 @@ public class Game extends JPanel implements ActionListener{
     private static long lastFPS;
     private static int currentFPS, totalFrames;
     private String nameTank;
+    private Condition con;
     
     //private TestDrawTank tdt;
     
-    public Game(){
+    public Game(String name, int alli, int axis, String diff){
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        nameTank = "comet";
+        nameTank = name;
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
-        bot = new Ai(1, 1, player, "hard");
+        bot = new Ai(alli, axis, player, diff);
+        con = new Condition(player, bot.getPersons());
         map = new Map(2000, 0, bot.getPersons());
         bot.throwMap(map);
         start.start();
@@ -88,6 +90,8 @@ public class Game extends JPanel implements ActionListener{
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("", 20,20));
         g2d.drawString("FPS: "+currentFPS, 10, 20);
+        
+        con.draw(g2d);
         
     }
     

@@ -22,7 +22,7 @@ public class CollectionTanks {
         
         tanks.put("m4", new double[] {30, 10, 10, 5, 600, 160, 30, 4, 3.5, 0.25, 0.5, 1, 1}); // class1
         
-        tanks.put("m4a3e8", new double[] {35, 15, 15, 10, 800, 180, 38, 4, 2.5, 0.19, 0.5, 1, 2}); //class2
+        tanks.put("m4a3e8", new double[] {35, 15, 15, 10, 800, 180, 38, 4, 3, 0.19, 0.5, 1, 2}); //class2
         
         tanks.put("m26", new double[] {48, 40, 40, 10, 800, 180, 50, 4, 3, 0.21, 0.5, 1, 3}); //class3
         
@@ -35,7 +35,7 @@ public class CollectionTanks {
         
         tanks.put("tiger", new double[] {50, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 0.31, 0.5, 2, 3});
         
-        tanks.put("tiger2", new double[] {60, 50, 50 ,30, 800, 210, 58, 8, 1.5, 0.2, 0.5, 2, 4});
+        tanks.put("tiger2", new double[] {60, 50, 50 ,30, 800, 210, 58, 7, 1.5, 0.2, 0.5, 2, 4});
         
         //Britan Tank
         tanks.put("cromwell", new double[] {30, 8, 8, 2, 600, 160, 28, 4, 4.5, 0.26, 0.4, 3, 1});

@@ -8,19 +8,19 @@ public class Window {
     public static int width;
     public static int height;
     
-    public Window(int w, int h){
+    public Window(int w, int h, String nameTank, int alli, int axis, String diff){
         width = w;
         height = h;
-        createWindow();
+        createWindow(nameTank, alli, axis, diff);
     }
-    private void createWindow(){
+    private void createWindow(String nameTank, int alli, int axis, String diff){
         jframe = new JFrame();
         jframe.setTitle("Big-Gun");
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setSize(width, height);
         jframe.setResizable(false);
         jframe.setLocationRelativeTo(null);
-        jframe.add(new Game());
+        jframe.add(new Game(nameTank, alli, axis, diff));
         jframe.setVisible(true);
     }
 }
