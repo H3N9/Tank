@@ -45,12 +45,12 @@ public class Ai implements ActionListener{
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2000+i*200, 4500, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2000+i*200, 4500, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
         }
