@@ -11,6 +11,7 @@ package big.gun.window.map;
  */
 import big.gun.window.tank.*;
 import big.gun.window.Window;
+import big.gun.window.sound.Sound;
 import big.gun.window.tank.allPlayer.Player;
 import big.gun.window.tank.allPlayer.Ai;
 import java.awt.Color;
@@ -280,6 +281,7 @@ public class Map {
                                 if(player.getMyTank().getShell().getPenetration() >= thickness){
                                     ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
                                     System.out.println(ebot.getMyTank().getHp());
+                                    new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                 }
                                 else{
                                     double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
@@ -288,7 +290,9 @@ public class Map {
                                     if(player.getMyTank().getShell().getPenetration()+got >= thickness){
                                         ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
                                         System.out.println(ebot.getMyTank().getHp()+" Penetrate");
-                                        
+                                        new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
+                                    }else{
+                                        new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                     }
                                     
                                 }
@@ -329,13 +333,16 @@ public class Map {
                             
                             if(ebot.getMyTank().getShell().getPenetration() >= thickness){
                                 player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                new Sound("penetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
                             }
                             else{
                                 double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
                                 double got = Calculate.randomNumber(0, (int) want);
                                 if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
                                     player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
-
+                                    new Sound("penetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
+                                }else{
+                                    new Sound("notPenetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
                                 }
                             }
                             
@@ -370,13 +377,16 @@ public class Map {
                                 
                                 if(ebot.getMyTank().getShell().getPenetration() >= thickness){
                                     ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                    new Sound("penetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
                                 }
                                 else{
                                     double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
                                     double got = Calculate.randomNumber(0, (int) want);
                                     if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
                                         ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
-                                        
+                                        new Sound("penetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
+                                    }else{
+                                        new Sound("notPenetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
                                     }
                                 }
                                 

@@ -129,6 +129,7 @@ public class Tank extends GameObject implements Moveable{
         if(hp <= 0 && boomed == 0){
             boomed = 1;
             boom = new Boom(getCenterX(), getCenterY());
+            new Sound("tankDestroyed", getPosX(), getPosY());
         }else if(hp <= 0 && boomed == 1 && boom.getAlpha() != 0){
             boom.update(getCenterX(), getCenterY());
         }
@@ -156,7 +157,7 @@ public class Tank extends GameObject implements Moveable{
     public void shoot(){
         if(reload>=speedReload){
             shell = new Shell(this);
-            new Sound("/res/sound/reload1.wav", getPosX(), getPosY());
+            new Sound("shoot", getPosX(), getPosY());
             shell.getTime().start();
             setReload(0);
         }

@@ -22,7 +22,7 @@ public class Sound {
     public Sound(String path, double posX, double posY){
         //File file = new File(path);
         try {
-            AudioInputStream sound = AudioSystem.getAudioInputStream(getClass().getResource(path));
+            AudioInputStream sound = AudioSystem.getAudioInputStream(getClass().getResource("/res/sound/"+path+".wav"));
             clip = AudioSystem.getClip();
             clip.open(sound);
             clip.setFramePosition(0);
