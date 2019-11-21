@@ -84,7 +84,7 @@ public class Map {
         getBuilds().add(new Builds(800, 400, "tree1"));
         getBuilds().add(new Builds(400, 1000, "tree1"));
         getBuilds().add(new Builds(1200, 1600, "tree1"));
-        getBuilds().add(new Builds(100, 1800, "tree2"));
+        getBuilds().add(new Builds(200, 1800, "tree2"));
         getBuilds().add(new Builds(800, 2400, "tree1"));
         getBuilds().add(new Builds(1000, 2600, "tree2"));
         getBuilds().add(new Builds(200, 3000, "tree1"));

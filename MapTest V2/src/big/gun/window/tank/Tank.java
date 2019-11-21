@@ -109,11 +109,11 @@ public class Tank extends GameObject implements Moveable{
             setRotateSpeed(0);
         }
         setRotate(getRotate()+getRotateSpeed()*isBack);
-        turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()+Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
+        turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         for(int i=0; i < armours.length; i++){
             if(i==0 || i==armours.length-1){
                 for(int j=0; j<3; j++){
