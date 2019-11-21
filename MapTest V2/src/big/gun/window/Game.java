@@ -39,7 +39,7 @@ public class Game extends JPanel implements ActionListener{
     
     //private TestDrawTank tdt;
     
-    public Game(String name, int alli, int axis, String diff){
+    public Game(String name, int amountBout, String diff){
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
@@ -47,9 +47,9 @@ public class Game extends JPanel implements ActionListener{
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
-        bot = new Ai(alli, axis, player, diff);
+        bot = new Ai(amountBout-1, amountBout, player, diff);
         con = new Condition(player, bot.getPersons());
-        map = new Map(2000, 4000, bot.getPersons());
+        map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
         bot.throwMap(map);
         start.start();
         bot.getTime().start();

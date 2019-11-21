@@ -18,7 +18,7 @@ public class Shell extends GameObject implements Moveable,ActionListener{
     private Timer time;
     
     public Shell(Tank tank){
-        time = new Timer(1, this);
+        time = new Timer(10, this);
         setWidth(Import.tankImg.get(tank.getNameTank())[2].getWidth()/4); setHeight(getWidth());
         setPosX(tank.getTurret().getGunPosX()-getWidth()*0.5);
         setPosY(tank.getTurret().getGunPosY());
