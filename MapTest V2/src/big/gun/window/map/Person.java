@@ -13,6 +13,7 @@ import big.gun.window.Window;
 import big.gun.window.tank.*;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.util.HashSet;
@@ -57,12 +58,18 @@ public class Person extends MapObject {
 
     public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
-        g2d.setColor(Color.PINK);
-        g2d.fill(checkLeft);
-        g2d.setColor(Color.MAGENTA);
-        g2d.fill(checkRight);
-        g2d.drawString(myTank.getNameTank(),
-                (float) myTank.getPosX() + 50, (float) myTank.getPosY() - 10);
+        //test bot detection front draw
+//        g2d.setColor(Color.PINK);
+//        g2d.fill(checkLeft);
+//        g2d.setColor(Color.MAGENTA);
+//        g2d.fill(checkRight);
+        if(tag == 1){
+            g2d.setColor(Color.BLUE);
+        }else if(tag == 2){
+            g2d.setColor(Color.RED);
+        }
+        g2d.setFont(new Font("TimesRoman", Font.BOLD, 20)); 
+        g2d.drawString(myTank.getNameTank(),(float) myTank.getPosX(), (float) myTank.getPosY() - 10);
     }
 
     @Override

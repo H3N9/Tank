@@ -147,22 +147,16 @@ public class Ai implements ActionListener{
          if(persons.get(i).getLeftHit() > 0){
              persons.get(i).setLeftHit(persons.get(i).getLeftHit()-1);
          }
-         else{
-             move.get(i).remove("S");
-         }
          if(persons.get(i).getRightHit() > 0){
              persons.get(i).setRightHit(persons.get(i).getRightHit()-1);
-         }
-         else{
-             move.get(i).remove("S");
          }
          
          //เช็คชนคน
          for(Person ebot: persons){
              for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
                  for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
-                     if(persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds())){
-                        persons.get(i).setDeadLock(3000);
+                     if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds())) && persons.get(i)!=ebot){
+                        persons.get(i).setDeadLock(2500);
                     }
                  }
              }
@@ -171,16 +165,16 @@ public class Ai implements ActionListener{
          for(int k=0; k < player.getMyTank().getArmours().length; k++){
              for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
                  if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getArmours()[k][j].getBounds())){
-                    persons.get(i).setDeadLock(3000);
+                    persons.get(i).setDeadLock(2500);
                 }
              }
          }
          //เลี้ยวเมื่อใกล้สิ่งของ
          for(Builds mObject: map.getBuilds()) {
             if(persons.get(i).getRightHit() > 0 && persons.get(i).getLeftHit() > 0){
-                persons.get(i).setDeadLock(3000);
+                persons.get(i).setDeadLock(2500);
             }
-            if(persons.get(i).getDeadLock() > 2000){
+            if(persons.get(i).getDeadLock() > 1500){
                 move.get(i).remove("W");
                 move.get(i).add("S");
             }else if(persons.get(i).getDeadLock() > 0){
@@ -196,13 +190,13 @@ public class Ai implements ActionListener{
                 move.get(i).remove("W");
                 move.get(i).remove("A");
                 move.get(i).add("D");
-                persons.get(i).setLeftHit(1500);
+                persons.get(i).setLeftHit(1000);
             }
             else if(persons.get(i).getCheckRight().intersects(mObject.getBounds())){
                 move.get(i).remove("W");
                 move.get(i).remove("D");
                 move.get(i).add("A");
-                persons.get(i).setRightHit(1500);
+                persons.get(i).setRightHit(1000);
             }
 
         }   
