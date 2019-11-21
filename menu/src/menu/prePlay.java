@@ -5,14 +5,17 @@
  */
 package menu;
 
+import java.awt.*;
+import javax.swing.*;
+
 /**
  *
  * @author PCoil
  */
-public class prePlay extends javax.swing.JPanel {
+public class prePlay extends javax.swing.JFrame {
 
     /**
-     * Creates new form Home
+     * Creates new form prePlay2
      */
     public prePlay() {
         initComponents();
@@ -27,208 +30,2895 @@ public class prePlay extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        start = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         moneyPanel = new javax.swing.JPanel();
         labelMoney = new javax.swing.JLabel();
         money = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
+        T1 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        T2 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        T3 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        T4 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jPanel36 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jPanel37 = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        T5 = new javax.swing.JPanel();
+        jPanel38 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jPanel39 = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jPanel42 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        T6 = new javax.swing.JPanel();
+        jPanel43 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
+        jPanel44 = new javax.swing.JPanel();
+        jPanel45 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jPanel46 = new javax.swing.JPanel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jPanel47 = new javax.swing.JPanel();
+        jLabel66 = new javax.swing.JLabel();
+        T7 = new javax.swing.JPanel();
+        jPanel48 = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
+        jPanel49 = new javax.swing.JPanel();
+        jPanel50 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        jPanel51 = new javax.swing.JPanel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jPanel52 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        T8 = new javax.swing.JPanel();
+        jPanel53 = new javax.swing.JPanel();
+        jLabel78 = new javax.swing.JLabel();
+        jPanel54 = new javax.swing.JPanel();
+        jPanel55 = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
+        jPanel56 = new javax.swing.JPanel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jPanel57 = new javax.swing.JPanel();
+        jLabel88 = new javax.swing.JLabel();
+        T9 = new javax.swing.JPanel();
+        jPanel58 = new javax.swing.JPanel();
+        jLabel89 = new javax.swing.JLabel();
+        jPanel59 = new javax.swing.JPanel();
+        jPanel60 = new javax.swing.JPanel();
+        jLabel90 = new javax.swing.JLabel();
+        jPanel61 = new javax.swing.JPanel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jPanel62 = new javax.swing.JPanel();
+        jLabel99 = new javax.swing.JLabel();
+        T10 = new javax.swing.JPanel();
+        jPanel63 = new javax.swing.JPanel();
+        jLabel100 = new javax.swing.JLabel();
+        jPanel64 = new javax.swing.JPanel();
+        jPanel65 = new javax.swing.JPanel();
+        jLabel101 = new javax.swing.JLabel();
+        jPanel66 = new javax.swing.JPanel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        jPanel67 = new javax.swing.JPanel();
+        jLabel110 = new javax.swing.JLabel();
+        T11 = new javax.swing.JPanel();
+        jPanel68 = new javax.swing.JPanel();
+        jLabel111 = new javax.swing.JLabel();
+        jPanel69 = new javax.swing.JPanel();
+        jPanel70 = new javax.swing.JPanel();
+        jLabel112 = new javax.swing.JLabel();
+        jPanel71 = new javax.swing.JPanel();
+        jLabel113 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
+        jPanel72 = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
+        T12 = new javax.swing.JPanel();
+        jPanel73 = new javax.swing.JPanel();
+        jLabel122 = new javax.swing.JLabel();
+        jPanel74 = new javax.swing.JPanel();
+        jPanel75 = new javax.swing.JPanel();
+        jLabel123 = new javax.swing.JLabel();
+        jPanel76 = new javax.swing.JPanel();
+        jLabel124 = new javax.swing.JLabel();
+        jLabel125 = new javax.swing.JLabel();
+        jLabel126 = new javax.swing.JLabel();
+        jLabel127 = new javax.swing.JLabel();
+        jLabel128 = new javax.swing.JLabel();
+        jLabel129 = new javax.swing.JLabel();
+        jLabel130 = new javax.swing.JLabel();
+        jLabel131 = new javax.swing.JLabel();
+        jPanel77 = new javax.swing.JPanel();
+        jLabel132 = new javax.swing.JLabel();
+        T13 = new javax.swing.JPanel();
+        jPanel78 = new javax.swing.JPanel();
+        jLabel133 = new javax.swing.JLabel();
+        jPanel79 = new javax.swing.JPanel();
+        jPanel80 = new javax.swing.JPanel();
+        jLabel134 = new javax.swing.JLabel();
+        jPanel81 = new javax.swing.JPanel();
+        jLabel135 = new javax.swing.JLabel();
+        jLabel136 = new javax.swing.JLabel();
+        jLabel137 = new javax.swing.JLabel();
+        jLabel138 = new javax.swing.JLabel();
+        jLabel139 = new javax.swing.JLabel();
+        jLabel140 = new javax.swing.JLabel();
+        jLabel141 = new javax.swing.JLabel();
+        jLabel142 = new javax.swing.JLabel();
+        jPanel82 = new javax.swing.JPanel();
+        jLabel143 = new javax.swing.JLabel();
+        T14 = new javax.swing.JPanel();
+        jPanel83 = new javax.swing.JPanel();
+        jLabel144 = new javax.swing.JLabel();
+        jPanel84 = new javax.swing.JPanel();
+        jPanel85 = new javax.swing.JPanel();
+        jLabel145 = new javax.swing.JLabel();
+        jPanel86 = new javax.swing.JPanel();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel147 = new javax.swing.JLabel();
+        jLabel148 = new javax.swing.JLabel();
+        jLabel149 = new javax.swing.JLabel();
+        jLabel150 = new javax.swing.JLabel();
+        jLabel151 = new javax.swing.JLabel();
+        jLabel152 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        jPanel87 = new javax.swing.JPanel();
+        jLabel154 = new javax.swing.JLabel();
+        T15 = new javax.swing.JPanel();
+        jPanel88 = new javax.swing.JPanel();
+        jLabel155 = new javax.swing.JLabel();
+        jPanel89 = new javax.swing.JPanel();
+        jPanel90 = new javax.swing.JPanel();
+        jLabel156 = new javax.swing.JLabel();
+        jPanel91 = new javax.swing.JPanel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
+        jLabel159 = new javax.swing.JLabel();
+        jLabel160 = new javax.swing.JLabel();
+        jLabel161 = new javax.swing.JLabel();
+        jLabel162 = new javax.swing.JLabel();
+        jLabel163 = new javax.swing.JLabel();
+        jLabel164 = new javax.swing.JLabel();
+        jPanel92 = new javax.swing.JPanel();
+        jLabel165 = new javax.swing.JLabel();
+        T16 = new javax.swing.JPanel();
+        jPanel93 = new javax.swing.JPanel();
+        jLabel166 = new javax.swing.JLabel();
+        jPanel94 = new javax.swing.JPanel();
+        jPanel95 = new javax.swing.JPanel();
+        jLabel167 = new javax.swing.JLabel();
+        jPanel96 = new javax.swing.JPanel();
+        jLabel168 = new javax.swing.JLabel();
+        jLabel169 = new javax.swing.JLabel();
+        jLabel170 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
+        jLabel172 = new javax.swing.JLabel();
+        jLabel173 = new javax.swing.JLabel();
+        jLabel174 = new javax.swing.JLabel();
+        jLabel175 = new javax.swing.JLabel();
+        jPanel97 = new javax.swing.JPanel();
+        jLabel176 = new javax.swing.JLabel();
+        start = new javax.swing.JLabel();
         backgound = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1080, 720));
-        setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 755));
+        setPreferredSize(new java.awt.Dimension(1080, 755));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button (5).png"))); // NOI18N
-        add(start);
-        start.setBounds(900, 20, 160, 70);
+        jPanel1.setMinimumSize(new java.awt.Dimension(1080, 720));
+        jPanel1.setLayout(null);
 
         moneyPanel.setBackground(new java.awt.Color(102, 102, 102));
         moneyPanel.setLayout(new java.awt.GridLayout(2, 0));
 
-        labelMoney.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        labelMoney.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         labelMoney.setForeground(new java.awt.Color(255, 255, 255));
         labelMoney.setText(" Money");
         moneyPanel.add(labelMoney);
 
-        money.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        money.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         money.setForeground(new java.awt.Color(255, 255, 255));
         money.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         money.setText("200 $ ");
         money.setToolTipText("");
         moneyPanel.add(money);
 
-        add(moneyPanel);
+        jPanel1.add(moneyPanel);
         moneyPanel.setBounds(20, 20, 170, 70);
 
         title.setFont(new java.awt.Font("Impact", 1, 56)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
         title.setText("CHOSE YOUR THNK");
-        add(title);
+        jPanel1.add(title);
         title.setBounds(320, 20, 460, 70);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridLayout(4, 4, 4, 4));
+        jPanel2.setLayout(new java.awt.GridLayout(4, 4));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel1.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel1.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel1);
-        jPanel1.getAccessibleContext().setAccessibleName("");
+        T1.setBackground(new java.awt.Color(0, 0, 0));
+        T1.setForeground(new java.awt.Color(102, 255, 102));
+        T1.setMinimumSize(new java.awt.Dimension(250, 250));
+        T1.setPreferredSize(new java.awt.Dimension(250, 140));
+        T1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T1MousePressed(evt);
+            }
+        });
+        T1.setLayout(new java.awt.GridLayout(1, 2));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel3.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel3.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel3);
-        jPanel3.getAccessibleContext().setAccessibleName("");
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel4.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel4.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel4);
-        jPanel4.getAccessibleContext().setAccessibleName("");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m4.png"))); // NOI18N
+        jPanel19.add(jLabel1);
+        jLabel1.setBounds(0, 30, 130, 90);
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel5.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel5.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel5);
-        jPanel5.getAccessibleContext().setAccessibleName("");
+        T1.add(jPanel19);
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel6.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel6.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel6.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel6);
-        jPanel6.getAccessibleContext().setAccessibleName("");
+        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel18.setLayout(null);
 
-        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel7.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel7.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel7.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel7);
-        jPanel7.getAccessibleContext().setAccessibleName("");
+        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel8.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel8.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel8.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel8);
-        jPanel8.getAccessibleContext().setAccessibleName("");
+        jLabel2.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("M4");
+        jLabel2.setToolTipText("");
+        jPanel20.add(jLabel2);
 
-        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel9.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel9.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel9.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel9);
-        jPanel9.getAccessibleContext().setAccessibleName("");
+        jPanel18.add(jPanel20);
+        jPanel20.setBounds(0, 0, 130, 40);
 
-        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel10.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel10.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel10.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel10);
-        jPanel10.getAccessibleContext().setAccessibleName("");
+        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setLayout(null);
 
-        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel11.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel11.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel11.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel11);
-        jPanel11.getAccessibleContext().setAccessibleName("");
+        jLabel5.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel5.setText("Hp : ");
+        jPanel21.add(jLabel5);
+        jLabel5.setBounds(0, 0, 57, 20);
 
-        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel12.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel12.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel12.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel12);
-        jPanel12.getAccessibleContext().setAccessibleName("");
+        jLabel4.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel4.setText("100");
+        jPanel21.add(jLabel4);
+        jLabel4.setBounds(60, 0, 70, 20);
 
-        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel13.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel13.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel13.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel13);
-        jPanel13.getAccessibleContext().setAccessibleName("");
+        jLabel3.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel3.setText("Armor :");
+        jPanel21.add(jLabel3);
+        jLabel3.setBounds(0, 20, 57, 20);
 
-        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel14.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel14.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel14.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel14);
-        jPanel14.getAccessibleContext().setAccessibleName("");
+        jLabel6.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel6.setText("12/80/50");
+        jPanel21.add(jLabel6);
+        jLabel6.setBounds(60, 20, 70, 20);
 
-        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel15.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel15.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel15.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel15);
-        jPanel15.getAccessibleContext().setAccessibleName("");
+        jLabel7.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel7.setText("Damage :");
+        jPanel21.add(jLabel7);
+        jLabel7.setBounds(0, 40, 70, 20);
 
-        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel16.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel16.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel16.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel16);
-        jPanel16.getAccessibleContext().setAccessibleName("");
+        jLabel8.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel8.setText("200");
+        jPanel21.add(jLabel8);
+        jLabel8.setBounds(60, 40, 50, 20);
 
-        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel17.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel17.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel17.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel17);
-        jPanel17.getAccessibleContext().setAccessibleName("");
+        jLabel9.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel9.setText("Penetrate :");
+        jPanel21.add(jLabel9);
+        jLabel9.setBounds(0, 60, 70, 20);
 
-        add(jPanel2);
+        jLabel10.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel10.setText("150");
+        jPanel21.add(jLabel10);
+        jLabel10.setBounds(60, 60, 70, 20);
+
+        jPanel18.add(jPanel21);
+        jPanel21.setBounds(0, 40, 130, 83);
+
+        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel11.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel11.setText("205 $");
+        jPanel22.add(jLabel11);
+
+        jPanel18.add(jPanel22);
+        jPanel22.setBounds(0, 120, 130, 30);
+
+        T1.add(jPanel18);
+
+        jPanel2.add(T1);
+
+        T2.setBackground(new java.awt.Color(0, 0, 0));
+        T2.setForeground(new java.awt.Color(102, 255, 102));
+        T2.setMinimumSize(new java.awt.Dimension(250, 250));
+        T2.setPreferredSize(new java.awt.Dimension(250, 140));
+        T2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T2MouseEntered1(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T2MousePressed(evt);
+            }
+        });
+        T2.setLayout(new java.awt.GridLayout());
+
+        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel23.setLayout(null);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/panzer4.png"))); // NOI18N
+        jPanel23.add(jLabel12);
+        jLabel12.setBounds(0, 30, 130, 90);
+
+        T2.add(jPanel23);
+
+        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel24.setLayout(null);
+
+        jPanel25.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel13.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("PANZER4");
+        jPanel25.add(jLabel13);
+
+        jPanel24.add(jPanel25);
+        jPanel25.setBounds(0, 0, 130, 40);
+
+        jPanel26.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel26.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel14.setText("Hp : ");
+        jPanel26.add(jLabel14);
+        jLabel14.setBounds(0, 0, 57, 20);
+
+        jLabel15.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel15.setText("100");
+        jPanel26.add(jLabel15);
+        jLabel15.setBounds(60, 0, 70, 20);
+
+        jLabel16.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel16.setText("Armor :");
+        jPanel26.add(jLabel16);
+        jLabel16.setBounds(0, 20, 57, 20);
+
+        jLabel17.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel17.setText("12/80/50");
+        jPanel26.add(jLabel17);
+        jLabel17.setBounds(60, 20, 70, 20);
+
+        jLabel18.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel18.setText("Damage :");
+        jPanel26.add(jLabel18);
+        jLabel18.setBounds(0, 40, 70, 20);
+
+        jLabel19.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel19.setText("200");
+        jPanel26.add(jLabel19);
+        jLabel19.setBounds(60, 40, 50, 20);
+
+        jLabel20.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel20.setText("Penetrate :");
+        jPanel26.add(jLabel20);
+        jLabel20.setBounds(0, 60, 70, 20);
+
+        jLabel21.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel21.setText("150");
+        jPanel26.add(jLabel21);
+        jLabel21.setBounds(60, 60, 70, 20);
+
+        jPanel24.add(jPanel26);
+        jPanel26.setBounds(0, 40, 130, 83);
+
+        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel27.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel22.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel22.setText("205 $");
+        jPanel27.add(jLabel22);
+
+        jPanel24.add(jPanel27);
+        jPanel27.setBounds(0, 120, 130, 30);
+
+        T2.add(jPanel24);
+
+        jPanel2.add(T2);
+
+        T3.setBackground(new java.awt.Color(0, 0, 0));
+        T3.setForeground(new java.awt.Color(102, 255, 102));
+        T3.setMinimumSize(new java.awt.Dimension(250, 250));
+        T3.setPreferredSize(new java.awt.Dimension(250, 140));
+        T3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T3MousePressed(evt);
+            }
+        });
+        T3.setLayout(new java.awt.GridLayout());
+
+        jPanel28.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel28.setLayout(null);
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/cromwell.png"))); // NOI18N
+        jPanel28.add(jLabel23);
+        jLabel23.setBounds(0, 30, 130, 90);
+
+        T3.add(jPanel28);
+
+        jPanel29.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel29.setLayout(null);
+
+        jPanel30.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel24.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("CROMWELL");
+        jPanel30.add(jLabel24);
+
+        jPanel29.add(jPanel30);
+        jPanel30.setBounds(0, 0, 130, 40);
+
+        jPanel31.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel31.setLayout(null);
+
+        jLabel25.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel25.setText("Hp : ");
+        jPanel31.add(jLabel25);
+        jLabel25.setBounds(0, 0, 57, 20);
+
+        jLabel26.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel26.setText("100");
+        jPanel31.add(jLabel26);
+        jLabel26.setBounds(60, 0, 70, 20);
+
+        jLabel27.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel27.setText("Armor :");
+        jPanel31.add(jLabel27);
+        jLabel27.setBounds(0, 20, 57, 20);
+
+        jLabel28.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel28.setText("12/80/50");
+        jPanel31.add(jLabel28);
+        jLabel28.setBounds(60, 20, 70, 20);
+
+        jLabel29.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel29.setText("Damage :");
+        jPanel31.add(jLabel29);
+        jLabel29.setBounds(0, 40, 70, 20);
+
+        jLabel30.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel30.setText("200");
+        jPanel31.add(jLabel30);
+        jLabel30.setBounds(60, 40, 50, 20);
+
+        jLabel31.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel31.setText("Penetrate :");
+        jPanel31.add(jLabel31);
+        jLabel31.setBounds(0, 60, 70, 20);
+
+        jLabel32.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel32.setText("150");
+        jPanel31.add(jLabel32);
+        jLabel32.setBounds(60, 60, 70, 20);
+
+        jPanel29.add(jPanel31);
+        jPanel31.setBounds(0, 40, 130, 83);
+
+        jPanel32.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel32.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel33.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel33.setText("205 $");
+        jPanel32.add(jLabel33);
+
+        jPanel29.add(jPanel32);
+        jPanel32.setBounds(0, 120, 130, 30);
+
+        T3.add(jPanel29);
+
+        jPanel2.add(T3);
+
+        T4.setBackground(new java.awt.Color(0, 0, 0));
+        T4.setForeground(new java.awt.Color(102, 255, 102));
+        T4.setMinimumSize(new java.awt.Dimension(250, 250));
+        T4.setPreferredSize(new java.awt.Dimension(250, 140));
+        T4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T4MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T4MousePressed(evt);
+            }
+        });
+        T4.setLayout(new java.awt.GridLayout());
+
+        jPanel33.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel33.setLayout(null);
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/t34.png"))); // NOI18N
+        jPanel33.add(jLabel34);
+        jLabel34.setBounds(0, 30, 130, 90);
+
+        T4.add(jPanel33);
+
+        jPanel34.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel34.setLayout(null);
+
+        jPanel35.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel35.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("T34");
+        jPanel35.add(jLabel35);
+
+        jPanel34.add(jPanel35);
+        jPanel35.setBounds(0, 0, 130, 40);
+
+        jPanel36.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel36.setLayout(null);
+
+        jLabel36.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel36.setText("Hp : ");
+        jPanel36.add(jLabel36);
+        jLabel36.setBounds(0, 0, 57, 20);
+
+        jLabel37.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel37.setText("100");
+        jPanel36.add(jLabel37);
+        jLabel37.setBounds(60, 0, 70, 20);
+
+        jLabel38.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel38.setText("Armor :");
+        jPanel36.add(jLabel38);
+        jLabel38.setBounds(0, 20, 57, 20);
+
+        jLabel39.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel39.setText("12/80/50");
+        jPanel36.add(jLabel39);
+        jLabel39.setBounds(60, 20, 70, 20);
+
+        jLabel40.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel40.setText("Damage :");
+        jPanel36.add(jLabel40);
+        jLabel40.setBounds(0, 40, 70, 20);
+
+        jLabel41.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel41.setText("200");
+        jPanel36.add(jLabel41);
+        jLabel41.setBounds(60, 40, 50, 20);
+
+        jLabel42.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel42.setText("Penetrate :");
+        jPanel36.add(jLabel42);
+        jLabel42.setBounds(0, 60, 70, 20);
+
+        jLabel43.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel43.setText("150");
+        jPanel36.add(jLabel43);
+        jLabel43.setBounds(60, 60, 70, 20);
+
+        jPanel34.add(jPanel36);
+        jPanel36.setBounds(0, 40, 130, 83);
+
+        jPanel37.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel37.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel44.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel44.setText("205 $");
+        jPanel37.add(jLabel44);
+
+        jPanel34.add(jPanel37);
+        jPanel37.setBounds(0, 120, 130, 30);
+
+        T4.add(jPanel34);
+
+        jPanel2.add(T4);
+
+        T5.setBackground(new java.awt.Color(0, 0, 0));
+        T5.setForeground(new java.awt.Color(102, 255, 102));
+        T5.setMinimumSize(new java.awt.Dimension(250, 250));
+        T5.setPreferredSize(new java.awt.Dimension(250, 140));
+        T5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T5MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T5MousePressed(evt);
+            }
+        });
+        T5.setLayout(new java.awt.GridLayout());
+
+        jPanel38.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel38.setLayout(null);
+
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m4a3e8.png"))); // NOI18N
+        jPanel38.add(jLabel45);
+        jLabel45.setBounds(0, 30, 130, 90);
+
+        T5.add(jPanel38);
+
+        jPanel39.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel39.setLayout(null);
+
+        jPanel40.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel46.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("M4A3E8");
+        jPanel40.add(jLabel46);
+
+        jPanel39.add(jPanel40);
+        jPanel40.setBounds(0, 0, 130, 40);
+
+        jPanel41.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel41.setLayout(null);
+
+        jLabel47.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel47.setText("Hp : ");
+        jPanel41.add(jLabel47);
+        jLabel47.setBounds(0, 0, 57, 20);
+
+        jLabel48.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel48.setText("100");
+        jPanel41.add(jLabel48);
+        jLabel48.setBounds(60, 0, 70, 20);
+
+        jLabel49.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel49.setText("Armor :");
+        jPanel41.add(jLabel49);
+        jLabel49.setBounds(0, 20, 57, 20);
+
+        jLabel50.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel50.setText("12/80/50");
+        jPanel41.add(jLabel50);
+        jLabel50.setBounds(60, 20, 70, 20);
+
+        jLabel51.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel51.setText("Damage :");
+        jPanel41.add(jLabel51);
+        jLabel51.setBounds(0, 40, 70, 20);
+
+        jLabel52.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel52.setText("200");
+        jPanel41.add(jLabel52);
+        jLabel52.setBounds(60, 40, 50, 20);
+
+        jLabel53.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel53.setText("Penetrate :");
+        jPanel41.add(jLabel53);
+        jLabel53.setBounds(0, 60, 70, 20);
+
+        jLabel54.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel54.setText("150");
+        jPanel41.add(jLabel54);
+        jLabel54.setBounds(60, 60, 70, 20);
+
+        jPanel39.add(jPanel41);
+        jPanel41.setBounds(0, 40, 130, 83);
+
+        jPanel42.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel42.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel55.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel55.setText("205 $");
+        jPanel42.add(jLabel55);
+
+        jPanel39.add(jPanel42);
+        jPanel42.setBounds(0, 120, 130, 30);
+
+        T5.add(jPanel39);
+
+        jPanel2.add(T5);
+
+        T6.setBackground(new java.awt.Color(0, 0, 0));
+        T6.setForeground(new java.awt.Color(102, 255, 102));
+        T6.setMinimumSize(new java.awt.Dimension(250, 250));
+        T6.setPreferredSize(new java.awt.Dimension(250, 140));
+        T6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T6MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T6MousePressed(evt);
+            }
+        });
+        T6.setLayout(new java.awt.GridLayout());
+
+        jPanel43.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel43.setLayout(null);
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/panther.png"))); // NOI18N
+        jPanel43.add(jLabel56);
+        jLabel56.setBounds(0, 30, 130, 90);
+
+        T6.add(jPanel43);
+
+        jPanel44.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel44.setLayout(null);
+
+        jPanel45.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel57.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setText("PANTHER");
+        jPanel45.add(jLabel57);
+
+        jPanel44.add(jPanel45);
+        jPanel45.setBounds(0, 0, 130, 40);
+
+        jPanel46.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel46.setLayout(null);
+
+        jLabel58.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel58.setText("Hp : ");
+        jPanel46.add(jLabel58);
+        jLabel58.setBounds(0, 0, 57, 20);
+
+        jLabel59.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel59.setText("100");
+        jPanel46.add(jLabel59);
+        jLabel59.setBounds(60, 0, 70, 20);
+
+        jLabel60.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel60.setText("Armor :");
+        jPanel46.add(jLabel60);
+        jLabel60.setBounds(0, 20, 57, 20);
+
+        jLabel61.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel61.setText("12/80/50");
+        jPanel46.add(jLabel61);
+        jLabel61.setBounds(60, 20, 70, 20);
+
+        jLabel62.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel62.setText("Damage :");
+        jPanel46.add(jLabel62);
+        jLabel62.setBounds(0, 40, 70, 20);
+
+        jLabel63.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel63.setText("200");
+        jPanel46.add(jLabel63);
+        jLabel63.setBounds(60, 40, 50, 20);
+
+        jLabel64.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel64.setText("Penetrate :");
+        jPanel46.add(jLabel64);
+        jLabel64.setBounds(0, 60, 70, 20);
+
+        jLabel65.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel65.setText("150");
+        jPanel46.add(jLabel65);
+        jLabel65.setBounds(60, 60, 70, 20);
+
+        jPanel44.add(jPanel46);
+        jPanel46.setBounds(0, 40, 130, 83);
+
+        jPanel47.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel47.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel66.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel66.setText("205 $");
+        jPanel47.add(jLabel66);
+
+        jPanel44.add(jPanel47);
+        jPanel47.setBounds(0, 120, 130, 30);
+
+        T6.add(jPanel44);
+
+        jPanel2.add(T6);
+
+        T7.setBackground(new java.awt.Color(0, 0, 0));
+        T7.setForeground(new java.awt.Color(102, 255, 102));
+        T7.setMinimumSize(new java.awt.Dimension(250, 250));
+        T7.setPreferredSize(new java.awt.Dimension(250, 140));
+        T7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T7MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T7MousePressed(evt);
+            }
+        });
+        T7.setLayout(new java.awt.GridLayout());
+
+        jPanel48.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel48.setLayout(null);
+
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/firefly.png"))); // NOI18N
+        jPanel48.add(jLabel67);
+        jLabel67.setBounds(0, 30, 130, 90);
+
+        T7.add(jPanel48);
+
+        jPanel49.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel49.setLayout(null);
+
+        jPanel50.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel68.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel68.setText("FIREFLY");
+        jPanel50.add(jLabel68);
+
+        jPanel49.add(jPanel50);
+        jPanel50.setBounds(0, 0, 130, 40);
+
+        jPanel51.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel51.setLayout(null);
+
+        jLabel69.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel69.setText("Hp : ");
+        jPanel51.add(jLabel69);
+        jLabel69.setBounds(0, 0, 57, 20);
+
+        jLabel70.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel70.setText("100");
+        jPanel51.add(jLabel70);
+        jLabel70.setBounds(60, 0, 70, 20);
+
+        jLabel71.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel71.setText("Armor :");
+        jPanel51.add(jLabel71);
+        jLabel71.setBounds(0, 20, 57, 20);
+
+        jLabel72.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel72.setText("12/80/50");
+        jPanel51.add(jLabel72);
+        jLabel72.setBounds(60, 20, 70, 20);
+
+        jLabel73.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel73.setText("Damage :");
+        jPanel51.add(jLabel73);
+        jLabel73.setBounds(0, 40, 70, 20);
+
+        jLabel74.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel74.setText("200");
+        jPanel51.add(jLabel74);
+        jLabel74.setBounds(60, 40, 50, 20);
+
+        jLabel75.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel75.setText("Penetrate :");
+        jPanel51.add(jLabel75);
+        jLabel75.setBounds(0, 60, 70, 20);
+
+        jLabel76.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel76.setText("150");
+        jPanel51.add(jLabel76);
+        jLabel76.setBounds(60, 60, 70, 20);
+
+        jPanel49.add(jPanel51);
+        jPanel51.setBounds(0, 40, 130, 83);
+
+        jPanel52.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel52.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel77.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel77.setText("205 $");
+        jPanel52.add(jLabel77);
+
+        jPanel49.add(jPanel52);
+        jPanel52.setBounds(0, 120, 130, 30);
+
+        T7.add(jPanel49);
+
+        jPanel2.add(T7);
+
+        T8.setBackground(new java.awt.Color(0, 0, 0));
+        T8.setForeground(new java.awt.Color(102, 255, 102));
+        T8.setMinimumSize(new java.awt.Dimension(250, 250));
+        T8.setPreferredSize(new java.awt.Dimension(250, 140));
+        T8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T8MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T8MousePressed(evt);
+            }
+        });
+        T8.setLayout(new java.awt.GridLayout());
+
+        jPanel53.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel53.setLayout(null);
+
+        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/kv1.png"))); // NOI18N
+        jPanel53.add(jLabel78);
+        jLabel78.setBounds(0, 30, 130, 90);
+
+        T8.add(jPanel53);
+
+        jPanel54.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel54.setLayout(null);
+
+        jPanel55.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel79.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel79.setText("KV1");
+        jPanel55.add(jLabel79);
+
+        jPanel54.add(jPanel55);
+        jPanel55.setBounds(0, 0, 130, 40);
+
+        jPanel56.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel56.setLayout(null);
+
+        jLabel80.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel80.setText("Hp : ");
+        jPanel56.add(jLabel80);
+        jLabel80.setBounds(0, 0, 57, 20);
+
+        jLabel81.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel81.setText("100");
+        jPanel56.add(jLabel81);
+        jLabel81.setBounds(60, 0, 70, 20);
+
+        jLabel82.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel82.setText("Armor :");
+        jPanel56.add(jLabel82);
+        jLabel82.setBounds(0, 20, 57, 20);
+
+        jLabel83.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel83.setText("12/80/50");
+        jPanel56.add(jLabel83);
+        jLabel83.setBounds(60, 20, 70, 20);
+
+        jLabel84.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel84.setText("Damage :");
+        jPanel56.add(jLabel84);
+        jLabel84.setBounds(0, 40, 70, 20);
+
+        jLabel85.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel85.setText("200");
+        jPanel56.add(jLabel85);
+        jLabel85.setBounds(60, 40, 50, 20);
+
+        jLabel86.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel86.setText("Penetrate :");
+        jPanel56.add(jLabel86);
+        jLabel86.setBounds(0, 60, 70, 20);
+
+        jLabel87.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel87.setText("150");
+        jPanel56.add(jLabel87);
+        jLabel87.setBounds(60, 60, 70, 20);
+
+        jPanel54.add(jPanel56);
+        jPanel56.setBounds(0, 40, 130, 83);
+
+        jPanel57.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel57.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel88.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel88.setText("205 $");
+        jPanel57.add(jLabel88);
+
+        jPanel54.add(jPanel57);
+        jPanel57.setBounds(0, 120, 130, 30);
+
+        T8.add(jPanel54);
+
+        jPanel2.add(T8);
+
+        T9.setBackground(new java.awt.Color(0, 0, 0));
+        T9.setForeground(new java.awt.Color(102, 255, 102));
+        T9.setMinimumSize(new java.awt.Dimension(250, 250));
+        T9.setPreferredSize(new java.awt.Dimension(250, 140));
+        T9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T9MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T9MousePressed(evt);
+            }
+        });
+        T9.setLayout(new java.awt.GridLayout());
+
+        jPanel58.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel58.setLayout(null);
+
+        jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m26.png"))); // NOI18N
+        jPanel58.add(jLabel89);
+        jLabel89.setBounds(0, 30, 130, 90);
+
+        T9.add(jPanel58);
+
+        jPanel59.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel59.setLayout(null);
+
+        jPanel60.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel90.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel90.setText("M26");
+        jPanel60.add(jLabel90);
+
+        jPanel59.add(jPanel60);
+        jPanel60.setBounds(0, 0, 130, 40);
+
+        jPanel61.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel61.setLayout(null);
+
+        jLabel91.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel91.setText("Hp : ");
+        jPanel61.add(jLabel91);
+        jLabel91.setBounds(0, 0, 57, 20);
+
+        jLabel92.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel92.setText("100");
+        jPanel61.add(jLabel92);
+        jLabel92.setBounds(60, 0, 70, 20);
+
+        jLabel93.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel93.setText("Armor :");
+        jPanel61.add(jLabel93);
+        jLabel93.setBounds(0, 20, 57, 20);
+
+        jLabel94.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel94.setText("12/80/50");
+        jPanel61.add(jLabel94);
+        jLabel94.setBounds(60, 20, 70, 20);
+
+        jLabel95.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel95.setText("Damage :");
+        jPanel61.add(jLabel95);
+        jLabel95.setBounds(0, 40, 70, 20);
+
+        jLabel96.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel96.setText("200");
+        jPanel61.add(jLabel96);
+        jLabel96.setBounds(60, 40, 50, 20);
+
+        jLabel97.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel97.setText("Penetrate :");
+        jPanel61.add(jLabel97);
+        jLabel97.setBounds(0, 60, 70, 20);
+
+        jLabel98.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel98.setText("150");
+        jPanel61.add(jLabel98);
+        jLabel98.setBounds(60, 60, 70, 20);
+
+        jPanel59.add(jPanel61);
+        jPanel61.setBounds(0, 40, 130, 83);
+
+        jPanel62.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel62.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel99.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel99.setText("205 $");
+        jPanel62.add(jLabel99);
+
+        jPanel59.add(jPanel62);
+        jPanel62.setBounds(0, 120, 130, 30);
+
+        T9.add(jPanel59);
+
+        jPanel2.add(T9);
+
+        T10.setBackground(new java.awt.Color(0, 0, 0));
+        T10.setForeground(new java.awt.Color(102, 255, 102));
+        T10.setMinimumSize(new java.awt.Dimension(250, 250));
+        T10.setPreferredSize(new java.awt.Dimension(250, 140));
+        T10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T10MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T10MousePressed(evt);
+            }
+        });
+        T10.setLayout(new java.awt.GridLayout());
+
+        jPanel63.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel63.setLayout(null);
+
+        jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/tiger.png"))); // NOI18N
+        jPanel63.add(jLabel100);
+        jLabel100.setBounds(0, 30, 130, 90);
+
+        T10.add(jPanel63);
+
+        jPanel64.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel64.setLayout(null);
+
+        jPanel65.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel101.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setText("TIGER");
+        jPanel65.add(jLabel101);
+
+        jPanel64.add(jPanel65);
+        jPanel65.setBounds(0, 0, 130, 40);
+
+        jPanel66.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel66.setLayout(null);
+
+        jLabel102.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel102.setText("Hp : ");
+        jPanel66.add(jLabel102);
+        jLabel102.setBounds(0, 0, 57, 20);
+
+        jLabel103.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel103.setText("100");
+        jPanel66.add(jLabel103);
+        jLabel103.setBounds(60, 0, 70, 20);
+
+        jLabel104.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel104.setText("Armor :");
+        jPanel66.add(jLabel104);
+        jLabel104.setBounds(0, 20, 57, 20);
+
+        jLabel105.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel105.setText("12/80/50");
+        jPanel66.add(jLabel105);
+        jLabel105.setBounds(60, 20, 70, 20);
+
+        jLabel106.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel106.setText("Damage :");
+        jPanel66.add(jLabel106);
+        jLabel106.setBounds(0, 40, 70, 20);
+
+        jLabel107.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel107.setText("200");
+        jPanel66.add(jLabel107);
+        jLabel107.setBounds(60, 40, 50, 20);
+
+        jLabel108.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel108.setText("Penetrate :");
+        jPanel66.add(jLabel108);
+        jLabel108.setBounds(0, 60, 70, 20);
+
+        jLabel109.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel109.setText("150");
+        jPanel66.add(jLabel109);
+        jLabel109.setBounds(60, 60, 70, 20);
+
+        jPanel64.add(jPanel66);
+        jPanel66.setBounds(0, 40, 130, 83);
+
+        jPanel67.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel67.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel110.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel110.setText("205 $");
+        jPanel67.add(jLabel110);
+
+        jPanel64.add(jPanel67);
+        jPanel67.setBounds(0, 120, 130, 30);
+
+        T10.add(jPanel64);
+
+        jPanel2.add(T10);
+
+        T11.setBackground(new java.awt.Color(0, 0, 0));
+        T11.setForeground(new java.awt.Color(102, 255, 102));
+        T11.setMinimumSize(new java.awt.Dimension(250, 250));
+        T11.setPreferredSize(new java.awt.Dimension(250, 140));
+        T11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T11MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T11MousePressed(evt);
+            }
+        });
+        T11.setLayout(new java.awt.GridLayout());
+
+        jPanel68.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel68.setLayout(null);
+
+        jLabel111.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/churchill.png"))); // NOI18N
+        jPanel68.add(jLabel111);
+        jLabel111.setBounds(0, 30, 130, 90);
+
+        T11.add(jPanel68);
+
+        jPanel69.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel69.setLayout(null);
+
+        jPanel70.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel112.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel112.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel112.setText("CHURCHILL");
+        jPanel70.add(jLabel112);
+
+        jPanel69.add(jPanel70);
+        jPanel70.setBounds(0, 0, 130, 40);
+
+        jPanel71.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel71.setLayout(null);
+
+        jLabel113.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel113.setText("Hp : ");
+        jPanel71.add(jLabel113);
+        jLabel113.setBounds(0, 0, 57, 20);
+
+        jLabel114.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel114.setText("100");
+        jPanel71.add(jLabel114);
+        jLabel114.setBounds(60, 0, 70, 20);
+
+        jLabel115.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel115.setText("Armor :");
+        jPanel71.add(jLabel115);
+        jLabel115.setBounds(0, 20, 57, 20);
+
+        jLabel116.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel116.setText("12/80/50");
+        jPanel71.add(jLabel116);
+        jLabel116.setBounds(60, 20, 70, 20);
+
+        jLabel117.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel117.setText("Damage :");
+        jPanel71.add(jLabel117);
+        jLabel117.setBounds(0, 40, 70, 20);
+
+        jLabel118.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel118.setText("200");
+        jPanel71.add(jLabel118);
+        jLabel118.setBounds(60, 40, 50, 20);
+
+        jLabel119.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel119.setText("Penetrate :");
+        jPanel71.add(jLabel119);
+        jLabel119.setBounds(0, 60, 70, 20);
+
+        jLabel120.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel120.setText("150");
+        jPanel71.add(jLabel120);
+        jLabel120.setBounds(60, 60, 70, 20);
+
+        jPanel69.add(jPanel71);
+        jPanel71.setBounds(0, 40, 130, 83);
+
+        jPanel72.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel72.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel121.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel121.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel121.setText("205 $");
+        jPanel72.add(jLabel121);
+
+        jPanel69.add(jPanel72);
+        jPanel72.setBounds(0, 120, 130, 30);
+
+        T11.add(jPanel69);
+
+        jPanel2.add(T11);
+
+        T12.setBackground(new java.awt.Color(0, 0, 0));
+        T12.setForeground(new java.awt.Color(102, 255, 102));
+        T12.setMinimumSize(new java.awt.Dimension(250, 250));
+        T12.setPreferredSize(new java.awt.Dimension(250, 140));
+        T12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T12MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T12MousePressed(evt);
+            }
+        });
+        T12.setLayout(new java.awt.GridLayout());
+
+        jPanel73.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel73.setLayout(null);
+
+        jLabel122.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/is2.png"))); // NOI18N
+        jPanel73.add(jLabel122);
+        jLabel122.setBounds(0, 30, 130, 90);
+
+        T12.add(jPanel73);
+
+        jPanel74.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel74.setLayout(null);
+
+        jPanel75.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel123.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel123.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel123.setText("IS2");
+        jPanel75.add(jLabel123);
+
+        jPanel74.add(jPanel75);
+        jPanel75.setBounds(0, 0, 130, 40);
+
+        jPanel76.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel76.setLayout(null);
+
+        jLabel124.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel124.setText("Hp : ");
+        jPanel76.add(jLabel124);
+        jLabel124.setBounds(0, 0, 57, 20);
+
+        jLabel125.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel125.setText("100");
+        jPanel76.add(jLabel125);
+        jLabel125.setBounds(60, 0, 70, 20);
+
+        jLabel126.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel126.setText("Armor :");
+        jPanel76.add(jLabel126);
+        jLabel126.setBounds(0, 20, 57, 20);
+
+        jLabel127.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel127.setText("12/80/50");
+        jPanel76.add(jLabel127);
+        jLabel127.setBounds(60, 20, 70, 20);
+
+        jLabel128.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel128.setText("Damage :");
+        jPanel76.add(jLabel128);
+        jLabel128.setBounds(0, 40, 70, 20);
+
+        jLabel129.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel129.setText("200");
+        jPanel76.add(jLabel129);
+        jLabel129.setBounds(60, 40, 50, 20);
+
+        jLabel130.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel130.setText("Penetrate :");
+        jPanel76.add(jLabel130);
+        jLabel130.setBounds(0, 60, 70, 20);
+
+        jLabel131.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel131.setText("150");
+        jPanel76.add(jLabel131);
+        jLabel131.setBounds(60, 60, 70, 20);
+
+        jPanel74.add(jPanel76);
+        jPanel76.setBounds(0, 40, 130, 83);
+
+        jPanel77.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel77.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel132.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel132.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel132.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel132.setText("205 $");
+        jPanel77.add(jLabel132);
+
+        jPanel74.add(jPanel77);
+        jPanel77.setBounds(0, 120, 130, 30);
+
+        T12.add(jPanel74);
+
+        jPanel2.add(T12);
+
+        T13.setBackground(new java.awt.Color(0, 0, 0));
+        T13.setForeground(new java.awt.Color(102, 255, 102));
+        T13.setMinimumSize(new java.awt.Dimension(250, 250));
+        T13.setPreferredSize(new java.awt.Dimension(250, 140));
+        T13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T13MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T13MousePressed(evt);
+            }
+        });
+        T13.setLayout(new java.awt.GridLayout());
+
+        jPanel78.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel78.setLayout(null);
+
+        jLabel133.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m26s.png"))); // NOI18N
+        jPanel78.add(jLabel133);
+        jLabel133.setBounds(0, 30, 130, 90);
+
+        T13.add(jPanel78);
+
+        jPanel79.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel79.setLayout(null);
+
+        jPanel80.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel134.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel134.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel134.setText("M26S");
+        jPanel80.add(jLabel134);
+
+        jPanel79.add(jPanel80);
+        jPanel80.setBounds(0, 0, 130, 40);
+
+        jPanel81.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel81.setLayout(null);
+
+        jLabel135.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel135.setText("Hp : ");
+        jPanel81.add(jLabel135);
+        jLabel135.setBounds(0, 0, 57, 20);
+
+        jLabel136.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel136.setText("100");
+        jPanel81.add(jLabel136);
+        jLabel136.setBounds(60, 0, 70, 20);
+
+        jLabel137.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel137.setText("Armor :");
+        jPanel81.add(jLabel137);
+        jLabel137.setBounds(0, 20, 57, 20);
+
+        jLabel138.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel138.setText("12/80/50");
+        jPanel81.add(jLabel138);
+        jLabel138.setBounds(60, 20, 70, 20);
+
+        jLabel139.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel139.setText("Damage :");
+        jPanel81.add(jLabel139);
+        jLabel139.setBounds(0, 40, 70, 20);
+
+        jLabel140.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel140.setText("200");
+        jPanel81.add(jLabel140);
+        jLabel140.setBounds(60, 40, 50, 20);
+
+        jLabel141.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel141.setText("Penetrate :");
+        jPanel81.add(jLabel141);
+        jLabel141.setBounds(0, 60, 70, 20);
+
+        jLabel142.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel142.setText("150");
+        jPanel81.add(jLabel142);
+        jLabel142.setBounds(60, 60, 70, 20);
+
+        jPanel79.add(jPanel81);
+        jPanel81.setBounds(0, 40, 130, 83);
+
+        jPanel82.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel82.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel143.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel143.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel143.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel143.setText("205 $");
+        jPanel82.add(jLabel143);
+
+        jPanel79.add(jPanel82);
+        jPanel82.setBounds(0, 120, 130, 30);
+
+        T13.add(jPanel79);
+
+        jPanel2.add(T13);
+
+        T14.setBackground(new java.awt.Color(0, 0, 0));
+        T14.setForeground(new java.awt.Color(102, 255, 102));
+        T14.setMinimumSize(new java.awt.Dimension(250, 250));
+        T14.setPreferredSize(new java.awt.Dimension(250, 140));
+        T14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T14MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T14MousePressed(evt);
+            }
+        });
+        T14.setLayout(new java.awt.GridLayout());
+
+        jPanel83.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel83.setLayout(null);
+
+        jLabel144.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/tiger2.png"))); // NOI18N
+        jPanel83.add(jLabel144);
+        jLabel144.setBounds(0, 30, 130, 90);
+
+        T14.add(jPanel83);
+
+        jPanel84.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel84.setLayout(null);
+
+        jPanel85.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel145.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel145.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel145.setText("TIGER2");
+        jPanel85.add(jLabel145);
+
+        jPanel84.add(jPanel85);
+        jPanel85.setBounds(0, 0, 130, 40);
+
+        jPanel86.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel86.setLayout(null);
+
+        jLabel146.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel146.setText("Hp : ");
+        jPanel86.add(jLabel146);
+        jLabel146.setBounds(0, 0, 57, 20);
+
+        jLabel147.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel147.setText("100");
+        jPanel86.add(jLabel147);
+        jLabel147.setBounds(60, 0, 70, 20);
+
+        jLabel148.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel148.setText("Armor :");
+        jPanel86.add(jLabel148);
+        jLabel148.setBounds(0, 20, 57, 20);
+
+        jLabel149.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel149.setText("12/80/50");
+        jPanel86.add(jLabel149);
+        jLabel149.setBounds(60, 20, 70, 20);
+
+        jLabel150.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel150.setText("Damage :");
+        jPanel86.add(jLabel150);
+        jLabel150.setBounds(0, 40, 70, 20);
+
+        jLabel151.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel151.setText("200");
+        jPanel86.add(jLabel151);
+        jLabel151.setBounds(60, 40, 50, 20);
+
+        jLabel152.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel152.setText("Penetrate :");
+        jPanel86.add(jLabel152);
+        jLabel152.setBounds(0, 60, 70, 20);
+
+        jLabel153.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel153.setText("150");
+        jPanel86.add(jLabel153);
+        jLabel153.setBounds(60, 60, 70, 20);
+
+        jPanel84.add(jPanel86);
+        jPanel86.setBounds(0, 40, 130, 83);
+
+        jPanel87.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel87.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel154.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel154.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel154.setText("205 $");
+        jPanel87.add(jLabel154);
+
+        jPanel84.add(jPanel87);
+        jPanel87.setBounds(0, 120, 130, 30);
+
+        T14.add(jPanel84);
+
+        jPanel2.add(T14);
+
+        T15.setBackground(new java.awt.Color(0, 0, 0));
+        T15.setForeground(new java.awt.Color(102, 255, 102));
+        T15.setMinimumSize(new java.awt.Dimension(250, 250));
+        T15.setPreferredSize(new java.awt.Dimension(250, 140));
+        T15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T15MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T15MousePressed(evt);
+            }
+        });
+        T15.setLayout(new java.awt.GridLayout());
+
+        jPanel88.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel88.setLayout(null);
+
+        jLabel155.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/comet.png"))); // NOI18N
+        jPanel88.add(jLabel155);
+        jLabel155.setBounds(0, 30, 130, 90);
+
+        T15.add(jPanel88);
+
+        jPanel89.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel89.setLayout(null);
+
+        jPanel90.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel156.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel156.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel156.setText("COMET");
+        jPanel90.add(jLabel156);
+
+        jPanel89.add(jPanel90);
+        jPanel90.setBounds(0, 0, 130, 40);
+
+        jPanel91.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel91.setLayout(null);
+
+        jLabel157.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel157.setText("Hp : ");
+        jPanel91.add(jLabel157);
+        jLabel157.setBounds(0, 0, 57, 20);
+
+        jLabel158.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel158.setText("100");
+        jPanel91.add(jLabel158);
+        jLabel158.setBounds(60, 0, 70, 20);
+
+        jLabel159.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel159.setText("Armor :");
+        jPanel91.add(jLabel159);
+        jLabel159.setBounds(0, 20, 57, 20);
+
+        jLabel160.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel160.setText("12/80/50");
+        jPanel91.add(jLabel160);
+        jLabel160.setBounds(60, 20, 70, 20);
+
+        jLabel161.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel161.setText("Damage :");
+        jPanel91.add(jLabel161);
+        jLabel161.setBounds(0, 40, 70, 20);
+
+        jLabel162.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel162.setText("200");
+        jPanel91.add(jLabel162);
+        jLabel162.setBounds(60, 40, 50, 20);
+
+        jLabel163.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel163.setText("Penetrate :");
+        jPanel91.add(jLabel163);
+        jLabel163.setBounds(0, 60, 70, 20);
+
+        jLabel164.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel164.setText("150");
+        jPanel91.add(jLabel164);
+        jLabel164.setBounds(60, 60, 70, 20);
+
+        jPanel89.add(jPanel91);
+        jPanel91.setBounds(0, 40, 130, 83);
+
+        jPanel92.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel92.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel165.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel165.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel165.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel165.setText("205 $");
+        jPanel92.add(jLabel165);
+
+        jPanel89.add(jPanel92);
+        jPanel92.setBounds(0, 120, 130, 30);
+
+        T15.add(jPanel89);
+
+        jPanel2.add(T15);
+
+        T16.setBackground(new java.awt.Color(0, 0, 0));
+        T16.setForeground(new java.awt.Color(102, 255, 102));
+        T16.setMinimumSize(new java.awt.Dimension(250, 250));
+        T16.setPreferredSize(new java.awt.Dimension(250, 140));
+        T16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T16MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T16MousePressed(evt);
+            }
+        });
+        T16.setLayout(new java.awt.GridLayout());
+
+        jPanel93.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel93.setLayout(null);
+
+        jLabel166.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/is3.png"))); // NOI18N
+        jPanel93.add(jLabel166);
+        jLabel166.setBounds(0, 30, 130, 90);
+
+        T16.add(jPanel93);
+
+        jPanel94.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel94.setLayout(null);
+
+        jPanel95.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel167.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel167.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel167.setText("IS3");
+        jPanel95.add(jLabel167);
+
+        jPanel94.add(jPanel95);
+        jPanel95.setBounds(0, 0, 130, 40);
+
+        jPanel96.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel96.setLayout(null);
+
+        jLabel168.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel168.setText("Hp : ");
+        jPanel96.add(jLabel168);
+        jLabel168.setBounds(0, 0, 57, 20);
+
+        jLabel169.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel169.setText("100");
+        jPanel96.add(jLabel169);
+        jLabel169.setBounds(60, 0, 70, 20);
+
+        jLabel170.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel170.setText("Armor :");
+        jPanel96.add(jLabel170);
+        jLabel170.setBounds(0, 20, 57, 20);
+
+        jLabel171.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel171.setText("12/80/50");
+        jPanel96.add(jLabel171);
+        jLabel171.setBounds(60, 20, 70, 20);
+
+        jLabel172.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel172.setText("Damage :");
+        jPanel96.add(jLabel172);
+        jLabel172.setBounds(0, 40, 70, 20);
+
+        jLabel173.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel173.setText("200");
+        jPanel96.add(jLabel173);
+        jLabel173.setBounds(60, 40, 50, 20);
+
+        jLabel174.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel174.setText("Penetrate :");
+        jPanel96.add(jLabel174);
+        jLabel174.setBounds(0, 60, 70, 20);
+
+        jLabel175.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel175.setText("150");
+        jPanel96.add(jLabel175);
+        jLabel175.setBounds(60, 60, 70, 20);
+
+        jPanel94.add(jPanel96);
+        jPanel96.setBounds(0, 40, 130, 83);
+
+        jPanel97.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel97.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel176.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel176.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel176.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel176.setText("205 $");
+        jPanel97.add(jLabel176);
+
+        jPanel94.add(jPanel97);
+        jPanel97.setBounds(0, 120, 130, 30);
+
+        T16.add(jPanel94);
+
+        jPanel2.add(T16);
+
+        jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 110, 1040, 600);
+
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/intogame.png"))); // NOI18N
+        start.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                startMousePressed(evt);
+            }
+        });
+        jPanel1.add(start);
+        start.setBounds(930, 30, 140, 50);
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/opl.jpg"))); // NOI18N
         backgound.setMinimumSize(new java.awt.Dimension(1080, 720));
         backgound.setPreferredSize(new java.awt.Dimension(1899, 1416));
-        add(backgound);
+        jPanel1.add(backgound);
         backgound.setBounds(0, -70, 1940, 1416);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1080, 720);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+ private void check(int i){
+        switch(i){
+            case 1:
+                tank = "m4";
+                chose = 1;
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 2:
+                chose = 2;
+                tank = "panzer4";
+                T1.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 3:
+                chose = 3;
+                tank = "cromwell";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 4:
+                 chose = 4;
+                 tank = "t34";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 5:
+                chose = 5;
+                tank = "m4a3e8";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 6:
+                chose = 6;
+                tank = "panther";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 7:
+                chose = 7;
+                tank = "firefly";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 8:
+                chose = 8;
+                tank = "kv1";
+               T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 9:
+                chose = 9;
+                tank = "m26";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 10:
+                chose = 10;
+                tank = "tiger";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 11:
+                chose = 11;
+                tank = "churchill";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 12:
+                chose = 12;
+                tank = "is2";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 13:
+                chose = 13;
+                tank = "m26s";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 14:
+                chose = 14;
+                tank = "tiger2";
+               T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 15:
+                chose = 15;
+                tank = "comet";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 16:
+                chose = 16;
+                tank = "is3";
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                break;
+        }
+    }
 
+    private void T1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MouseEntered
+        // TODO add your handling code here:
+        if(chose != 1)  T1.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T1MouseEntered
 
+    private void T1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MouseExited
+        // TODO add your handling code here:
+        if(chose != 1)T1.setBorder(null);
+        
+    }//GEN-LAST:event_T1MouseExited
+
+    private void T1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MousePressed
+        // TODO add your handling code here:
+        if(chose != 1){
+            T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(1);
+        }
+    }//GEN-LAST:event_T1MousePressed
+
+    private void T2MouseEntered1(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MouseEntered1
+        // TODO add your handling code here:
+        if(chose != 2)  T2.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T2MouseEntered1
+
+    private void T2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MouseExited
+        // TODO add your handling code here:
+         if(chose != 2)  T2.setBorder(null);
+    }//GEN-LAST:event_T2MouseExited
+
+    private void T2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MousePressed
+        // TODO add your handling code here:
+      if(chose != 2){
+            T2.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(2);
+        }
+    }//GEN-LAST:event_T2MousePressed
+
+    private void T3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MouseEntered
+        // TODO add your handling code here:
+        if(chose != 3)  T3.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T3MouseEntered
+
+    private void T3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MouseExited
+        // TODO add your handling code here:
+         if(chose != 3)  T3.setBorder(null);
+    }//GEN-LAST:event_T3MouseExited
+
+    private void T3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MousePressed
+        // TODO add your handling code here:
+        if(chose != 3){
+            T3.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(3);
+        }
+    }//GEN-LAST:event_T3MousePressed
+
+    private void T4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MouseEntered
+        // TODO add your handling code here:
+        if(chose != 4)  T4.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T4MouseEntered
+
+    private void T4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MouseExited
+        // TODO add your handling code here:
+         if(chose != 4)  T4.setBorder(null);
+    }//GEN-LAST:event_T4MouseExited
+
+    private void T4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MousePressed
+        // TODO add your handling code here:
+      if(chose != 4){
+            T4.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(4);
+        }
+    }//GEN-LAST:event_T4MousePressed
+
+    private void T5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T5MouseEntered
+        // TODO add your handling code here:
+        if(chose != 5)  T5.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T5MouseEntered
+
+    private void T5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T5MouseExited
+        // TODO add your handling code here:
+        if(chose != 5)  T5.setBorder(null);
+    }//GEN-LAST:event_T5MouseExited
+
+    private void T6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T6MouseEntered
+        // TODO add your handling code here:
+        if(chose != 6)  T6.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T6MouseEntered
+
+    private void T6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T6MouseExited
+        // TODO add your handling code here:
+        if(chose != 6)  T6.setBorder(null);
+    }//GEN-LAST:event_T6MouseExited
+
+    private void T7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T7MouseEntered
+        // TODO add your handling code here:
+        if(chose != 7)  T7.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T7MouseEntered
+
+    private void T7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T7MouseExited
+        // TODO add your handling code here:
+        if(chose != 7)  T7.setBorder(null);
+    }//GEN-LAST:event_T7MouseExited
+
+    private void T8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T8MouseEntered
+        // TODO add your handling code here:
+        if(chose != 8)  T8.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T8MouseEntered
+
+    private void T8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T8MouseExited
+        // TODO add your handling code here:
+        if(chose != 8)  T8.setBorder(null);
+    }//GEN-LAST:event_T8MouseExited
+
+    private void T9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T9MouseEntered
+        // TODO add your handling code here:
+        if(chose != 9)  T9.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T9MouseEntered
+
+    private void T9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T9MouseExited
+        // TODO add your handling code here:
+        if(chose != 9)  T9.setBorder(null);
+    }//GEN-LAST:event_T9MouseExited
+
+    private void T10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T10MouseEntered
+        // TODO add your handling code here:
+        if(chose != 10)  T10.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T10MouseEntered
+
+    private void T10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T10MouseExited
+        // TODO add your handling code here:
+        if(chose != 10)  T10.setBorder(null);
+    }//GEN-LAST:event_T10MouseExited
+
+    private void T11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T11MouseEntered
+        // TODO add your handling code here:
+        if(chose != 11)  T11.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T11MouseEntered
+
+    private void T11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T11MouseExited
+        // TODO add your handling code here:
+        if(chose != 11)  T11.setBorder(null);
+    }//GEN-LAST:event_T11MouseExited
+
+    private void T12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T12MouseEntered
+        // TODO add your handling code here:
+        if(chose != 12)  T12.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T12MouseEntered
+
+    private void T12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T12MouseExited
+        // TODO add your handling code here:
+        if(chose != 12)  T12.setBorder(null);
+    }//GEN-LAST:event_T12MouseExited
+
+    private void T13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T13MouseEntered
+        // TODO add your handling code here:
+        if(chose != 13)  T13.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T13MouseEntered
+
+    private void T13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T13MouseExited
+        // TODO add your handling code here:
+        if(chose != 13)  T13.setBorder(null);
+    }//GEN-LAST:event_T13MouseExited
+
+    private void T14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T14MouseEntered
+        // TODO add your handling code here:
+        if(chose != 14)  T14.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T14MouseEntered
+
+    private void T14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T14MouseExited
+        // TODO add your handling code here:
+        if(chose != 14)  T14.setBorder(null);
+    }//GEN-LAST:event_T14MouseExited
+
+    private void T15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T15MouseEntered
+        // TODO add your handling code here:4
+        if(chose != 15)  T15.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T15MouseEntered
+
+    private void T15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T15MouseExited
+        // TODO add your handling code here:
+        if(chose != 15)  T15.setBorder(null);
+    }//GEN-LAST:event_T15MouseExited
+
+    private void T16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T16MouseEntered
+        // TODO add your handling code here:
+        if(chose != 16)  T16.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T16MouseEntered
+
+    private void T16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T16MouseExited
+        // TODO add your handling code here:
+        if(chose != 16)  T16.setBorder(null);
+    }//GEN-LAST:event_T16MouseExited
+
+    private void T5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T5MousePressed
+        // TODO add your handling code here:
+        if(chose != 5){
+            T5.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(5);
+        }
+    }//GEN-LAST:event_T5MousePressed
+
+    private void T6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T6MousePressed
+        // TODO add your handling code here:
+        if(chose != 6){
+            T6.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(6);
+        }
+    }//GEN-LAST:event_T6MousePressed
+
+    private void T7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T7MousePressed
+        // TODO add your handling code here:
+        if(chose != 7){
+            T7.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(7);
+        }
+    }//GEN-LAST:event_T7MousePressed
+
+    private void T8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T8MousePressed
+        // TODO add your handling code here:
+        if(chose != 8){
+            T8.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(8);
+        }
+    }//GEN-LAST:event_T8MousePressed
+
+    private void T9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T9MousePressed
+        // TODO add your handling code here:
+        if(chose != 9){
+            T9.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(9);
+        }
+    }//GEN-LAST:event_T9MousePressed
+
+    private void T10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T10MousePressed
+        // TODO add your handling code here:
+        if(chose != 10){
+            T10.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(10);
+        }
+    }//GEN-LAST:event_T10MousePressed
+
+    private void T11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T11MousePressed
+        // TODO add your handling code here:
+        if(chose != 11){
+            T11.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(11);
+        }
+    }//GEN-LAST:event_T11MousePressed
+
+    private void T12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T12MousePressed
+        // TODO add your handling code here:
+        if(chose != 12){
+            T12.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(12);
+        }
+    }//GEN-LAST:event_T12MousePressed
+
+    private void T13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T13MousePressed
+        // TODO add your handling code here:
+        if(chose != 13){
+            T13.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(13);
+        }
+    }//GEN-LAST:event_T13MousePressed
+
+    private void T14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T14MousePressed
+        // TODO add your handling code here:
+        if(chose != 114){
+            T14.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(14);
+        }
+    }//GEN-LAST:event_T14MousePressed
+
+    private void T15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T15MousePressed
+        // TODO add your handling code here:
+        if(chose != 15){
+            T15.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(15);
+        }
+    }//GEN-LAST:event_T15MousePressed
+
+    private void T16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T16MousePressed
+        // TODO add your handling code here:
+        if(chose != 16){
+            T16.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(16);
+        }
+    }//GEN-LAST:event_T16MousePressed
+
+    private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
+        // TODO add your handling code here:
+        System.out.println(tank);
+    }//GEN-LAST:event_startMousePressed
+
+    private void startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseEntered
+        // TODO add your handling code here:        
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/intogame2.png")));
+    }//GEN-LAST:event_startMouseEntered
+
+    private void startMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseExited
+        // TODO add your handling code here:        
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/intogame.png")));
+    }//GEN-LAST:event_startMouseExited
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new prePlay().setVisible(true);
+            }
+        });
+    }
+    private int chose = 0;
+    private String tank = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel T1;
+    private javax.swing.JPanel T10;
+    private javax.swing.JPanel T11;
+    private javax.swing.JPanel T12;
+    private javax.swing.JPanel T13;
+    private javax.swing.JPanel T14;
+    private javax.swing.JPanel T15;
+    private javax.swing.JPanel T16;
+    private javax.swing.JPanel T2;
+    private javax.swing.JPanel T3;
+    private javax.swing.JPanel T4;
+    private javax.swing.JPanel T5;
+    private javax.swing.JPanel T6;
+    private javax.swing.JPanel T7;
+    private javax.swing.JPanel T8;
+    private javax.swing.JPanel T9;
     private javax.swing.JLabel backgound;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
+    private javax.swing.JLabel jLabel126;
+    private javax.swing.JLabel jLabel127;
+    private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
+    private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel159;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel161;
+    private javax.swing.JLabel jLabel162;
+    private javax.swing.JLabel jLabel163;
+    private javax.swing.JLabel jLabel164;
+    private javax.swing.JLabel jLabel165;
+    private javax.swing.JLabel jLabel166;
+    private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel169;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
+    private javax.swing.JLabel jLabel172;
+    private javax.swing.JLabel jLabel173;
+    private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel175;
+    private javax.swing.JLabel jLabel176;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
+    private javax.swing.JPanel jPanel72;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel74;
+    private javax.swing.JPanel jPanel75;
+    private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel78;
+    private javax.swing.JPanel jPanel79;
+    private javax.swing.JPanel jPanel80;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
+    private javax.swing.JPanel jPanel83;
+    private javax.swing.JPanel jPanel84;
+    private javax.swing.JPanel jPanel85;
+    private javax.swing.JPanel jPanel86;
+    private javax.swing.JPanel jPanel87;
+    private javax.swing.JPanel jPanel88;
+    private javax.swing.JPanel jPanel89;
+    private javax.swing.JPanel jPanel90;
+    private javax.swing.JPanel jPanel91;
+    private javax.swing.JPanel jPanel92;
+    private javax.swing.JPanel jPanel93;
+    private javax.swing.JPanel jPanel94;
+    private javax.swing.JPanel jPanel95;
+    private javax.swing.JPanel jPanel96;
+    private javax.swing.JPanel jPanel97;
     private javax.swing.JLabel labelMoney;
     private javax.swing.JLabel money;
     private javax.swing.JPanel moneyPanel;
