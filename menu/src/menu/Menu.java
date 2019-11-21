@@ -17,16 +17,22 @@ public class Menu {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-         JFrame f = new JFrame("title");
-        Home p1 = new Home();
-//        prePlay p2 = new prePlay();
-        about p3 = new about();
+            Frame f = new Frame();
+            Home p1 = new Home();
+            prePlay p2 = new prePlay();
+            f.add(p2);
+//            f.add(p1);
+            f.setVisible(true);
+            f.pack();
+//        JFrame f = new JFrame("title");
+//        Home p1 = new Home();
+//        prePlay pp = new prePlay();
+//        about p3 = new about();
 //        f.add(p1);
-        f.add(p3);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.pack();
-        f.setVisible(true);
+////        f.add(pp);
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        f.pack();
+//        f.setVisible(true);
     }
     
 }

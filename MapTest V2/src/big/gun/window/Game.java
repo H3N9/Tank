@@ -49,7 +49,7 @@ public class Game extends JPanel implements ActionListener{
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
         bot = new Ai(alli, axis, player, diff);
         con = new Condition(player, bot.getPersons());
-        map = new Map(2000, 0, bot.getPersons());
+        map = new Map(2000, 4000, bot.getPersons());
         bot.throwMap(map);
         start.start();
         bot.getTime().start();
