@@ -5,14 +5,17 @@
  */
 package menu;
 
+import java.awt.*;
+import javax.swing.*;
+
 /**
  *
  * @author PCoil
  */
-public class prePlay extends javax.swing.JPanel {
+public class prePlay extends javax.swing.JFrame {
 
     /**
-     * Creates new form Home
+     * Creates new form prePlay2
      */
     public prePlay() {
         initComponents();
@@ -27,38 +30,70 @@ public class prePlay extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        start = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         moneyPanel = new javax.swing.JPanel();
         labelMoney = new javax.swing.JLabel();
         money = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
+        T1 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        T2 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        T3 = new javax.swing.JPanel();
+        T4 = new javax.swing.JPanel();
+        T5 = new javax.swing.JPanel();
+        T6 = new javax.swing.JPanel();
+        T7 = new javax.swing.JPanel();
+        T8 = new javax.swing.JPanel();
+        T9 = new javax.swing.JPanel();
+        T10 = new javax.swing.JPanel();
+        T11 = new javax.swing.JPanel();
+        T12 = new javax.swing.JPanel();
+        T13 = new javax.swing.JPanel();
+        T14 = new javax.swing.JPanel();
+        T15 = new javax.swing.JPanel();
+        T16 = new javax.swing.JPanel();
         backgound = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1080, 720));
-        setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 755));
+        setPreferredSize(new java.awt.Dimension(1080, 755));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button (5).png"))); // NOI18N
-        add(start);
-        start.setBounds(900, 20, 160, 70);
+        jPanel1.setMinimumSize(new java.awt.Dimension(1080, 720));
+        jPanel1.setLayout(null);
 
         moneyPanel.setBackground(new java.awt.Color(102, 102, 102));
         moneyPanel.setLayout(new java.awt.GridLayout(2, 0));
@@ -75,164 +110,974 @@ public class prePlay extends javax.swing.JPanel {
         money.setToolTipText("");
         moneyPanel.add(money);
 
-        add(moneyPanel);
+        jPanel1.add(moneyPanel);
         moneyPanel.setBounds(20, 20, 170, 70);
 
         title.setFont(new java.awt.Font("Impact", 1, 56)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
         title.setText("CHOSE YOUR THNK");
-        add(title);
+        jPanel1.add(title);
         title.setBounds(320, 20, 460, 70);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridLayout(4, 4, 4, 4));
+        jPanel2.setLayout(new java.awt.GridLayout(4, 4));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel1.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel1.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel1);
-        jPanel1.getAccessibleContext().setAccessibleName("");
+        T1.setBackground(new java.awt.Color(0, 0, 0));
+        T1.setForeground(new java.awt.Color(102, 255, 102));
+        T1.setMinimumSize(new java.awt.Dimension(250, 250));
+        T1.setPreferredSize(new java.awt.Dimension(250, 140));
+        T1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T1MousePressed(evt);
+            }
+        });
+        T1.setLayout(new java.awt.GridLayout(1, 2));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel3.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel3.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel3);
-        jPanel3.getAccessibleContext().setAccessibleName("");
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel4.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel4.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel4);
-        jPanel4.getAccessibleContext().setAccessibleName("");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m4.png"))); // NOI18N
+        jPanel19.add(jLabel1);
+        jLabel1.setBounds(0, 30, 130, 90);
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel5.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel5.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel5);
-        jPanel5.getAccessibleContext().setAccessibleName("");
+        T1.add(jPanel19);
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel6.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel6.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel6.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel6);
-        jPanel6.getAccessibleContext().setAccessibleName("");
+        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel18.setLayout(null);
 
-        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel7.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel7.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel7.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel7);
-        jPanel7.getAccessibleContext().setAccessibleName("");
+        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel8.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel8.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel8.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel8);
-        jPanel8.getAccessibleContext().setAccessibleName("");
+        jLabel2.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("M4");
+        jPanel20.add(jLabel2);
 
-        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel9.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel9.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel9.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel9);
-        jPanel9.getAccessibleContext().setAccessibleName("");
+        jPanel18.add(jPanel20);
+        jPanel20.setBounds(0, 0, 130, 40);
 
-        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel10.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel10.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel10.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel10);
-        jPanel10.getAccessibleContext().setAccessibleName("");
+        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setLayout(null);
 
-        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel11.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel11.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel11.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel11);
-        jPanel11.getAccessibleContext().setAccessibleName("");
+        jLabel5.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel5.setText("Hp : ");
+        jPanel21.add(jLabel5);
+        jLabel5.setBounds(0, 0, 57, 20);
 
-        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel12.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel12.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel12.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel12);
-        jPanel12.getAccessibleContext().setAccessibleName("");
+        jLabel4.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel4.setText("100");
+        jPanel21.add(jLabel4);
+        jLabel4.setBounds(60, 0, 70, 20);
 
-        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel13.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel13.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel13.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel13);
-        jPanel13.getAccessibleContext().setAccessibleName("");
+        jLabel3.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel3.setText("Armor :");
+        jPanel21.add(jLabel3);
+        jLabel3.setBounds(0, 20, 57, 20);
 
-        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel14.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel14.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel14.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel14);
-        jPanel14.getAccessibleContext().setAccessibleName("");
+        jLabel6.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel6.setText("12/80/50");
+        jPanel21.add(jLabel6);
+        jLabel6.setBounds(60, 20, 70, 20);
 
-        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel15.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel15.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel15.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel15);
-        jPanel15.getAccessibleContext().setAccessibleName("");
+        jLabel7.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel7.setText("Damage :");
+        jPanel21.add(jLabel7);
+        jLabel7.setBounds(0, 40, 70, 20);
 
-        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel16.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel16.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel16.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel16);
-        jPanel16.getAccessibleContext().setAccessibleName("");
+        jLabel8.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel8.setText("200");
+        jPanel21.add(jLabel8);
+        jLabel8.setBounds(60, 40, 50, 20);
 
-        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel17.setForeground(new java.awt.Color(102, 255, 102));
-        jPanel17.setMinimumSize(new java.awt.Dimension(250, 250));
-        jPanel17.setPreferredSize(new java.awt.Dimension(250, 140));
-        jPanel2.add(jPanel17);
-        jPanel17.getAccessibleContext().setAccessibleName("");
+        jLabel9.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel9.setText("Penetrate :");
+        jPanel21.add(jLabel9);
+        jLabel9.setBounds(0, 60, 70, 20);
 
-        add(jPanel2);
+        jLabel10.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel10.setText("150");
+        jPanel21.add(jLabel10);
+        jLabel10.setBounds(60, 60, 70, 20);
+
+        jPanel18.add(jPanel21);
+        jPanel21.setBounds(0, 40, 130, 83);
+
+        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel11.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel11.setText("205 $");
+        jPanel22.add(jLabel11);
+
+        jPanel18.add(jPanel22);
+        jPanel22.setBounds(0, 120, 130, 30);
+
+        T1.add(jPanel18);
+
+        jPanel2.add(T1);
+
+        T2.setBackground(new java.awt.Color(0, 0, 0));
+        T2.setForeground(new java.awt.Color(102, 255, 102));
+        T2.setMinimumSize(new java.awt.Dimension(250, 250));
+        T2.setPreferredSize(new java.awt.Dimension(250, 140));
+        T2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T2MouseEntered1(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T2MousePressed(evt);
+            }
+        });
+
+        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel23.setLayout(null);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/collection/m4.png"))); // NOI18N
+        jPanel23.add(jLabel12);
+        jLabel12.setBounds(0, 30, 130, 90);
+
+        T2.add(jPanel23);
+
+        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel24.setLayout(null);
+
+        jPanel25.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel13.setFont(new java.awt.Font("Impact", 0, 22)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("M4");
+        jPanel25.add(jLabel13);
+
+        jPanel24.add(jPanel25);
+        jPanel25.setBounds(0, 0, 130, 40);
+
+        jPanel26.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel26.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel14.setText("Hp : ");
+        jPanel26.add(jLabel14);
+        jLabel14.setBounds(0, 0, 57, 20);
+
+        jLabel15.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel15.setText("100");
+        jPanel26.add(jLabel15);
+        jLabel15.setBounds(60, 0, 70, 20);
+
+        jLabel16.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel16.setText("Armor :");
+        jPanel26.add(jLabel16);
+        jLabel16.setBounds(0, 20, 57, 20);
+
+        jLabel17.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel17.setText("12/80/50");
+        jPanel26.add(jLabel17);
+        jLabel17.setBounds(60, 20, 70, 20);
+
+        jLabel18.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel18.setText("Damage :");
+        jPanel26.add(jLabel18);
+        jLabel18.setBounds(0, 40, 70, 20);
+
+        jLabel19.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel19.setText("200");
+        jPanel26.add(jLabel19);
+        jLabel19.setBounds(60, 40, 50, 20);
+
+        jLabel20.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel20.setText("Penetrate :");
+        jPanel26.add(jLabel20);
+        jLabel20.setBounds(0, 60, 70, 20);
+
+        jLabel21.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        jLabel21.setText("150");
+        jPanel26.add(jLabel21);
+        jLabel21.setBounds(60, 60, 70, 20);
+
+        jPanel24.add(jPanel26);
+        jPanel26.setBounds(0, 40, 130, 83);
+
+        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel27.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jLabel22.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel22.setText("205 $");
+        jPanel27.add(jLabel22);
+
+        jPanel24.add(jPanel27);
+        jPanel27.setBounds(0, 120, 130, 30);
+
+        T2.add(jPanel24);
+
+        jPanel2.add(T2);
+
+        T3.setBackground(new java.awt.Color(0, 0, 0));
+        T3.setForeground(new java.awt.Color(102, 255, 102));
+        T3.setMinimumSize(new java.awt.Dimension(250, 250));
+        T3.setPreferredSize(new java.awt.Dimension(250, 140));
+        T3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T3MousePressed(evt);
+            }
+        });
+        jPanel2.add(T3);
+
+        T4.setBackground(new java.awt.Color(0, 0, 0));
+        T4.setForeground(new java.awt.Color(102, 255, 102));
+        T4.setMinimumSize(new java.awt.Dimension(250, 250));
+        T4.setPreferredSize(new java.awt.Dimension(250, 140));
+        T4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T4MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                T4MousePressed(evt);
+            }
+        });
+        jPanel2.add(T4);
+
+        T5.setBackground(new java.awt.Color(0, 0, 0));
+        T5.setForeground(new java.awt.Color(102, 255, 102));
+        T5.setMinimumSize(new java.awt.Dimension(250, 250));
+        T5.setPreferredSize(new java.awt.Dimension(250, 140));
+        T5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T5MouseExited(evt);
+            }
+        });
+        jPanel2.add(T5);
+
+        T6.setBackground(new java.awt.Color(0, 0, 0));
+        T6.setForeground(new java.awt.Color(102, 255, 102));
+        T6.setMinimumSize(new java.awt.Dimension(250, 250));
+        T6.setPreferredSize(new java.awt.Dimension(250, 140));
+        T6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T6MouseExited(evt);
+            }
+        });
+        jPanel2.add(T6);
+
+        T7.setBackground(new java.awt.Color(0, 0, 0));
+        T7.setForeground(new java.awt.Color(102, 255, 102));
+        T7.setMinimumSize(new java.awt.Dimension(250, 250));
+        T7.setPreferredSize(new java.awt.Dimension(250, 140));
+        T7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T7MouseExited(evt);
+            }
+        });
+        jPanel2.add(T7);
+
+        T8.setBackground(new java.awt.Color(0, 0, 0));
+        T8.setForeground(new java.awt.Color(102, 255, 102));
+        T8.setMinimumSize(new java.awt.Dimension(250, 250));
+        T8.setPreferredSize(new java.awt.Dimension(250, 140));
+        T8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T8MouseExited(evt);
+            }
+        });
+        jPanel2.add(T8);
+
+        T9.setBackground(new java.awt.Color(0, 0, 0));
+        T9.setForeground(new java.awt.Color(102, 255, 102));
+        T9.setMinimumSize(new java.awt.Dimension(250, 250));
+        T9.setPreferredSize(new java.awt.Dimension(250, 140));
+        T9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T9MouseExited(evt);
+            }
+        });
+        jPanel2.add(T9);
+
+        T10.setBackground(new java.awt.Color(0, 0, 0));
+        T10.setForeground(new java.awt.Color(102, 255, 102));
+        T10.setMinimumSize(new java.awt.Dimension(250, 250));
+        T10.setPreferredSize(new java.awt.Dimension(250, 140));
+        T10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T10MouseExited(evt);
+            }
+        });
+        jPanel2.add(T10);
+
+        T11.setBackground(new java.awt.Color(0, 0, 0));
+        T11.setForeground(new java.awt.Color(102, 255, 102));
+        T11.setMinimumSize(new java.awt.Dimension(250, 250));
+        T11.setPreferredSize(new java.awt.Dimension(250, 140));
+        T11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T11MouseExited(evt);
+            }
+        });
+        jPanel2.add(T11);
+
+        T12.setBackground(new java.awt.Color(0, 0, 0));
+        T12.setForeground(new java.awt.Color(102, 255, 102));
+        T12.setMinimumSize(new java.awt.Dimension(250, 250));
+        T12.setPreferredSize(new java.awt.Dimension(250, 140));
+        T12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T12MouseExited(evt);
+            }
+        });
+        jPanel2.add(T12);
+
+        T13.setBackground(new java.awt.Color(0, 0, 0));
+        T13.setForeground(new java.awt.Color(102, 255, 102));
+        T13.setMinimumSize(new java.awt.Dimension(250, 250));
+        T13.setPreferredSize(new java.awt.Dimension(250, 140));
+        T13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T13MouseExited(evt);
+            }
+        });
+        jPanel2.add(T13);
+
+        T14.setBackground(new java.awt.Color(0, 0, 0));
+        T14.setForeground(new java.awt.Color(102, 255, 102));
+        T14.setMinimumSize(new java.awt.Dimension(250, 250));
+        T14.setPreferredSize(new java.awt.Dimension(250, 140));
+        T14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T14MouseExited(evt);
+            }
+        });
+        jPanel2.add(T14);
+
+        T15.setBackground(new java.awt.Color(0, 0, 0));
+        T15.setForeground(new java.awt.Color(102, 255, 102));
+        T15.setMinimumSize(new java.awt.Dimension(250, 250));
+        T15.setPreferredSize(new java.awt.Dimension(250, 140));
+        T15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T15MouseExited(evt);
+            }
+        });
+        jPanel2.add(T15);
+
+        T16.setBackground(new java.awt.Color(0, 0, 0));
+        T16.setForeground(new java.awt.Color(102, 255, 102));
+        T16.setMinimumSize(new java.awt.Dimension(250, 250));
+        T16.setPreferredSize(new java.awt.Dimension(250, 140));
+        T16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                T16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                T16MouseExited(evt);
+            }
+        });
+        jPanel2.add(T16);
+
+        jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 110, 1040, 600);
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/opl.jpg"))); // NOI18N
         backgound.setMinimumSize(new java.awt.Dimension(1080, 720));
         backgound.setPreferredSize(new java.awt.Dimension(1899, 1416));
-        add(backgound);
+        jPanel1.add(backgound);
         backgound.setBounds(0, -70, 1940, 1416);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1080, 720);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+ private void check(int i){
+        switch(i){
+            case 1:
+                chose = 1;
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 2:
+                chose = 2;
+                T1.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 3:
+                chose = 3;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 4:
+                 chose = 4;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 5:
+                chose = 5;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+            case 6:
+                chose = 6;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 7:
+                chose = 7;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 8:
+                chose = 8;
+               T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 9:
+                chose = 9;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 10:
+                chose = 10;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 11:
+                chose = 11;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 12:
+                chose = 12;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 13:
+                chose = 13;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 14:
+                chose = 14;
+               T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T15.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 15:
+                chose = 15;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T16.setBorder(null);
+                break;
+             case 16:
+                chose = 16;
+                T1.setBorder(null);
+                T2.setBorder(null);
+                T3.setBorder(null);
+                T4.setBorder(null);
+                T5.setBorder(null);
+                T6.setBorder(null);
+                T7.setBorder(null);
+                T8.setBorder(null);
+                T9.setBorder(null);
+                T10.setBorder(null);
+                T11.setBorder(null);
+                T12.setBorder(null);
+                T13.setBorder(null);
+                T14.setBorder(null);
+                T15.setBorder(null);
+                break;
+        }
+    }
 
+    private void T1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MouseEntered
+        // TODO add your handling code here:
+        if(chose != 1)  T1.setBorder(BorderFactory.createLineBorder(new Color(255, 216, 1), 3));
+    }//GEN-LAST:event_T1MouseEntered
 
+    private void T1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MouseExited
+        // TODO add your handling code here:
+        if(chose != 1)T1.setBorder(null);
+        
+    }//GEN-LAST:event_T1MouseExited
+
+    private void T1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T1MousePressed
+        // TODO add your handling code here:
+        if(chose != 1){
+            T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
+            check(1);
+        }
+    }//GEN-LAST:event_T1MousePressed
+
+    private void T2MouseEntered1(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MouseEntered1
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T2MouseEntered1
+
+    private void T2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T2MouseExited
+
+    private void T2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T2MousePressed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_T2MousePressed
+
+    private void T3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MouseEntered
+        // TODO add your handling code here:
+        T2.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+    }//GEN-LAST:event_T3MouseEntered
+
+    private void T3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T3MouseExited
+
+    private void T3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T3MousePressed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_T3MousePressed
+
+    private void T4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T4MouseEntered
+
+    private void T4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T4MouseExited
+
+    private void T4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T4MousePressed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_T4MousePressed
+
+    private void T5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T5MouseEntered
+
+    private void T5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T5MouseExited
+
+    private void T6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T6MouseEntered
+
+    private void T6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T6MouseExited
+
+    private void T7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T7MouseEntered
+
+    private void T7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T7MouseExited
+
+    private void T8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T8MouseEntered
+
+    private void T8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T8MouseExited
+
+    private void T9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T9MouseEntered
+
+    private void T9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T9MouseExited
+
+    private void T10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T10MouseEntered
+
+    private void T10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T10MouseExited
+
+    private void T11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T11MouseEntered
+
+    private void T11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T11MouseExited
+
+    private void T12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T12MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T12MouseEntered
+
+    private void T12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T12MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T12MouseExited
+
+    private void T13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T13MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T13MouseEntered
+
+    private void T13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T13MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T13MouseExited
+
+    private void T14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T14MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T14MouseEntered
+
+    private void T14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T14MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T14MouseExited
+
+    private void T15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T15MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T15MouseEntered
+
+    private void T15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T15MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T15MouseExited
+
+    private void T16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T16MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T16MouseEntered
+
+    private void T16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T16MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T16MouseExited
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(prePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new prePlay().setVisible(true);
+            }
+        });
+    }
+    private int chose = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel T1;
+    private javax.swing.JPanel T10;
+    private javax.swing.JPanel T11;
+    private javax.swing.JPanel T12;
+    private javax.swing.JPanel T13;
+    private javax.swing.JPanel T14;
+    private javax.swing.JPanel T15;
+    private javax.swing.JPanel T16;
+    private javax.swing.JPanel T2;
+    private javax.swing.JPanel T3;
+    private javax.swing.JPanel T4;
+    private javax.swing.JPanel T5;
+    private javax.swing.JPanel T6;
+    private javax.swing.JPanel T7;
+    private javax.swing.JPanel T8;
+    private javax.swing.JPanel T9;
     private javax.swing.JLabel backgound;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JLabel labelMoney;
     private javax.swing.JLabel money;
     private javax.swing.JPanel moneyPanel;
-    private javax.swing.JLabel start;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
