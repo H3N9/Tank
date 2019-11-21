@@ -21,6 +21,7 @@ public class Builds extends MapObject{
     private Color color;
     private BufferedImage img;
     private Rectangle2D rect;
+    private boolean alwaysDraw; 
     
     public Builds(double posX, double posY, String name){
         this(posX, posY, 200, 200, null, name);
@@ -36,6 +37,15 @@ public class Builds extends MapObject{
         if (!"".equals(path)){
             loadImage(path);
         }
+        alwaysDraw = false;
+    }
+    public Builds(double posX, double posY, double width, double height, Color color, String path, boolean b){
+        super(posX, posY, width, height);
+        this.color = color;
+        if (!"".equals(path)){
+            loadImage(path);
+        }
+        alwaysDraw = b;
     }
     
     public static void updatePos(double posX, double posY){
@@ -63,15 +73,17 @@ public class Builds extends MapObject{
     }
     
     public void draw(Graphics2D g2d){
-        AffineTransform old = g2d.getTransform();
-        g2d.setColor(color);
-        if (img != null){
-            g2d.drawImage(img, (int)this.getPosX(), (int)this.getPosY(), (int)this.getWidth(), (int)this.getHeight(), null);
+        if(this.getBounds().intersects(-10,-10,big.gun.window.Window.width+10,big.gun.window.Window.height+10) || alwaysDraw){
+            AffineTransform old = g2d.getTransform();
+            g2d.setColor(color);
+            if (img != null){
+                g2d.drawImage(img, (int)this.getPosX(), (int)this.getPosY(), (int)this.getWidth(), (int)this.getHeight(), null);
+            }
+            else{
+                rect = new Rectangle2D.Double(this.getPosX(), this.getPosY(), this.getWidth(), this.getHeight());
+                g2d.fill(rect);
+            }
+            g2d.setTransform(old);
         }
-        else{
-            rect = new Rectangle2D.Double(this.getPosX(), this.getPosY(), this.getWidth(), this.getHeight());
-            g2d.fill(rect);
-        }
-        g2d.setTransform(old);
     }
 }

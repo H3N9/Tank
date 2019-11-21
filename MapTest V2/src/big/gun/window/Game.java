@@ -46,8 +46,8 @@ public class Game extends JPanel implements ActionListener{
         player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
         Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
-        bot = new Ai(1, 1, player, "hard");
-        map = new Map(2000, 0, bot.getPersons());
+        bot = new Ai(3, 3, player, "hard");
+        map = new Map(2000, 4000, bot.getPersons());
         bot.throwMap(map);
         start.start();
         bot.getTime().start();

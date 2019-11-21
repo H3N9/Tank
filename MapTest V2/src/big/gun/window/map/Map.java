@@ -70,7 +70,7 @@ public class Map {
     
     
     public void addBuilds(){
-        getBuilds().add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), ""){
+        getBuilds().add(new Builds(0, 0, 5000, 5000, Color.decode("#9b7653"), "", true){
             @Override
             public Rectangle2D getBounds(){
                 return new Rectangle2D.Double(getPosX(), getPosY(),0,0);
@@ -98,11 +98,11 @@ public class Map {
         getBuilds().add(new Builds(4000, 1200, "tree1"));
         getBuilds().add(new Builds(4400, 800, "tree1"));
         
-        getBuilds().add(new Builds(1400, 600, 1000, 200, Color.GRAY, "horizontal1"));
-        getBuilds().add(new Builds(2600, 600, 1000, 200, Color.GRAY, "horizontal1"));
+        getBuilds().add(new Builds(1300, 600, 1000, 200, Color.GRAY, "horizontal1"));
+        getBuilds().add(new Builds(2700, 600, 1000, 200, Color.GRAY, "horizontal1"));
         getBuilds().add(new Builds(1400, 800, 200, 3400, Color.GRAY, "vertical1"));
-        getBuilds().add(new Builds(1400, 4200, 1000, 200, Color.GRAY, "horizontal2"));
-        getBuilds().add(new Builds(2600, 4200, 1000, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(1300, 4200, 1000, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(2700, 4200, 1000, 200, Color.GRAY, "horizontal2"));
         getBuilds().add(new Builds(3400, 800, 200, 3400, Color.GRAY, "vertical2"));
         
         getBuilds().add(new Builds(2000, 1000, 300, 600, Color.GRAY, "square1"));
@@ -111,8 +111,8 @@ public class Map {
         getBuilds().add(new Builds(2000, 2000, 300, 300, Color.GRAY, "square2"));
         getBuilds().add(new Builds(2700, 2000, 300, 300, Color.GRAY, "square1"));
         
-        getBuilds().add(new Builds(1800, 2600, 600, 200, Color.GRAY, "horizontal2"));
-        getBuilds().add(new Builds(2600, 2600, 600, 200, Color.GRAY, "horizontal1"));
+        getBuilds().add(new Builds(1800, 2500, 600, 200, Color.GRAY, "horizontal2"));
+        getBuilds().add(new Builds(2600, 2500, 600, 200, Color.GRAY, "horizontal1"));
         
         getBuilds().add(new Builds(2000, 2900, 300, 300, Color.GRAY, "square2"));
         getBuilds().add(new Builds(2700, 2900, 300, 300, Color.GRAY, "square1"));
