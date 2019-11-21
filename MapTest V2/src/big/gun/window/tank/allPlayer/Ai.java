@@ -118,15 +118,32 @@ public class Ai implements ActionListener{
              move.get(i).remove("D");
              move.get(i).remove("A");
          }
+         //defualt เดิน
+         move.get(i).remove("A");
+         move.get(i).remove("D");
+         move.get(i).add("W");
             
-            
+         //นับเวลา ชนซ้าย ชนขวา deadLock
          if(persons.get(i).getDeadLock() > 0){
              persons.get(i).setDeadLock(persons.get(i).getDeadLock()-1);
-             System.out.println(persons.get(i).getDeadLock());
          }
          else{
              move.get(i).remove("S");
          }
+         if(persons.get(i).getLeftHit() > 0){
+             persons.get(i).setLeftHit(persons.get(i).getLeftHit()-1);
+         }
+         else{
+             move.get(i).remove("S");
+         }
+         if(persons.get(i).getRightHit() > 0){
+             persons.get(i).setRightHit(persons.get(i).getRightHit()-1);
+         }
+         else{
+             move.get(i).remove("S");
+         }
+         
+         //เช็คชนคน
          for(Person ebot: persons){
              if(persons.get(i).getCheckLeft().intersects(ebot.getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getBounds())){
                  persons.get(i).setDeadLock(600);
@@ -136,21 +153,15 @@ public class Ai implements ActionListener{
              persons.get(i).setDeadLock(600);
          }
          //เลี้ยวเมื่อใกล้สิ่งของ
-         move.get(i).remove("A");
-         move.get(i).remove("D");
-         move.get(i).add("W");
          for(Builds mObject: map.getBuilds()) {
             if(persons.get(i).getCheckLeft().intersects(mObject.getBounds()) && persons.get(i).getCheckRight().intersects(mObject.getBounds())){
                 persons.get(i).setDeadLock(600);
             }
-            if(persons.get(i).getDeadLock() > 300){
+            if(persons.get(i).getDeadLock() > 400){
                 move.get(i).remove("W");
                 move.get(i).add("S");
-                move.get(i).add("D");
-            }else if(persons.get(i).getDeadLock() <= 300 && persons.get(i).getDeadLock() > 0){
-                move.get(i).remove("W");
-                move.get(i).add("S");
-                move.get(i).add("A");
+            }else if(persons.get(i).getDeadLock() > 0 && persons.get(i).getDeadLock() <= 400){
+                
             }
             else if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
                 move.get(i).remove("W");

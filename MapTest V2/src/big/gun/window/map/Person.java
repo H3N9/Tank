@@ -26,7 +26,7 @@ public class Person extends MapObject {
     private Rectangle2D veiw;
     private double clx, cly, crx, cry;
     private Rectangle2D checkLeft, checkRight;
-    private int deadLock;
+    private int deadLock, leftHit, rightHit;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -43,6 +43,8 @@ public class Person extends MapObject {
         cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-30, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkRight = new Rectangle2D.Double(crx, cry, myTank.getWidth()/2, myTank.getWidth()/2);
         deadLock = 0;
+        leftHit = 0;
+        rightHit = 0;
 //count = 5;
     }
 
@@ -95,14 +97,14 @@ public class Person extends MapObject {
     public void moveStop() {
         setMyPosX(getMyPosX() - Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
         setMyPosY(getMyPosY() - Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
-//        if (myTank.getRotateSpeed() != 0){
-//            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
-//            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
-//        }
-//        if (myTank.getRotateSpeed() != 0){
-//            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
-//            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
-//        }
+        if (myTank.getRotateSpeed() != 0){
+            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+        }
+        if (myTank.getRotateSpeed() != 0){
+            myTank.setRotate(myTank.getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+            myTank.getTurret().setRotate(myTank.getTurret().getRotate()-myTank.getRotateSpeed()*myTank.getIsBack());
+        }
 //        myTank.moveRotateStop();
     }
 
@@ -291,7 +293,20 @@ public class Person extends MapObject {
         this.deadLock = deadLock;
     }
 
+    public int getLeftHit() {
+        return leftHit;
+    }
 
+    public void setLeftHit(int leftHit) {
+        this.leftHit = leftHit;
+    }
 
-    
+    public int getRightHit() {
+        return rightHit;
+    }
+
+    public void setRightHit(int rightHit) {
+        this.rightHit = rightHit;
+    }
+
 }
