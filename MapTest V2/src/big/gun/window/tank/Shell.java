@@ -19,7 +19,7 @@ public class Shell extends GameObject implements Moveable,ActionListener{
     
     public Shell(Tank tank){
         time = new Timer(10, this);
-        setWidth(Import.tankImg.get(tank.getNameTank())[2].getWidth()/4); setHeight(getWidth());
+        setWidth(5); setHeight(5);
         setPosX(tank.getTurret().getGunPosX()-getWidth()*0.5);
         setPosY(tank.getTurret().getGunPosY());
         setCenterX(getPosX()+getWidth()/2); setCenterY(getPosY()+getHeight()/2);
@@ -32,11 +32,16 @@ public class Shell extends GameObject implements Moveable,ActionListener{
     public void draw(Graphics2D g2d){
         g2d.setColor(Color.white);
         g2d.fill(getBounds());
+        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
+        g2d.drawImage(Import.shell, (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+        g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
     }
     
     public void move() {
         setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 15)); 
         setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -15));
+        setCenterX(getPosX()+getWidth()/2); 
+        setCenterY(getPosY()+getHeight()/2);
     }
 
     public void setDamage(double damage) {
