@@ -114,6 +114,7 @@ public class Tank extends GameObject implements Moveable{
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
         turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         for(int i=0; i < armours.length; i++){
             if(i==0 || i==armours.length-1){
                 for(int j=0; j<3; j++){
@@ -138,7 +139,7 @@ public class Tank extends GameObject implements Moveable{
         }else if(hp <= 0 && boomed == 1 && boom.getAlpha() != 0){
             boom.update(getCenterX(), getCenterY());
         }
-        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
+        
         setReload(getReload()+0.01);
     }
     
@@ -147,6 +148,7 @@ public class Tank extends GameObject implements Moveable{
         setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
     }
     
     public void moveRotateStop(){
@@ -158,6 +160,7 @@ public class Tank extends GameObject implements Moveable{
             setRotate(getRotate()-getRotateSpeed()*isBack);
             turret.setRotate(turret.getRotate()-getRotateSpeed()*isBack);      
         }
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
     }
     public void shoot(){
         if(reload>=speedReload){

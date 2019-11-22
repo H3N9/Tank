@@ -14,8 +14,8 @@ import java.util.LinkedList;
 
 
 public class Condition {
-    private Player player;
-    private LinkedList<Person> persons;
+    public Player player;
+    public LinkedList<Person> persons;
     private Rectangle2D rect;
     private int delay;
     
@@ -27,24 +27,7 @@ public class Condition {
     }
     
     public void draw(Graphics2D g2d){
-        if("Alli".equals(gameCondition())){
-            if(delay>=500){
-                g2d.setColor(Color.black);
-                rect.setRect(0, 0, Window.width, Window.height);
-                g2d.fill(rect);
-            }
-            else
-                delay++;
-        }
-        else if("Axis".equals(gameCondition())){
-            if(delay==500){
-                g2d.setColor(Color.red);
-                rect.setRect(0, 0, Window.width, Window.height);
-                g2d.fill(rect);
-            }
-            else
-                delay++;
-        }
+        
     }
     
     public String gameCondition(){

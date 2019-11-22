@@ -34,8 +34,8 @@ public class Game extends JPanel implements ActionListener{
     private Ai bot;
     private static long lastFPS;
     private static int currentFPS, totalFrames;
-    private String nameTank;
     private Condition con;
+    private String whoLose;
     
     //private TestDrawTank tdt;
     
@@ -43,12 +43,12 @@ public class Game extends JPanel implements ActionListener{
         importImg = new Import();
         collection = new CollectionTanks();
         start = new Timer(10, this);
-        nameTank = name;
-        player = new Player(nameTank, (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2, (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2);
-        Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
-        Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
+        player = new Player(name, (Window.width*0.5)-(Import.tankImg.get(name)[0].getWidth()*CollectionTanks.tanks.get(name)[9])/2, (Window.height*0.5)-(Import.tankImg.get(name)[0].getHeight()*CollectionTanks.tanks.get(name)[9])/2);
+        Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(name)[0].getWidth()*CollectionTanks.tanks.get(name)[9])/2;
+        Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(name)[0].getHeight()*CollectionTanks.tanks.get(name)[9])/2;
         bot = new Ai(amountBout-1, amountBout, player, diff);
         con = new Condition(player, bot.getPersons());
+        whoLose = "nothing";
         map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
         bot.throwMap(map);
         start.start();
@@ -91,7 +91,13 @@ public class Game extends JPanel implements ActionListener{
         g2d.setFont(new Font("", 20,20));
         g2d.drawString("FPS: "+currentFPS, 10, 20);
         
-        con.draw(g2d);
+        if(whoLose.equals("Axis")){
+            g2d.setColor(Color.BLUE);
+            g2d.fillRect(0, 0, Window.width, Window.height);
+        }else if(whoLose.equals("Alli")){
+            g2d.setColor(Color.BLACK);
+            g2d.fillRect(0, 0, Window.width, Window.height);
+        }
         
     }
     
@@ -103,6 +109,9 @@ public class Game extends JPanel implements ActionListener{
         map.playerCollision(player, bot);
         map.bulletCollision(bot, player);
         FPS();
+        if(whoLose.equals("nothing")){
+            whoLose = con.gameCondition();
+        }
         repaint();
     }
     
