@@ -9,21 +9,21 @@ import big.gun.window.map.Person;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 
 
-public class Condition {
+public class Condition extends KeyAdapter{
     public Player player;
     public LinkedList<Person> persons;
     private Rectangle2D rect;
-    private int delay;
     
     public Condition(Player player, LinkedList<Person> persons){
         this.player = player;
         this.persons = persons;
         rect = new Rectangle2D.Double();
-        delay = 0;
     }
     
     public void draw(Graphics2D g2d){
@@ -41,6 +41,20 @@ public class Condition {
             }
         }
         return "Axis";
+    }
+    
+    public void keyPressed(KeyEvent e){
+       int key = e.getKeyCode();
+       if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
+           Window.jframe.dispose();
+       }
+    }
+    public void keyReleased(KeyEvent e){
+       int key = e.getKeyCode();
+       if(key==KeyEvent.VK_ENTER){
+           System.out.println("save");
+           SaveGame.Save(player.getGotMoney(), "");
+       }
     }
     
     

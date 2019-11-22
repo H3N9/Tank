@@ -282,6 +282,8 @@ public class Map {
                                     ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
                                     System.out.println(ebot.getMyTank().getHp());
                                     new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
+                                    if(ebot.getTag()==2)
+                                        player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());
                                 }
                                 else{
                                     double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
@@ -291,6 +293,8 @@ public class Map {
                                         ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
                                         System.out.println(ebot.getMyTank().getHp()+" Penetrate");
                                         new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
+                                        if(ebot.getTag()==2)
+                                            player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());
                                     }else{
                                         new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                     }

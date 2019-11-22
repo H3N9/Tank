@@ -4,7 +4,7 @@ package big.gun.window;
 import javax.swing.JFrame;
 
 public class Window {
-    private JFrame jframe;
+    public static JFrame jframe;
     public static int width;
     public static int height;
     
@@ -23,4 +23,5 @@ public class Window {
         jframe.add(new Game(nameTank, amountBout, diff));
         jframe.setVisible(true);
     }
+    
 }
