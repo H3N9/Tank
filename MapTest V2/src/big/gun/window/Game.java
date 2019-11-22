@@ -101,14 +101,12 @@ public class Game extends JPanel implements ActionListener{
             g2d.fillRect(0, 0, Window.width, Window.height);
             g2d.setColor(Color.white);
             g2d.drawString("Money: "+player.getGotMoney(), Window.width/2-50, Window.height/2);
-            g2d.drawString("Wallet: "+SaveGame.LoadSave().getMoney()+player.getGotMoney(), Window.width/2-50, Window.height/2+20);
         }else if(whoLose.equals("Alli")){
             addKeyListener(con);
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, Window.width, Window.height);
             g2d.setColor(Color.white);
             g2d.drawString("Money: "+player.getGotMoney(), Window.width/2-50, Window.height/2);
-            g2d.drawString("Wallet: "+SaveGame.LoadSave().getMoney()+player.getGotMoney(), Window.width/2-50, Window.height/2+20);
         }
         
         

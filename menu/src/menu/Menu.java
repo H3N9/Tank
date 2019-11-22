@@ -17,13 +17,7 @@ public class Menu {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            Frame f = new Frame();
             Home p1 = new Home();
-            prePlay p2 = new prePlay();
-            f.add(p2);
-//            f.add(p1);
-            f.setVisible(true);
-            f.pack();
 //        JFrame f = new JFrame("title");
 //        Home p1 = new Home();
 //        prePlay pp = new prePlay();
