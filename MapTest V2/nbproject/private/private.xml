@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/sound/Sound.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/map/MapObject.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/tank/CollectionTanks.java</file>
@@ -17,6 +18,9 @@
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/map/Map.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/tank/Shell.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/Game.java</file>
+=======
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/MapTest%20V2/src/big/gun/window/sound/Sound.java</file>
+>>>>>>> d2e431a60656f81cdc63253db279aab9e4433572
         </group>
     </open-files>
 </project-private>

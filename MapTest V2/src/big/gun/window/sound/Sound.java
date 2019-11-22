@@ -11,44 +11,79 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.*;
+import java.util.HashMap;
 
 /**
  *
  * @author pooh
  */
-public class Sound {
+public class Sound implements Runnable {
+
     public static double playerPosX, playerPosY;
-    private Clip clip;
-    
-    public Sound(String path, double posX, double posY){
+    public static HashMap<String, Clip> sounds;
+    public Clip clip;
+
+    public Sound(String name, double posX, double posY) {
         //File file = new File(path);
-        try {
-            if(posX > -100 && posX < Window.width+100 && posY > -100 && posY < Window.height+100){
-                AudioInputStream sound = AudioSystem.getAudioInputStream(getClass().getResource("/res/sound/"+path+".wav"));
-                clip = AudioSystem.getClip();
-                clip.open(sound);
-                clip.setFramePosition(0);
-                FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                double vol = ((float)Math.sqrt(Math.pow(playerPosX-posX, 2)+Math.pow(playerPosY-posY, 2))/5000)*50;
-                System.out.println(playerPosX+", "+playerPosY+", "+posX+", "+posY);
-                System.out.println(vol/20);
-                float dB = (float)(Math.log(1-vol/20)/Math.log(10)*20);
-                gain.setValue(dB);
-                clip.start();
-            }
-        } catch (UnsupportedAudioFileException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+        if (posX > -100 && posX < Window.width + 100 && posY > -100 && posY < Window.height + 100) {
+            //                clip = AudioSystem.getClip();
+//                clip.open(sounds.get(name));
+//                System.out.println(sounds.get(name));
+            clip = sounds.get(name);
+            Thread t1 = new Thread(this);
+            t1.start();
+//            } catch (LineUnavailableException ex) {
+//                ex.printStackTrace();
+//            } catch (IOException ex) {
+//                ex.printStackTrace();
+//            }
+//            FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+//            double vol = ((float) Math.sqrt(Math.pow(playerPosX - posX, 2) + Math.pow(playerPosY - posY, 2)) / 5000) * 50;
+//            System.out.println(vol / 20);
+//            float dB = (float) (Math.log(1 - vol / 20) / Math.log(10) * 20);
+//            gain.setValue(dB);
+//clip.start();
         }
     }
 
     /**
      * @return the clip
      */
-    public Clip getClip() {
-        return clip;
+    public static void downLoadSound() {
+        String[] name = {"notPenetrate", "penetrate", "reload1", "shoot", "tankDestroyed"};
+        sounds = new HashMap<String, Clip>();
+        Clip clip;
+        for (int i = 0; i < name.length; i++) {
+            try {
+                AudioInputStream sound = AudioSystem.getAudioInputStream(Sound.class.getResource("/res/sound/" + name[i] + ".wav"));
+                clip = AudioSystem.getClip();
+                clip.open(sound);
+                clip.setFramePosition(0);
+                sounds.put(name[i], clip);
+            } catch (UnsupportedAudioFileException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (LineUnavailableException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    @Override
+    public void run() {
+//        try {
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+            while (true){
+                System.out.println(clip.getFramePosition()+", "+clip.getFrameLength());
+                if (clip.getFramePosition() >= clip.getFrameLength()){
+                    clip.setFramePosition(0);
+                    clip.stop();
+                    break;
+                }
+            }
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 }
