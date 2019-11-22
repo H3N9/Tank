@@ -180,10 +180,12 @@ public class Ai implements ActionListener{
             }else if(persons.get(i).getDeadLock() > 0){
                 if(persons.get(i).getRndly() > persons.get(i).getRndry()){
 //                    move.get(i).remove("S");
-                    move.get(i).add("D");
+                    move.get(i).remove("W");
+                    move.get(i).add("A");
                 }else{
 //                    move.get(i).remove("S");
-                    move.get(i).add("A");
+                    move.get(i).remove("W");
+                    move.get(i).add("D");
                 }
             }
             else if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){

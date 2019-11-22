@@ -48,18 +48,16 @@ public class Condition {
     }
     
     public String gameCondition(){
+        //return who lose
         for(int i=0;i<persons.size();i++){
-            if(persons.get(i).getTag()==1&&persons.get(i).getMyTank().getHp()<=0){
-                return "Alli";
-            }
-            else if(persons.get(i).getTag()==2&&persons.get(i).getMyTank().getHp()<=0){
-                return "Axis";
+            if(persons.get(i).getTag()==2&&persons.get(i).getMyTank().getHp()>0){
+                return "nothing";
             }
             else if(player.getMyTank().getHp()<=0){
                 return "Alli";
             }
         }
-        return "nothing";
+        return "Axis";
     }
     
     
