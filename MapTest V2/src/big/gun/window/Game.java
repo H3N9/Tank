@@ -93,7 +93,8 @@ public class Game extends JPanel implements ActionListener{
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("", 20,20));
         g2d.drawString("FPS: "+currentFPS, 10, 20);
-        
+        hub.draw(g2d);
+        con.draw(g2d);
         if(whoLose.equals("Axis")){
             g2d.setColor(Color.BLUE);
             g2d.fillRect(0, 0, Window.width, Window.height);
@@ -101,8 +102,7 @@ public class Game extends JPanel implements ActionListener{
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, Window.width, Window.height);
         }
-        hub.draw(g2d);
-        con.draw(g2d);
+        
         
     }
     

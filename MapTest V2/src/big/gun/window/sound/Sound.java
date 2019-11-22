@@ -75,7 +75,6 @@ public class Sound implements Runnable {
 //        try {
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             while (true){
-                System.out.println(clip.getFramePosition()+", "+clip.getFrameLength());
                 if (clip.getFramePosition() >= clip.getFrameLength()){
                     clip.setFramePosition(0);
                     clip.stop();
