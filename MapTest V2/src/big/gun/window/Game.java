@@ -36,6 +36,7 @@ public class Game extends JPanel implements ActionListener{
     private static int currentFPS, totalFrames;
     private Condition con;
     private String whoLose;
+    private Hub hub;
     
     //private TestDrawTank tdt;
     
@@ -46,7 +47,9 @@ public class Game extends JPanel implements ActionListener{
         player = new Player(name, (Window.width*0.5)-(Import.tankImg.get(name)[0].getWidth()*CollectionTanks.tanks.get(name)[9])/2, (Window.height*0.5)-(Import.tankImg.get(name)[0].getHeight()*CollectionTanks.tanks.get(name)[9])/2);
         Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(name)[0].getWidth()*CollectionTanks.tanks.get(name)[9])/2;
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(name)[0].getHeight()*CollectionTanks.tanks.get(name)[9])/2;
+        Sound.downLoadSound();
         bot = new Ai(amountBout-1, amountBout, player, diff);
+        hub = new Hub(player, bot);
         con = new Condition(player, bot.getPersons());
         whoLose = "nothing";
         map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
@@ -98,6 +101,8 @@ public class Game extends JPanel implements ActionListener{
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, Window.width, Window.height);
         }
+        hub.draw(g2d);
+        con.draw(g2d);
         
     }
     
@@ -108,6 +113,7 @@ public class Game extends JPanel implements ActionListener{
         map.moveMap(player);
         map.playerCollision(player, bot);
         map.bulletCollision(bot, player);
+        hub.update(player, bot);
         FPS();
         if(whoLose.equals("nothing")){
             whoLose = con.gameCondition();

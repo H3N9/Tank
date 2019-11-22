@@ -221,4 +221,28 @@ public class Ai implements ActionListener{
         this.map = map;
     }
 
+    public int getSpawnAxis() {
+        return spawnAxis;
+    }
+
+    public void setSpawnAxis(int spawnAxis) {
+        this.spawnAxis = spawnAxis;
+    }
+
+    public int getSpawnAlli() {
+        return spawnAlli;
+    }
+
+    public void setSpawnAlli(int spawnAlli) {
+        this.spawnAlli = spawnAlli;
+    }
+
+    public String getDifficult() {
+        return difficult;
+    }
+
+    public void setDifficult(String difficult) {
+        this.difficult = difficult;
+    }
+
 }
