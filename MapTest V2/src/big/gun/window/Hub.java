@@ -32,9 +32,11 @@ public class Hub {
     
     public void draw(Graphics2D g2d){
         g2d.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
-        g2d.setColor(Color.yellow);
+        g2d.setColor(Color.blue);
         g2d.drawString("Allies "+allies,(float) 530, (float) 35);
+        g2d.setColor(Color.white);
         g2d.drawString(":",(float) 630, (float) 35);
+        g2d.setColor(Color.red);
         g2d.drawString(enemies+" Enemies ",(float) 650, (float) 35);
     }
     
