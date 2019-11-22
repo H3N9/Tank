@@ -86,11 +86,10 @@ public class Home extends javax.swing.JFrame {
 
     private void startMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseClicked
         // TODO add your handling code here:
-        prePlay f = new prePlay();
+        setting f = new setting();
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
-
     }//GEN-LAST:event_startMouseClicked
 
     /**
