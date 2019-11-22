@@ -42,9 +42,7 @@ public class SaveGame {
             }
             catch(Exception e){}
         }
-        else{
-            profile = new Profile();
-        }
+        profile = new Profile();
         return profile;
     }
     
