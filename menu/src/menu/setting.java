@@ -36,9 +36,9 @@ public class setting extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1080, 720));
-        setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
+        setMaximumSize(new java.awt.Dimension(1080, 755));
+        setMinimumSize(new java.awt.Dimension(1080, 755));
+        setPreferredSize(new java.awt.Dimension(1080, 755));
         getContentPane().setLayout(null);
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1080, 720));
