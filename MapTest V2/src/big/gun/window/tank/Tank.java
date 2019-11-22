@@ -200,7 +200,11 @@ public class Tank extends GameObject implements Moveable{
     }
 
     public void setHp(double hp) {
-        this.hp = hp;
+        if(hp < 0){
+            this.hp = 0;
+        }else{
+            this.hp = hp;
+        }
     }
 
     public void setReload(double reload) {

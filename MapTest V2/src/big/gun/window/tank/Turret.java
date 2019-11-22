@@ -142,6 +142,11 @@ public class Turret extends GameObject{
     }
 
     public void setRotateHead(double rotateHead) {
+        if(rotateHead < 0){
+            rotateHead = 360+rotateHead;
+        }else if(rotateHead > 360){
+            rotateHead = 360-rotateHead;
+        }
         this.rotateHead = rotateHead;
     }
 

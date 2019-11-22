@@ -156,7 +156,7 @@ public class Ai implements ActionListener{
              for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
                  for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
                      if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds())) && persons.get(i)!=ebot){
-                        persons.get(i).setDeadLock(2500);
+                        persons.get(i).setDeadLock(4000);
                     }
                  }
              }
@@ -165,25 +165,25 @@ public class Ai implements ActionListener{
          for(int k=0; k < player.getMyTank().getArmours().length; k++){
              for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
                  if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getArmours()[k][j].getBounds())){
-                    persons.get(i).setDeadLock(2500);
+                    persons.get(i).setDeadLock(4000);
                 }
              }
          }
          //เลี้ยวเมื่อใกล้สิ่งของ
          for(Builds mObject: map.getBuilds()) {
             if(persons.get(i).getRightHit() > 0 && persons.get(i).getLeftHit() > 0){
-                persons.get(i).setDeadLock(2500);
+                persons.get(i).setDeadLock(4000);
             }
-            if(persons.get(i).getDeadLock() > 1500){
+            if(persons.get(i).getDeadLock() > 2500){
                 move.get(i).remove("W");
                 move.get(i).add("S");
             }else if(persons.get(i).getDeadLock() > 0){
                 if(persons.get(i).getRndly() > persons.get(i).getRndry()){
-//                    move.get(i).remove("S");
+                    move.get(i).remove("S");
                     move.get(i).remove("W");
                     move.get(i).add("A");
                 }else{
-//                    move.get(i).remove("S");
+                    move.get(i).remove("S");
                     move.get(i).remove("W");
                     move.get(i).add("D");
                 }

@@ -9,10 +9,10 @@ package menu;
  *
  * @author PCoil
  */
-public class about extends javax.swing.JPanel {
+public class about extends javax.swing.JFrame {
 
     /**
-     * Creates new form Home
+     * Creates new form about2
      */
     public about() {
         initComponents();
@@ -27,8 +27,9 @@ public class about extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        title = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        back = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         member1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         member2 = new javax.swing.JPanel();
@@ -39,7 +40,7 @@ public class about extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         member5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         name1 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -63,22 +64,36 @@ public class about extends javax.swing.JPanel {
         title1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1080, 720));
-        setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 755));
+        setPreferredSize(new java.awt.Dimension(1080, 755));
+        getContentPane().setLayout(null);
 
-        title.setFont(new java.awt.Font("Impact", 0, 56)); // NOI18N
-        title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/back.png"))); // NOI18N
-        title.setToolTipText("");
-        title.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        add(title);
-        title.setBounds(20, 640, 1080, 60);
+        jPanel1.setMaximumSize(new java.awt.Dimension(1080, 720));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1080, 720));
+        jPanel1.setLayout(null);
 
-        jPanel1.setBackground(null);
-        jPanel1.setLayout(new java.awt.GridLayout(1, 5));
+        back.setFont(new java.awt.Font("Impact", 0, 56)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/back.png"))); // NOI18N
+        back.setToolTipText("");
+        back.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backMousePressed(evt);
+            }
+        });
+        jPanel1.add(back);
+        back.setBounds(10, 620, 190, 80);
+
+        jPanel2.setLayout(new java.awt.GridLayout(1, 5));
 
         member1.setBackground(new java.awt.Color(255, 255, 255));
         member1.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -87,7 +102,7 @@ public class about extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/golf.jpg"))); // NOI18N
         member1.add(jLabel3);
 
-        jPanel1.add(member1);
+        jPanel2.add(member1);
 
         member2.setBackground(new java.awt.Color(255, 255, 255));
         member2.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -96,7 +111,7 @@ public class about extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/pooh.jpg"))); // NOI18N
         member2.add(jLabel2);
 
-        jPanel1.add(member2);
+        jPanel2.add(member2);
 
         member3.setBackground(new java.awt.Color(255, 255, 255));
         member3.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -105,7 +120,7 @@ public class about extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ramil.jpg"))); // NOI18N
         member3.add(jLabel4);
 
-        jPanel1.add(member3);
+        jPanel2.add(member3);
 
         member4.setBackground(new java.awt.Color(255, 255, 255));
         member4.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -114,7 +129,7 @@ public class about extends javax.swing.JPanel {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/oil.jpg"))); // NOI18N
         member4.add(jLabel5);
 
-        jPanel1.add(member4);
+        jPanel2.add(member4);
 
         member5.setBackground(new java.awt.Color(255, 255, 255));
         member5.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -123,12 +138,12 @@ public class about extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/peerakarn.jpg"))); // NOI18N
         member5.add(jLabel6);
 
-        jPanel1.add(member5);
+        jPanel2.add(member5);
 
-        add(jPanel1);
-        jPanel1.setBounds(0, 150, 1080, 300);
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(0, 150, 1080, 300);
 
-        jPanel2.setLayout(new java.awt.GridLayout(1, 5));
+        jPanel3.setLayout(new java.awt.GridLayout(1, 5));
 
         name1.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -147,7 +162,7 @@ public class about extends javax.swing.JPanel {
         jLabel25.setText("Dev");
         name1.add(jLabel25);
 
-        jPanel2.add(name1);
+        jPanel3.add(name1);
 
         name2.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -166,7 +181,7 @@ public class about extends javax.swing.JPanel {
         jLabel27.setText("Dev");
         name2.add(jLabel27);
 
-        jPanel2.add(name2);
+        jPanel3.add(name2);
 
         name3.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -185,7 +200,7 @@ public class about extends javax.swing.JPanel {
         jLabel29.setText("Dev");
         name3.add(jLabel29);
 
-        jPanel2.add(name3);
+        jPanel3.add(name3);
 
         name4.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -205,7 +220,7 @@ public class about extends javax.swing.JPanel {
         jLabel17.setText("Dev");
         name4.add(jLabel17);
 
-        jPanel2.add(name4);
+        jPanel3.add(name4);
 
         name9.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -225,28 +240,87 @@ public class about extends javax.swing.JPanel {
         jLabel20.setText("Dev");
         name9.add(jLabel20);
 
-        jPanel2.add(name9);
+        jPanel3.add(name9);
 
-        add(jPanel2);
-        jPanel2.setBounds(0, 450, 1080, 120);
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(0, 450, 1080, 120);
 
         title1.setFont(new java.awt.Font("Impact", 0, 56)); // NOI18N
         title1.setForeground(new java.awt.Color(255, 255, 255));
         title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title1.setText("Provider");
         title1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        add(title1);
+        jPanel1.add(title1);
         title1.setBounds(0, 30, 1080, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/opl.jpg"))); // NOI18N
         background.setMinimumSize(new java.awt.Dimension(1080, 720));
         background.setPreferredSize(new java.awt.Dimension(1899, 1416));
-        add(background);
+        jPanel1.add(background);
         background.setBounds(0, -70, 1940, 1416);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1080, 720);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMousePressed
+        // TODO add your handling code here:
+        Home f = new Home();
+        f.setVisible(true);
+        f.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_backMousePressed
+
+    private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
+        // TODO add your handling code here:
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/back2.png")));
+    }//GEN-LAST:event_backMouseEntered
+
+    private void backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseExited
+        // TODO add your handling code here:
+           back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/back.png")));
+    }//GEN-LAST:event_backMouseExited
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new about().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel back;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -270,6 +344,7 @@ public class about extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel member1;
     private javax.swing.JPanel member2;
     private javax.swing.JPanel member3;
@@ -280,7 +355,6 @@ public class about extends javax.swing.JPanel {
     private javax.swing.JPanel name3;
     private javax.swing.JPanel name4;
     private javax.swing.JPanel name9;
-    private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
     // End of variables declaration//GEN-END:variables
 }

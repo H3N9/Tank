@@ -31,8 +31,7 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         start = new javax.swing.JLabel();
-        howToPlay = new javax.swing.JLabel();
-        setting = new javax.swing.JLabel();
+        htplay = new javax.swing.JLabel();
         about = new javax.swing.JLabel();
         backgound = new javax.swing.JLabel();
 
@@ -51,26 +50,47 @@ public class Home extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(80, 160, 510, 400);
 
-        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/start.png"))); // NOI18N
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/start.png"))); // NOI18N
         start.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                startMouseClicked(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                startMousePressed(evt);
             }
         });
         jPanel1.add(start);
-        start.setBounds(630, 150, 352, 95);
+        start.setBounds(620, 190, 352, 95);
 
-        howToPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/setting.png"))); // NOI18N
-        jPanel1.add(howToPlay);
-        howToPlay.setBounds(630, 390, 352, 95);
+        htplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/htp.png"))); // NOI18N
+        htplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                htplayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                htplayMouseExited(evt);
+            }
+        });
+        jPanel1.add(htplay);
+        htplay.setBounds(620, 320, 352, 95);
 
-        setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/htp.png"))); // NOI18N
-        jPanel1.add(setting);
-        setting.setBounds(630, 270, 352, 95);
-
-        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/about.png"))); // NOI18N
+        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/about.png"))); // NOI18N
+        about.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aboutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aboutMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                aboutMousePressed(evt);
+            }
+        });
         jPanel1.add(about);
-        about.setBounds(630, 510, 352, 95);
+        about.setBounds(620, 440, 352, 95);
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/opl.jpg"))); // NOI18N
         backgound.setMinimumSize(new java.awt.Dimension(1080, 720));
@@ -84,13 +104,51 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void startMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseClicked
+    private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
         // TODO add your handling code here:
         setting f = new setting();
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_startMouseClicked
+    }//GEN-LAST:event_startMousePressed
+
+    private void htplayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_htplayMouseEntered
+        // TODO add your handling code here:
+        htplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/htp_2.png")));
+    }//GEN-LAST:event_htplayMouseEntered
+
+    private void htplayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_htplayMouseExited
+        // TODO add your handling code here:
+          htplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/htp.png")));
+    }//GEN-LAST:event_htplayMouseExited
+
+    private void aboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseEntered
+        // TODO add your handling code here:
+        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/about_2.png")));
+    }//GEN-LAST:event_aboutMouseEntered
+
+    private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
+        // TODO add your handling code here:
+        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/about.png")));
+    }//GEN-LAST:event_aboutMouseExited
+
+    private void startMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseExited
+        // TODO add your handling code here:
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/start.png")));
+    }//GEN-LAST:event_startMouseExited
+
+    private void startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseEntered
+        // TODO add your handling code here:
+           start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/button_home/start_2.png")));
+    }//GEN-LAST:event_startMouseEntered
+
+    private void aboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMousePressed
+        // TODO add your handling code here:
+        about f = new about();
+        f.setVisible(true);
+        f.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_aboutMousePressed
 
     /**
      * @param args the command line arguments
@@ -133,10 +191,9 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel about;
     private javax.swing.JLabel backgound;
-    private javax.swing.JLabel howToPlay;
+    private javax.swing.JLabel htplay;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel setting;
     private javax.swing.JLabel start;
     // End of variables declaration//GEN-END:variables
 }
