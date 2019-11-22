@@ -36,6 +36,7 @@ public class Game extends JPanel implements ActionListener{
     private static int currentFPS, totalFrames;
     private String nameTank;
     private Condition con;
+    private Hub hub;
     
     //private TestDrawTank tdt;
     
@@ -48,6 +49,7 @@ public class Game extends JPanel implements ActionListener{
         Sound.playerPosX = (Window.width*0.5)-(Import.tankImg.get(nameTank)[0].getWidth()*CollectionTanks.tanks.get(nameTank)[9])/2;
         Sound.playerPosY = (Window.height*0.5)-(Import.tankImg.get(nameTank)[0].getHeight()*CollectionTanks.tanks.get(nameTank)[9])/2;
         bot = new Ai(amountBout-1, amountBout, player, diff);
+        hub = new Hub(player, bot);
         con = new Condition(player, bot.getPersons());
         map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
         bot.throwMap(map);
@@ -90,7 +92,7 @@ public class Game extends JPanel implements ActionListener{
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("", 20,20));
         g2d.drawString("FPS: "+currentFPS, 10, 20);
-        
+        hub.draw(g2d);
         con.draw(g2d);
         
     }
@@ -102,6 +104,7 @@ public class Game extends JPanel implements ActionListener{
         map.moveMap(player);
         map.playerCollision(player, bot);
         map.bulletCollision(bot, player);
+        hub.update(player, bot);
         FPS();
         repaint();
     }
