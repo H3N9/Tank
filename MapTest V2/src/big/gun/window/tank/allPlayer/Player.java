@@ -1,6 +1,7 @@
 
 package big.gun.window.tank.allPlayer;
 
+import big.gun.window.SaveGame;
 import big.gun.window.tank.Tank;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -10,11 +11,13 @@ import java.util.LinkedList;
 
 public class Player {
     private Tank myTank;
+    private int gotMoney;
 
 
     
     public Player(String name, double posX, double posY){
         myTank = new Tank(name, posX, posY);
+        gotMoney = 0;
     }
     
     //
@@ -89,5 +92,13 @@ public class Player {
 
     public Tank getMyTank() {
         return myTank;
+    }
+    
+    public int getGotMoney() {
+        return gotMoney;
+    }
+
+    public void setGotMoney(int gotMoney) {
+        this.gotMoney = gotMoney;
     }
 }
