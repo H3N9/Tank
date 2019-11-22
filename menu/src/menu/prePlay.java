@@ -396,7 +396,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel5.setBounds(0, 0, 57, 20);
 
         jLabel4.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel4.setText("100");
+        jLabel4.setText("600");
         jPanel21.add(jLabel4);
         jLabel4.setBounds(60, 0, 70, 20);
 
@@ -406,7 +406,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel3.setBounds(0, 20, 57, 20);
 
         jLabel6.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel6.setText("12/80/50");
+        jLabel6.setText("30/10/5");
         jPanel21.add(jLabel6);
         jLabel6.setBounds(60, 20, 70, 20);
 
@@ -464,7 +464,7 @@ public class prePlay extends javax.swing.JFrame {
                 T2MousePressed(evt);
             }
         });
-        T2.setLayout(new java.awt.GridLayout());
+        T2.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
         jPanel23.setLayout(null);
@@ -507,7 +507,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel16.setBounds(0, 20, 57, 20);
 
         jLabel17.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel17.setText("12/80/50");
+        jLabel17.setText("32/12/5");
         jPanel26.add(jLabel17);
         jLabel17.setBounds(60, 20, 70, 20);
 
@@ -565,7 +565,7 @@ public class prePlay extends javax.swing.JFrame {
                 T3MousePressed(evt);
             }
         });
-        T3.setLayout(new java.awt.GridLayout());
+        T3.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel28.setBackground(new java.awt.Color(204, 204, 204));
         jPanel28.setLayout(null);
@@ -608,7 +608,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel27.setBounds(0, 20, 57, 20);
 
         jLabel28.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel28.setText("12/80/50");
+        jLabel28.setText("30/8/2");
         jPanel31.add(jLabel28);
         jLabel28.setBounds(60, 20, 70, 20);
 
@@ -666,7 +666,7 @@ public class prePlay extends javax.swing.JFrame {
                 T4MousePressed(evt);
             }
         });
-        T4.setLayout(new java.awt.GridLayout());
+        T4.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel33.setBackground(new java.awt.Color(204, 204, 204));
         jPanel33.setLayout(null);
@@ -709,7 +709,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel38.setBounds(0, 20, 57, 20);
 
         jLabel39.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel39.setText("12/80/50");
+        jLabel39.setText("28/10/5");
         jPanel36.add(jLabel39);
         jLabel39.setBounds(60, 20, 70, 20);
 
@@ -767,7 +767,7 @@ public class prePlay extends javax.swing.JFrame {
                 T5MousePressed(evt);
             }
         });
-        T5.setLayout(new java.awt.GridLayout());
+        T5.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel38.setBackground(new java.awt.Color(204, 204, 204));
         jPanel38.setLayout(null);
@@ -810,7 +810,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel49.setBounds(0, 20, 57, 20);
 
         jLabel50.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel50.setText("12/80/50");
+        jLabel50.setText("35/15/10");
         jPanel41.add(jLabel50);
         jLabel50.setBounds(60, 20, 70, 20);
 
@@ -868,7 +868,7 @@ public class prePlay extends javax.swing.JFrame {
                 T6MousePressed(evt);
             }
         });
-        T6.setLayout(new java.awt.GridLayout());
+        T6.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel43.setBackground(new java.awt.Color(204, 204, 204));
         jPanel43.setLayout(null);
@@ -911,7 +911,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel60.setBounds(0, 20, 57, 20);
 
         jLabel61.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel61.setText("12/80/50");
+        jLabel61.setText("40/20/10");
         jPanel46.add(jLabel61);
         jLabel61.setBounds(60, 20, 70, 20);
 
@@ -969,7 +969,7 @@ public class prePlay extends javax.swing.JFrame {
                 T7MousePressed(evt);
             }
         });
-        T7.setLayout(new java.awt.GridLayout());
+        T7.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel48.setBackground(new java.awt.Color(204, 204, 204));
         jPanel48.setLayout(null);
@@ -1012,7 +1012,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel71.setBounds(0, 20, 57, 20);
 
         jLabel72.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel72.setText("12/80/50");
+        jLabel72.setText("30/10/5");
         jPanel51.add(jLabel72);
         jLabel72.setBounds(60, 20, 70, 20);
 
@@ -1070,7 +1070,7 @@ public class prePlay extends javax.swing.JFrame {
                 T8MousePressed(evt);
             }
         });
-        T8.setLayout(new java.awt.GridLayout());
+        T8.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel53.setBackground(new java.awt.Color(204, 204, 204));
         jPanel53.setLayout(null);
@@ -1113,7 +1113,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel82.setBounds(0, 20, 57, 20);
 
         jLabel83.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel83.setText("12/80/50");
+        jLabel83.setText("50/35/20");
         jPanel56.add(jLabel83);
         jLabel83.setBounds(60, 20, 70, 20);
 
@@ -1171,7 +1171,7 @@ public class prePlay extends javax.swing.JFrame {
                 T9MousePressed(evt);
             }
         });
-        T9.setLayout(new java.awt.GridLayout());
+        T9.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel58.setBackground(new java.awt.Color(204, 204, 204));
         jPanel58.setLayout(null);
@@ -1204,7 +1204,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel91.setBounds(0, 0, 57, 20);
 
         jLabel92.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel92.setText("100");
+        jLabel92.setText("800");
         jPanel61.add(jLabel92);
         jLabel92.setBounds(60, 0, 70, 20);
 
@@ -1214,7 +1214,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel93.setBounds(0, 20, 57, 20);
 
         jLabel94.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel94.setText("12/80/50");
+        jLabel94.setText("48/40/10");
         jPanel61.add(jLabel94);
         jLabel94.setBounds(60, 20, 70, 20);
 
@@ -1272,7 +1272,7 @@ public class prePlay extends javax.swing.JFrame {
                 T10MousePressed(evt);
             }
         });
-        T10.setLayout(new java.awt.GridLayout());
+        T10.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel63.setBackground(new java.awt.Color(204, 204, 204));
         jPanel63.setLayout(null);
@@ -1315,7 +1315,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel104.setBounds(0, 20, 57, 20);
 
         jLabel105.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel105.setText("12/80/50");
+        jLabel105.setText("50/40/20");
         jPanel66.add(jLabel105);
         jLabel105.setBounds(60, 20, 70, 20);
 
@@ -1373,7 +1373,7 @@ public class prePlay extends javax.swing.JFrame {
                 T11MousePressed(evt);
             }
         });
-        T11.setLayout(new java.awt.GridLayout());
+        T11.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel68.setBackground(new java.awt.Color(204, 204, 204));
         jPanel68.setLayout(null);
@@ -1416,7 +1416,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel115.setBounds(0, 20, 57, 20);
 
         jLabel116.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel116.setText("12/80/50");
+        jLabel116.setText("62/55/30");
         jPanel71.add(jLabel116);
         jLabel116.setBounds(60, 20, 70, 20);
 
@@ -1474,7 +1474,7 @@ public class prePlay extends javax.swing.JFrame {
                 T12MousePressed(evt);
             }
         });
-        T12.setLayout(new java.awt.GridLayout());
+        T12.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel73.setBackground(new java.awt.Color(204, 204, 204));
         jPanel73.setLayout(null);
@@ -1517,7 +1517,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel126.setBounds(0, 20, 57, 20);
 
         jLabel127.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel127.setText("12/80/50");
+        jLabel127.setText("55/38/20");
         jPanel76.add(jLabel127);
         jLabel127.setBounds(60, 20, 70, 20);
 
@@ -1575,7 +1575,7 @@ public class prePlay extends javax.swing.JFrame {
                 T13MousePressed(evt);
             }
         });
-        T13.setLayout(new java.awt.GridLayout());
+        T13.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel78.setBackground(new java.awt.Color(204, 204, 204));
         jPanel78.setLayout(null);
@@ -1608,7 +1608,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel135.setBounds(0, 0, 57, 20);
 
         jLabel136.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel136.setText("100");
+        jLabel136.setText("800");
         jPanel81.add(jLabel136);
         jLabel136.setBounds(60, 0, 70, 20);
 
@@ -1618,7 +1618,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel137.setBounds(0, 20, 57, 20);
 
         jLabel138.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel138.setText("12/80/50");
+        jLabel138.setText("60/40/20");
         jPanel81.add(jLabel138);
         jLabel138.setBounds(60, 20, 70, 20);
 
@@ -1676,7 +1676,7 @@ public class prePlay extends javax.swing.JFrame {
                 T14MousePressed(evt);
             }
         });
-        T14.setLayout(new java.awt.GridLayout());
+        T14.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel83.setBackground(new java.awt.Color(204, 204, 204));
         jPanel83.setLayout(null);
@@ -1719,7 +1719,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel148.setBounds(0, 20, 57, 20);
 
         jLabel149.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel149.setText("12/80/50");
+        jLabel149.setText("60/50/30");
         jPanel86.add(jLabel149);
         jLabel149.setBounds(60, 20, 70, 20);
 
@@ -1777,7 +1777,7 @@ public class prePlay extends javax.swing.JFrame {
                 T15MousePressed(evt);
             }
         });
-        T15.setLayout(new java.awt.GridLayout());
+        T15.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel88.setBackground(new java.awt.Color(204, 204, 204));
         jPanel88.setLayout(null);
@@ -1820,7 +1820,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel159.setBounds(0, 20, 57, 20);
 
         jLabel160.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel160.setText("12/80/50");
+        jLabel160.setText("55/35/20");
         jPanel91.add(jLabel160);
         jLabel160.setBounds(60, 20, 70, 20);
 
@@ -1878,7 +1878,7 @@ public class prePlay extends javax.swing.JFrame {
                 T16MousePressed(evt);
             }
         });
-        T16.setLayout(new java.awt.GridLayout());
+        T16.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel93.setBackground(new java.awt.Color(204, 204, 204));
         jPanel93.setLayout(null);
@@ -1921,7 +1921,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel170.setBounds(0, 20, 57, 20);
 
         jLabel171.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel171.setText("12/80/50");
+        jLabel171.setText("61/45/25");
         jPanel96.add(jLabel171);
         jLabel171.setBounds(60, 20, 70, 20);
 
