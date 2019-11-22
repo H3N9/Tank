@@ -4,20 +4,23 @@ package big.gun.window.tank.allPlayer;
 import big.gun.window.tank.Tank;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 
 
 public class Player {
     private Tank myTank;
-    
-    public Player(){
-        this("t34", 0, 0);
-    }
+
 
     
     public Player(String name, double posX, double posY){
         myTank = new Tank(name, posX, posY);
     }
+    
+    //
+//    public Player(double posX, double posY){
+//        own
+//    }
     
     public void draw(Graphics2D g2d){
         myTank.draw(g2d);

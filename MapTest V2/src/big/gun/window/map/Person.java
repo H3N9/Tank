@@ -13,6 +13,7 @@ import big.gun.window.Window;
 import big.gun.window.tank.*;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.util.HashSet;
@@ -25,6 +26,7 @@ public class Person extends MapObject {
     private int tag;
     private Rectangle2D veiw;
     private double clx, cly, crx, cry;
+    private double rndly, rndry;
     private Rectangle2D checkLeft, checkRight;
     private int deadLock, leftHit, rightHit;
     //private double count;
@@ -35,12 +37,14 @@ public class Person extends MapObject {
         this.setWidth(myTank.getWidth());
         this.setHeight(myTank.getHeight());
         this.tag = tag;
+        rndly = Calculate.randomNumber(10, 50);
+        rndry = Calculate.randomNumber(10, 50);
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
-        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-50, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
-        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-50, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkLeft = new Rectangle2D.Double(clx, cly, myTank.getWidth()/2, myTank.getWidth()/2); 
-        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-30, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
-        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-30, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkRight = new Rectangle2D.Double(crx, cry, myTank.getWidth()/2, myTank.getWidth()/2);
         deadLock = 0;
         leftHit = 0;
@@ -54,12 +58,18 @@ public class Person extends MapObject {
 
     public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
-        g2d.setColor(Color.PINK);
-        g2d.fill(checkLeft);
-        g2d.setColor(Color.MAGENTA);
-        g2d.fill(checkRight);
-        g2d.drawString(myTank.getNameTank(),
-                (float) myTank.getPosX() + 50, (float) myTank.getPosY() - 10);
+        //test bot detection front draw
+//        g2d.setColor(Color.PINK);
+//        g2d.fill(checkLeft);
+//        g2d.setColor(Color.MAGENTA);
+//        g2d.fill(checkRight);
+        if(tag == 1){
+            g2d.setColor(Color.BLUE);
+        }else if(tag == 2){
+            g2d.setColor(Color.RED);
+        }
+        g2d.setFont(new Font("TimesRoman", Font.BOLD, 20)); 
+        g2d.drawString(myTank.getNameTank(),(float) myTank.getPosX(), (float) myTank.getPosY() - 10);
     }
 
     @Override
@@ -74,11 +84,11 @@ public class Person extends MapObject {
         //อัพเดทตำแหน่งจาก viewpoint
         myTank.setPosX(getMyPosX() + mapX);
         myTank.setPosY(getMyPosY() + mapY);
-        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-50, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
-        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-50, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkLeft.setRect(clx, cly, myTank.getWidth()/2, myTank.getWidth()/2); 
-        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-30, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
-        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-30, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkRight.setRect(crx, cry, myTank.getWidth()/2, myTank.getWidth()/2);
         //รถเคลื่อนที่
         this.move();
@@ -307,6 +317,22 @@ public class Person extends MapObject {
 
     public void setRightHit(int rightHit) {
         this.rightHit = rightHit;
+    }
+
+    public double getRndly() {
+        return rndly;
+    }
+
+    public void setRndly(double rndly) {
+        this.rndly = rndly;
+    }
+
+    public double getRndry() {
+        return rndry;
+    }
+
+    public void setRndry(double rndry) {
+        this.rndry = rndry;
     }
 
 }

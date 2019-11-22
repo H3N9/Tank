@@ -57,10 +57,8 @@ public class Turret extends GameObject{
     }
     
     public void draw(Graphics2D g2d){
-        g2d.setColor(Color.yellow);
         g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
         g2d.rotate(Math.toRadians(rotateHead), getPosX()+getWidth()/2, getPosY()+getHeight()/2);
-        g2d.fill(new Rectangle2D.Double(getPosX()+getWidth()/2-10, getPosY()-50, 20, 50));
         if(tank.getHp() <= 0){
             g2d.drawImage(Import.tankDImg.get(nameTank)[1], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
         }
@@ -70,8 +68,12 @@ public class Turret extends GameObject{
         g2d.drawImage(Import.tankImg.get(nameTank)[2], (int)(getPosX()+getWidth()/2-gunWidth/2), (int)(getPosY()-gunHeight), (int)gunWidth, (int)gunHeight, null);
         g2d.rotate(Math.toRadians(-rotateHead), getPosX()+getWidth()/2, getPosY()+getHeight()/2);
         g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
-        g2d.fill(new Rectangle2D.Double(centerHeadX, centerHeadY, 10, 10));
-        g2d.fill(new Rectangle2D.Double(gunPosX, gunPosY, 10, 10));
+        
+        //test draw
+//        g2d.setColor(Color.yellow);
+//        g2d.fill(new Rectangle2D.Double(getPosX()+getWidth()/2-10, getPosY()-50, 20, 50));
+//        g2d.fill(new Rectangle2D.Double(centerHeadX, centerHeadY, 10, 10));
+//        g2d.fill(new Rectangle2D.Double(gunPosX, gunPosY, 10, 10));
         
     }
     

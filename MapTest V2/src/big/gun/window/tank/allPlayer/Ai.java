@@ -45,12 +45,12 @@ public class Ai implements ActionListener{
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2800+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2800+i*100, 100, CollectionTanks.getName(flag, num), 1));
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
         }
@@ -62,12 +62,12 @@ public class Ai implements ActionListener{
             int flag = Calculate.randomNumber(1, 4);
             if(level==4){
                 int num = 4;
-                persons.add(new Person(2500+i*100, 300, CollectionTanks.getName(flag, num), 2));
+                persons.add(new Person(2000+i*200, 150, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
             }
             else{
                 int num = Calculate.randomNumber(level, level+1);
-                persons.add(new Person(2500+i*100, 300, CollectionTanks.getName(flag, num), 2));
+                persons.add(new Person(2000+i*200, 150, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
             }
         }
@@ -110,14 +110,28 @@ public class Ai implements ActionListener{
                         break;
                     }
 
-         }
-         else{
-             move.get(i).remove("shoot");
-             move.get(i).remove("Q");
-             move.get(i).remove("E");
-             move.get(i).remove("D");
-             move.get(i).remove("A");
-         }
+            }
+            else if(persons.get(i).getMyTank().getTurret().getRotateHead() < -5){
+                move.get(i).remove("shoot");
+                move.get(i).remove("Q");
+                move.get(i).add("E");
+                move.get(i).remove("D");
+                move.get(i).remove("A");
+            }
+            else if(persons.get(i).getMyTank().getTurret().getRotateHead() > 5){
+                move.get(i).remove("shoot");
+                move.get(i).add("Q");
+                move.get(i).remove("E");
+                move.get(i).remove("D");
+                move.get(i).remove("A");
+            }
+            else{
+                move.get(i).remove("shoot");
+                move.get(i).remove("Q");
+                move.get(i).remove("E");
+                move.get(i).remove("D");
+                move.get(i).remove("A");
+            }
          //defualt เดิน
          move.get(i).remove("A");
          move.get(i).remove("D");
@@ -133,45 +147,58 @@ public class Ai implements ActionListener{
          if(persons.get(i).getLeftHit() > 0){
              persons.get(i).setLeftHit(persons.get(i).getLeftHit()-1);
          }
-         else{
-             move.get(i).remove("S");
-         }
          if(persons.get(i).getRightHit() > 0){
              persons.get(i).setRightHit(persons.get(i).getRightHit()-1);
-         }
-         else{
-             move.get(i).remove("S");
          }
          
          //เช็คชนคน
          for(Person ebot: persons){
-             if(persons.get(i).getCheckLeft().intersects(ebot.getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getBounds())){
-                 persons.get(i).setDeadLock(600);
+             for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
+                 for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
+                     if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds())) && persons.get(i)!=ebot){
+                        persons.get(i).setDeadLock(2500);
+                    }
+                 }
              }
+             
          }  
-         if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getBounds())){
-             persons.get(i).setDeadLock(600);
+         for(int k=0; k < player.getMyTank().getArmours().length; k++){
+             for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
+                 if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getArmours()[k][j].getBounds())){
+                    persons.get(i).setDeadLock(2500);
+                }
+             }
          }
          //เลี้ยวเมื่อใกล้สิ่งของ
          for(Builds mObject: map.getBuilds()) {
-            if(persons.get(i).getCheckLeft().intersects(mObject.getBounds()) && persons.get(i).getCheckRight().intersects(mObject.getBounds())){
-                persons.get(i).setDeadLock(600);
+            if(persons.get(i).getRightHit() > 0 && persons.get(i).getLeftHit() > 0){
+                persons.get(i).setDeadLock(2500);
             }
-            if(persons.get(i).getDeadLock() > 400){
+            if(persons.get(i).getDeadLock() > 1500){
                 move.get(i).remove("W");
                 move.get(i).add("S");
-            }else if(persons.get(i).getDeadLock() > 0 && persons.get(i).getDeadLock() <= 400){
-                
+            }else if(persons.get(i).getDeadLock() > 0){
+                if(persons.get(i).getRndly() > persons.get(i).getRndry()){
+//                    move.get(i).remove("S");
+                    move.get(i).remove("W");
+                    move.get(i).add("A");
+                }else{
+//                    move.get(i).remove("S");
+                    move.get(i).remove("W");
+                    move.get(i).add("D");
+                }
             }
             else if(persons.get(i).getCheckLeft().intersects(mObject.getBounds())){
                 move.get(i).remove("W");
                 move.get(i).remove("A");
                 move.get(i).add("D");
+                persons.get(i).setLeftHit(1000);
             }
             else if(persons.get(i).getCheckRight().intersects(mObject.getBounds())){
                 move.get(i).remove("W");
                 move.get(i).remove("D");
                 move.get(i).add("A");
+                persons.get(i).setRightHit(1000);
             }
 
         }   
@@ -192,6 +219,30 @@ public class Ai implements ActionListener{
     
     public void throwMap(Map map){
         this.map = map;
+    }
+
+    public int getSpawnAxis() {
+        return spawnAxis;
+    }
+
+    public void setSpawnAxis(int spawnAxis) {
+        this.spawnAxis = spawnAxis;
+    }
+
+    public int getSpawnAlli() {
+        return spawnAlli;
+    }
+
+    public void setSpawnAlli(int spawnAlli) {
+        this.spawnAlli = spawnAlli;
+    }
+
+    public String getDifficult() {
+        return difficult;
+    }
+
+    public void setDifficult(String difficult) {
+        this.difficult = difficult;
     }
 
 }

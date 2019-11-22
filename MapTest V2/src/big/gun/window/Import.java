@@ -17,7 +17,7 @@ public class Import {
     public static HashMap<String, BufferedImage[]> tankImg;
     public static HashMap<String, BufferedImage[]> tankDImg;
     private BufferedImage hull, turret, gun;
-    public static BufferedImage boom;
+    public static BufferedImage boom, shell;
     
     public Import(){
         tankImg = new HashMap<>();
@@ -44,6 +44,7 @@ public class Import {
         
         try{
             boom = ImageIO.read(getClass().getResource("/res/destroyed/boom.png"));
+            shell = ImageIO.read(getClass().getResource("/res/shell.png"));
         }catch(Exception e){
             
         }

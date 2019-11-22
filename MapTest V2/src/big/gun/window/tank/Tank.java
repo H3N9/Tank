@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import big.gun.window.Import;
+import big.gun.window.Window;
 import big.gun.window.sound.Sound;
 import static big.gun.window.tank.CollectionTanks.tanks;
 import java.awt.geom.AffineTransform;
@@ -58,40 +59,44 @@ public class Tank extends GameObject implements Moveable{
     }
 
     public void draw(Graphics2D g2d){
-        g2d.setColor(Color.red);
-        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
-        g2d.fill(getBounds());
-        if(hp <= 0){
-            g2d.drawImage(Import.tankDImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
-        }
-        else{
-            g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
-        }
-        g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
-        for(int i=0; i < armours.length; i++){
-            if(i==0 || i==armours.length-1){
-                for(int j=0; j<3; j++){
-                    g2d.setColor(Color.red);
-                    g2d.fill(armours[i][j].getBounds());
-                }
+        if(armours[0][0].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[sizeOfArmoursArray-1][2].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[sizeOfArmoursArray-1][0].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[0][2].getBounds().intersects(-10,-10,Window.width+10,Window.height+10)){
+            g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
+            if(hp <= 0){
+                g2d.drawImage(Import.tankDImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
             }
             else{
-                for(int j=0; j<2; j++){
-                    g2d.setColor(Color.cyan);
-                    g2d.fill(armours[i][j].getBounds());
-                }
+                g2d.drawImage(Import.tankImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
             }
+            g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+
+            //draw test armour
+    //        for(int i=0; i < armours.length; i++){
+    //            if(i==0 || i==armours.length-1){
+    //                for(int j=0; j<3; j++){
+    //                    g2d.setColor(Color.red);
+    //                    g2d.fill(armours[i][j].getBounds());
+    //                }
+    //            }
+    //            else{
+    //                for(int j=0; j<2; j++){
+    //                    g2d.setColor(Color.cyan);
+    //                    g2d.fill(armours[i][j].getBounds());
+    //                }
+    //            }
+    //        }
+
+
+            turret.draw(g2d);
+            CollectionTanks.getName(3, 1);
         }
-        
+            
+        if(boomed == 1 && boom.getAlpha() != 0){
+            boom.draw(g2d);
+        }
         try{
             shell.draw(g2d);
         }catch(Exception e){
             
-        }
-        turret.draw(g2d);
-        CollectionTanks.getName(3, 1);
-        if(boomed == 1 && boom.getAlpha() != 0){
-            boom.draw(g2d);
         }
     }
 
@@ -104,11 +109,12 @@ public class Tank extends GameObject implements Moveable{
             setRotateSpeed(0);
         }
         setRotate(getRotate()+getRotateSpeed()*isBack);
-        turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
         setPosX(getPosX()+Calculate.calculateMoveX(getRotate(), getSpeedX()));
         setPosY(getPosY()+Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
+        turret.setRotate(turret.getRotate()+getRotateSpeed()*isBack);
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
         for(int i=0; i < armours.length; i++){
             if(i==0 || i==armours.length-1){
                 for(int j=0; j<3; j++){
@@ -133,7 +139,7 @@ public class Tank extends GameObject implements Moveable{
         }else if(hp <= 0 && boomed == 1 && boom.getAlpha() != 0){
             boom.update(getCenterX(), getCenterY());
         }
-        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
+        
         setReload(getReload()+0.01);
     }
     
@@ -142,6 +148,7 @@ public class Tank extends GameObject implements Moveable{
         setPosY(getPosY()-Calculate.calculateMoveY(getRotate(), getSpeedY()));
         setCenterX(getPosX()+getWidth()/2); 
         setCenterY(getPosY()+getHeight()/2);
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
     }
     
     public void moveRotateStop(){
@@ -153,6 +160,7 @@ public class Tank extends GameObject implements Moveable{
             setRotate(getRotate()-getRotateSpeed()*isBack);
             turret.setRotate(turret.getRotate()-getRotateSpeed()*isBack);      
         }
+        turret.update(getPosX(), getPosY(), getCenterX(), getCenterY(), getWidth(), getHeight(), getRotate());
     }
     public void shoot(){
         if(reload>=speedReload){
