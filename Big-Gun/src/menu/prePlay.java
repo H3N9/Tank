@@ -12,7 +12,7 @@ import big.gun.window.Window;
  *
  * @author PCoil
  */
-public class prePlay extends javax.swing.JFrame {
+public class prePlay extends javax.swing.JFrame{
 
     /**
      * Creates new form prePlay2
@@ -27,7 +27,8 @@ public class prePlay extends javax.swing.JFrame {
         this.height = height;
         this.enemy = enemy;
         this.level = level;
-        tank = "m4";
+        check(1);
+        T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
         
     }
 
