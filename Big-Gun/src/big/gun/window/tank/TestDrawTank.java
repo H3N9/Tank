@@ -23,20 +23,20 @@ public class TestDrawTank {
         draw(g2d, 410, 10, "m26");
         draw(g2d, 610, 10, "m26s");
         
-        draw(g2d, 10, 260, "panzer4");
-        draw(g2d, 210, 260, "panther");
-        draw(g2d, 410, 260, "tiger");
-        draw(g2d, 610, 260, "tiger2");
+        draw(g2d, 10, 210, "panzer4");
+        draw(g2d, 210, 210, "panther");
+        draw(g2d, 410, 210, "tiger");
+        draw(g2d, 610, 210, "tiger2");
         
-        draw(g2d, 10, 510, "t34");
-        draw(g2d, 210, 510, "kv1");
-        draw(g2d, 410, 510, "is2");
-        draw(g2d, 610, 510, "is3");
+        draw(g2d, 10, 410, "t34");
+        draw(g2d, 210, 410, "kv1");
+        draw(g2d, 410, 410, "is2");
+        draw(g2d, 610, 410, "is3");
         
-        draw(g2d, 10, 760, "cromwell");
-        draw(g2d, 210, 760, "churchill");
-        draw(g2d, 410, 760, "comet");
-        draw(g2d, 610, 760, "firefly");
+        draw(g2d, 10, 610, "cromwell");
+        draw(g2d, 210, 610, "churchill");
+        draw(g2d, 410, 610, "comet");
+        draw(g2d, 610, 610, "firefly");
     }
     
     public void draw(Graphics2D g2d, int posX, int posY, String name){

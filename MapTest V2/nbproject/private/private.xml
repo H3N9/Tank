@@ -2,7 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/sound/Sound.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/map/MapObject.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/tank/CollectionTanks.java</file>
@@ -19,6 +23,15 @@
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/map/Map.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/tank/Shell.java</file>
             <file>file:/C:/Users/USER/Desktop/Tank/MapTest%20V2/src/big/gun/window/Game.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/all%20project/Tank/MapTest%20V2/src/big/gun/window/tank/CollectionTanks.java</file>
+=======
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/Tank/MapTest%20V2/src/big/gun/window/sound/Sound.java</file>
+            <file>file:/C:/Users/pooh/Documents/NetBeansProjects/Tank/MapTest%20V2/src/big/gun/BigGun.java</file>
+>>>>>>> ccfece9efcd336bfd6186f2671529636f05b6c67
+>>>>>>> 4b8f1afc74fdb195639518c519296715a0a12853
         </group>
+>>>>>>> 78507540228a025c27c9b4fc9bc535593eeddf13
     </open-files>
 </project-private>

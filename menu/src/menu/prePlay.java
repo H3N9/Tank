@@ -19,13 +19,16 @@ public class prePlay extends javax.swing.JFrame {
      */
     public prePlay() {
         initComponents();
+        check(1);
     }
     
-    public prePlay(int width, int height,int enemy){
+    public prePlay(int width, int height,int enemy, String level){
         initComponents();
         this.width = width;
         this.height = height;
         this.enemy = enemy;
+        this.level = level;
+        check(1);
     }
 
     /**
@@ -423,7 +426,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel7.setBounds(0, 40, 70, 20);
 
         jLabel8.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel8.setText("200");
+        jLabel8.setText("160");
         jPanel21.add(jLabel8);
         jLabel8.setBounds(60, 40, 50, 20);
 
@@ -433,7 +436,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel9.setBounds(0, 60, 70, 20);
 
         jLabel10.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel10.setText("150");
+        jLabel10.setText("30");
         jPanel21.add(jLabel10);
         jLabel10.setBounds(60, 60, 70, 20);
 
@@ -504,7 +507,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel14.setBounds(0, 0, 57, 20);
 
         jLabel15.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel15.setText("100");
+        jLabel15.setText("600");
         jPanel26.add(jLabel15);
         jLabel15.setBounds(60, 0, 70, 20);
 
@@ -524,7 +527,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel18.setBounds(0, 40, 70, 20);
 
         jLabel19.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel19.setText("200");
+        jLabel19.setText("160");
         jPanel26.add(jLabel19);
         jLabel19.setBounds(60, 40, 50, 20);
 
@@ -534,7 +537,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel20.setBounds(0, 60, 70, 20);
 
         jLabel21.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel21.setText("150");
+        jLabel21.setText("35");
         jPanel26.add(jLabel21);
         jLabel21.setBounds(60, 60, 70, 20);
 
@@ -605,7 +608,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel25.setBounds(0, 0, 57, 20);
 
         jLabel26.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel26.setText("100");
+        jLabel26.setText("600");
         jPanel31.add(jLabel26);
         jLabel26.setBounds(60, 0, 70, 20);
 
@@ -625,7 +628,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel29.setBounds(0, 40, 70, 20);
 
         jLabel30.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel30.setText("200");
+        jLabel30.setText("160");
         jPanel31.add(jLabel30);
         jLabel30.setBounds(60, 40, 50, 20);
 
@@ -635,7 +638,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel31.setBounds(0, 60, 70, 20);
 
         jLabel32.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel32.setText("150");
+        jLabel32.setText("28");
         jPanel31.add(jLabel32);
         jLabel32.setBounds(60, 60, 70, 20);
 
@@ -706,7 +709,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel36.setBounds(0, 0, 57, 20);
 
         jLabel37.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel37.setText("100");
+        jLabel37.setText("600");
         jPanel36.add(jLabel37);
         jLabel37.setBounds(60, 0, 70, 20);
 
@@ -726,7 +729,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel40.setBounds(0, 40, 70, 20);
 
         jLabel41.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel41.setText("200");
+        jLabel41.setText("160");
         jPanel36.add(jLabel41);
         jLabel41.setBounds(60, 40, 50, 20);
 
@@ -736,7 +739,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel42.setBounds(0, 60, 70, 20);
 
         jLabel43.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel43.setText("150");
+        jLabel43.setText("29");
         jPanel36.add(jLabel43);
         jLabel43.setBounds(60, 60, 70, 20);
 
@@ -807,7 +810,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel47.setBounds(0, 0, 57, 20);
 
         jLabel48.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel48.setText("100");
+        jLabel48.setText("800");
         jPanel41.add(jLabel48);
         jLabel48.setBounds(60, 0, 70, 20);
 
@@ -908,7 +911,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel58.setBounds(0, 0, 57, 20);
 
         jLabel59.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel59.setText("100");
+        jLabel59.setText("800");
         jPanel46.add(jLabel59);
         jLabel59.setBounds(60, 0, 70, 20);
 
@@ -928,7 +931,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel62.setBounds(0, 40, 70, 20);
 
         jLabel63.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel63.setText("200");
+        jLabel63.setText("175");
         jPanel46.add(jLabel63);
         jLabel63.setBounds(60, 40, 50, 20);
 
@@ -938,7 +941,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel64.setBounds(0, 60, 70, 20);
 
         jLabel65.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel65.setText("150");
+        jLabel65.setText("45");
         jPanel46.add(jLabel65);
         jLabel65.setBounds(60, 60, 70, 20);
 
@@ -1009,7 +1012,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel69.setBounds(0, 0, 57, 20);
 
         jLabel70.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel70.setText("100");
+        jLabel70.setText("600");
         jPanel51.add(jLabel70);
         jLabel70.setBounds(60, 0, 70, 20);
 
@@ -1029,7 +1032,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel73.setBounds(0, 40, 70, 20);
 
         jLabel74.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel74.setText("200");
+        jLabel74.setText("230");
         jPanel51.add(jLabel74);
         jLabel74.setBounds(60, 40, 50, 20);
 
@@ -1039,7 +1042,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel75.setBounds(0, 60, 70, 20);
 
         jLabel76.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel76.setText("150");
+        jLabel76.setText("55");
         jPanel51.add(jLabel76);
         jLabel76.setBounds(60, 60, 70, 20);
 
@@ -1110,7 +1113,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel80.setBounds(0, 0, 57, 20);
 
         jLabel81.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel81.setText("100");
+        jLabel81.setText("800");
         jPanel56.add(jLabel81);
         jLabel81.setBounds(60, 0, 70, 20);
 
@@ -1130,7 +1133,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel84.setBounds(0, 40, 70, 20);
 
         jLabel85.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel85.setText("200");
+        jLabel85.setText("160");
         jPanel56.add(jLabel85);
         jLabel85.setBounds(60, 40, 50, 20);
 
@@ -1140,7 +1143,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel86.setBounds(0, 60, 70, 20);
 
         jLabel87.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel87.setText("150");
+        jLabel87.setText("35");
         jPanel56.add(jLabel87);
         jLabel87.setBounds(60, 60, 70, 20);
 
@@ -1231,7 +1234,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel95.setBounds(0, 40, 70, 20);
 
         jLabel96.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel96.setText("200");
+        jLabel96.setText("180");
         jPanel61.add(jLabel96);
         jLabel96.setBounds(60, 40, 50, 20);
 
@@ -1241,7 +1244,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel97.setBounds(0, 60, 70, 20);
 
         jLabel98.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel98.setText("150");
+        jLabel98.setText("50");
         jPanel61.add(jLabel98);
         jLabel98.setBounds(60, 60, 70, 20);
 
@@ -1312,7 +1315,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel102.setBounds(0, 0, 57, 20);
 
         jLabel103.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel103.setText("100");
+        jLabel103.setText("800");
         jPanel66.add(jLabel103);
         jLabel103.setBounds(60, 0, 70, 20);
 
@@ -1332,7 +1335,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel106.setBounds(0, 40, 70, 20);
 
         jLabel107.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel107.setText("200");
+        jLabel107.setText("180");
         jPanel66.add(jLabel107);
         jLabel107.setBounds(60, 40, 50, 20);
 
@@ -1342,7 +1345,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel108.setBounds(0, 60, 70, 20);
 
         jLabel109.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel109.setText("150");
+        jLabel109.setText("50");
         jPanel66.add(jLabel109);
         jLabel109.setBounds(60, 60, 70, 20);
 
@@ -1413,7 +1416,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel113.setBounds(0, 0, 57, 20);
 
         jLabel114.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel114.setText("100");
+        jLabel114.setText("1000");
         jPanel71.add(jLabel114);
         jLabel114.setBounds(60, 0, 70, 20);
 
@@ -1433,7 +1436,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel117.setBounds(0, 40, 70, 20);
 
         jLabel118.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel118.setText("200");
+        jLabel118.setText("160");
         jPanel71.add(jLabel118);
         jLabel118.setBounds(60, 40, 50, 20);
 
@@ -1443,7 +1446,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel119.setBounds(0, 60, 70, 20);
 
         jLabel120.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel120.setText("150");
+        jLabel120.setText("39");
         jPanel71.add(jLabel120);
         jLabel120.setBounds(60, 60, 70, 20);
 
@@ -1514,7 +1517,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel124.setBounds(0, 0, 57, 20);
 
         jLabel125.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel125.setText("100");
+        jLabel125.setText("800");
         jPanel76.add(jLabel125);
         jLabel125.setBounds(60, 0, 70, 20);
 
@@ -1534,7 +1537,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel128.setBounds(0, 40, 70, 20);
 
         jLabel129.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel129.setText("200");
+        jLabel129.setText("180");
         jPanel76.add(jLabel129);
         jLabel129.setBounds(60, 40, 50, 20);
 
@@ -1544,7 +1547,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel130.setBounds(0, 60, 70, 20);
 
         jLabel131.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel131.setText("150");
+        jLabel131.setText("55");
         jPanel76.add(jLabel131);
         jLabel131.setBounds(60, 60, 70, 20);
 
@@ -1645,7 +1648,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel141.setBounds(0, 60, 70, 20);
 
         jLabel142.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel142.setText("150");
+        jLabel142.setText("57");
         jPanel81.add(jLabel142);
         jLabel142.setBounds(60, 60, 70, 20);
 
@@ -1716,7 +1719,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel146.setBounds(0, 0, 57, 20);
 
         jLabel147.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel147.setText("100");
+        jLabel147.setText("800");
         jPanel86.add(jLabel147);
         jLabel147.setBounds(60, 0, 70, 20);
 
@@ -1736,7 +1739,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel150.setBounds(0, 40, 70, 20);
 
         jLabel151.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel151.setText("200");
+        jLabel151.setText("210");
         jPanel86.add(jLabel151);
         jLabel151.setBounds(60, 40, 50, 20);
 
@@ -1746,7 +1749,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel152.setBounds(0, 60, 70, 20);
 
         jLabel153.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel153.setText("150");
+        jLabel153.setText("58");
         jPanel86.add(jLabel153);
         jLabel153.setBounds(60, 60, 70, 20);
 
@@ -1817,7 +1820,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel157.setBounds(0, 0, 57, 20);
 
         jLabel158.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel158.setText("100");
+        jLabel158.setText("800");
         jPanel91.add(jLabel158);
         jLabel158.setBounds(60, 0, 70, 20);
 
@@ -1847,7 +1850,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel163.setBounds(0, 60, 70, 20);
 
         jLabel164.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel164.setText("150");
+        jLabel164.setText("59");
         jPanel91.add(jLabel164);
         jLabel164.setBounds(60, 60, 70, 20);
 
@@ -1918,7 +1921,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel168.setBounds(0, 0, 57, 20);
 
         jLabel169.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel169.setText("100");
+        jLabel169.setText("800");
         jPanel96.add(jLabel169);
         jLabel169.setBounds(60, 0, 70, 20);
 
@@ -1948,7 +1951,7 @@ public class prePlay extends javax.swing.JFrame {
         jLabel174.setBounds(0, 60, 70, 20);
 
         jLabel175.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel175.setText("150");
+        jLabel175.setText("58");
         jPanel96.add(jLabel175);
         jLabel175.setBounds(60, 60, 70, 20);
 
@@ -2005,6 +2008,7 @@ public class prePlay extends javax.swing.JFrame {
             case 1:
                 tank = "m4";
                 chose = 1;
+                T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
                 T2.setBorder(null);
                 T3.setBorder(null);
                 T4.setBorder(null);
@@ -2604,7 +2608,7 @@ public class prePlay extends javax.swing.JFrame {
         System.out.println(width);
         System.out.println(height);
         System.out.println(enemy);
-        
+        System.out.println(level);
     }//GEN-LAST:event_startMousePressed
 
     private void startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseEntered
@@ -2652,7 +2656,7 @@ public class prePlay extends javax.swing.JFrame {
     }
     private int chose = 0, width, height, enemy;
   
-    private String tank = "";
+    private String tank = "", level;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel T1;
     private javax.swing.JPanel T10;
