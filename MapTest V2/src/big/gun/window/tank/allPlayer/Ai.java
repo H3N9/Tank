@@ -59,7 +59,7 @@ public class Ai implements ActionListener{
                 persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
-            else if(difficult.equals("eazy")){
+            else if(difficult.equals("easy")){
                 if(level!=1){
                     num = Calculate.randomNumber(level-1, level);
                 }
@@ -90,7 +90,7 @@ public class Ai implements ActionListener{
                 persons.add(new Person(2000+i*200, 4500, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
             }
-            else if(difficult.equals("eazy")){
+            else if(difficult.equals("easy")){
                 if(level!=1){
                     num = Calculate.randomNumber(level-1, level);
                 }
@@ -110,7 +110,7 @@ public class Ai implements ActionListener{
             if(persons.get(i).veiwOfBot(player, persons, i)!=-2){
                 int target = persons.get(i).veiwOfBot(player, persons, i);
                 int wrongShoot = 0;
-                if(difficult.equals("eazy"))
+                if(difficult.equals("easy"))
                     wrongShoot = Calculate.randomNumber(0, 10);
                 else if(difficult.equals("normal"))
                     wrongShoot = Calculate.randomNumber(0, 5);

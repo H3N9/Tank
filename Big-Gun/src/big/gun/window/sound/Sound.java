@@ -26,9 +26,27 @@ public class Sound implements Runnable {
     public Sound(String name, double posX, double posY) {
         //File file = new File(path);
         if (posX > -100 && posX < Window.width + 100 && posY > -100 && posY < Window.height + 100) {
-            clip = sounds.get(name);
-            Thread t1 = new Thread(this);
-            t1.start();
+//            clip = sounds.get(name);
+//            Thread t1 = new Thread(this);
+//            t1.start();
+            AudioInputStream sound;
+            try {
+                sound = AudioSystem.getAudioInputStream(Sound.class.getResource("/res/sound/" + name + ".wav"));
+                clip = AudioSystem.getClip();
+                clip.open(sound);
+                clip.setFramePosition(0);
+                clip.start();
+            } catch (UnsupportedAudioFileException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            catch (LineUnavailableException ex) {
+                Logger.getLogger(Sound.class.getName()).log(Level.SEVERE, null, ex);
+            }
+//            clip = sounds.get(name);
+//            Thread t1 = new Thread(this);
+//            t1.start();
             FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             double vol = ((float) Math.sqrt(Math.pow(playerPosX - posX, 2) + Math.pow(playerPosY - posY, 2)) / 5000) * 50;
             float dB = (float) (Math.log(1 - vol / 20) / Math.log(10) * 20);

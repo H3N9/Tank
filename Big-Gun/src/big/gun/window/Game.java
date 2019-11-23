@@ -55,7 +55,6 @@ public class Game extends JPanel implements ActionListener{
         map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
         bot.throwMap(map);
         start.start();
-        bot.getTime().start();
         addKeyListener(new Input(player));
         setFocusable(true);
         
