@@ -91,6 +91,9 @@ public class Person extends MapObject {
         //จุดเกิดเคลื่อนที่
         setMyPosX(getMyPosX() + Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
         setMyPosY(getMyPosY() + Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
+        if(getMyPosX() < 0 || getMyPosY() < 0 || getMyPosX() > 5000 || getMyPosY() > 5000){
+            myTank.setHp(0);
+        }
 
         //อัพเดทตำแหน่งจาก viewpoint
         myTank.setPosX(getMyPosX() + mapX);
