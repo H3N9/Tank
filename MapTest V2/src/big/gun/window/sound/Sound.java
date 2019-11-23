@@ -31,7 +31,7 @@ public class Sound implements Runnable {
             t1.start();
             FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             double vol = ((float) Math.sqrt(Math.pow(playerPosX - posX, 2) + Math.pow(playerPosY - posY, 2)) / 5000) * 50;
-            System.out.println(vol / 20);
+            System.out.println(1-vol / 20);
             float dB = (float) (Math.log(1 - vol / 20) / Math.log(10) * 20);
             gain.setValue(dB);
         }
