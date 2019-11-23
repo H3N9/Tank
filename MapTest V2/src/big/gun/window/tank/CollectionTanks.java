@@ -51,7 +51,7 @@ public class CollectionTanks {
         //Soviet Tank
         tanks.put("t34", new double[] {28, 10, 10, 5, 600, 160, 29, 3, 3.8, 0.2, 0.4, 4, 1, 0});
         
-        tanks.put("kv1", new double[] {50, 35, 35, 20, 800, 160, 35, 4, 2.8, 0.17, 0.4, 4, 2, 2800});
+        tanks.put("kv1", new double[] {50, 35, 35, 20, 800, 160, 35, 4, 2.2, 0.17, 0.4, 4, 2, 2800});
         
         tanks.put("is2", new double[] {55, 38, 38, 20, 800, 180, 55, 4, 2.5, 0.2, 0.4, 4, 3, 8300});
         
