@@ -86,7 +86,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;&quot;+SaveGame.LoadSave().getMoney()+&quot; $&quot;" type="code"/>
+                  <Connection code="&quot;&quot;+(SaveGame.LoadSave().getMoney())+&quot; $&quot;" type="code"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -361,11 +361,10 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Impact" size="18" style="0"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="cc" type="rgb"/>
-                            </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;m4&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -604,11 +603,10 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Impact" size="18" style="0"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="cc" type="rgb"/>
-                            </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;panzer4&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -847,11 +845,10 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Impact" size="18" style="0"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="cc" type="rgb"/>
-                            </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;cromwell&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1090,11 +1087,10 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Impact" size="18" style="0"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="cc" type="rgb"/>
-                            </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;t34&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1337,7 +1333,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;m4a3e8&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1580,7 +1578,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;panther&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1823,7 +1823,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;firefly&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2066,7 +2068,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;kv1&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2309,7 +2313,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;m26&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2552,7 +2558,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;tiger&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2795,7 +2803,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;churchill&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3038,7 +3048,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;is2&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3281,7 +3293,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;m26s&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3524,7 +3538,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;tiger2&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3767,7 +3783,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;comet&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -4010,7 +4028,9 @@
                               <Color blue="0" green="0" red="cc" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="11"/>
-                            <Property name="text" type="java.lang.String" value="205 $"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;is3&quot;)[13]+&quot; S&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>

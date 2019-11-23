@@ -16,8 +16,9 @@ public class Shell extends GameObject implements Moveable,ActionListener{
     private double damage;
     private double penetration;
     private Timer time;
+    boolean isShot;
     
-    public Shell(Tank tank){
+    public Shell(Tank tank, boolean isShot){
         time = new Timer(10, this);
         setWidth(5); setHeight(5);
         setPosX(tank.getTurret().getGunPosX()-getWidth()*0.5);
@@ -26,25 +27,29 @@ public class Shell extends GameObject implements Moveable,ActionListener{
         setRotate(tank.getTurret().getRotate()+tank.getTurret().getRotateHead());
         this.damage = CollectionTanks.tanks.get(tank.getNameTank())[5];
         this.penetration = CollectionTanks.tanks.get(tank.getNameTank())[6];
-        time.start();
+        this.isShot = isShot;
     }
 
     
     public void draw(Graphics2D g2d){
-        g2d.setColor(Color.white);
-        g2d.fill(getBounds());
-        g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
-        g2d.drawImage(Import.shell, (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
-        g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+        if(isShot){
+            g2d.setColor(Color.white);
+            g2d.fill(getBounds());
+            g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
+            g2d.drawImage(Import.shell, (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
+            g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
+        }
     }
     
     public void move() {
-        setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 15)); 
-        setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -15));
-        setCenterX(getPosX()+getWidth()/2); 
-        setCenterY(getPosY()+getHeight()/2);
+        if(isShot){
+            setPosX(getPosX()+Calculate.calculateMoveX(this.getRotate(), 15)); 
+            setPosY(getPosY()+Calculate.calculateMoveY(this.getRotate(), -15));
+            setCenterX(getPosX()+getWidth()/2); 
+            setCenterY(getPosY()+getHeight()/2);
+        }
     }
-
+    
     public void setDamage(double damage) {
         this.damage = damage;
     }
@@ -67,6 +72,14 @@ public class Shell extends GameObject implements Moveable,ActionListener{
 
     public Timer getTime() {
         return time;
+    }
+
+    public boolean isIsShot() {
+        return isShot;
+    }
+
+    public void setIsShot(boolean isShot) {
+        this.isShot = isShot;
     }
     
     

@@ -51,10 +51,10 @@ public class Player {
                 myTank.setIsBack(-1);
             }
             if(key==KeyEvent.VK_LEFT){
-                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.8);
             }
             if(key==KeyEvent.VK_RIGHT){
-                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.8);
             }
             if(key==KeyEvent.VK_SPACE){
                 myTank.shoot();
@@ -101,4 +101,9 @@ public class Player {
     public void setGotMoney(int gotMoney) {
         this.gotMoney = gotMoney;
     }
+
+    
+    
+    
+    
 }

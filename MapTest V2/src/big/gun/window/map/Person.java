@@ -67,12 +67,12 @@ public class Person extends MapObject {
     public void draw(Graphics2D g2d) {
         myTank.draw(g2d);
         //test bot detection front draw
-        g2d.setColor(Color.PINK);
-        g2d.fill(checkLeft);
-        g2d.fill(checkBLeft);
-        g2d.setColor(Color.MAGENTA);
-        g2d.fill(checkRight);
-        g2d.fill(checkBRight);
+//        g2d.setColor(Color.PINK);
+//        g2d.fill(checkLeft);
+//        g2d.fill(checkBLeft);
+//        g2d.setColor(Color.MAGENTA);
+//        g2d.fill(checkRight);
+//        g2d.fill(checkBRight);
 
         if(tag == 1){
             g2d.setColor(Color.BLUE);

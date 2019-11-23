@@ -11,8 +11,10 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
+import menu.Home;
 
 
 public class Condition extends KeyAdapter{
@@ -36,7 +38,7 @@ public class Condition extends KeyAdapter{
             if(persons.get(i).getTag()==2&&persons.get(i).getMyTank().getHp()>0){
                 return "nothing";
             }
-            else if(player.getMyTank().getHp()<=0){
+            if(player.getMyTank().getHp()<=0){
                 return "Alli";
             }
         }
@@ -48,8 +50,16 @@ public class Condition extends KeyAdapter{
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
            System.out.println("save");
            SaveGame.Save(player.getGotMoney(), "");
-           System.exit(1);
-           
+           Window.jframe.dispose();
+           Game.start.stop();
+           java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Home h = new Home();
+                h.setTitle("Big Gun");
+                h.setVisible(true);
+                h.setLocationRelativeTo(null);
+            }
+        }); 
        }
     }
 

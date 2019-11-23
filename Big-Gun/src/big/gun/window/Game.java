@@ -26,7 +26,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 public class Game extends JPanel implements ActionListener{
-    private Timer start;
+    public static Timer start;
     private Player player;
     private Map map;
     private Import importImg;
@@ -37,6 +37,7 @@ public class Game extends JPanel implements ActionListener{
     private Condition con;
     private String whoLose;
     private Hub hub;
+    private int delay, countMoney;
     
     //private TestDrawTank tdt;
     
@@ -52,9 +53,11 @@ public class Game extends JPanel implements ActionListener{
         hub = new Hub(player, bot);
         con = new Condition(player, bot.getPersons());
         whoLose = "nothing";
+        delay = 0; countMoney = 0;
         map = new Map(1800-Window.width/2, 4700-Window.height/2, bot.getPersons());
         bot.throwMap(map);
         start.start();
+        bot.getTime().start();
         addKeyListener(new Input(player));
         setFocusable(true);
         
@@ -95,19 +98,45 @@ public class Game extends JPanel implements ActionListener{
         hub.draw(g2d);
         con.draw(g2d);
         if(whoLose.equals("Axis")){
-            addKeyListener(con);
-            g2d.setColor(Color.BLUE);
+            
+            g2d.setColor(Color.black);
             g2d.fillRect(0, 0, Window.width, Window.height);
             g2d.setColor(Color.white);
-            g2d.drawString("Money: "+player.getGotMoney(), Window.width/2-50, Window.height/2);
-            g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()), Window.width/2-50, Window.height/2+20);
+            g2d.setFont(new Font("Impack", 30, 30));
+            g2d.drawString("Money: "+countMoney, Window.width/2-80, Window.height/2-40);
+            if(countMoney<=player.getGotMoney()){
+                countMoney += 5;
+            }
+            else{
+                g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()), Window.width/2-80, Window.height/2);
+            }
+            if(delay-player.getGotMoney()<500){
+                delay += 5;
+            }
+            else{
+                addKeyListener(con);
+                g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+80);
+            }
         }else if(whoLose.equals("Alli")){
-            addKeyListener(con);
-            g2d.setColor(Color.BLACK);
+            
+            g2d.setColor(Color.black);
             g2d.fillRect(0, 0, Window.width, Window.height);
             g2d.setColor(Color.white);
-            g2d.drawString("Money: "+player.getGotMoney(), Window.width/2-50, Window.height/2);
-            g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()), Window.width/2-50, Window.height/2+20);
+            g2d.setFont(new Font("Impack", 30, 30));
+            g2d.drawString("Money: "+countMoney, Window.width/2-80, Window.height/2-40);
+            if(countMoney<=player.getGotMoney()){
+                countMoney += 5;
+            }
+            else{
+                g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()), Window.width/2-80, Window.height/2);
+            }
+            if(delay-player.getGotMoney()<500){
+                delay += 5;
+            }
+            else{
+                addKeyListener(con);
+                g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+80);
+            }
         }
         
         
@@ -119,7 +148,7 @@ public class Game extends JPanel implements ActionListener{
         map.update();
         map.moveMap(player);
         map.playerCollision(player, bot);
-        map.bulletCollision(bot, player);  // Laging
+        map.bulletCollision(bot, player);
         hub.update(player, bot);
         FPS();
         if(whoLose.equals("nothing")){

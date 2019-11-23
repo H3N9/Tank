@@ -35,27 +35,27 @@ public class CollectionTanks {
         
         tanks.put("tiger", new double[] {50, 40, 40, 20, 800, 180, 50, 4.5, 2.8, 0.31, 0.5, 2, 3, 8000});
         
-        tanks.put("tiger2", new double[] {60, 50, 50 ,30, 800, 210, 58, 7, 1.5, 0.2, 0.5, 2, 4, 18000});
+        tanks.put("tiger2", new double[] {60, 50, 50 ,30, 800, 220, 58, 7, 2, 0.2, 0.5, 2, 4, 18000});
         
         //Britan Tank
         tanks.put("cromwell", new double[] {30, 8, 8, 2, 600, 160, 28, 4, 4.5, 0.26, 0.4, 3, 1, 0});
         
-        tanks.put("firefly", new double[] {30, 10, 10, 5, 600, 230, 55, 6, 1.8, 0.19, 0.5, 3, 2, 4500});
+        tanks.put("firefly", new double[] {30, 10, 10, 5, 600, 230, 55, 6, 2.2, 0.19, 0.5, 3, 2, 4500});
         
         tanks.put("churchill", new double[] {62, 55, 55, 30, 1000, 160, 39, 4, 1.2, 0.19, 0.5, 3, 3, 7000});
         
-        tanks.put("comet", new double[] {55, 35, 35, 20, 800, 200, 59, 4.5, 3.2, 0.21, 0.4, 3, 4, 15000});
+        tanks.put("comet", new double[] {58, 35, 35, 20, 800, 200, 59, 4.5, 3, 0.21, 0.4, 3, 4, 15000});
         
         
         
         //Soviet Tank
         tanks.put("t34", new double[] {28, 10, 10, 5, 600, 160, 29, 3, 3.8, 0.2, 0.4, 4, 1, 0});
         
-        tanks.put("kv1", new double[] {50, 35, 35, 20, 800, 160, 35, 4, 2.8, 0.17, 0.4, 4, 2, 2800});
+        tanks.put("kv1", new double[] {50, 35, 35, 20, 800, 160, 35, 4, 2.2, 0.17, 0.4, 4, 2, 2800});
         
         tanks.put("is2", new double[] {55, 38, 38, 20, 800, 180, 55, 4, 2.5, 0.2, 0.4, 4, 3, 8300});
         
-        tanks.put("is3", new double[] {61, 45, 45, 25, 800, 200, 58, 5, 2.8, 0.23, 0.4, 4, 4, 18500});
+        tanks.put("is3", new double[] {61, 45, 45, 25, 800, 200, 58, 5, 2.8, 0.23, 0.4, 4, 4, 20000});
         
         name = new String[] {"m4", "panzer4", "cromwell", "t34",
                              "m4a3e8", "panther", "firefly", "kv1",

@@ -5,13 +5,14 @@
  */
 package big.gun.window;
 
+import java.io.Serializable;
 import java.util.HashSet;
 
 /**
  *
  * @author h3n9
  */
-public class Profile {
+public class Profile implements Serializable{
     private long money;
     private HashSet<String> set;
     

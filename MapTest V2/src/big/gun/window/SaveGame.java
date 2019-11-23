@@ -15,42 +15,45 @@ public class SaveGame {
 
     
     
-public static void Save(int money){
-        int p = money;
-        
+    public static void Save(int money, String buy){
+        Profile profile = LoadSave();
+        profile.setMoney(profile.getMoney()+money);
+        if(buy.equals("")){
+            profile.getSet().add(buy);
+        }
         try{
             FileOutputStream fot = new FileOutputStream("save.dat");
-                DataOutputStream oot = new DataOutputStream(fot);
-                oot.write(p);
-                oot.close();
-                fot.close();
+            ObjectOutputStream oot = new ObjectOutputStream(fot);
+            oot.writeObject(profile);
+            oot.close();
+            fot.close();
             
         }
         catch(IOException x){}
         
     }
     
-    public static int LoadSave(){
-        int p = 0;
+    public static Profile LoadSave(){
+        Profile profile = new Profile();
         File file = new File("save.dat");
         if(file.exists()){
             try{
                 FileInputStream fin = new FileInputStream("save.dat");
-                DataInputStream oin = new DataInputStream(fin);
-                p = oin.read();
+                ObjectInputStream oin = new ObjectInputStream(fin);
+                profile = (Profile)oin.readObject();
                 oin.close();
                 fin.close();
-                return p;
+                return profile;
             }
-            catch(IOException e){}
+            catch(IOException | ClassNotFoundException e){}
         }
         else{
             System.out.println("new");
-            return p;
+            return profile;
             
         }
         System.out.println("null");
-        return p;
+        return profile;
     }
     
     
