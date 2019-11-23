@@ -41,19 +41,18 @@ public class Person extends MapObject {
         rndly = Calculate.randomNumber(5, 15);
         rndry = Calculate.randomNumber(5, 15);
         veiw = new Rectangle2D.Double(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
-        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkLeft = new Rectangle2D.Double(clx, cly, myTank.getWidth(), myTank.getWidth()); 
-        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkRight = new Rectangle2D.Double(crx, cry, myTank.getWidth(), myTank.getWidth());
-        
-        cblx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cbly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkBLeft = new Rectangle2D.Double(cblx, cbly, myTank.getWidth(), myTank.getWidth()); 
-        cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth(), myTank.getWidth());
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkLeft = new Rectangle2D.Double(clx, cly, myTank.getWidth()/2, myTank.getWidth()/2); 
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkRight = new Rectangle2D.Double(crx, cry, myTank.getWidth()/2, myTank.getWidth()/2);
+        cblx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cbly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkBLeft = new Rectangle2D.Double(cblx, cbly, myTank.getWidth()/2, myTank.getWidth()/2); 
+        cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth()/2, myTank.getWidth()/2);
         
         deadLock = 0;
         leftHit = 0;
@@ -96,18 +95,18 @@ public class Person extends MapObject {
         //อัพเดทตำแหน่งจาก viewpoint
         myTank.setPosX(getMyPosX() + mapX);
         myTank.setPosY(getMyPosY() + mapY);
-        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkLeft.setRect(clx, cly, myTank.getWidth(), myTank.getWidth()); 
-        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkRight.setRect(crx, cry, myTank.getWidth(), myTank.getWidth());
-        cblx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cbly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkBLeft = new Rectangle2D.Double(cblx, cbly, myTank.getWidth(), myTank.getWidth()); 
-        cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/2, myTank.getCenterY()-myTank.getWidth()/2, myTank.getRotate());
-        checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth(), myTank.getWidth());
+        clx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()-myTank.getWidth()/2-rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkLeft = new Rectangle2D.Double(clx, cly, myTank.getWidth()/2, myTank.getWidth()/2); 
+        crx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()-myTank.getWidth()/2-rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkRight = new Rectangle2D.Double(crx, cry, myTank.getWidth()/2, myTank.getWidth()/2);
+        cblx = Calculate.calculateRotateX(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cbly = Calculate.calculateRotateY(myTank.getPosX()-myTank.getWidth()/2, myTank.getPosY()+myTank.getHeight()+rndly, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkBLeft = new Rectangle2D.Double(cblx, cbly, myTank.getWidth()/2, myTank.getWidth()/2); 
+        cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
+        checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth()/2, myTank.getWidth()/2);
         //รถเคลื่อนที่
         this.move();
     }
