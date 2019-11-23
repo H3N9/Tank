@@ -48,11 +48,9 @@ public class SaveGame {
             catch(IOException | ClassNotFoundException e){}
         }
         else{
-            System.out.println("new");
             return profile;
             
         }
-        System.out.println("null");
         return profile;
     }
     

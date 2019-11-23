@@ -66,7 +66,6 @@ public class about extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 755));
-        setPreferredSize(new java.awt.Dimension(1080, 755));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -160,7 +159,7 @@ public class about extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Dev");
+        jLabel25.setText("Dev-game");
         name1.add(jLabel25);
 
         jPanel3.add(name1);
@@ -179,7 +178,7 @@ public class about extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Dev");
+        jLabel27.setText("Dev-game");
         name2.add(jLabel27);
 
         jPanel3.add(name2);
@@ -198,7 +197,7 @@ public class about extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("Dev");
+        jLabel29.setText("Dev-game");
         name3.add(jLabel29);
 
         jPanel3.add(name3);
@@ -218,7 +217,7 @@ public class about extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Dev");
+        jLabel17.setText("Dev-menu");
         name4.add(jLabel17);
 
         jPanel3.add(name4);
@@ -238,7 +237,7 @@ public class about extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Dev");
+        jLabel20.setText("game-tester");
         name9.add(jLabel20);
 
         jPanel3.add(name9);
@@ -249,7 +248,7 @@ public class about extends javax.swing.JFrame {
         title1.setFont(new java.awt.Font("Impact", 0, 56)); // NOI18N
         title1.setForeground(new java.awt.Color(255, 255, 255));
         title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title1.setText("Provider");
+        title1.setText("Developer");
         title1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jPanel1.add(title1);
         title1.setBounds(0, 30, 1080, 60);

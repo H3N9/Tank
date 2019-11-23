@@ -2752,7 +2752,6 @@ public class prePlay extends javax.swing.JFrame{
 
     private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
         // TODO add your handling code here:
-        System.out.println(width+" "+height+" "+tank+" "+enemy+" "+level);
         new Window(width, height, tank, enemy, level);
         this.dispose();
     }//GEN-LAST:event_startMousePressed
