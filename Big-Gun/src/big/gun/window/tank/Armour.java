@@ -5,12 +5,12 @@
  */
 package big.gun.window.tank;
 
-import static big.gun.window.tank.Calculate.*;
-
 /**
  *
  * @author USER
  */
+import static big.gun.window.tank.Calculate.*;
+
 public class Armour extends GameObject{
     public Armour(double posX, double posY, double size){
         super();
@@ -19,7 +19,7 @@ public class Armour extends GameObject{
         setWidth(size);
         setHeight(size);
     }
-    
+
     public void update(double posX, double posY, double cx, double cy, double rotate){
         setPosX(calculateRotateX(posX, posY, cx, cy, rotate));
         setPosY(calculateRotateY(posX, posY, cx, cy, rotate));

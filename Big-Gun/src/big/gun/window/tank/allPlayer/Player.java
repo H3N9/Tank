@@ -1,55 +1,64 @@
 
 package big.gun.window.tank.allPlayer;
 
+import big.gun.window.SaveGame;
 import big.gun.window.tank.Tank;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 
 
 public class Player {
     private Tank myTank;
-    
-    public Player(){
-        this("churchill");
+    private int gotMoney;
 
-    }
 
     
-    public Player(String name){
-        myTank = new Tank(name);
+    public Player(String name, double posX, double posY){
+        myTank = new Tank(name, posX, posY);
+        gotMoney = 0;
     }
+    
+    //
+//    public Player(double posX, double posY){
+//        own
+//    }
     
     public void draw(Graphics2D g2d){
         myTank.draw(g2d);
+        g2d.drawString(myTank.getNameTank(), 
+                (float)myTank.getPosX()+50, (float)myTank.getPosY()-10);
     }
     
     public void keyPressed(KeyEvent e){
-        int key = e.getKeyCode();
-        if(key==KeyEvent.VK_W){
-            myTank.setSpeedX(myTank.getSpeed());  
-            myTank.setSpeedY(-myTank.getSpeed());
-            myTank.setIsBack(1);
-        }
-        if(key==KeyEvent.VK_A){
-            myTank.setRotateSpeed(-myTank.getSpeed()/2);
-        }
-        if(key==KeyEvent.VK_D){
-            myTank.setRotateSpeed(myTank.getSpeed()/2);
-        }
-        if(key==KeyEvent.VK_S){
-            myTank.setSpeedX(-myTank.getSpeed());  
-            myTank.setSpeedY(myTank.getSpeed());
-            myTank.setIsBack(-1);
-        }
-        if(key==KeyEvent.VK_Q){
-            myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
-        }
-        if(key==KeyEvent.VK_E){
-            myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
-        }
-        if(key==KeyEvent.VK_SPACE){
-            myTank.shoot();
+        if(myTank.getHp() > 0){
+            int key = e.getKeyCode();
+            if(key==KeyEvent.VK_W){
+                myTank.setSpeedX(myTank.getSpeed());  
+                myTank.setSpeedY(-myTank.getSpeed());
+                myTank.setIsBack(1);
+            }
+            if(key==KeyEvent.VK_A){
+                myTank.setRotateSpeed(-myTank.getSpeed()/2);
+            }
+            if(key==KeyEvent.VK_D){
+                myTank.setRotateSpeed(myTank.getSpeed()/2);
+            }
+            if(key==KeyEvent.VK_S){
+                myTank.setSpeedX(-myTank.getSpeed());  
+                myTank.setSpeedY(myTank.getSpeed());
+                myTank.setIsBack(-1);
+            }
+            if(key==KeyEvent.VK_Q){
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+            }
+            if(key==KeyEvent.VK_E){
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+            }
+            if(key==KeyEvent.VK_SPACE){
+                myTank.shoot();
+            }
         }
     }
     
@@ -83,5 +92,13 @@ public class Player {
 
     public Tank getMyTank() {
         return myTank;
+    }
+    
+    public int getGotMoney() {
+        return gotMoney;
+    }
+
+    public void setGotMoney(int gotMoney) {
+        this.gotMoney = gotMoney;
     }
 }
