@@ -50,16 +50,8 @@ public class Condition extends KeyAdapter{
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
            System.out.println("save");
            SaveGame.Save(player.getGotMoney(), "");
-           Window.jframe.dispose();
-           Game.start.stop();
-           java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Home h = new Home();
-                h.setTitle("Big Gun");
-                h.setVisible(true);
-                h.setLocationRelativeTo(null);
-            }
-        }); 
+           Window.jframe.dispatchEvent(new WindowEvent(Window.jframe, WindowEvent.WINDOW_CLOSING));
+           
        }
     }
 
