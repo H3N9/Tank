@@ -9,6 +9,7 @@ package big.gun.window.map;
  *
  * @author pooh
  */
+import big.gun.window.SaveGame;
 import big.gun.window.tank.*;
 import big.gun.window.Window;
 import big.gun.window.sound.Sound;
@@ -284,6 +285,8 @@ public class Map {
                                     new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                     if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
                                         player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());   //get money
+                                        SaveGame.Save(player.getGotMoney());
+                                        System.out.println((int)SaveGame.LoadSave()+" Save");
                                     }                                  
                                 }
                                 else{
@@ -296,6 +299,8 @@ public class Map {
                                         new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                         if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
                                             player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());  // get money
+                                            SaveGame.Save(player.getGotMoney());
+                                            System.out.println((int)SaveGame.LoadSave()+" Save");
                                         }                                          
                                     }else{
                                         new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());

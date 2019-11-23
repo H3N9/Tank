@@ -15,36 +15,43 @@ public class SaveGame {
 
     
     
-//    public static void Save(int money, String buy){
-//        list = LoadSave();
-//        list.set(0, (long)list.get(0)+money);
-//        
-//        try{
-//            FileOutputStream fot = new FileOutputStream("Profile.dat");
-//            ObjectOutput oot = new ObjectOutputStream(fot);
-//            oot.writeObject(list);
-//            oot.close();
-//            fot.close();
-//        }
-//        catch(Exception x){}
-//        
-//    }
-//    
-//    public static LinkedList LoadSave(){
-//        File file = new File("Profile.dat");
-//        if(file.exists()){
-//            try{
-//                FileInputStream fin = new FileInputStream("Profile.dat");
-//                ObjectInputStream oin = new ObjectInputStream(fin);
-//                list = (LinkedList) oin.readObject();
-//                oin.close();
-//                fin.close();
-//                return list;
-//            }
-//            catch(Exception e){}
-//        }
-//        return list;
-//    }
+public static void Save(int money){
+        int p = money;
+        
+        try{
+            try (FileOutputStream fot = new FileOutputStream("save.dat")) {
+                DataOutputStream oot = new DataOutputStream(fot);
+                oot.write(p);
+                oot.close();
+                fot.close();
+            }
+        }
+        catch(IOException x){}
+        
+    }
+    
+    public static int LoadSave(){
+        int p = 0;
+        File file = new File("save.dat");
+        if(file.exists()){
+            try{
+                FileInputStream fin = new FileInputStream("save.dat");
+                DataInputStream oin = new DataInputStream(fin);
+                p = oin.read();
+                oin.close();
+                fin.close();
+                return p;
+            }
+            catch(IOException e){}
+        }
+        else{
+            System.out.println("new");
+            return p;
+            
+        }
+        System.out.println("null");
+        return p;
+    }
     
     
     

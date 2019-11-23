@@ -47,7 +47,6 @@ public class Condition extends KeyAdapter{
        int key = e.getKeyCode();
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
            System.out.println("save");
-           System.exit(1);
            
        }
     }

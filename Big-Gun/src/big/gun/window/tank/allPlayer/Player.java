@@ -50,10 +50,10 @@ public class Player {
                 myTank.setSpeedY(myTank.getSpeed());
                 myTank.setIsBack(-1);
             }
-            if(key==KeyEvent.VK_Q){
+            if(key==KeyEvent.VK_LEFT){
                 myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
             }
-            if(key==KeyEvent.VK_E){
+            if(key==KeyEvent.VK_RIGHT){
                 myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
             }
             if(key==KeyEvent.VK_SPACE){
@@ -79,10 +79,10 @@ public class Player {
             myTank.setSpeedY(0);
             myTank.setIsBack(1);
         }
-        if(key==KeyEvent.VK_Q){
+        if(key==KeyEvent.VK_LEFT){
             myTank.getTurret().setRotateSpeed(0);
         }
-        if(key==KeyEvent.VK_E){
+        if(key==KeyEvent.VK_RIGHT){
             myTank.getTurret().setRotateSpeed(0);
         }
     }

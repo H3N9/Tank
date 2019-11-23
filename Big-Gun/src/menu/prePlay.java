@@ -5,6 +5,7 @@
  */
 package menu;
 
+import big.gun.window.SaveGame;
 import java.awt.*;
 import javax.swing.*;
 import big.gun.window.Window;
@@ -30,8 +31,9 @@ public class prePlay extends javax.swing.JFrame{
         check(1);
         T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
         
+        
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -324,7 +326,6 @@ public class prePlay extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 755));
-        setPreferredSize(new java.awt.Dimension(1080, 755));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -342,8 +343,16 @@ public class prePlay extends javax.swing.JFrame{
         money.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         money.setForeground(new java.awt.Color(255, 255, 255));
         money.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        money.setText("200 $ ");
+        money.setText(""+SaveGame.LoadSave().getMoney()+" $");
         money.setToolTipText("");
+        money.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                moneyCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                moneyInputMethodTextChanged(evt);
+            }
+        });
         moneyPanel.add(money);
 
         jPanel1.add(moneyPanel);
@@ -2619,6 +2628,14 @@ public class prePlay extends javax.swing.JFrame{
         start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/intogame.png")));
     }//GEN-LAST:event_startMouseExited
 
+    private void moneyCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_moneyCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moneyCaretPositionChanged
+
+    private void moneyInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_moneyInputMethodTextChanged
+        jLabel55.setText(""+SaveGame.LoadSave().getMoney()+":$");
+    }//GEN-LAST:event_moneyInputMethodTextChanged
+
     /**
      * @param args the command line arguments
      */
@@ -2938,3 +2955,4 @@ public class prePlay extends javax.swing.JFrame{
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
+
