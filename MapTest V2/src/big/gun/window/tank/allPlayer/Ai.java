@@ -173,34 +173,7 @@ public class Ai implements ActionListener{
              persons.get(i).setRightHit(persons.get(i).getRightHit()-1);
          }
          
-         //เช็คชนคน
-         for(Person ebot: persons){
-             for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
-                 for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
-                     if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds())) && persons.get(i)!=ebot){
-//                        persons.get(i).setDeadLock(200);
-                        move.get(i).remove("W");
-                        move.get(i).remove("S");
-                        move.get(i).remove("A");
-                        move.get(i).add("D");
-                        persons.get(i).setLeftHit(20);
-                    }
-                 }
-             }
-             
-         }  
-         for(int k=0; k < player.getMyTank().getArmours().length; k++){
-             for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
-                 if(persons.get(i).getCheckLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()) || persons.get(i).getCheckRight().intersects(player.getMyTank().getArmours()[k][j].getBounds())){
-//                    persons.get(i).setDeadLock(200);
-                    move.get(i).remove("W");
-                    move.get(i).remove("S");
-                    move.get(i).remove("D");
-                    move.get(i).add("A");
-                    persons.get(i).setRightHit(20);
-                }
-             }
-         }
+         
          //เลี้ยวเมื่อใกล้สิ่งของ
          for(Builds mObject: map.getBuilds()) {
             if(persons.get(i).getRightHit() > 0 && persons.get(i).getLeftHit() > 0){
@@ -232,8 +205,102 @@ public class Ai implements ActionListener{
                 move.get(i).add("A");
                 persons.get(i).setRightHit(20);
             }
-
-        }   
+            
+            //check back
+            if(persons.get(i).getCheckBLeft().intersects(mObject.getBounds())){
+                move.get(i).add("W");
+                move.get(i).remove("S");
+                move.get(i).remove("A");
+                move.get(i).add("D");
+                persons.get(i).setRightHit(0);
+                persons.get(i).setLeftHit(0);
+                persons.get(i).setDeadLock(0);
+            }
+            else if(persons.get(i).getCheckBRight().intersects(mObject.getBounds())){
+                move.get(i).add("W");
+                move.get(i).remove("S");
+                move.get(i).remove("D");
+                move.get(i).add("A");
+                persons.get(i).setRightHit(0);
+                persons.get(i).setLeftHit(0);
+                persons.get(i).setDeadLock(0);
+            }
+            
+        }
+         //เช็คชนคน
+         for(Person ebot: persons){
+             for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
+                 for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
+                    if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot)){
+//                        persons.get(i).setDeadLock(200);
+                        move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setLeftHit(20);
+                    }
+                    else if(persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot ){
+                         move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setRightHit(20);
+                    }
+                    if((persons.get(i).getCheckBLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot)){
+                        move.get(i).add("W");
+                        move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setRightHit(0);
+                        persons.get(i).setLeftHit(0);
+                        persons.get(i).setDeadLock(0);
+                    }
+                    else if(persons.get(i).getCheckBRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot ){
+                        move.get(i).add("W");
+                        move.get(i).remove("S");
+                        move.get(i).remove("D");
+                        move.get(i).add("A");
+                        persons.get(i).setRightHit(0);
+                        persons.get(i).setLeftHit(0);
+                        persons.get(i).setDeadLock(0);
+                    }
+                 }
+             }
+             
+         }  
+         for(int k=0; k < player.getMyTank().getArmours().length; k++){
+             for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
+                 if((persons.get(i).getCheckLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()))){
+//                        persons.get(i).setDeadLock(200);
+                        move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setLeftHit(20);
+                    }
+                    else if(persons.get(i).getCheckRight().intersects(player.getMyTank().getArmours()[k][j].getBounds()) ){
+                         move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setRightHit(20);
+                    }
+                    if((persons.get(i).getCheckBLeft().intersects(player.getMyTank().getArmours()[k][j].getBounds()))){
+                        move.get(i).add("W");
+                        move.get(i).remove("S");
+                        move.get(i).remove("A");
+                        move.get(i).add("D");
+                        persons.get(i).setRightHit(0);
+                        persons.get(i).setLeftHit(0);
+                        persons.get(i).setDeadLock(0);
+                    }
+                    else if(persons.get(i).getCheckBRight().intersects(player.getMyTank().getArmours()[k][j].getBounds()) ){
+                        move.get(i).add("W");
+                        move.get(i).remove("S");
+                        move.get(i).remove("D");
+                        move.get(i).add("A");
+                        persons.get(i).setRightHit(0);
+                        persons.get(i).setLeftHit(0);
+                        persons.get(i).setDeadLock(0);
+                    }
+             }
+         }
 
         persons.get(i).behavior(move.get(i));
       }
