@@ -20,6 +20,7 @@ import java.util.HashMap;
 public class Sound implements Runnable {
 
     public static double playerPosX, playerPosY;
+    private float dB;
     public static HashMap<String, Clip> sounds;
     public Clip clip;
 
@@ -32,7 +33,7 @@ public class Sound implements Runnable {
             FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             double vol = ((float) Math.sqrt(Math.pow(playerPosX - posX, 2) + Math.pow(playerPosY - posY, 2)) / 5000) * 50;
             System.out.println(vol / 20);
-            float dB = (float) (Math.log(1 - vol / 20) / Math.log(10) * 20);
+            dB = (float) (Math.log(1 - vol / 20) / Math.log(10) * 20);
             gain.setValue(dB);
         }
     }
@@ -64,7 +65,9 @@ public class Sound implements Runnable {
     @Override
     public void run() {
 //        try {
+            FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
+            gain.setValue(dB);
             while (true){
                 if (clip.getFramePosition() >= clip.getFrameLength()){
                     clip.setFramePosition(0);
