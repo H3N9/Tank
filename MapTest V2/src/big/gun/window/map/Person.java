@@ -145,10 +145,10 @@ public class Person extends MapObject {
             
 
             if(event.contains("Q")){
-                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.5);
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.8);
             }
             else if(event.contains("E")){
-                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.5);
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.8);
             }
             else{
                 myTank.getTurret().setRotateSpeed(0);
