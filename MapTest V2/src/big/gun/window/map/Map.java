@@ -165,7 +165,6 @@ public class Map {
                         break;
                     }
                 }
-                if(breakall == 1){break;}
             }
             //bot ชนสิ่งของ
             breakall = 0;
@@ -178,7 +177,6 @@ public class Map {
                             break;
                         }
                     }
-                    if(breakall == 1){break;}
                 }
             }
         }
@@ -191,7 +189,7 @@ public class Map {
                     for(Person ebot: bot.getPersons()){
                         for(int p=0; p < ebot.getMyTank().getArmours().length; p++){
                             for(int q=0; q < ebot.getMyTank().getArmours()[p].length; q++){
-                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds())){
+                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds()) && ebot.getMyTank().getHp() > 0){
                                     pTank.moveStop();
                                     ebot.moveStop();
                                     isMoveMap = false;
@@ -213,14 +211,12 @@ public class Map {
                     for(Person ebot2: bot.getPersons()){
                         for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
                             for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
-                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2 && ebot2.getMyTank().getHp() > 0){
                                     ebot.moveStop();
-                                    ebot2.moveStop();
                                     breakall = 1;
                                     break;
                                 }
                             }
-                            if(breakall == 1){break;}
                         }
                     }
                 }

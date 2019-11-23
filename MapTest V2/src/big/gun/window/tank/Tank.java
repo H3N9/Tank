@@ -71,20 +71,20 @@ public class Tank extends GameObject implements Moveable{
             g2d.rotate(Math.toRadians(-getRotate()), getCenterX(), getCenterY());
 
             //draw test armour
-    //        for(int i=0; i < armours.length; i++){
-    //            if(i==0 || i==armours.length-1){
-    //                for(int j=0; j<3; j++){
-    //                    g2d.setColor(Color.red);
-    //                    g2d.fill(armours[i][j].getBounds());
-    //                }
-    //            }
-    //            else{
-    //                for(int j=0; j<2; j++){
-    //                    g2d.setColor(Color.cyan);
-    //                    g2d.fill(armours[i][j].getBounds());
-    //                }
-    //            }
-    //        }
+            for(int i=0; i < armours.length; i++){
+                if(i==0 || i==armours.length-1){
+                    for(int j=0; j<3; j++){
+                        g2d.setColor(Color.red);
+                        g2d.fill(armours[i][j].getBounds());
+                    }
+                }
+                else{
+                    for(int j=0; j<2; j++){
+                        g2d.setColor(Color.cyan);
+                        g2d.fill(armours[i][j].getBounds());
+                    }
+                }
+            }
 
 
             turret.draw(g2d);
