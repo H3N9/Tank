@@ -20,6 +20,13 @@ public class prePlay extends javax.swing.JFrame {
     public prePlay() {
         initComponents();
     }
+    
+    public prePlay(int width, int height,int enemy){
+        initComponents();
+        this.width = width;
+        this.height = height;
+        this.enemy = enemy;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -2594,6 +2601,10 @@ public class prePlay extends javax.swing.JFrame {
     private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
         // TODO add your handling code here:
         System.out.println(tank);
+        System.out.println(width);
+        System.out.println(height);
+        System.out.println(enemy);
+        
     }//GEN-LAST:event_startMousePressed
 
     private void startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseEntered
@@ -2635,13 +2646,11 @@ public class prePlay extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new prePlay().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new prePlay().setVisible(true);
         });
     }
-    private int chose = 0;
+    private int chose = 0, width, height, enemy;
     private String tank = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel T1;

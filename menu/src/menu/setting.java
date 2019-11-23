@@ -18,6 +18,33 @@ public class setting extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void setResolution(String size){
+        if(size.equals("800 x 600")){
+            width = 800;
+            height = 600;
+        }
+        if(size.equals("1024 x 768")){
+            width = 1024;
+            height = 768; 
+        }
+        if(size.equals("1280 x 720")){
+            width = 1280;
+            height = 720; 
+        }
+        if(size.equals("1360 x 768")){
+            width = 1360;
+            height = 768; 
+        }
+        if(size.equals("1440 x 1050")){
+            width = 1440;
+            height = 1050; 
+        }
+        if(size.equals("1680 x 900")){
+            width = 1680;
+            height = 900; 
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,16 +56,17 @@ public class setting extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        enemy = new javax.swing.JComboBox<>();
+        resolution = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bnConfirm = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1080, 755));
         setMinimumSize(new java.awt.Dimension(1080, 755));
         setPreferredSize(new java.awt.Dimension(1080, 755));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1080, 720));
@@ -52,15 +80,15 @@ public class setting extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(385, 300, 280, 50);
 
-        jComboBox1.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        jPanel2.add(jComboBox1);
-        jComboBox1.setBounds(400, 380, 250, 40);
+        enemy.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        enemy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        jPanel2.add(enemy);
+        enemy.setBounds(400, 380, 250, 40);
 
-        jComboBox2.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "800 x 600", "1024 x 768", "1280 x 720", "1360 x 768", "1440 x 1050", "1680 x 900" }));
-        jPanel2.add(jComboBox2);
-        jComboBox2.setBounds(400, 230, 250, 40);
+        resolution.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        resolution.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "800 x 600", "1024 x 768", "1280 x 720", "1360 x 768", "1440 x 1050", "1680 x 900" }));
+        jPanel2.add(resolution);
+        resolution.setBounds(400, 230, 250, 40);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
@@ -69,19 +97,20 @@ public class setting extends javax.swing.JFrame {
         jPanel2.add(jLabel3);
         jLabel3.setBounds(400, 150, 250, 50);
 
-        jButton1.setText("OKAY");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bnConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/c2.png"))); // NOI18N
+        bnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bnConfirmMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bnConfirmMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
+                bnConfirmMousePressed(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(400, 460, 250, 40);
+        jPanel2.add(bnConfirm);
+        bnConfirm.setBounds(400, 460, 254, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/opl.jpg"))); // NOI18N
         jPanel2.add(jLabel1);
@@ -93,17 +122,26 @@ public class setting extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bnConfirmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnConfirmMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        bnConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/c.png")));
+    }//GEN-LAST:event_bnConfirmMouseEntered
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+    private void bnConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnConfirmMouseExited
         // TODO add your handling code here:
-         prePlay f = new prePlay();
+        bnConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/c2.png")));        
+    }//GEN-LAST:event_bnConfirmMouseExited
+
+    private void bnConfirmMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnConfirmMousePressed
+        // TODO add your handling code here:
+        setResolution(resolution.getSelectedItem().toString());
+        enemys = Integer.parseInt(enemy.getSelectedItem().toString());
+        prePlay f = new prePlay(width, height, enemys);
+        f.setTitle("Big Gun");
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1MousePressed
+    }//GEN-LAST:event_bnConfirmMousePressed
 
     /**
      * @param args the command line arguments
@@ -133,20 +171,18 @@ public class setting extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new setting().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new setting().setVisible(true);
         });
     }
-
+    private int width, height, enemys;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel bnConfirm;
+    private javax.swing.JComboBox<String> enemy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> resolution;
     // End of variables declaration//GEN-END:variables
 }
