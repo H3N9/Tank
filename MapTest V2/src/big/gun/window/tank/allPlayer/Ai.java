@@ -43,13 +43,26 @@ public class Ai implements ActionListener{
         spawnAlli = alline>max? max: alline;
         for(int i=0;i<spawnAlli;i++){
             int flag = Calculate.randomNumber(1, 4);
+            int num = level;
             if(level==4){
-                int num = 4;
+                num = 4;
                 persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
-            else{
-                int num = Calculate.randomNumber(level, level+1);
+            else if(difficult.equals("hard")){
+                num = Calculate.randomNumber(level, level+1);
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
+                move.add(new HashSet<String>());
+            }
+            else if(difficult.equals("normal")){
+                num = Calculate.randomNumber(level, level);
+                persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
+                move.add(new HashSet<String>());
+            }
+            else if(difficult.equals("eazy")){
+                if(level!=1){
+                    num = Calculate.randomNumber(level-1, level);
+                }
                 persons.add(new Person(2000+i*200, 4700, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
             }
@@ -76,23 +89,17 @@ public class Ai implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        switch(difficult){
-            case "easy":
-                time.setDelay(200);
-                break;
-            case "normal":
-                time.setDelay(150);
-            case "hard":
-                time.setDelay(0);
-            default:
-                break;
-        }
         
         //Bot shoot on Target
         for(int i=0;i<spawnAlli+spawnAxis;i++){
             if(persons.get(i).veiwOfBot(player, persons, i)!=-2){
                 int target = persons.get(i).veiwOfBot(player, persons, i);
-                switch (persons.get(i).shootOnTarGet(player,  persons, target)) {
+                int wrongShoot = 0;
+                if(difficult.equals("eazy"))
+                    wrongShoot = Calculate.randomNumber(0, 10);
+                else if(difficult.equals("normal"))
+                    wrongShoot = Calculate.randomNumber(0, 5);
+                switch (persons.get(i).shootOnTarGet(player,  persons, target, wrongShoot)) {
                     case "right":
                         move.get(i).add("E");
                         move.get(i).remove("Q");

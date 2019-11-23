@@ -2651,6 +2651,7 @@ public class prePlay extends javax.swing.JFrame {
         });
     }
     private int chose = 0, width, height, enemy;
+  
     private String tank = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel T1;

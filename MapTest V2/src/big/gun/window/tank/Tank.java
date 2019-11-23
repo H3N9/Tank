@@ -59,7 +59,7 @@ public class Tank extends GameObject implements Moveable{
     }
 
     public void draw(Graphics2D g2d){
-        if(armours[0][0].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[sizeOfArmoursArray-1][2].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[sizeOfArmoursArray-1][0].getBounds().intersects(-10,-10,Window.width+10,Window.height+10) || armours[0][2].getBounds().intersects(-10,-10,Window.width+10,Window.height+10)){
+        if(armours[0][0].getBounds().intersects(-50,-50,Window.width+50,Window.height+50) || armours[sizeOfArmoursArray-1][2].getBounds().intersects(-50,-50,Window.width+50,Window.height+50) || armours[sizeOfArmoursArray-1][0].getBounds().intersects(-50,-50,Window.width+50,Window.height+50) || armours[0][2].getBounds().intersects(-50,-50,Window.width+50,Window.height+50)){
             g2d.rotate(Math.toRadians(getRotate()), getCenterX(), getCenterY());
             if(hp <= 0){
                 g2d.drawImage(Import.tankDImg.get(nameTank)[0], (int)getPosX(), (int)getPosY(), (int)getWidth(), (int)getHeight(), null);
@@ -200,7 +200,11 @@ public class Tank extends GameObject implements Moveable{
     }
 
     public void setHp(double hp) {
-        this.hp = hp;
+        if(hp < 0){
+            this.hp = 0;
+        }else{
+            this.hp = hp;
+        }
     }
 
     public void setReload(double reload) {

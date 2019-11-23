@@ -46,16 +46,11 @@ public class Condition extends KeyAdapter{
     public void keyPressed(KeyEvent e){
        int key = e.getKeyCode();
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
-           Window.jframe.dispose();
-       }
-    }
-    public void keyReleased(KeyEvent e){
-       int key = e.getKeyCode();
-       if(key==KeyEvent.VK_ENTER){
            System.out.println("save");
-           SaveGame.Save(player.getGotMoney(), "");
+           System.exit(1);
+           
        }
     }
-    
+
     
 }
