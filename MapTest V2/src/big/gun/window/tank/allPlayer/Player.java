@@ -12,12 +12,14 @@ import java.util.LinkedList;
 public class Player {
     private Tank myTank;
     private int gotMoney;
+    private int wallet;
 
 
     
     public Player(String name, double posX, double posY){
         myTank = new Tank(name, posX, posY);
         gotMoney = 0;
+        wallet = SaveGame.LoadSave();
     }
     
     //
@@ -101,4 +103,16 @@ public class Player {
     public void setGotMoney(int gotMoney) {
         this.gotMoney = gotMoney;
     }
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
+    
+    
+    
+    
 }
