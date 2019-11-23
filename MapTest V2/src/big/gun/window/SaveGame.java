@@ -19,13 +19,12 @@ public static void Save(int money){
         int p = money;
         
         try{
-            try (FileOutputStream fot = new FileOutputStream("save.dat")) {
+                FileOutputStream fot = new FileOutputStream("save.dat");
                 DataOutputStream oot = new DataOutputStream(fot);
                 oot.write(p);
                 oot.close();
                 fot.close();
             }
-        }
         catch(IOException x){}
         
     }

@@ -91,7 +91,7 @@ public class Person extends MapObject {
         //จุดเกิดเคลื่อนที่
         setMyPosX(getMyPosX() + Calculate.calculateMoveX(myTank.getRotate(), myTank.getSpeedX()));
         setMyPosY(getMyPosY() + Calculate.calculateMoveY(myTank.getRotate(), myTank.getSpeedY()));
-        if(getMyPosX() < 0 || getMyPosY() < 0 || getMyPosX() > 5000 || getMyPosY() > 5000){
+        if(getMyPosX() < 0 || getMyPosY() < 0 || getMyPosX() > 5000 || getMyPosY() > 5000 || getMyPosX()+myTank.getWidth() < 0 || getMyPosY()+myTank.getHeight() < 0 || getMyPosX()+myTank.getWidth() > 5000 || getMyPosY()+myTank.getHeight() > 5000){
             myTank.setHp(0);
         }
 
@@ -110,6 +110,7 @@ public class Person extends MapObject {
         cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth()/2, myTank.getWidth()/2);
+        
         //รถเคลื่อนที่
         this.move();
     }
