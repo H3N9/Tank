@@ -112,9 +112,9 @@ public class Ai implements ActionListener{
                 int target = persons.get(i).veiwOfBot(player, persons, i);
                 int wrongShoot = 0;
                 if(difficult.equals("easy"))
-                    wrongShoot = Calculate.randomNumber(0, 10);
+                    wrongShoot = Calculate.randomNumber(0, 20);
                 else if(difficult.equals("normal"))
-                    wrongShoot = Calculate.randomNumber(0, 5);
+                    wrongShoot = Calculate.randomNumber(0, 10);
                 switch (persons.get(i).shootOnTarGet(player,  persons, target, wrongShoot)) {
                     case "right":
                         move.get(i).add("E");
