@@ -67,6 +67,7 @@ public class about extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 755));
         setPreferredSize(new java.awt.Dimension(1080, 755));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(1080, 720));
@@ -97,7 +98,7 @@ public class about extends javax.swing.JFrame {
 
         member1.setBackground(new java.awt.Color(255, 255, 255));
         member1.setPreferredSize(new java.awt.Dimension(200, 300));
-        member1.setLayout(new java.awt.GridLayout());
+        member1.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/golf.jpg"))); // NOI18N
         member1.add(jLabel3);
@@ -106,7 +107,7 @@ public class about extends javax.swing.JFrame {
 
         member2.setBackground(new java.awt.Color(255, 255, 255));
         member2.setPreferredSize(new java.awt.Dimension(200, 300));
-        member2.setLayout(new java.awt.GridLayout());
+        member2.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/pooh.jpg"))); // NOI18N
         member2.add(jLabel2);
@@ -115,7 +116,7 @@ public class about extends javax.swing.JFrame {
 
         member3.setBackground(new java.awt.Color(255, 255, 255));
         member3.setPreferredSize(new java.awt.Dimension(200, 300));
-        member3.setLayout(new java.awt.GridLayout());
+        member3.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ramil.jpg"))); // NOI18N
         member3.add(jLabel4);
@@ -124,7 +125,7 @@ public class about extends javax.swing.JFrame {
 
         member4.setBackground(new java.awt.Color(255, 255, 255));
         member4.setPreferredSize(new java.awt.Dimension(200, 300));
-        member4.setLayout(new java.awt.GridLayout());
+        member4.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/oil.jpg"))); // NOI18N
         member4.add(jLabel5);
@@ -133,7 +134,7 @@ public class about extends javax.swing.JFrame {
 
         member5.setBackground(new java.awt.Color(255, 255, 255));
         member5.setPreferredSize(new java.awt.Dimension(200, 300));
-        member5.setLayout(new java.awt.GridLayout());
+        member5.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/peerakarn.jpg"))); // NOI18N
         member5.add(jLabel6);
@@ -271,6 +272,7 @@ public class about extends javax.swing.JFrame {
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
+         f.setTitle("Big Gun");
     }//GEN-LAST:event_backMousePressed
 
     private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
