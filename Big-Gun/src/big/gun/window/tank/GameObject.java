@@ -94,7 +94,7 @@ public class GameObject{
     public void setRotate(double rotate) {
         if(rotate < 0){
             rotate = 360+rotate;
-        }else if(rotate > 360){
+        }else if(rotate >= 360){
             rotate = 360-rotate;
         }
         this.rotate = rotate;

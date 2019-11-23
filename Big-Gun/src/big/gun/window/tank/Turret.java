@@ -47,7 +47,7 @@ public class Turret extends GameObject{
         save = centerHeadX;
         centerHeadX = calculateRotateX(centerHeadX, centerHeadY, cx, cy, tankRotate);
         centerHeadY = calculateRotateY(save, centerHeadY, cx, cy, tankRotate);
-        rotateHead += rotateSpeed;
+        setRotateHead(getRotateHead()+rotateSpeed);
         save = gunPosX;
         gunPosX = calculateRotateX(gunPosX, gunPosY, cx, cy, tankRotate);
         gunPosY = calculateRotateY(save, gunPosY, cx, cy, tankRotate);
@@ -144,7 +144,7 @@ public class Turret extends GameObject{
     public void setRotateHead(double rotateHead) {
         if(rotateHead < 0){
             rotateHead = 360+rotateHead;
-        }else if(rotateHead > 360){
+        }else if(rotateHead >= 360){
             rotateHead = 360-rotateHead;
         }
         this.rotateHead = rotateHead;
