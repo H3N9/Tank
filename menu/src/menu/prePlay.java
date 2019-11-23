@@ -21,11 +21,13 @@ public class prePlay extends javax.swing.JFrame {
         initComponents();
     }
     
-    public prePlay(int width, int height,int enemy){
+    public prePlay(int width, int height,int enemy, String level){
         initComponents();
         this.width = width;
         this.height = height;
         this.enemy = enemy;
+        this.level = level;
+        
     }
 
     /**
@@ -2604,7 +2606,7 @@ public class prePlay extends javax.swing.JFrame {
         System.out.println(width);
         System.out.println(height);
         System.out.println(enemy);
-        
+        System.out.println(level);
     }//GEN-LAST:event_startMousePressed
 
     private void startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseEntered
@@ -2652,7 +2654,7 @@ public class prePlay extends javax.swing.JFrame {
     }
     private int chose = 0, width, height, enemy;
   
-    private String tank = "";
+    private String tank = "", level;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel T1;
     private javax.swing.JPanel T10;
