@@ -55,6 +55,7 @@ public class Tank extends GameObject implements Moveable{
         armours = new Armour[sizeOfArmoursArray][];
         createArmours();
         turret = new Turret(this);
+        shell = new Shell(this, false);
         boomed = 0;
     }
 
@@ -164,7 +165,7 @@ public class Tank extends GameObject implements Moveable{
     }
     public void shoot(){
         if(reload>=speedReload){
-            shell = new Shell(this);
+            shell = new Shell(this, true);
             new Sound("shoot", getPosX(), getPosY());
             shell.getTime().start();
             setReload(0);
