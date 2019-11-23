@@ -259,30 +259,22 @@ public class Map {
                         }
 
                         if(player.getMyTank().getShell().getPenetration() >= thickness){
-                            ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
-                            System.out.println(ebot.getMyTank().getHp());
-                            new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                             if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
                                 player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());   //get money
-                                player.setWallet(player.getWallet()+player.getGotMoney());
-                                SaveGame.Save(player.getWallet());
-                                System.out.println(SaveGame.LoadSave()+" Save "+player.getWallet());
-                            }                                  
+                                
+                            } 
+                            ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                            new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());                                 
                         }
                         else{
                             double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
                             double got = Calculate.randomNumber(0, (int) want);
-                            System.out.println(got);
                             if(player.getMyTank().getShell().getPenetration()+got >= thickness){
-                                ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
-                                System.out.println(ebot.getMyTank().getHp()+" Penetrate");
-                                new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                                 if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
                                     player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());  // get money
-                                    player.setWallet(player.getWallet()+player.getGotMoney());
-                                    SaveGame.Save(player.getWallet());
-                                    System.out.println(SaveGame.LoadSave()+" Save "+player.getWallet());
-                                }                                          
+                                } 
+                                ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                                new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());                                        
                             }else{
                                 new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
                             }

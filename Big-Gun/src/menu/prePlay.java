@@ -9,6 +9,7 @@ import big.gun.window.SaveGame;
 import java.awt.*;
 import javax.swing.*;
 import big.gun.window.Window;
+import big.gun.window.tank.CollectionTanks;
 /**
  *
  * @author PCoil
@@ -18,17 +19,21 @@ public class prePlay extends javax.swing.JFrame{
     /**
      * Creates new form prePlay2
      */
+    private CollectionTanks tanks;
+    
     public prePlay() {
         initComponents();
     }
     
     public prePlay(int width, int height,int enemy, String level){
-        initComponents();
         this.width = width;
         this.height = height;
         this.enemy = enemy;
         this.level = level;
+        tanks = new CollectionTanks();
+        initComponents();
         check(1);
+        clearProfile();
         T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
         
         
@@ -343,7 +348,7 @@ public class prePlay extends javax.swing.JFrame{
         money.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         money.setForeground(new java.awt.Color(255, 255, 255));
         money.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        money.setText(""+SaveGame.LoadSave().getMoney()+" $");
+        money.setText(""+(SaveGame.LoadSave().getMoney())+" $");
         money.setToolTipText("");
         money.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -457,9 +462,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel11.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(204, 0, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel11.setText("205 $");
+        jLabel11.setText(""+(int)tanks.tanks.get("m4")[13]+" S");
         jPanel22.add(jLabel11);
 
         jPanel18.add(jPanel22);
@@ -558,9 +562,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel27.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel22.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(204, 0, 0));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel22.setText("205 $");
+        jLabel22.setText(""+(int)tanks.tanks.get("panzer4")[13]+" S");
         jPanel27.add(jLabel22);
 
         jPanel24.add(jPanel27);
@@ -659,9 +662,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel32.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel33.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(204, 0, 0));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel33.setText("205 $");
+        jLabel33.setText(""+(int)tanks.tanks.get("cromwell")[13]+" S");
         jPanel32.add(jLabel33);
 
         jPanel29.add(jPanel32);
@@ -760,9 +762,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel37.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel44.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(204, 0, 0));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel44.setText("205 $");
+        jLabel44.setText(""+(int)tanks.tanks.get("t34")[13]+" S");
         jPanel37.add(jLabel44);
 
         jPanel34.add(jPanel37);
@@ -863,7 +864,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel55.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(204, 0, 0));
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel55.setText("205 $");
+        jLabel55.setText(""+(int)tanks.tanks.get("m4a3e8")[13]+" S");
         jPanel42.add(jLabel55);
 
         jPanel39.add(jPanel42);
@@ -964,7 +965,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel66.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(204, 0, 0));
         jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel66.setText("205 $");
+        jLabel66.setText(""+(int)tanks.tanks.get("panther")[13]+" S");
         jPanel47.add(jLabel66);
 
         jPanel44.add(jPanel47);
@@ -1065,7 +1066,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel77.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(204, 0, 0));
         jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel77.setText("205 $");
+        jLabel77.setText(""+(int)tanks.tanks.get("firefly")[13]+" S");
         jPanel52.add(jLabel77);
 
         jPanel49.add(jPanel52);
@@ -1166,7 +1167,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel88.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(204, 0, 0));
         jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel88.setText("205 $");
+        jLabel88.setText(""+(int)tanks.tanks.get("kv1")[13]+" S");
         jPanel57.add(jLabel88);
 
         jPanel54.add(jPanel57);
@@ -1267,7 +1268,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel99.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel99.setForeground(new java.awt.Color(204, 0, 0));
         jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel99.setText("205 $");
+        jLabel99.setText(""+(int)tanks.tanks.get("m26")[13]+" S");
         jPanel62.add(jLabel99);
 
         jPanel59.add(jPanel62);
@@ -1368,7 +1369,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel110.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel110.setForeground(new java.awt.Color(204, 0, 0));
         jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel110.setText("205 $");
+        jLabel110.setText(""+(int)tanks.tanks.get("tiger")[13]+" S");
         jPanel67.add(jLabel110);
 
         jPanel64.add(jPanel67);
@@ -1469,7 +1470,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel121.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel121.setForeground(new java.awt.Color(204, 0, 0));
         jLabel121.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel121.setText("205 $");
+        jLabel121.setText(""+(int)tanks.tanks.get("churchill")[13]+" S");
         jPanel72.add(jLabel121);
 
         jPanel69.add(jPanel72);
@@ -1570,7 +1571,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel132.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel132.setForeground(new java.awt.Color(204, 0, 0));
         jLabel132.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel132.setText("205 $");
+        jLabel132.setText(""+(int)tanks.tanks.get("is2")[13]+" S");
         jPanel77.add(jLabel132);
 
         jPanel74.add(jPanel77);
@@ -1671,7 +1672,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel143.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel143.setForeground(new java.awt.Color(204, 0, 0));
         jLabel143.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel143.setText("205 $");
+        jLabel143.setText(""+(int)tanks.tanks.get("m26s")[13]+" S");
         jPanel82.add(jLabel143);
 
         jPanel79.add(jPanel82);
@@ -1772,7 +1773,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel154.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel154.setForeground(new java.awt.Color(204, 0, 0));
         jLabel154.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel154.setText("205 $");
+        jLabel154.setText(""+(int)tanks.tanks.get("tiger2")[13]+" S");
         jPanel87.add(jLabel154);
 
         jPanel84.add(jPanel87);
@@ -1873,7 +1874,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel165.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel165.setForeground(new java.awt.Color(204, 0, 0));
         jLabel165.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel165.setText("205 $");
+        jLabel165.setText(""+(int)tanks.tanks.get("comet")[13]+" S");
         jPanel92.add(jLabel165);
 
         jPanel89.add(jPanel92);
@@ -1974,7 +1975,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel176.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel176.setForeground(new java.awt.Color(204, 0, 0));
         jLabel176.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel176.setText("205 $");
+        jLabel176.setText(""+(int)tanks.tanks.get("is3")[13]+" S");
         jPanel97.add(jLabel176);
 
         jPanel94.add(jPanel97);
@@ -2016,24 +2017,26 @@ public class prePlay extends javax.swing.JFrame{
  private void check(int i){
         switch(i){
             case 1:
-                tank = "m4";
-                chose = 1;
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
-                break;
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m4")[13]){
+                    tank = "m4";
+                    chose = 1;
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    break;
+                }
             case 2:
                 chose = 2;
                 tank = "panzer4";
@@ -2092,233 +2095,369 @@ public class prePlay extends javax.swing.JFrame{
                 T16.setBorder(null);
                 break;
             case 5:
-                chose = 5;
-                tank = "m4a3e8";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m4a3e8")[13]&&SaveGame.LoadSave().getSet().contains("m4")||SaveGame.LoadSave().getSet().contains("m4a3e8")){
+                    chose = 5;
+                    tank = "m4a3e8";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
             case 6:
-                chose = 6;
-                tank = "panther";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("panther")[13]&&SaveGame.LoadSave().getSet().contains("panzer4")||SaveGame.LoadSave().getSet().contains("panther")){
+                    chose = 6;
+                    tank = "panther";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
              case 7:
-                chose = 7;
-                tank = "firefly";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("firefly")[13]&&SaveGame.LoadSave().getSet().contains("cromwell")||SaveGame.LoadSave().getSet().contains("firefly")){
+                    chose = 7;
+                    tank = "firefly";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                    
+                }
                 break;
              case 8:
-                chose = 8;
-                tank = "kv1";
-               T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("kv1")[13]&&SaveGame.LoadSave().getSet().contains("t34")||SaveGame.LoadSave().getSet().contains("kv1")){
+                    chose = 8;
+                    tank = "kv1";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
              case 9:
-                chose = 9;
-                tank = "m26";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m26")[13]&&SaveGame.LoadSave().getSet().contains("m4a3e8")||SaveGame.LoadSave().getSet().contains("m26")){
+                    chose = 9;
+                    tank = "m26";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 10:
-                chose = 10;
-                tank = "tiger";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("tiger")[13]&&SaveGame.LoadSave().getSet().contains("panther")||SaveGame.LoadSave().getSet().contains("tiger")){
+                    chose = 10;
+                    tank = "tiger";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 11:
-                chose = 11;
-                tank = "churchill";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("churchill")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("churchill")){
+                        chose = 11;
+                        tank = "churchill";
+                        T1.setBorder(null);
+                        T2.setBorder(null);
+                        T3.setBorder(null);
+                        T4.setBorder(null);
+                        T5.setBorder(null);
+                        T6.setBorder(null);
+                        T7.setBorder(null);
+                        T8.setBorder(null);
+                        T9.setBorder(null);
+                        T10.setBorder(null);
+                        T12.setBorder(null);
+                        T13.setBorder(null);
+                        T14.setBorder(null);
+                        T15.setBorder(null);
+                        T16.setBorder(null);
+                        if(!SaveGame.LoadSave().getSet().contains(tank)){
+                            SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                            money.setText(SaveGame.LoadSave().getMoney()+" $");
+                            clearProfile();
+                        }
+                }
                 break;
              case 12:
-                chose = 12;
-                tank = "is2";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("is2")[13]&&SaveGame.LoadSave().getSet().contains("kv1")||SaveGame.LoadSave().getSet().contains("is2")){
+                    chose = 12;
+                    tank = "is2";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 13:
-                chose = 13;
-                tank = "m26s";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m26s")[13]&&SaveGame.LoadSave().getSet().contains("m26")||SaveGame.LoadSave().getSet().contains("m26s")){
+                    chose = 13;
+                    tank = "m26s";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }                
                 break;
              case 14:
-                chose = 14;
-                tank = "tiger2";
-               T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("tiger2")[13]&&SaveGame.LoadSave().getSet().contains("tiger")||SaveGame.LoadSave().getSet().contains("tiger2")){
+                    chose = 14;
+                    tank = "tiger2";
+                   T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }  
+                }
                 break;
              case 15:
-                chose = 15;
-                tank = "comet";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("comet")){
+                        chose = 15;
+                        tank = "comet";
+                        T1.setBorder(null);
+                        T2.setBorder(null);
+                        T3.setBorder(null);
+                        T4.setBorder(null);
+                        T5.setBorder(null);
+                        T6.setBorder(null);
+                        T7.setBorder(null);
+                        T8.setBorder(null);
+                        T9.setBorder(null);
+                        T10.setBorder(null);
+                        T11.setBorder(null);
+                        T12.setBorder(null);
+                        T13.setBorder(null);
+                        T14.setBorder(null);
+                        T16.setBorder(null);
+                        if(!SaveGame.LoadSave().getSet().contains(tank)){
+                            SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                            money.setText(SaveGame.LoadSave().getMoney()+" $");
+                            clearProfile();
+                        } 
+                }
                 break;
              case 16:
-                chose = 16;
-                tank = "is3";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("is3")[13]&&SaveGame.LoadSave().getSet().contains("is2")||SaveGame.LoadSave().getSet().contains("is3")){
+                    chose = 16;
+                    tank = "is3";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }    
+                 }
                 break;
+        }
+    }
+ 
+    public void clearProfile(){
+        if(SaveGame.LoadSave().getSet().contains("m4a3e8")){
+            jLabel55.setText("0 $");
+            jLabel55.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("firefly")){
+            jLabel66.setText("0 $");
+            jLabel66.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("panther")){
+            jLabel77.setText("0 $");
+            jLabel77.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("kv1")){
+            jLabel88.setText("0 $");
+            jLabel88.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("m26")){
+            jLabel99.setText("0 $");
+            jLabel99.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("tiger")){
+            jLabel110.setText("0 $");
+            jLabel110.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("churchill")){
+            jLabel121.setText("0 $");
+            jLabel121.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("is2")){
+            jLabel132.setText("0 $");
+            jLabel132.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("m26s")){
+            jLabel143.setText("0 $");
+            jLabel143.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("tiger2")){
+            jLabel154.setText("0 $");
+            jLabel154.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("comet")){
+            jLabel165.setText("0 $");
+            jLabel165.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("is3")){
+            jLabel176.setText("0 $");
+            jLabel176.setForeground(Color.black);
         }
     }
 

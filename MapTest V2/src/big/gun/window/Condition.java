@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 
@@ -36,7 +37,7 @@ public class Condition extends KeyAdapter{
             if(persons.get(i).getTag()==2&&persons.get(i).getMyTank().getHp()>0){
                 return "nothing";
             }
-            else if(player.getMyTank().getHp()<=0){
+            if(player.getMyTank().getHp()<=0){
                 return "Alli";
             }
         }
@@ -47,7 +48,8 @@ public class Condition extends KeyAdapter{
        int key = e.getKeyCode();
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
            System.out.println("save");
-           
+           SaveGame.Save(player.getGotMoney(), "");
+           Window.jframe.dispatchEvent(new WindowEvent(Window.jframe, WindowEvent.WINDOW_CLOSING));
        }
     }
 
