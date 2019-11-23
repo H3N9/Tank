@@ -107,6 +107,7 @@ public class Home extends javax.swing.JFrame {
     private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
         // TODO add your handling code here:
         setting f = new setting();
+        f.setTitle("Big Gun");
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
@@ -145,6 +146,7 @@ public class Home extends javax.swing.JFrame {
     private void aboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMousePressed
         // TODO add your handling code here:
         about f = new about();
+        f.setTitle("Big Gun");
         f.setVisible(true);
         f.setLocationRelativeTo(null);
         this.setVisible(false);
@@ -182,6 +184,7 @@ public class Home extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Home h = new Home();
+                h.setTitle("Big Gun");
                 h.setVisible(true);
                 h.setLocationRelativeTo(null);
             }

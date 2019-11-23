@@ -175,20 +175,17 @@ public class Person extends MapObject {
     public int veiwOfBot(Player player, LinkedList<Person> bot, int origin){
         veiw.setRect(myTank.getCenterX()-Window.width/2, myTank.getCenterY()-Window.height/2, Window.width, Window.height);
         for(int i=0;i<bot.size();i++){
-            if(i!=origin){
-                if(bot.get(i).getTag()!=tag&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())&&bot.get(i).getMyTank().getHp()>0){
-                    return i; //bot
-                }
-                else if(tag!=1&&veiw.getBounds().intersects(player.getMyTank().getBounds())&&player.getMyTank().getHp()>0){
-                    return -1; //Player
-                }
-                    
+            if(bot.get(i).getTag()!=tag&& veiw.getBounds().intersects(bot.get(i).getMyTank().getBounds())&&bot.get(i).getMyTank().getHp()>0&&origin!=i){
+                return i; //bot
+            }
+            else if(tag!=1&&veiw.getBounds().intersects(player.getMyTank().getBounds())&&player.getMyTank().getHp()>0){
+                return -1; //Player
             }
         }
         return -2; //notfound
     }
     
-    public String shootOnTarGet(Player player, LinkedList<Person> bot, int target){
+    public String shootOnTarGet(Player player, LinkedList<Person> bot, int target, int wrong){
         double myx = getMyTank().getCenterX();
         double myy = getMyTank().getCenterY();
         double tx = player.getMyTank().getCenterX();
@@ -213,10 +210,10 @@ public class Person extends MapObject {
         else if(tx > myx && ty < myy){
             realDegree = degree;
         }
-        if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() < realDegree-5){
+        if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() < realDegree-5-wrong){
             return "right";
         }
-        else if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() > realDegree+5){
+        else if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() > realDegree+5+wrong){
             return "left";
         }
         else{
