@@ -166,7 +166,6 @@ public class Tank extends GameObject implements Moveable{
         if(reload>=speedReload){
             shell = new Shell(this);
             new Sound("shoot", getPosX(), getPosY());
-            shell.getTime().start();
             setReload(0);
         }
             

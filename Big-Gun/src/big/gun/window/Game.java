@@ -117,7 +117,7 @@ public class Game extends JPanel implements ActionListener{
         map.update();
         map.moveMap(player);
         map.playerCollision(player, bot);
-        map.bulletCollision(bot, player);
+        //map.bulletCollision(bot, player);  // Laging
         hub.update(player, bot);
         FPS();
         if(whoLose.equals("nothing")){
