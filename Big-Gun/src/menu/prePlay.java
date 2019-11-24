@@ -1760,7 +1760,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel152.setBounds(0, 60, 70, 20);
 
         tiger2_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        tiger2_p.setText(""+(int)tanks.tanks.get("tiger")[6]);
+        tiger2_p.setText(""+(int)tanks.tanks.get("tiger2")[6]);
         jPanel86.add(tiger2_p);
         tiger2_p.setBounds(60, 60, 70, 20);
 
@@ -2357,7 +2357,7 @@ public class prePlay extends javax.swing.JFrame{
                 }
                 break;
              case 15:
-                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("comet")){
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("churchill")||SaveGame.LoadSave().getSet().contains("comet")){
                         chose = 15;
                         tank = "comet";
                         T1.setBorder(null);

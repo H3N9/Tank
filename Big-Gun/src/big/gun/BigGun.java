@@ -1,6 +1,7 @@
 
 package big.gun;
 
+import big.gun.window.SaveGame;
 import big.gun.window.Window;
 import big.gun.window.tank.CollectionTanks;
 import menu.Home;
