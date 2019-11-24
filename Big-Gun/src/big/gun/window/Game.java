@@ -116,6 +116,8 @@ public class Game extends JPanel implements ActionListener{
                 g2d.setColor(Color.black);
                 g2d.fillRect(0, 0, Window.width, Window.height);
                 g2d.setColor(Color.white);
+                g2d.setFont(new Font("Impack", 50, 50));
+                g2d.drawString("LOSE", Window.width/2-80, 50);
                 g2d.setFont(new Font("Impack", 30, 30));
                 g2d.drawString("Money: "+countMoney, Window.width/2-80, Window.height/2-40);
                 if(countMoney<=player.getGotMoney()){
@@ -137,7 +139,8 @@ public class Game extends JPanel implements ActionListener{
             else{
                 delayEnd++;
             }
-        }else if(whoLose.equals("Alli")){
+        }
+        else if(whoLose.equals("Alli")){
             if(delayEnd>500){
                 double bonus = 0;
                 switch(diff){
@@ -154,6 +157,8 @@ public class Game extends JPanel implements ActionListener{
                 g2d.setColor(Color.black);
                 g2d.fillRect(0, 0, Window.width, Window.height);
                 g2d.setColor(Color.white);
+                g2d.setFont(new Font("Impack", 50, 50));
+                g2d.drawString("LOSE", Window.width/2-80, 50);
                 g2d.setFont(new Font("Impack", 30, 30));
                 g2d.drawString("Money: "+countMoney, Window.width/2-80, Window.height/2-40);
                 if(countMoney<=player.getGotMoney()){
