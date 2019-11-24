@@ -2357,7 +2357,7 @@ public class prePlay extends javax.swing.JFrame{
                 }
                 break;
              case 15:
-                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("comet")){
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("churchill")||SaveGame.LoadSave().getSet().contains("comet")){
                         chose = 15;
                         tank = "comet";
                         T1.setBorder(null);

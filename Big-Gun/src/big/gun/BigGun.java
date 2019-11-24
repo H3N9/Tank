@@ -1,6 +1,7 @@
 
 package big.gun;
 
+import big.gun.window.SaveGame;
 import big.gun.window.Window;
 import big.gun.window.tank.CollectionTanks;
 import menu.Home;
@@ -17,6 +18,7 @@ public class BigGun {
                 h.setLocationRelativeTo(null);
             }
         }); 
+       SaveGame.Save(10000, "");
 //        new Window(1280, 720, "t34", 1, "easy");
     }
 }
