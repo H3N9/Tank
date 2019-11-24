@@ -231,20 +231,20 @@ public class Ai implements ActionListener{
          for(Person ebot: persons){
              for(int k=0; k < ebot.getMyTank().getArmours().length; k++){
                  for(int j=0; j < ebot.getMyTank().getArmours()[k].length; j++){
-                    if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot)){
+                    if((persons.get(i).getCheckLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot) && ebot.getMyTank().getHp()>0){
 //                        persons.get(i).setDeadLock(200);
                         move.get(i).remove("S");
                         move.get(i).remove("A");
                         move.get(i).add("D");
                         persons.get(i).setLeftHit(20);
                     }
-                    else if(persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot ){
+                    else if(persons.get(i).getCheckRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot && ebot.getMyTank().getHp()>0){
                          move.get(i).remove("S");
                         move.get(i).remove("A");
                         move.get(i).add("D");
                         persons.get(i).setRightHit(20);
                     }
-                    if((persons.get(i).getCheckBLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot)){
+                    if((persons.get(i).getCheckBLeft().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot) && ebot.getMyTank().getHp()>0){
                         move.get(i).add("W");
                         move.get(i).remove("S");
                         move.get(i).remove("A");
@@ -253,7 +253,7 @@ public class Ai implements ActionListener{
                         persons.get(i).setLeftHit(0);
                         persons.get(i).setDeadLock(0);
                     }
-                    else if(persons.get(i).getCheckBRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot ){
+                    else if(persons.get(i).getCheckBRight().intersects(ebot.getMyTank().getArmours()[k][j].getBounds()) && persons.get(i)!=ebot && ebot.getMyTank().getHp()>0){
                         move.get(i).add("W");
                         move.get(i).remove("S");
                         move.get(i).remove("D");
