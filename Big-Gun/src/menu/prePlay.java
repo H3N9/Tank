@@ -2416,11 +2416,11 @@ public class prePlay extends javax.swing.JFrame{
             jLabel55.setText("0 $");
             jLabel55.setForeground(Color.black);
         }
-        if(SaveGame.LoadSave().getSet().contains("firefly")){
+        if(SaveGame.LoadSave().getSet().contains("panther")){
             jLabel66.setText("0 $");
             jLabel66.setForeground(Color.black);
         }
-        if(SaveGame.LoadSave().getSet().contains("panther")){
+        if(SaveGame.LoadSave().getSet().contains("firefly")){
             jLabel77.setText("0 $");
             jLabel77.setForeground(Color.black);
         }
