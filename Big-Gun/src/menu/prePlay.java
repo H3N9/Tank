@@ -27,8 +27,7 @@ public class prePlay extends javax.swing.JFrame{
         this.height = height;
         this.enemy = enemy;
         this.level = level;
-        check(1);
-        T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        check(1);       
         
     }
 
@@ -2009,6 +2008,7 @@ public class prePlay extends javax.swing.JFrame{
             case 1:
                 tank = "m4";
                 chose = 1;
+                T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
                 T2.setBorder(null);
                 T3.setBorder(null);
                 T4.setBorder(null);
