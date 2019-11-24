@@ -5,6 +5,7 @@
  */
 package big.gun.window;
 
+import big.gun.BigGun;
 import big.gun.window.map.Person;
 import big.gun.window.tank.allPlayer.Player;
 import java.awt.Color;
@@ -69,13 +70,19 @@ public class Condition extends KeyAdapter{
     private void nextPage(){
         if (isNextPage){
             SaveGame.Save(player.getGotMoney(), "");
+            Window.jframe.dispose();
+            String[] arg = new String[20];
+            BigGun.main(arg);
            //Window.jframe.dispatchEvent(new WindowEvent(Window.jframe, WindowEvent.WINDOW_CLOSING));
-           game.gameClose();
-           Home f = new Home();
-           f.setTitle("Big Gun");
-           f.setVisible(true);
-           f.setLocationRelativeTo(null);
-           isNextPage = false;
+//           game.gameClose();
+//           Home f = new Home();
+//           f.setTitle("Big Gun");
+//           f.setVisible(true);
+//           f.setLocationRelativeTo(null);
+//           isNextPage = false;
         }
     }
+
+    
+    
 }

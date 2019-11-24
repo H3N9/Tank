@@ -91,7 +91,6 @@ public class Game extends JPanel implements ActionListener{
         Graphics2D g2d = (Graphics2D)g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         //Draw below this
-        System.out.println(111);
         map.draw(g2d);
         player.draw(g2d);
         //FPS
