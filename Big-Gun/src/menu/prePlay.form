@@ -3614,7 +3614,7 @@
                               <Font name="Impact" size="15" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;tiger&quot;)[6]" type="code"/>
+                              <Connection code="&quot;&quot;+(int)tanks.tanks.get(&quot;tiger2&quot;)[6]" type="code"/>
                             </Property>
                           </Properties>
                           <Constraints>

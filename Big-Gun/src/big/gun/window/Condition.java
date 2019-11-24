@@ -25,6 +25,7 @@ public class Condition extends KeyAdapter{
     private Game game;
     private Rectangle2D rect;
     private boolean isNextPage;
+    private boolean test;
     
     public Condition(Player player, LinkedList<Person> persons, Game game){
         this.player = player;
@@ -47,6 +48,7 @@ public class Condition extends KeyAdapter{
             if(player.getMyTank().getHp()<=0){
                 return "Alli";
             }
+            
         }
         return "Axis";
     }
@@ -57,6 +59,7 @@ public class Condition extends KeyAdapter{
            isNextPage = true;
            //this.setVisible(false);
        }
+       
        nextPage();
     }
     
@@ -70,6 +73,7 @@ public class Condition extends KeyAdapter{
     private void nextPage(){
         if (isNextPage){
             SaveGame.Save(player.getGotMoney(), "");
+            game.gameClose();
             Window.jframe.dispose();
             String[] arg = new String[20];
             BigGun.main(arg);
