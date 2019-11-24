@@ -73,6 +73,9 @@ public class Home extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 htplayMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                htplayMousePressed(evt);
+            }
         });
         jPanel1.add(htplay);
         htplay.setBounds(620, 320, 352, 95);
@@ -151,6 +154,15 @@ public class Home extends javax.swing.JFrame {
         f.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_aboutMousePressed
+
+    private void htplayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_htplayMousePressed
+        // TODO add your handling code here:
+        howtoplay how = new howtoplay();
+        how.setTitle("Big Gun");
+        how.setVisible(true);
+        how.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_htplayMousePressed
 
     /**
      * @param args the command line arguments
