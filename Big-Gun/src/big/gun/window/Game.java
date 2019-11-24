@@ -125,24 +125,26 @@ public class Game extends JPanel implements ActionListener{
             else{
                 g2d.drawString("Difflecult: "+(player.getGotMoney()*bonus)+" x "+bonus, Window.width/2-80, Window.height/2+0);
                 g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()*bonus), Window.width/2-80, Window.height/2+40);
+                
             }
             if(delay-player.getGotMoney()<500){
                 delay += 5;
             }
             else{
+                con.gotBonus(bonus);
                 g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
             }
         }else if(whoLose.equals("Alli")){
             double bonus = 0;
             switch(diff){
                 case "easy":
-                    bonus = 1.2;
+                    bonus = 1;
                     break;
                 case "normal":
-                    bonus = 1.5;
+                    bonus = 1.2;
                     break;
                 case "hard":
-                    bonus = 2;
+                    bonus = 1.5;
                     break;    
             }
             g2d.setColor(Color.black);
@@ -156,11 +158,13 @@ public class Game extends JPanel implements ActionListener{
             else{
                 g2d.drawString("Difflecult: "+(player.getGotMoney()*bonus)+" x "+bonus, Window.width/2-80, Window.height/2);
                 g2d.drawString("Wallet: "+(SaveGame.LoadSave().getMoney()+player.getGotMoney()*bonus), Window.width/2-80, Window.height/2+40);
+                
             }
             if(delay-player.getGotMoney()<500){
                 delay += 5;
             }
             else{
+                con.gotBonus(bonus);
                 g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
             }
         }

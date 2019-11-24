@@ -26,6 +26,7 @@ public class Condition extends KeyAdapter{
     private Rectangle2D rect;
     private boolean isNextPage;
     private boolean test;
+    private double bonus;
     
     public Condition(Player player, LinkedList<Person> persons, Game game){
         this.player = player;
@@ -72,7 +73,7 @@ public class Condition extends KeyAdapter{
     
     private void nextPage(){
         if (isNextPage){
-            SaveGame.Save(player.getGotMoney(), "");
+            SaveGame.Save((int)((double)player.getGotMoney()*bonus), "");
             game.gameClose();
             Window.jframe.dispose();
             String[] arg = new String[20];
@@ -85,6 +86,10 @@ public class Condition extends KeyAdapter{
 //           f.setLocationRelativeTo(null);
 //           isNextPage = false;
         }
+    }
+    
+    public void gotBonus(double bonus){
+        this.bonus = bonus;
     }
 
     
