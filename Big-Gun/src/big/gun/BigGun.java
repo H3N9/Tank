@@ -2,6 +2,7 @@
 package big.gun;
 
 import big.gun.window.Window;
+import big.gun.window.tank.CollectionTanks;
 import menu.Home;
 
 
@@ -16,5 +17,6 @@ public class BigGun {
                 h.setLocationRelativeTo(null);
             }
         }); 
+//        new Window(1280, 720, "t34", 1, "easy");
     }
 }

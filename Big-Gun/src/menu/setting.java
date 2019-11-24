@@ -120,7 +120,7 @@ public class setting extends javax.swing.JFrame {
         jLabel4.setBounds(385, 230, 280, 50);
 
         enemy.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        enemy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        enemy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "5", "8", "10" }));
         jPanel2.add(enemy);
         enemy.setBounds(400, 300, 250, 40);
 

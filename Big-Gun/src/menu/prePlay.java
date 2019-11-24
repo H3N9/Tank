@@ -5,9 +5,11 @@
  */
 package menu;
 
+import big.gun.window.SaveGame;
 import java.awt.*;
 import javax.swing.*;
 import big.gun.window.Window;
+import big.gun.window.tank.CollectionTanks;
 /**
  *
  * @author PCoil
@@ -17,20 +19,26 @@ public class prePlay extends javax.swing.JFrame{
     /**
      * Creates new form prePlay2
      */
+    private CollectionTanks tanks;
+    
     public prePlay() {
         initComponents();
     }
     
     public prePlay(int width, int height,int enemy, String level){
-        initComponents();
         this.width = width;
         this.height = height;
         this.enemy = enemy;
         this.level = level;
-        check(1);       
+        tanks = new CollectionTanks();
+        initComponents();
+        check(1);
+        clearProfile();
+        T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        
         
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,13 +62,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        m4_h = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        m4_a = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        m4_d = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        m4_p = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         T2 = new javax.swing.JPanel();
@@ -71,13 +79,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel13 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        panzer4_h = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        panzer4_a = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        panzer4_d = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        panzer4_p = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         T3 = new javax.swing.JPanel();
@@ -88,13 +96,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel24 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        cromwell_h = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        cromwell_a = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        cromwell_d = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        cromwell_p = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         T4 = new javax.swing.JPanel();
@@ -105,13 +113,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel35 = new javax.swing.JLabel();
         jPanel36 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        t34_h = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
+        t34_a = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
+        t34_d = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
+        t34_p = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         T5 = new javax.swing.JPanel();
@@ -122,13 +130,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel46 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
+        m4a3e8_h = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
+        m4a3e8_a = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
+        m4a3e8_d = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
+        m4a3e8_p = new javax.swing.JLabel();
         jPanel42 = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         T6 = new javax.swing.JPanel();
@@ -139,13 +147,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel57 = new javax.swing.JLabel();
         jPanel46 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
+        panther_h = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
+        panther_a = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
+        panther_d = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
+        panther_p = new javax.swing.JLabel();
         jPanel47 = new javax.swing.JPanel();
         jLabel66 = new javax.swing.JLabel();
         T7 = new javax.swing.JPanel();
@@ -156,13 +164,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel68 = new javax.swing.JLabel();
         jPanel51 = new javax.swing.JPanel();
         jLabel69 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
+        frefly_h = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
+        frefly_a = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
+        frefly_d = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
+        frefly_p = new javax.swing.JLabel();
         jPanel52 = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
         T8 = new javax.swing.JPanel();
@@ -173,13 +181,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel79 = new javax.swing.JLabel();
         jPanel56 = new javax.swing.JPanel();
         jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
+        kv1_h = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
+        kv1_a = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
+        kv1_d = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
+        kv1_p = new javax.swing.JLabel();
         jPanel57 = new javax.swing.JPanel();
         jLabel88 = new javax.swing.JLabel();
         T9 = new javax.swing.JPanel();
@@ -190,13 +198,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel90 = new javax.swing.JLabel();
         jPanel61 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
-        jLabel92 = new javax.swing.JLabel();
+        m26_h = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
-        jLabel94 = new javax.swing.JLabel();
+        m26_a = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
-        jLabel96 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
-        jLabel98 = new javax.swing.JLabel();
+        m26_d = new javax.swing.JLabel();
+        m26_p = new javax.swing.JLabel();
         jPanel62 = new javax.swing.JPanel();
         jLabel99 = new javax.swing.JLabel();
         T10 = new javax.swing.JPanel();
@@ -207,13 +215,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel101 = new javax.swing.JLabel();
         jPanel66 = new javax.swing.JPanel();
         jLabel102 = new javax.swing.JLabel();
-        jLabel103 = new javax.swing.JLabel();
+        tiger_h = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
-        jLabel105 = new javax.swing.JLabel();
+        tiger_a = new javax.swing.JLabel();
         jLabel106 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
+        tiger_d = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
-        jLabel109 = new javax.swing.JLabel();
+        tiger_p = new javax.swing.JLabel();
         jPanel67 = new javax.swing.JPanel();
         jLabel110 = new javax.swing.JLabel();
         T11 = new javax.swing.JPanel();
@@ -224,13 +232,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel112 = new javax.swing.JLabel();
         jPanel71 = new javax.swing.JPanel();
         jLabel113 = new javax.swing.JLabel();
-        jLabel114 = new javax.swing.JLabel();
+        churchile_h = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
-        jLabel116 = new javax.swing.JLabel();
+        churchile_a = new javax.swing.JLabel();
         jLabel117 = new javax.swing.JLabel();
-        jLabel118 = new javax.swing.JLabel();
+        churchile_d = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
-        jLabel120 = new javax.swing.JLabel();
+        churchile_p = new javax.swing.JLabel();
         jPanel72 = new javax.swing.JPanel();
         jLabel121 = new javax.swing.JLabel();
         T12 = new javax.swing.JPanel();
@@ -241,13 +249,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel123 = new javax.swing.JLabel();
         jPanel76 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
-        jLabel125 = new javax.swing.JLabel();
+        is2_h = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
-        jLabel127 = new javax.swing.JLabel();
+        is2_a = new javax.swing.JLabel();
         jLabel128 = new javax.swing.JLabel();
-        jLabel129 = new javax.swing.JLabel();
+        is2_d = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
-        jLabel131 = new javax.swing.JLabel();
+        is2_p = new javax.swing.JLabel();
         jPanel77 = new javax.swing.JPanel();
         jLabel132 = new javax.swing.JLabel();
         T13 = new javax.swing.JPanel();
@@ -258,13 +266,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel134 = new javax.swing.JLabel();
         jPanel81 = new javax.swing.JPanel();
         jLabel135 = new javax.swing.JLabel();
-        jLabel136 = new javax.swing.JLabel();
+        m26s_h = new javax.swing.JLabel();
         jLabel137 = new javax.swing.JLabel();
-        jLabel138 = new javax.swing.JLabel();
+        m26s_a = new javax.swing.JLabel();
         jLabel139 = new javax.swing.JLabel();
-        jLabel140 = new javax.swing.JLabel();
+        m26s_d = new javax.swing.JLabel();
         jLabel141 = new javax.swing.JLabel();
-        jLabel142 = new javax.swing.JLabel();
+        m26s_p = new javax.swing.JLabel();
         jPanel82 = new javax.swing.JPanel();
         jLabel143 = new javax.swing.JLabel();
         T14 = new javax.swing.JPanel();
@@ -275,13 +283,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel145 = new javax.swing.JLabel();
         jPanel86 = new javax.swing.JPanel();
         jLabel146 = new javax.swing.JLabel();
-        jLabel147 = new javax.swing.JLabel();
+        tiger2_h = new javax.swing.JLabel();
         jLabel148 = new javax.swing.JLabel();
-        jLabel149 = new javax.swing.JLabel();
+        tiger2_a = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
-        jLabel151 = new javax.swing.JLabel();
+        tiger2_d = new javax.swing.JLabel();
         jLabel152 = new javax.swing.JLabel();
-        jLabel153 = new javax.swing.JLabel();
+        tiger2_p = new javax.swing.JLabel();
         jPanel87 = new javax.swing.JPanel();
         jLabel154 = new javax.swing.JLabel();
         T15 = new javax.swing.JPanel();
@@ -292,13 +300,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel156 = new javax.swing.JLabel();
         jPanel91 = new javax.swing.JPanel();
         jLabel157 = new javax.swing.JLabel();
-        jLabel158 = new javax.swing.JLabel();
+        comet_h = new javax.swing.JLabel();
         jLabel159 = new javax.swing.JLabel();
-        jLabel160 = new javax.swing.JLabel();
+        comet_a = new javax.swing.JLabel();
         jLabel161 = new javax.swing.JLabel();
-        jLabel162 = new javax.swing.JLabel();
+        comet_d = new javax.swing.JLabel();
         jLabel163 = new javax.swing.JLabel();
-        jLabel164 = new javax.swing.JLabel();
+        comet_p = new javax.swing.JLabel();
         jPanel92 = new javax.swing.JPanel();
         jLabel165 = new javax.swing.JLabel();
         T16 = new javax.swing.JPanel();
@@ -309,13 +317,13 @@ public class prePlay extends javax.swing.JFrame{
         jLabel167 = new javax.swing.JLabel();
         jPanel96 = new javax.swing.JPanel();
         jLabel168 = new javax.swing.JLabel();
-        jLabel169 = new javax.swing.JLabel();
+        is3_h = new javax.swing.JLabel();
         jLabel170 = new javax.swing.JLabel();
-        jLabel171 = new javax.swing.JLabel();
+        is3_a = new javax.swing.JLabel();
         jLabel172 = new javax.swing.JLabel();
-        jLabel173 = new javax.swing.JLabel();
+        is3_d = new javax.swing.JLabel();
         jLabel174 = new javax.swing.JLabel();
-        jLabel175 = new javax.swing.JLabel();
+        is3_p = new javax.swing.JLabel();
         jPanel97 = new javax.swing.JPanel();
         jLabel176 = new javax.swing.JLabel();
         start = new javax.swing.JLabel();
@@ -323,7 +331,6 @@ public class prePlay extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 755));
-        setPreferredSize(new java.awt.Dimension(1080, 755));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -341,8 +348,16 @@ public class prePlay extends javax.swing.JFrame{
         money.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         money.setForeground(new java.awt.Color(255, 255, 255));
         money.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        money.setText("200 $ ");
+        money.setText(""+(SaveGame.LoadSave().getMoney())+" $");
         money.setToolTipText("");
+        money.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                moneyCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                moneyInputMethodTextChanged(evt);
+            }
+        });
         moneyPanel.add(money);
 
         jPanel1.add(moneyPanel);
@@ -405,40 +420,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel21.add(jLabel5);
         jLabel5.setBounds(0, 0, 57, 20);
 
-        jLabel4.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel4.setText("600");
-        jPanel21.add(jLabel4);
-        jLabel4.setBounds(60, 0, 70, 20);
+        m4_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4_h.setText(""+(int)tanks.tanks.get("m4")[4]);
+        jPanel21.add(m4_h);
+        m4_h.setBounds(60, 0, 70, 20);
 
         jLabel3.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel3.setText("Armor :");
         jPanel21.add(jLabel3);
         jLabel3.setBounds(0, 20, 57, 20);
 
-        jLabel6.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel6.setText("30/10/5");
-        jPanel21.add(jLabel6);
-        jLabel6.setBounds(60, 20, 70, 20);
+        m4_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4_a.setText(""+(int)tanks.tanks.get("m4")[0]+"/"+(int)tanks.tanks.get("m4")[1]+"/"+(int)(tanks.tanks.get("m4")[3]));
+        jPanel21.add(m4_a);
+        m4_a.setBounds(60, 20, 70, 20);
 
         jLabel7.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel7.setText("Damage :");
         jPanel21.add(jLabel7);
         jLabel7.setBounds(0, 40, 70, 20);
 
-        jLabel8.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel8.setText("200");
-        jPanel21.add(jLabel8);
-        jLabel8.setBounds(60, 40, 50, 20);
+        m4_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4_d.setText(""+(int)tanks.tanks.get("m4")[5]);
+        jPanel21.add(m4_d);
+        m4_d.setBounds(60, 40, 50, 20);
 
         jLabel9.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel9.setText("Penetrate :");
         jPanel21.add(jLabel9);
         jLabel9.setBounds(0, 60, 70, 20);
 
-        jLabel10.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel10.setText("150");
-        jPanel21.add(jLabel10);
-        jLabel10.setBounds(60, 60, 70, 20);
+        m4_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4_p.setText(""+(int)tanks.tanks.get("m4")[6]);
+        jPanel21.add(m4_p);
+        m4_p.setBounds(60, 60, 70, 20);
 
         jPanel18.add(jPanel21);
         jPanel21.setBounds(0, 40, 130, 83);
@@ -447,9 +462,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel11.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(204, 0, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel11.setText("205 $");
+        jLabel11.setText(""+(int)tanks.tanks.get("m4")[13]+" S");
         jPanel22.add(jLabel11);
 
         jPanel18.add(jPanel22);
@@ -506,40 +520,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel26.add(jLabel14);
         jLabel14.setBounds(0, 0, 57, 20);
 
-        jLabel15.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel15.setText("100");
-        jPanel26.add(jLabel15);
-        jLabel15.setBounds(60, 0, 70, 20);
+        panzer4_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panzer4_h.setText(""+(int)tanks.tanks.get("panzer4")[4]);
+        jPanel26.add(panzer4_h);
+        panzer4_h.setBounds(60, 0, 70, 20);
 
         jLabel16.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel16.setText("Armor :");
         jPanel26.add(jLabel16);
         jLabel16.setBounds(0, 20, 57, 20);
 
-        jLabel17.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel17.setText("32/12/5");
-        jPanel26.add(jLabel17);
-        jLabel17.setBounds(60, 20, 70, 20);
+        panzer4_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panzer4_a.setText(""+(int)tanks.tanks.get("panzer4")[0]+"/"+(int)tanks.tanks.get("panzer4")[1]+"/"+(int)(tanks.tanks.get("panzer4")[3]));
+        jPanel26.add(panzer4_a);
+        panzer4_a.setBounds(60, 20, 70, 20);
 
         jLabel18.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel18.setText("Damage :");
         jPanel26.add(jLabel18);
         jLabel18.setBounds(0, 40, 70, 20);
 
-        jLabel19.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel19.setText("200");
-        jPanel26.add(jLabel19);
-        jLabel19.setBounds(60, 40, 50, 20);
+        panzer4_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panzer4_d.setText(""+(int)tanks.tanks.get("panzer4")[5]);
+        jPanel26.add(panzer4_d);
+        panzer4_d.setBounds(60, 40, 50, 20);
 
         jLabel20.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel20.setText("Penetrate :");
         jPanel26.add(jLabel20);
         jLabel20.setBounds(0, 60, 70, 20);
 
-        jLabel21.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel21.setText("150");
-        jPanel26.add(jLabel21);
-        jLabel21.setBounds(60, 60, 70, 20);
+        panzer4_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panzer4_p.setText(""+(int)tanks.tanks.get("panzer4")[6]);
+        jPanel26.add(panzer4_p);
+        panzer4_p.setBounds(60, 60, 70, 20);
 
         jPanel24.add(jPanel26);
         jPanel26.setBounds(0, 40, 130, 83);
@@ -548,9 +562,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel27.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel22.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(204, 0, 0));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel22.setText("205 $");
+        jLabel22.setText(""+(int)tanks.tanks.get("panzer4")[13]+" S");
         jPanel27.add(jLabel22);
 
         jPanel24.add(jPanel27);
@@ -607,40 +620,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel31.add(jLabel25);
         jLabel25.setBounds(0, 0, 57, 20);
 
-        jLabel26.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel26.setText("100");
-        jPanel31.add(jLabel26);
-        jLabel26.setBounds(60, 0, 70, 20);
+        cromwell_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        cromwell_h.setText(""+(int)tanks.tanks.get("cromwell")[4]);
+        jPanel31.add(cromwell_h);
+        cromwell_h.setBounds(60, 0, 70, 20);
 
         jLabel27.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel27.setText("Armor :");
         jPanel31.add(jLabel27);
         jLabel27.setBounds(0, 20, 57, 20);
 
-        jLabel28.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel28.setText("30/8/2");
-        jPanel31.add(jLabel28);
-        jLabel28.setBounds(60, 20, 70, 20);
+        cromwell_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        cromwell_a.setText(""+(int)tanks.tanks.get("cromwell")[0]+"/"+(int)tanks.tanks.get("cromwell")[1]+"/"+(int)(tanks.tanks.get("cromwell")[3]));
+        jPanel31.add(cromwell_a);
+        cromwell_a.setBounds(60, 20, 70, 20);
 
         jLabel29.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel29.setText("Damage :");
         jPanel31.add(jLabel29);
         jLabel29.setBounds(0, 40, 70, 20);
 
-        jLabel30.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel30.setText("200");
-        jPanel31.add(jLabel30);
-        jLabel30.setBounds(60, 40, 50, 20);
+        cromwell_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        cromwell_d.setText(""+(int)tanks.tanks.get("cromwell")[5]);
+        jPanel31.add(cromwell_d);
+        cromwell_d.setBounds(60, 40, 50, 20);
 
         jLabel31.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel31.setText("Penetrate :");
         jPanel31.add(jLabel31);
         jLabel31.setBounds(0, 60, 70, 20);
 
-        jLabel32.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel32.setText("150");
-        jPanel31.add(jLabel32);
-        jLabel32.setBounds(60, 60, 70, 20);
+        cromwell_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        cromwell_p.setText(""+(int)tanks.tanks.get("cromwell")[6]);
+        jPanel31.add(cromwell_p);
+        cromwell_p.setBounds(60, 60, 70, 20);
 
         jPanel29.add(jPanel31);
         jPanel31.setBounds(0, 40, 130, 83);
@@ -649,9 +662,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel32.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel33.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(204, 0, 0));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel33.setText("205 $");
+        jLabel33.setText(""+(int)tanks.tanks.get("cromwell")[13]+" S");
         jPanel32.add(jLabel33);
 
         jPanel29.add(jPanel32);
@@ -708,40 +720,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel36.add(jLabel36);
         jLabel36.setBounds(0, 0, 57, 20);
 
-        jLabel37.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel37.setText("100");
-        jPanel36.add(jLabel37);
-        jLabel37.setBounds(60, 0, 70, 20);
+        t34_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        t34_h.setText(""+(int)tanks.tanks.get("t34")[4]);
+        jPanel36.add(t34_h);
+        t34_h.setBounds(60, 0, 70, 20);
 
         jLabel38.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel38.setText("Armor :");
         jPanel36.add(jLabel38);
         jLabel38.setBounds(0, 20, 57, 20);
 
-        jLabel39.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel39.setText("28/10/5");
-        jPanel36.add(jLabel39);
-        jLabel39.setBounds(60, 20, 70, 20);
+        t34_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        t34_a.setText(""+(int)tanks.tanks.get("t34")[0]+"/"+(int)tanks.tanks.get("t34")[1]+"/"+(int)(tanks.tanks.get("t34")[3]));
+        jPanel36.add(t34_a);
+        t34_a.setBounds(60, 20, 70, 20);
 
         jLabel40.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel40.setText("Damage :");
         jPanel36.add(jLabel40);
         jLabel40.setBounds(0, 40, 70, 20);
 
-        jLabel41.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel41.setText("200");
-        jPanel36.add(jLabel41);
-        jLabel41.setBounds(60, 40, 50, 20);
+        t34_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        t34_d.setText(""+(int)tanks.tanks.get("t34")[5]);
+        jPanel36.add(t34_d);
+        t34_d.setBounds(60, 40, 50, 20);
 
         jLabel42.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel42.setText("Penetrate :");
         jPanel36.add(jLabel42);
         jLabel42.setBounds(0, 60, 70, 20);
 
-        jLabel43.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel43.setText("150");
-        jPanel36.add(jLabel43);
-        jLabel43.setBounds(60, 60, 70, 20);
+        t34_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        t34_p.setText(""+(int)tanks.tanks.get("t34")[6]);
+        jPanel36.add(t34_p);
+        t34_p.setBounds(60, 60, 70, 20);
 
         jPanel34.add(jPanel36);
         jPanel36.setBounds(0, 40, 130, 83);
@@ -750,9 +762,8 @@ public class prePlay extends javax.swing.JFrame{
         jPanel37.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jLabel44.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(204, 0, 0));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel44.setText("205 $");
+        jLabel44.setText(""+(int)tanks.tanks.get("t34")[13]+" S");
         jPanel37.add(jLabel44);
 
         jPanel34.add(jPanel37);
@@ -809,40 +820,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel41.add(jLabel47);
         jLabel47.setBounds(0, 0, 57, 20);
 
-        jLabel48.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel48.setText("100");
-        jPanel41.add(jLabel48);
-        jLabel48.setBounds(60, 0, 70, 20);
+        m4a3e8_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4a3e8_h.setText(""+(int)tanks.tanks.get("m4a3e8")[4]);
+        jPanel41.add(m4a3e8_h);
+        m4a3e8_h.setBounds(60, 0, 70, 20);
 
         jLabel49.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel49.setText("Armor :");
         jPanel41.add(jLabel49);
         jLabel49.setBounds(0, 20, 57, 20);
 
-        jLabel50.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel50.setText("35/15/10");
-        jPanel41.add(jLabel50);
-        jLabel50.setBounds(60, 20, 70, 20);
+        m4a3e8_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4a3e8_a.setText(""+(int)tanks.tanks.get("m4a3e8")[0]+"/"+(int)tanks.tanks.get("m4a3e8")[1]+"/"+(int)(tanks.tanks.get("m4a3e8")[3]));
+        jPanel41.add(m4a3e8_a);
+        m4a3e8_a.setBounds(60, 20, 70, 20);
 
         jLabel51.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel51.setText("Damage :");
         jPanel41.add(jLabel51);
         jLabel51.setBounds(0, 40, 70, 20);
 
-        jLabel52.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel52.setText("200");
-        jPanel41.add(jLabel52);
-        jLabel52.setBounds(60, 40, 50, 20);
+        m4a3e8_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4a3e8_d.setText(""+(int)tanks.tanks.get("m4a3e8")[5]);
+        jPanel41.add(m4a3e8_d);
+        m4a3e8_d.setBounds(60, 40, 50, 20);
 
         jLabel53.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel53.setText("Penetrate :");
         jPanel41.add(jLabel53);
         jLabel53.setBounds(0, 60, 70, 20);
 
-        jLabel54.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel54.setText("150");
-        jPanel41.add(jLabel54);
-        jLabel54.setBounds(60, 60, 70, 20);
+        m4a3e8_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m4a3e8_p.setText(""+(int)tanks.tanks.get("m4a3e8")[6]);
+        jPanel41.add(m4a3e8_p);
+        m4a3e8_p.setBounds(60, 60, 70, 20);
 
         jPanel39.add(jPanel41);
         jPanel41.setBounds(0, 40, 130, 83);
@@ -853,7 +864,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel55.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(204, 0, 0));
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel55.setText("205 $");
+        jLabel55.setText(""+(int)tanks.tanks.get("m4a3e8")[13]+" S");
         jPanel42.add(jLabel55);
 
         jPanel39.add(jPanel42);
@@ -910,40 +921,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel46.add(jLabel58);
         jLabel58.setBounds(0, 0, 57, 20);
 
-        jLabel59.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel59.setText("100");
-        jPanel46.add(jLabel59);
-        jLabel59.setBounds(60, 0, 70, 20);
+        panther_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panther_h.setText(""+(int)tanks.tanks.get("panther")[4]);
+        jPanel46.add(panther_h);
+        panther_h.setBounds(60, 0, 70, 20);
 
         jLabel60.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel60.setText("Armor :");
         jPanel46.add(jLabel60);
         jLabel60.setBounds(0, 20, 57, 20);
 
-        jLabel61.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel61.setText("40/20/10");
-        jPanel46.add(jLabel61);
-        jLabel61.setBounds(60, 20, 70, 20);
+        panther_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panther_a.setText(""+(int)tanks.tanks.get("panther")[0]+"/"+(int)tanks.tanks.get("panther")[1]+"/"+(int)(tanks.tanks.get("panther")[3]));
+        jPanel46.add(panther_a);
+        panther_a.setBounds(60, 20, 70, 20);
 
         jLabel62.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel62.setText("Damage :");
         jPanel46.add(jLabel62);
         jLabel62.setBounds(0, 40, 70, 20);
 
-        jLabel63.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel63.setText("200");
-        jPanel46.add(jLabel63);
-        jLabel63.setBounds(60, 40, 50, 20);
+        panther_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panther_d.setText(""+(int)tanks.tanks.get("panther")[5]);
+        jPanel46.add(panther_d);
+        panther_d.setBounds(60, 40, 50, 20);
 
         jLabel64.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel64.setText("Penetrate :");
         jPanel46.add(jLabel64);
         jLabel64.setBounds(0, 60, 70, 20);
 
-        jLabel65.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel65.setText("150");
-        jPanel46.add(jLabel65);
-        jLabel65.setBounds(60, 60, 70, 20);
+        panther_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        panther_p.setText(""+(int)tanks.tanks.get("panther")[6]);
+        jPanel46.add(panther_p);
+        panther_p.setBounds(60, 60, 70, 20);
 
         jPanel44.add(jPanel46);
         jPanel46.setBounds(0, 40, 130, 83);
@@ -954,7 +965,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel66.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(204, 0, 0));
         jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel66.setText("205 $");
+        jLabel66.setText(""+(int)tanks.tanks.get("panther")[13]+" S");
         jPanel47.add(jLabel66);
 
         jPanel44.add(jPanel47);
@@ -1011,40 +1022,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel51.add(jLabel69);
         jLabel69.setBounds(0, 0, 57, 20);
 
-        jLabel70.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel70.setText("100");
-        jPanel51.add(jLabel70);
-        jLabel70.setBounds(60, 0, 70, 20);
+        frefly_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        frefly_h.setText(""+(int)tanks.tanks.get("firefly")[4]);
+        jPanel51.add(frefly_h);
+        frefly_h.setBounds(60, 0, 70, 20);
 
         jLabel71.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel71.setText("Armor :");
         jPanel51.add(jLabel71);
         jLabel71.setBounds(0, 20, 57, 20);
 
-        jLabel72.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel72.setText("30/10/5");
-        jPanel51.add(jLabel72);
-        jLabel72.setBounds(60, 20, 70, 20);
+        frefly_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        frefly_a.setText(""+(int)tanks.tanks.get("firefly")[0]+"/"+(int)tanks.tanks.get("firefly")[1]+"/"+(int)(tanks.tanks.get("firefly")[3]));
+        jPanel51.add(frefly_a);
+        frefly_a.setBounds(60, 20, 70, 20);
 
         jLabel73.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel73.setText("Damage :");
         jPanel51.add(jLabel73);
         jLabel73.setBounds(0, 40, 70, 20);
 
-        jLabel74.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel74.setText("200");
-        jPanel51.add(jLabel74);
-        jLabel74.setBounds(60, 40, 50, 20);
+        frefly_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        frefly_d.setText(""+(int)tanks.tanks.get("firefly")[5]);
+        jPanel51.add(frefly_d);
+        frefly_d.setBounds(60, 40, 50, 20);
 
         jLabel75.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel75.setText("Penetrate :");
         jPanel51.add(jLabel75);
         jLabel75.setBounds(0, 60, 70, 20);
 
-        jLabel76.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel76.setText("150");
-        jPanel51.add(jLabel76);
-        jLabel76.setBounds(60, 60, 70, 20);
+        frefly_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        frefly_p.setText(""+(int)tanks.tanks.get("firefly")[6]);
+        jPanel51.add(frefly_p);
+        frefly_p.setBounds(60, 60, 70, 20);
 
         jPanel49.add(jPanel51);
         jPanel51.setBounds(0, 40, 130, 83);
@@ -1055,7 +1066,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel77.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(204, 0, 0));
         jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel77.setText("205 $");
+        jLabel77.setText(""+(int)tanks.tanks.get("firefly")[13]+" S");
         jPanel52.add(jLabel77);
 
         jPanel49.add(jPanel52);
@@ -1112,40 +1123,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel56.add(jLabel80);
         jLabel80.setBounds(0, 0, 57, 20);
 
-        jLabel81.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel81.setText("100");
-        jPanel56.add(jLabel81);
-        jLabel81.setBounds(60, 0, 70, 20);
+        kv1_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        kv1_h.setText(""+(int)tanks.tanks.get("kv1")[4]);
+        jPanel56.add(kv1_h);
+        kv1_h.setBounds(60, 0, 70, 20);
 
         jLabel82.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel82.setText("Armor :");
         jPanel56.add(jLabel82);
         jLabel82.setBounds(0, 20, 57, 20);
 
-        jLabel83.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel83.setText("50/35/20");
-        jPanel56.add(jLabel83);
-        jLabel83.setBounds(60, 20, 70, 20);
+        kv1_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        kv1_a.setText(""+(int)tanks.tanks.get("kv1")[0]+"/"+(int)tanks.tanks.get("kv1")[1]+"/"+(int)(tanks.tanks.get("kv1")[3]));
+        jPanel56.add(kv1_a);
+        kv1_a.setBounds(60, 20, 70, 20);
 
         jLabel84.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel84.setText("Damage :");
         jPanel56.add(jLabel84);
         jLabel84.setBounds(0, 40, 70, 20);
 
-        jLabel85.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel85.setText("200");
-        jPanel56.add(jLabel85);
-        jLabel85.setBounds(60, 40, 50, 20);
+        kv1_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        kv1_d.setText(""+(int)tanks.tanks.get("kv1")[5]);
+        jPanel56.add(kv1_d);
+        kv1_d.setBounds(60, 40, 50, 20);
 
         jLabel86.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel86.setText("Penetrate :");
         jPanel56.add(jLabel86);
         jLabel86.setBounds(0, 60, 70, 20);
 
-        jLabel87.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel87.setText("150");
-        jPanel56.add(jLabel87);
-        jLabel87.setBounds(60, 60, 70, 20);
+        kv1_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        kv1_p.setText(""+(int)tanks.tanks.get("kv1")[6]);
+        jPanel56.add(kv1_p);
+        kv1_p.setBounds(60, 60, 70, 20);
 
         jPanel54.add(jPanel56);
         jPanel56.setBounds(0, 40, 130, 83);
@@ -1156,7 +1167,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel88.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(204, 0, 0));
         jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel88.setText("205 $");
+        jLabel88.setText(""+(int)tanks.tanks.get("kv1")[13]+" S");
         jPanel57.add(jLabel88);
 
         jPanel54.add(jPanel57);
@@ -1213,40 +1224,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel61.add(jLabel91);
         jLabel91.setBounds(0, 0, 57, 20);
 
-        jLabel92.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel92.setText("800");
-        jPanel61.add(jLabel92);
-        jLabel92.setBounds(60, 0, 70, 20);
+        m26_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26_h.setText(""+(int)tanks.tanks.get("m26")[4]);
+        jPanel61.add(m26_h);
+        m26_h.setBounds(60, 0, 70, 20);
 
         jLabel93.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel93.setText("Armor :");
         jPanel61.add(jLabel93);
         jLabel93.setBounds(0, 20, 57, 20);
 
-        jLabel94.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel94.setText("48/40/10");
-        jPanel61.add(jLabel94);
-        jLabel94.setBounds(60, 20, 70, 20);
+        m26_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26_a.setText(""+(int)tanks.tanks.get("m26")[0]+"/"+(int)tanks.tanks.get("m26")[1]+"/"+(int)(tanks.tanks.get("m26")[3]));
+        jPanel61.add(m26_a);
+        m26_a.setBounds(60, 20, 70, 20);
 
         jLabel95.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel95.setText("Damage :");
         jPanel61.add(jLabel95);
         jLabel95.setBounds(0, 40, 70, 20);
 
-        jLabel96.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel96.setText("200");
-        jPanel61.add(jLabel96);
-        jLabel96.setBounds(60, 40, 50, 20);
-
         jLabel97.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel97.setText("Penetrate :");
         jPanel61.add(jLabel97);
         jLabel97.setBounds(0, 60, 70, 20);
 
-        jLabel98.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel98.setText("150");
-        jPanel61.add(jLabel98);
-        jLabel98.setBounds(60, 60, 70, 20);
+        m26_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26_d.setText(""+(int)tanks.tanks.get("m26")[5]);
+        jPanel61.add(m26_d);
+        m26_d.setBounds(60, 40, 50, 20);
+
+        m26_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26_p.setText(""+(int)tanks.tanks.get("m26")[6]);
+        jPanel61.add(m26_p);
+        m26_p.setBounds(60, 60, 70, 20);
 
         jPanel59.add(jPanel61);
         jPanel61.setBounds(0, 40, 130, 83);
@@ -1257,7 +1268,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel99.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel99.setForeground(new java.awt.Color(204, 0, 0));
         jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel99.setText("205 $");
+        jLabel99.setText(""+(int)tanks.tanks.get("m26")[13]+" S");
         jPanel62.add(jLabel99);
 
         jPanel59.add(jPanel62);
@@ -1314,40 +1325,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel66.add(jLabel102);
         jLabel102.setBounds(0, 0, 57, 20);
 
-        jLabel103.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel103.setText("100");
-        jPanel66.add(jLabel103);
-        jLabel103.setBounds(60, 0, 70, 20);
+        tiger_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger_h.setText(""+(int)tanks.tanks.get("tiger")[4]);
+        jPanel66.add(tiger_h);
+        tiger_h.setBounds(60, 0, 70, 20);
 
         jLabel104.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel104.setText("Armor :");
         jPanel66.add(jLabel104);
         jLabel104.setBounds(0, 20, 57, 20);
 
-        jLabel105.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel105.setText("50/40/20");
-        jPanel66.add(jLabel105);
-        jLabel105.setBounds(60, 20, 70, 20);
+        tiger_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger_a.setText(""+(int)tanks.tanks.get("tiger")[0]+"/"+(int)tanks.tanks.get("tiger")[1]+"/"+(int)(tanks.tanks.get("tiger")[3]));
+        jPanel66.add(tiger_a);
+        tiger_a.setBounds(60, 20, 70, 20);
 
         jLabel106.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel106.setText("Damage :");
         jPanel66.add(jLabel106);
         jLabel106.setBounds(0, 40, 70, 20);
 
-        jLabel107.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel107.setText("200");
-        jPanel66.add(jLabel107);
-        jLabel107.setBounds(60, 40, 50, 20);
+        tiger_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger_d.setText(""+(int)tanks.tanks.get("tiger")[5]);
+        jPanel66.add(tiger_d);
+        tiger_d.setBounds(60, 40, 50, 20);
 
         jLabel108.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel108.setText("Penetrate :");
         jPanel66.add(jLabel108);
         jLabel108.setBounds(0, 60, 70, 20);
 
-        jLabel109.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel109.setText("150");
-        jPanel66.add(jLabel109);
-        jLabel109.setBounds(60, 60, 70, 20);
+        tiger_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger_p.setText(""+(int)tanks.tanks.get("tiger")[6]);
+        jPanel66.add(tiger_p);
+        tiger_p.setBounds(60, 60, 70, 20);
 
         jPanel64.add(jPanel66);
         jPanel66.setBounds(0, 40, 130, 83);
@@ -1358,7 +1369,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel110.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel110.setForeground(new java.awt.Color(204, 0, 0));
         jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel110.setText("205 $");
+        jLabel110.setText(""+(int)tanks.tanks.get("tiger")[13]+" S");
         jPanel67.add(jLabel110);
 
         jPanel64.add(jPanel67);
@@ -1415,40 +1426,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel71.add(jLabel113);
         jLabel113.setBounds(0, 0, 57, 20);
 
-        jLabel114.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel114.setText("100");
-        jPanel71.add(jLabel114);
-        jLabel114.setBounds(60, 0, 70, 20);
+        churchile_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        churchile_h.setText(""+(int)tanks.tanks.get("churchill")[4]);
+        jPanel71.add(churchile_h);
+        churchile_h.setBounds(60, 0, 70, 20);
 
         jLabel115.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel115.setText("Armor :");
         jPanel71.add(jLabel115);
         jLabel115.setBounds(0, 20, 57, 20);
 
-        jLabel116.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel116.setText("62/55/30");
-        jPanel71.add(jLabel116);
-        jLabel116.setBounds(60, 20, 70, 20);
+        churchile_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        churchile_a.setText(""+(int)tanks.tanks.get("churchill")[0]+"/"+(int)tanks.tanks.get("churchill")[1]+"/"+(int)(tanks.tanks.get("churchill")[3]));
+        jPanel71.add(churchile_a);
+        churchile_a.setBounds(60, 20, 70, 20);
 
         jLabel117.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel117.setText("Damage :");
         jPanel71.add(jLabel117);
         jLabel117.setBounds(0, 40, 70, 20);
 
-        jLabel118.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel118.setText("200");
-        jPanel71.add(jLabel118);
-        jLabel118.setBounds(60, 40, 50, 20);
+        churchile_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        churchile_d.setText(""+(int)tanks.tanks.get("churchill")[5]);
+        jPanel71.add(churchile_d);
+        churchile_d.setBounds(60, 40, 50, 20);
 
         jLabel119.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel119.setText("Penetrate :");
         jPanel71.add(jLabel119);
         jLabel119.setBounds(0, 60, 70, 20);
 
-        jLabel120.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel120.setText("150");
-        jPanel71.add(jLabel120);
-        jLabel120.setBounds(60, 60, 70, 20);
+        churchile_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        churchile_p.setText(""+(int)tanks.tanks.get("churchill")[6]);
+        jPanel71.add(churchile_p);
+        churchile_p.setBounds(60, 60, 70, 20);
 
         jPanel69.add(jPanel71);
         jPanel71.setBounds(0, 40, 130, 83);
@@ -1459,7 +1470,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel121.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel121.setForeground(new java.awt.Color(204, 0, 0));
         jLabel121.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel121.setText("205 $");
+        jLabel121.setText(""+(int)tanks.tanks.get("churchill")[13]+" S");
         jPanel72.add(jLabel121);
 
         jPanel69.add(jPanel72);
@@ -1516,40 +1527,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel76.add(jLabel124);
         jLabel124.setBounds(0, 0, 57, 20);
 
-        jLabel125.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel125.setText("100");
-        jPanel76.add(jLabel125);
-        jLabel125.setBounds(60, 0, 70, 20);
+        is2_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is2_h.setText(""+(int)tanks.tanks.get("is2")[4]);
+        jPanel76.add(is2_h);
+        is2_h.setBounds(60, 0, 70, 20);
 
         jLabel126.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel126.setText("Armor :");
         jPanel76.add(jLabel126);
         jLabel126.setBounds(0, 20, 57, 20);
 
-        jLabel127.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel127.setText("55/38/20");
-        jPanel76.add(jLabel127);
-        jLabel127.setBounds(60, 20, 70, 20);
+        is2_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is2_a.setText(""+(int)tanks.tanks.get("is2")[0]+"/"+(int)tanks.tanks.get("is2")[1]+"/"+(int)(tanks.tanks.get("is2")[3]));
+        jPanel76.add(is2_a);
+        is2_a.setBounds(60, 20, 70, 20);
 
         jLabel128.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel128.setText("Damage :");
         jPanel76.add(jLabel128);
         jLabel128.setBounds(0, 40, 70, 20);
 
-        jLabel129.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel129.setText("200");
-        jPanel76.add(jLabel129);
-        jLabel129.setBounds(60, 40, 50, 20);
+        is2_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is2_d.setText(""+(int)tanks.tanks.get("is2")[5]);
+        jPanel76.add(is2_d);
+        is2_d.setBounds(60, 40, 50, 20);
 
         jLabel130.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel130.setText("Penetrate :");
         jPanel76.add(jLabel130);
         jLabel130.setBounds(0, 60, 70, 20);
 
-        jLabel131.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel131.setText("150");
-        jPanel76.add(jLabel131);
-        jLabel131.setBounds(60, 60, 70, 20);
+        is2_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is2_p.setText(""+(int)tanks.tanks.get("is2")[6]);
+        jPanel76.add(is2_p);
+        is2_p.setBounds(60, 60, 70, 20);
 
         jPanel74.add(jPanel76);
         jPanel76.setBounds(0, 40, 130, 83);
@@ -1560,7 +1571,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel132.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel132.setForeground(new java.awt.Color(204, 0, 0));
         jLabel132.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel132.setText("205 $");
+        jLabel132.setText(""+(int)tanks.tanks.get("is2")[13]+" S");
         jPanel77.add(jLabel132);
 
         jPanel74.add(jPanel77);
@@ -1617,40 +1628,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel81.add(jLabel135);
         jLabel135.setBounds(0, 0, 57, 20);
 
-        jLabel136.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel136.setText("800");
-        jPanel81.add(jLabel136);
-        jLabel136.setBounds(60, 0, 70, 20);
+        m26s_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26s_h.setText(""+(int)tanks.tanks.get("m26s")[4]);
+        jPanel81.add(m26s_h);
+        m26s_h.setBounds(60, 0, 70, 20);
 
         jLabel137.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel137.setText("Armor :");
         jPanel81.add(jLabel137);
         jLabel137.setBounds(0, 20, 57, 20);
 
-        jLabel138.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel138.setText("60/40/20");
-        jPanel81.add(jLabel138);
-        jLabel138.setBounds(60, 20, 70, 20);
+        m26s_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26s_a.setText(""+(int)tanks.tanks.get("m26s")[0]+"/"+(int)tanks.tanks.get("m26s")[1]+"/"+(int)(tanks.tanks.get("m26s")[3]));
+        jPanel81.add(m26s_a);
+        m26s_a.setBounds(60, 20, 70, 20);
 
         jLabel139.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel139.setText("Damage :");
         jPanel81.add(jLabel139);
         jLabel139.setBounds(0, 40, 70, 20);
 
-        jLabel140.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel140.setText("200");
-        jPanel81.add(jLabel140);
-        jLabel140.setBounds(60, 40, 50, 20);
+        m26s_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26s_d.setText(""+(int)tanks.tanks.get("m26s")[5]);
+        jPanel81.add(m26s_d);
+        m26s_d.setBounds(60, 40, 50, 20);
 
         jLabel141.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel141.setText("Penetrate :");
         jPanel81.add(jLabel141);
         jLabel141.setBounds(0, 60, 70, 20);
 
-        jLabel142.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel142.setText("150");
-        jPanel81.add(jLabel142);
-        jLabel142.setBounds(60, 60, 70, 20);
+        m26s_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        m26s_p.setText(""+(int)tanks.tanks.get("m26s")[6]);
+        jPanel81.add(m26s_p);
+        m26s_p.setBounds(60, 60, 70, 20);
 
         jPanel79.add(jPanel81);
         jPanel81.setBounds(0, 40, 130, 83);
@@ -1661,7 +1672,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel143.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel143.setForeground(new java.awt.Color(204, 0, 0));
         jLabel143.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel143.setText("205 $");
+        jLabel143.setText(""+(int)tanks.tanks.get("m26s")[13]+" S");
         jPanel82.add(jLabel143);
 
         jPanel79.add(jPanel82);
@@ -1718,40 +1729,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel86.add(jLabel146);
         jLabel146.setBounds(0, 0, 57, 20);
 
-        jLabel147.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel147.setText("100");
-        jPanel86.add(jLabel147);
-        jLabel147.setBounds(60, 0, 70, 20);
+        tiger2_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger2_h.setText(""+(int)tanks.tanks.get("tiger2")[4]);
+        jPanel86.add(tiger2_h);
+        tiger2_h.setBounds(60, 0, 70, 20);
 
         jLabel148.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel148.setText("Armor :");
         jPanel86.add(jLabel148);
         jLabel148.setBounds(0, 20, 57, 20);
 
-        jLabel149.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel149.setText("60/50/30");
-        jPanel86.add(jLabel149);
-        jLabel149.setBounds(60, 20, 70, 20);
+        tiger2_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger2_a.setText(""+(int)tanks.tanks.get("tiger2")[0]+"/"+(int)tanks.tanks.get("tiger2")[1]+"/"+(int)(tanks.tanks.get("tiger2")[3]));
+        jPanel86.add(tiger2_a);
+        tiger2_a.setBounds(60, 20, 70, 20);
 
         jLabel150.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel150.setText("Damage :");
         jPanel86.add(jLabel150);
         jLabel150.setBounds(0, 40, 70, 20);
 
-        jLabel151.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel151.setText("200");
-        jPanel86.add(jLabel151);
-        jLabel151.setBounds(60, 40, 50, 20);
+        tiger2_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger2_d.setText(""+(int)tanks.tanks.get("tiger2")[5]);
+        jPanel86.add(tiger2_d);
+        tiger2_d.setBounds(60, 40, 50, 20);
 
         jLabel152.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel152.setText("Penetrate :");
         jPanel86.add(jLabel152);
         jLabel152.setBounds(0, 60, 70, 20);
 
-        jLabel153.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel153.setText("150");
-        jPanel86.add(jLabel153);
-        jLabel153.setBounds(60, 60, 70, 20);
+        tiger2_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        tiger2_p.setText(""+(int)tanks.tanks.get("tiger")[6]);
+        jPanel86.add(tiger2_p);
+        tiger2_p.setBounds(60, 60, 70, 20);
 
         jPanel84.add(jPanel86);
         jPanel86.setBounds(0, 40, 130, 83);
@@ -1762,7 +1773,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel154.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel154.setForeground(new java.awt.Color(204, 0, 0));
         jLabel154.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel154.setText("205 $");
+        jLabel154.setText(""+(int)tanks.tanks.get("tiger2")[13]+" S");
         jPanel87.add(jLabel154);
 
         jPanel84.add(jPanel87);
@@ -1819,40 +1830,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel91.add(jLabel157);
         jLabel157.setBounds(0, 0, 57, 20);
 
-        jLabel158.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel158.setText("100");
-        jPanel91.add(jLabel158);
-        jLabel158.setBounds(60, 0, 70, 20);
+        comet_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        comet_h.setText(""+(int)tanks.tanks.get("comet")[4]);
+        jPanel91.add(comet_h);
+        comet_h.setBounds(60, 0, 70, 20);
 
         jLabel159.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel159.setText("Armor :");
         jPanel91.add(jLabel159);
         jLabel159.setBounds(0, 20, 57, 20);
 
-        jLabel160.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel160.setText("55/35/20");
-        jPanel91.add(jLabel160);
-        jLabel160.setBounds(60, 20, 70, 20);
+        comet_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        comet_a.setText(""+(int)tanks.tanks.get("comet")[0]+"/"+(int)tanks.tanks.get("comet")[1]+"/"+(int)(tanks.tanks.get("comet")[3]));
+        jPanel91.add(comet_a);
+        comet_a.setBounds(60, 20, 70, 20);
 
         jLabel161.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel161.setText("Damage :");
         jPanel91.add(jLabel161);
         jLabel161.setBounds(0, 40, 70, 20);
 
-        jLabel162.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel162.setText("200");
-        jPanel91.add(jLabel162);
-        jLabel162.setBounds(60, 40, 50, 20);
+        comet_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        comet_d.setText(""+(int)tanks.tanks.get("comet")[5]);
+        jPanel91.add(comet_d);
+        comet_d.setBounds(60, 40, 50, 20);
 
         jLabel163.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel163.setText("Penetrate :");
         jPanel91.add(jLabel163);
         jLabel163.setBounds(0, 60, 70, 20);
 
-        jLabel164.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel164.setText("150");
-        jPanel91.add(jLabel164);
-        jLabel164.setBounds(60, 60, 70, 20);
+        comet_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        comet_p.setText(""+(int)tanks.tanks.get("comet")[6]);
+        jPanel91.add(comet_p);
+        comet_p.setBounds(60, 60, 70, 20);
 
         jPanel89.add(jPanel91);
         jPanel91.setBounds(0, 40, 130, 83);
@@ -1863,7 +1874,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel165.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel165.setForeground(new java.awt.Color(204, 0, 0));
         jLabel165.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel165.setText("205 $");
+        jLabel165.setText(""+(int)tanks.tanks.get("comet")[13]+" S");
         jPanel92.add(jLabel165);
 
         jPanel89.add(jPanel92);
@@ -1920,40 +1931,40 @@ public class prePlay extends javax.swing.JFrame{
         jPanel96.add(jLabel168);
         jLabel168.setBounds(0, 0, 57, 20);
 
-        jLabel169.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel169.setText("100");
-        jPanel96.add(jLabel169);
-        jLabel169.setBounds(60, 0, 70, 20);
+        is3_h.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is3_h.setText(""+(int)tanks.tanks.get("is3")[4]);
+        jPanel96.add(is3_h);
+        is3_h.setBounds(60, 0, 70, 20);
 
         jLabel170.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel170.setText("Armor :");
         jPanel96.add(jLabel170);
         jLabel170.setBounds(0, 20, 57, 20);
 
-        jLabel171.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel171.setText("61/45/25");
-        jPanel96.add(jLabel171);
-        jLabel171.setBounds(60, 20, 70, 20);
+        is3_a.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is3_a.setText(""+(int)tanks.tanks.get("is3")[0]+"/"+(int)tanks.tanks.get("is3")[1]+"/"+(int)(tanks.tanks.get("is3")[3]));
+        jPanel96.add(is3_a);
+        is3_a.setBounds(60, 20, 70, 20);
 
         jLabel172.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
         jLabel172.setText("Damage :");
         jPanel96.add(jLabel172);
         jLabel172.setBounds(0, 40, 70, 20);
 
-        jLabel173.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel173.setText("200");
-        jPanel96.add(jLabel173);
-        jLabel173.setBounds(60, 40, 50, 20);
+        is3_d.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is3_d.setText(""+(int)tanks.tanks.get("is3")[5]);
+        jPanel96.add(is3_d);
+        is3_d.setBounds(60, 40, 50, 20);
 
         jLabel174.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         jLabel174.setText("Penetrate :");
         jPanel96.add(jLabel174);
         jLabel174.setBounds(0, 60, 70, 20);
 
-        jLabel175.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
-        jLabel175.setText("150");
-        jPanel96.add(jLabel175);
-        jLabel175.setBounds(60, 60, 70, 20);
+        is3_p.setFont(new java.awt.Font("Impact", 0, 15)); // NOI18N
+        is3_p.setText(""+(int)tanks.tanks.get("is3")[6]);
+        jPanel96.add(is3_p);
+        is3_p.setBounds(60, 60, 70, 20);
 
         jPanel94.add(jPanel96);
         jPanel96.setBounds(0, 40, 130, 83);
@@ -1964,7 +1975,7 @@ public class prePlay extends javax.swing.JFrame{
         jLabel176.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel176.setForeground(new java.awt.Color(204, 0, 0));
         jLabel176.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel176.setText("205 $");
+        jLabel176.setText(""+(int)tanks.tanks.get("is3")[13]+" S");
         jPanel97.add(jLabel176);
 
         jPanel94.add(jPanel97);
@@ -2005,26 +2016,28 @@ public class prePlay extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
  private void check(int i){
         switch(i){
-            case 1:
-                tank = "m4";
-                chose = 1;
+            case 1:                
                 T1.setBorder(BorderFactory.createLineBorder(Color.black,3));
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
-                break;
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m4")[13]){
+                    tank = "m4";
+                    chose = 1;
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    break;
+                }
             case 2:
                 chose = 2;
                 tank = "panzer4";
@@ -2083,233 +2096,369 @@ public class prePlay extends javax.swing.JFrame{
                 T16.setBorder(null);
                 break;
             case 5:
-                chose = 5;
-                tank = "m4a3e8";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m4a3e8")[13]&&SaveGame.LoadSave().getSet().contains("m4")||SaveGame.LoadSave().getSet().contains("m4a3e8")){
+                    chose = 5;
+                    tank = "m4a3e8";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
             case 6:
-                chose = 6;
-                tank = "panther";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("panther")[13]&&SaveGame.LoadSave().getSet().contains("panzer4")||SaveGame.LoadSave().getSet().contains("panther")){
+                    chose = 6;
+                    tank = "panther";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
              case 7:
-                chose = 7;
-                tank = "firefly";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("firefly")[13]&&SaveGame.LoadSave().getSet().contains("cromwell")||SaveGame.LoadSave().getSet().contains("firefly")){
+                    chose = 7;
+                    tank = "firefly";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save(-(int)tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                    
+                }
                 break;
              case 8:
-                chose = 8;
-                tank = "kv1";
-               T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("kv1")[13]&&SaveGame.LoadSave().getSet().contains("t34")||SaveGame.LoadSave().getSet().contains("kv1")){
+                    chose = 8;
+                    tank = "kv1";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }
                 break;
              case 9:
-                chose = 9;
-                tank = "m26";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m26")[13]&&SaveGame.LoadSave().getSet().contains("m4a3e8")||SaveGame.LoadSave().getSet().contains("m26")){
+                    chose = 9;
+                    tank = "m26";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 10:
-                chose = 10;
-                tank = "tiger";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("tiger")[13]&&SaveGame.LoadSave().getSet().contains("panther")||SaveGame.LoadSave().getSet().contains("tiger")){
+                    chose = 10;
+                    tank = "tiger";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 11:
-                chose = 11;
-                tank = "churchill";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("churchill")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("churchill")){
+                        chose = 11;
+                        tank = "churchill";
+                        T1.setBorder(null);
+                        T2.setBorder(null);
+                        T3.setBorder(null);
+                        T4.setBorder(null);
+                        T5.setBorder(null);
+                        T6.setBorder(null);
+                        T7.setBorder(null);
+                        T8.setBorder(null);
+                        T9.setBorder(null);
+                        T10.setBorder(null);
+                        T12.setBorder(null);
+                        T13.setBorder(null);
+                        T14.setBorder(null);
+                        T15.setBorder(null);
+                        T16.setBorder(null);
+                        if(!SaveGame.LoadSave().getSet().contains(tank)){
+                            SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                            money.setText(SaveGame.LoadSave().getMoney()+" $");
+                            clearProfile();
+                        }
+                }
                 break;
              case 12:
-                chose = 12;
-                tank = "is2";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("is2")[13]&&SaveGame.LoadSave().getSet().contains("kv1")||SaveGame.LoadSave().getSet().contains("is2")){
+                    chose = 12;
+                    tank = "is2";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                 }
                 break;
              case 13:
-                chose = 13;
-                tank = "m26s";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("m26s")[13]&&SaveGame.LoadSave().getSet().contains("m26")||SaveGame.LoadSave().getSet().contains("m26s")){
+                    chose = 13;
+                    tank = "m26s";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }
+                }                
                 break;
              case 14:
-                chose = 14;
-                tank = "tiger2";
-               T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T15.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("tiger2")[13]&&SaveGame.LoadSave().getSet().contains("tiger")||SaveGame.LoadSave().getSet().contains("tiger2")){
+                    chose = 14;
+                    tank = "tiger2";
+                   T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T15.setBorder(null);
+                    T16.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }  
+                }
                 break;
              case 15:
-                chose = 15;
-                tank = "comet";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T16.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("comet")[13]&&SaveGame.LoadSave().getSet().contains("firefly")||SaveGame.LoadSave().getSet().contains("comet")){
+                        chose = 15;
+                        tank = "comet";
+                        T1.setBorder(null);
+                        T2.setBorder(null);
+                        T3.setBorder(null);
+                        T4.setBorder(null);
+                        T5.setBorder(null);
+                        T6.setBorder(null);
+                        T7.setBorder(null);
+                        T8.setBorder(null);
+                        T9.setBorder(null);
+                        T10.setBorder(null);
+                        T11.setBorder(null);
+                        T12.setBorder(null);
+                        T13.setBorder(null);
+                        T14.setBorder(null);
+                        T16.setBorder(null);
+                        if(!SaveGame.LoadSave().getSet().contains(tank)){
+                            SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                            money.setText(SaveGame.LoadSave().getMoney()+" $");
+                            clearProfile();
+                        } 
+                }
                 break;
              case 16:
-                chose = 16;
-                tank = "is3";
-                T1.setBorder(null);
-                T2.setBorder(null);
-                T3.setBorder(null);
-                T4.setBorder(null);
-                T5.setBorder(null);
-                T6.setBorder(null);
-                T7.setBorder(null);
-                T8.setBorder(null);
-                T9.setBorder(null);
-                T10.setBorder(null);
-                T11.setBorder(null);
-                T12.setBorder(null);
-                T13.setBorder(null);
-                T14.setBorder(null);
-                T15.setBorder(null);
+                 if(SaveGame.LoadSave().getMoney()>=tanks.getTanks("is3")[13]&&SaveGame.LoadSave().getSet().contains("is2")||SaveGame.LoadSave().getSet().contains("is3")){
+                    chose = 16;
+                    tank = "is3";
+                    T1.setBorder(null);
+                    T2.setBorder(null);
+                    T3.setBorder(null);
+                    T4.setBorder(null);
+                    T5.setBorder(null);
+                    T6.setBorder(null);
+                    T7.setBorder(null);
+                    T8.setBorder(null);
+                    T9.setBorder(null);
+                    T10.setBorder(null);
+                    T11.setBorder(null);
+                    T12.setBorder(null);
+                    T13.setBorder(null);
+                    T14.setBorder(null);
+                    T15.setBorder(null);
+                    if(!SaveGame.LoadSave().getSet().contains(tank)){
+                        SaveGame.Save((int)-tanks.getTanks(tank)[13], tank);
+                        money.setText(SaveGame.LoadSave().getMoney()+" $");
+                        clearProfile();
+                    }    
+                 }
                 break;
+        }
+    }
+ 
+    public void clearProfile(){
+        if(SaveGame.LoadSave().getSet().contains("m4a3e8")){
+            jLabel55.setText("0 $");
+            jLabel55.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("firefly")){
+            jLabel66.setText("0 $");
+            jLabel66.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("panther")){
+            jLabel77.setText("0 $");
+            jLabel77.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("kv1")){
+            jLabel88.setText("0 $");
+            jLabel88.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("m26")){
+            jLabel99.setText("0 $");
+            jLabel99.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("tiger")){
+            jLabel110.setText("0 $");
+            jLabel110.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("churchill")){
+            jLabel121.setText("0 $");
+            jLabel121.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("is2")){
+            jLabel132.setText("0 $");
+            jLabel132.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("m26s")){
+            jLabel143.setText("0 $");
+            jLabel143.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("tiger2")){
+            jLabel154.setText("0 $");
+            jLabel154.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("comet")){
+            jLabel165.setText("0 $");
+            jLabel165.setForeground(Color.black);
+        }
+        if(SaveGame.LoadSave().getSet().contains("is3")){
+            jLabel176.setText("0 $");
+            jLabel176.setForeground(Color.black);
         }
     }
 
@@ -2604,7 +2753,6 @@ public class prePlay extends javax.swing.JFrame{
 
     private void startMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMousePressed
         // TODO add your handling code here:
-        System.out.println(width+" "+height+" "+tank+" "+enemy+" "+level);
         new Window(width, height, tank, enemy, level);
         this.dispose();
     }//GEN-LAST:event_startMousePressed
@@ -2619,9 +2767,17 @@ public class prePlay extends javax.swing.JFrame{
         start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/intogame.png")));
     }//GEN-LAST:event_startMouseExited
 
+    private void moneyCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_moneyCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moneyCaretPositionChanged
+
+    private void moneyInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_moneyInputMethodTextChanged
+        jLabel55.setText(""+SaveGame.LoadSave().getMoney()+":$");
+    }//GEN-LAST:event_moneyInputMethodTextChanged
+
     /**
      * @param args the command line arguments
-     */
+//     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2673,181 +2829,141 @@ public class prePlay extends javax.swing.JFrame{
     private javax.swing.JPanel T8;
     private javax.swing.JPanel T9;
     private javax.swing.JLabel backgound;
+    private javax.swing.JLabel churchile_a;
+    private javax.swing.JLabel churchile_d;
+    private javax.swing.JLabel churchile_h;
+    private javax.swing.JLabel churchile_p;
+    private javax.swing.JLabel comet_a;
+    private javax.swing.JLabel comet_d;
+    private javax.swing.JLabel comet_h;
+    private javax.swing.JLabel comet_p;
+    private javax.swing.JLabel cromwell_a;
+    private javax.swing.JLabel cromwell_d;
+    private javax.swing.JLabel cromwell_h;
+    private javax.swing.JLabel cromwell_p;
+    private javax.swing.JLabel frefly_a;
+    private javax.swing.JLabel frefly_d;
+    private javax.swing.JLabel frefly_h;
+    private javax.swing.JLabel frefly_p;
+    private javax.swing.JLabel is2_a;
+    private javax.swing.JLabel is2_d;
+    private javax.swing.JLabel is2_h;
+    private javax.swing.JLabel is2_p;
+    private javax.swing.JLabel is3_a;
+    private javax.swing.JLabel is3_d;
+    private javax.swing.JLabel is3_h;
+    private javax.swing.JLabel is3_p;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
-    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
     private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel143;
     private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
     private javax.swing.JLabel jLabel146;
-    private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel148;
-    private javax.swing.JLabel jLabel149;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel150;
-    private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel155;
     private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel157;
-    private javax.swing.JLabel jLabel158;
     private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel161;
-    private javax.swing.JLabel jLabel162;
     private javax.swing.JLabel jLabel163;
-    private javax.swing.JLabel jLabel164;
     private javax.swing.JLabel jLabel165;
     private javax.swing.JLabel jLabel166;
     private javax.swing.JLabel jLabel167;
     private javax.swing.JLabel jLabel168;
-    private javax.swing.JLabel jLabel169;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel170;
-    private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel172;
-    private javax.swing.JLabel jLabel173;
     private javax.swing.JLabel jLabel174;
-    private javax.swing.JLabel jLabel175;
     private javax.swing.JLabel jLabel176;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel18;
@@ -2931,10 +3047,51 @@ public class prePlay extends javax.swing.JFrame{
     private javax.swing.JPanel jPanel95;
     private javax.swing.JPanel jPanel96;
     private javax.swing.JPanel jPanel97;
+    private javax.swing.JLabel kv1_a;
+    private javax.swing.JLabel kv1_d;
+    private javax.swing.JLabel kv1_h;
+    private javax.swing.JLabel kv1_p;
     private javax.swing.JLabel labelMoney;
+    private javax.swing.JLabel m26_a;
+    private javax.swing.JLabel m26_d;
+    private javax.swing.JLabel m26_h;
+    private javax.swing.JLabel m26_p;
+    private javax.swing.JLabel m26s_a;
+    private javax.swing.JLabel m26s_d;
+    private javax.swing.JLabel m26s_h;
+    private javax.swing.JLabel m26s_p;
+    private javax.swing.JLabel m4_a;
+    private javax.swing.JLabel m4_d;
+    private javax.swing.JLabel m4_h;
+    private javax.swing.JLabel m4_p;
+    private javax.swing.JLabel m4a3e8_a;
+    private javax.swing.JLabel m4a3e8_d;
+    private javax.swing.JLabel m4a3e8_h;
+    private javax.swing.JLabel m4a3e8_p;
     private javax.swing.JLabel money;
     private javax.swing.JPanel moneyPanel;
+    private javax.swing.JLabel panther_a;
+    private javax.swing.JLabel panther_d;
+    private javax.swing.JLabel panther_h;
+    private javax.swing.JLabel panther_p;
+    private javax.swing.JLabel panzer4_a;
+    private javax.swing.JLabel panzer4_d;
+    private javax.swing.JLabel panzer4_h;
+    private javax.swing.JLabel panzer4_p;
     private javax.swing.JLabel start;
+    private javax.swing.JLabel t34_a;
+    private javax.swing.JLabel t34_d;
+    private javax.swing.JLabel t34_h;
+    private javax.swing.JLabel t34_p;
+    private javax.swing.JLabel tiger2_a;
+    private javax.swing.JLabel tiger2_d;
+    private javax.swing.JLabel tiger2_h;
+    private javax.swing.JLabel tiger2_p;
+    private javax.swing.JLabel tiger_a;
+    private javax.swing.JLabel tiger_d;
+    private javax.swing.JLabel tiger_h;
+    private javax.swing.JLabel tiger_p;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
+

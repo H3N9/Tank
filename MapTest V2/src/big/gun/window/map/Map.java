@@ -9,6 +9,7 @@ package big.gun.window.map;
  *
  * @author pooh
  */
+import big.gun.window.SaveGame;
 import big.gun.window.tank.*;
 import big.gun.window.Window;
 import big.gun.window.sound.Sound;
@@ -165,7 +166,6 @@ public class Map {
                         break;
                     }
                 }
-                if(breakall == 1){break;}
             }
             //bot ชนสิ่งของ
             breakall = 0;
@@ -178,7 +178,6 @@ public class Map {
                             break;
                         }
                     }
-                    if(breakall == 1){break;}
                 }
             }
         }
@@ -191,7 +190,7 @@ public class Map {
                     for(Person ebot: bot.getPersons()){
                         for(int p=0; p < ebot.getMyTank().getArmours().length; p++){
                             for(int q=0; q < ebot.getMyTank().getArmours()[p].length; q++){
-                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds())){
+                                if(pTank.getArmours()[n][m].getBounds().intersects(ebot.getMyTank().getArmours()[p][q].getBounds()) && ebot.getMyTank().getHp() > 0){
                                     pTank.moveStop();
                                     ebot.moveStop();
                                     isMoveMap = false;
@@ -201,11 +200,8 @@ public class Map {
                             }
                             if(breakall == 1){break;}
                         }
-                        if(breakall == 1){break;}
                     }
-                    if(breakall == 1){break;}
                 }
-                if(breakall == 1){break;}
             }
         
         //bot ชน bot
@@ -216,22 +212,16 @@ public class Map {
                     for(Person ebot2: bot.getPersons()){
                         for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
                             for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
-                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
+                                if(ebot.getMyTank().getArmours()[m][n].getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2 && ebot2.getMyTank().getHp() > 0){
                                     ebot.moveStop();
-                                    ebot2.moveStop();
                                     breakall = 1;
                                     break;
                                 }
                             }
-                            if(breakall == 1){break;}
                         }
-                        if(breakall == 1){break;}
                     }
-                    if(breakall == 1){break;}
                 }
-                if(breakall == 1){break;}
             }
-            if(breakall == 1){break;}
         }
     }
     
@@ -240,80 +230,62 @@ public class Map {
             //hit map's objects
             for (int i=0; i < getBuilds().size(); i++){
                 //player's bullet
-                try{
-                    if(player.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds())){
-                        player.getMyTank().setShell(null);
+                    if(player.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds()) && player.getMyTank().getShell().isIsShot()){
+                        player.getMyTank().getShell().setIsShot(false);
                     }
-                }catch(NullPointerException e){
-                    
-                }
-                
                 //bot's bullets
                 for(Person ebot: bot.getPersons()){
-                    try{
-                        if(ebot.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds())){
-                            ebot.getMyTank().setShell(null);
-                        }
-                    }catch(NullPointerException e){
-            
+                    if(ebot.getMyTank().getShell().getBounds().intersects(getBuilds().get(i).getBounds()) && ebot.getMyTank().getShell().isIsShot()){
+                        ebot.getMyTank().getShell().setIsShot(false);
                     }
                 }
-            }
+            }      
             
         //player shoots bottank's armours
         breakall = 0;
         for(Person ebot: bot.getPersons()){
             for(int n=0; n < ebot.getMyTank().getArmours().length; n++){
-                    for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
-                        try{
-                            if( player.getMyTank().getShell().getBounds().intersects(ebot.getMyTank().getArmours()[n][m].getBounds())){
-                                double thickness;
-                                if(n==0){
-                                    thickness = ebot.getMyTank().getThickness()[0];
-                                }
-                                else if(n==ebot.getMyTank().getSizeOfArmoursArray()-1){
-                                    thickness = ebot.getMyTank().getThickness()[3];
-                                }
-                                else{
-                                    thickness = ebot.getMyTank().getThickness()[1];
-                                }
-                                
-                                if(player.getMyTank().getShell().getPenetration() >= thickness){
-                                    ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
-                                    System.out.println(ebot.getMyTank().getHp());
-                                    new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
-                                    if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
-                                        player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());   //get money
-                                    }                                  
-                                }
-                                else{
-                                    double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
-                                    double got = Calculate.randomNumber(0, (int) want);
-                                    System.out.println(got);
-                                    if(player.getMyTank().getShell().getPenetration()+got >= thickness){
-                                        ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
-                                        System.out.println(ebot.getMyTank().getHp()+" Penetrate");
-                                        new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
-                                        if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
-                                            player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());  // get money
-                                        }                                          
-                                    }else{
-                                        new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
-                                    }
-                                    
-                                }
-                                
-
-                                player.getMyTank().setShell(null);
-                                breakall = 1;
-                                break;
-                            }
-                        }catch(NullPointerException e){
-                            
+                for(int m=0; m < ebot.getMyTank().getArmours()[n].length; m++){
+                    if( player.getMyTank().getShell().getBounds().intersects(ebot.getMyTank().getArmours()[n][m].getBounds()) && player.getMyTank().getShell().isIsShot()){
+                        double thickness;
+                        if(n==0){
+                            thickness = ebot.getMyTank().getThickness()[0];
                         }
-                        
+                        else if(n==ebot.getMyTank().getSizeOfArmoursArray()-1){
+                            thickness = ebot.getMyTank().getThickness()[3];
+                        }
+                        else{
+                            thickness = ebot.getMyTank().getThickness()[1];
+                        }
+
+                        if(player.getMyTank().getShell().getPenetration() >= thickness){
+                            if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
+                                player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());   //get money
+                                
+                            } 
+                            ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                            new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());                                 
+                        }
+                        else{
+                            double want = Math.abs(player.getMyTank().getShell().getPenetration()-thickness);
+                            double got = Calculate.randomNumber(0, (int) want);
+                            if(player.getMyTank().getShell().getPenetration()+got >= thickness){
+                                if(ebot.getTag()==2&&ebot.getMyTank().getHp()>0){
+                                    player.setGotMoney(player.getGotMoney()+(int)player.getMyTank().getShell().getDamage());  // get money
+                                } 
+                                ebot.getMyTank().setHp(ebot.getMyTank().getHp()-player.getMyTank().getShell().getDamage());
+                                new Sound("penetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());                                        
+                            }else{
+                                new Sound("notPenetrate", ebot.getMyTank().getPosX(), ebot.getMyTank().getPosY());
+                            }
+
+                        }
+                        player.getMyTank().getShell().setIsShot(false);
+                        breakall = 1;
+                        break;
                     }
-                    if(breakall == 1){break;}
+                }
+                if(breakall == 1){break;}
                 }
             if(breakall == 1){break;}
         }
@@ -322,42 +294,38 @@ public class Map {
         for(Person ebot: bot.getPersons()){
             //bot shoot player
             breakall = 0;
-            for(int i=0; i < player.getMyTank().getArmours().length; i++){
-                for(int j=0; j < player.getMyTank().getArmours()[i].length; j++){
-                    try{
-                        if(ebot.getMyTank().getShell().getBounds().intersects(player.getMyTank().getArmours()[i][j].getBounds())){
-                            double thickness;
-                            if(i==0){
-                                thickness = player.getMyTank().getThickness()[0];
-                            }
-                            else if(i==player.getMyTank().getSizeOfArmoursArray()-1){
-                                thickness = player.getMyTank().getThickness()[3];
-                            }
-                            else{
-                                thickness = player.getMyTank().getThickness()[1];
-                            }
-                            
-                            if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+            for(int k=0; k < player.getMyTank().getArmours().length; k++){
+                for(int j=0; j < player.getMyTank().getArmours()[k].length; j++){
+                    if(ebot.getMyTank().getShell().getBounds().intersects(player.getMyTank().getArmours()[k][j].getBounds()) && ebot.getMyTank().getShell().isIsShot()){
+                        double thickness;
+                        if(k==0){
+                            thickness = player.getMyTank().getThickness()[0];
+                        }
+                        else if(k==player.getMyTank().getSizeOfArmoursArray()-1){
+                            thickness = player.getMyTank().getThickness()[3];
+                        }
+                        else{
+                            thickness = player.getMyTank().getThickness()[1];
+                        }
+
+                        if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                            player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                            new Sound("penetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
+                        }
+                        else{
+                            double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
+                            double got = Calculate.randomNumber(0, (int) want);
+                            if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
                                 player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
                                 new Sound("penetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
+                            }else{
+                                new Sound("notPenetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
                             }
-                            else{
-                                double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
-                                double got = Calculate.randomNumber(0, (int) want);
-                                if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
-                                    player.getMyTank().setHp(player.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
-                                    new Sound("penetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
-                                }else{
-                                    new Sound("notPenetrate", player.getMyTank().getPosX(), player.getMyTank().getPosY());
-                                }
-                            }
-                            
-                            ebot.getMyTank().setShell(null);
-                            breakall = 1;
-                            break;
                         }
-                    }catch(NullPointerException e){
-                        
+
+                        ebot.getMyTank().getShell().setIsShot(false);
+                        breakall = 1;
+                        break;
                     }
                 }
                 if(breakall == 1){break;}
@@ -368,41 +336,37 @@ public class Map {
             for(Person ebot2: bot.getPersons()){
                 for(int p=0; p < ebot2.getMyTank().getArmours().length; p++){
                     for(int q=0; q < ebot2.getMyTank().getArmours()[p].length; q++){
-                        try{
-                            if(ebot.getMyTank().getShell().getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2){
-                                double thickness;
-                                if(p==0){
-                                    thickness = ebot2.getMyTank().getThickness()[0];
-                                }
-                                else if(p==player.getMyTank().getSizeOfArmoursArray()-1){
-                                    thickness = ebot2.getMyTank().getThickness()[3];
-                                }
-                                else{
-                                    thickness = ebot2.getMyTank().getThickness()[1];
-                                }
-                                
-                                if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                        if(ebot.getMyTank().getShell().getBounds().intersects(ebot2.getMyTank().getArmours()[p][q].getBounds()) && ebot != ebot2 && ebot.getMyTank().getShell().isIsShot()){
+                            double thickness;
+                            if(p==0){
+                                thickness = ebot2.getMyTank().getThickness()[0];
+                            }
+                            else if(p==player.getMyTank().getSizeOfArmoursArray()-1){
+                                thickness = ebot2.getMyTank().getThickness()[3];
+                            }
+                            else{
+                                thickness = ebot2.getMyTank().getThickness()[1];
+                            }
+
+                            if(ebot.getMyTank().getShell().getPenetration() >= thickness){
+                                ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
+                                new Sound("penetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
+                            }
+                            else{
+                                double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
+                                double got = Calculate.randomNumber(0, (int) want);
+                                if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
                                     ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
                                     new Sound("penetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
+                                }else{
+                                    new Sound("notPenetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
                                 }
-                                else{
-                                    double want = Math.abs(ebot.getMyTank().getShell().getPenetration()-thickness);
-                                    double got = Calculate.randomNumber(0, (int) want);
-                                    if(ebot.getMyTank().getShell().getPenetration()+got >= thickness){
-                                        ebot2.getMyTank().setHp(ebot2.getMyTank().getHp()-ebot.getMyTank().getShell().getDamage());
-                                        new Sound("penetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
-                                    }else{
-                                        new Sound("notPenetrate", ebot2.getMyTank().getPosX(), ebot2.getMyTank().getPosY());
-                                    }
-                                }
-                                
-                                
-                                ebot.getMyTank().setShell(null);
-                                breakall = 1;
-                                break;
                             }
-                        }catch(NullPointerException e){
-                            
+
+
+                            ebot.getMyTank().getShell().setIsShot(false);
+                            breakall = 1;
+                            break;
                         }
                     }
                     if(breakall == 1){break;}
@@ -410,7 +374,7 @@ public class Map {
             }
         }
     }
-    
+
     public double getPosX() {
         return posX;
     }
