@@ -118,11 +118,10 @@ public class Person extends MapObject {
     @Override
     public void move() {
         myTank.move();
-        try {
+        if(myTank.getShell().isIsShot()){
             myTank.getShell().move();
-        } catch (Exception e) {
-
         }
+
     }
 
     public void moveStop() {
