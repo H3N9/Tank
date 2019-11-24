@@ -168,7 +168,6 @@ public class Tank extends GameObject implements Moveable{
             shell.getTime().start();
             setReload(0);
         }
-            
     }
     
     
