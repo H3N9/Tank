@@ -151,11 +151,11 @@ public class Person extends MapObject {
             }
 
             if (event.contains("A")) {
-                myTank.setRotateSpeed(-myTank.getSpeed() / 2);
+                myTank.setRotateSpeed(-myTank.getSpeed() / 3.5);
             }
 
             else if (event.contains("D")) {
-                myTank.setRotateSpeed(myTank.getSpeed() / 2);
+                myTank.setRotateSpeed(myTank.getSpeed() / 3.5);
             }
             else{
                 myTank.setRotateSpeed(0);
@@ -164,10 +164,10 @@ public class Person extends MapObject {
             
 
             if(event.contains("Q")){
-                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/1.8);
+                myTank.getTurret().setRotateSpeed(-myTank.getSpeed()/3);
             }
             else if(event.contains("E")){
-                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/1.8);
+                myTank.getTurret().setRotateSpeed(myTank.getSpeed()/3);
             }
             else{
                 myTank.getTurret().setRotateSpeed(0);
