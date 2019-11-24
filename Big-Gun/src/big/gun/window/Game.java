@@ -22,6 +22,8 @@ import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
@@ -182,19 +184,8 @@ public class Game extends JPanel implements ActionListener{
     }
     
     public void gameClose(){
-        start.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-            }
-            
-        });
-        bot.getTime().addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-            }
-            
-        });
-        this.setVisible(false);
+        start.stop();
+        bot.getTime().stop();
     }
 
     /**
