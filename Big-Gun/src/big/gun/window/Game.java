@@ -71,10 +71,8 @@ public class Game extends JPanel implements ActionListener{
         player.getMyTank().move(); 
     }
     public void updateBullet(){
-        try{
+        if(player.getMyTank().getShell().isIsShot()){
             player.getMyTank().getShell().move(); 
-        }catch(Exception e){
-            
         }
     }
     

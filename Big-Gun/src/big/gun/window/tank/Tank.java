@@ -94,10 +94,8 @@ public class Tank extends GameObject implements Moveable{
         if(boomed == 1 && boom.getAlpha() != 0){
             boom.draw(g2d);
         }
-        try{
+        if(shell.isIsShot()){
             shell.draw(g2d);
-        }catch(Exception e){
-            
         }
     }
 
