@@ -15,17 +15,22 @@ import java.awt.event.WindowEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 import menu.Home;
+import menu.setting;
 
 
 public class Condition extends KeyAdapter{
     public Player player;
     public LinkedList<Person> persons;
+    private Game game;
     private Rectangle2D rect;
+    private boolean isNextPage;
     
-    public Condition(Player player, LinkedList<Person> persons){
+    public Condition(Player player, LinkedList<Person> persons, Game game){
         this.player = player;
+        this.game = game;
         this.persons = persons;
         rect = new Rectangle2D.Double();
+        isNextPage = false;
     }
     
     public void draw(Graphics2D g2d){
@@ -48,11 +53,29 @@ public class Condition extends KeyAdapter{
     public void keyPressed(KeyEvent e){
        int key = e.getKeyCode();
        if(key==KeyEvent.VK_ENTER&&(gameCondition().equals("Alli")||gameCondition().equals("Axis"))){
-           SaveGame.Save(player.getGotMoney(), "");
-           Window.jframe.dispatchEvent(new WindowEvent(Window.jframe, WindowEvent.WINDOW_CLOSING));
-           
+           isNextPage = true;
+           //this.setVisible(false);
        }
+       nextPage();
     }
-
     
+//    public void keyReleased(KeyEvent e){
+//        int key = e.getKeyCode();
+//        if (key == KeyEvent.VK_ENTER && isNextPage){
+//            isNextPage = false;
+//        }
+//    }
+    
+    private void nextPage(){
+        if (isNextPage){
+            SaveGame.Save(player.getGotMoney(), "");
+           //Window.jframe.dispatchEvent(new WindowEvent(Window.jframe, WindowEvent.WINDOW_CLOSING));
+           game.gameClose();
+           Home f = new Home();
+           f.setTitle("Big Gun");
+           f.setVisible(true);
+           f.setLocationRelativeTo(null);
+           isNextPage = false;
+        }
+    }
 }

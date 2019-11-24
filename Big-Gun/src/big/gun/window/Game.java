@@ -26,7 +26,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 public class Game extends JPanel implements ActionListener{
-    public static Timer start;
+    private Timer start;
     private Player player;
     private Map map;
     private Import importImg;
@@ -51,7 +51,8 @@ public class Game extends JPanel implements ActionListener{
         Sound.downLoadSound();
         bot = new Ai(amountBout-1, amountBout, player, diff);
         hub = new Hub(player, bot);
-        con = new Condition(player, bot.getPersons());
+        con = new Condition(player, bot.getPersons(), this);
+        addKeyListener(con);
         whoLose = "nothing";
         this.diff = diff;
         delay = 0; countMoney = 0;
@@ -90,6 +91,7 @@ public class Game extends JPanel implements ActionListener{
         Graphics2D g2d = (Graphics2D)g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         //Draw below this
+        System.out.println(111);
         map.draw(g2d);
         player.draw(g2d);
         //FPS
@@ -127,7 +129,6 @@ public class Game extends JPanel implements ActionListener{
                 delay += 5;
             }
             else{
-                addKeyListener(con);
                 g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
             }
         }else if(whoLose.equals("Alli")){
@@ -159,7 +160,6 @@ public class Game extends JPanel implements ActionListener{
                 delay += 5;
             }
             else{
-                addKeyListener(con);
                 g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
             }
         }
@@ -180,6 +180,36 @@ public class Game extends JPanel implements ActionListener{
             whoLose = con.gameCondition();
         }
         repaint();
+    }
+    
+    public void gameClose(){
+        start.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+            }
+            
+        });
+        bot.getTime().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+            }
+            
+        });
+        this.setVisible(false);
+    }
+
+    /**
+     * @return the start
+     */
+    public Timer getStart() {
+        return start;
+    }
+
+    /**
+     * @param aStart the start to set
+     */
+    public void setStart(Timer Start) {
+        this.start = Start;
     }
     
 }
