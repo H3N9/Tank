@@ -92,11 +92,11 @@ public class GameObject{
     }
 
     public void setRotate(double rotate) {
-//        if(rotate < 0){
-//            rotate = 360+rotate;
-//        }else if(rotate > 360){
-//            rotate = 360-rotate;
-//        }
+        if(rotate < 0){
+            rotate = 360+rotate;
+        }else if(rotate >= 360){
+            rotate = rotate-360;
+        }
         this.rotate = rotate;
     }
     
