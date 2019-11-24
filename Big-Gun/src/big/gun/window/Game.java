@@ -100,7 +100,7 @@ public class Game extends JPanel implements ActionListener{
         hub.draw(g2d);
         con.draw(g2d);
         if(whoLose.equals("Axis")){
-            if(delayEnd<500){
+            if(delayEnd>500){
                 double bonus = 0;
                 switch(diff){
                     case "easy":
@@ -138,7 +138,7 @@ public class Game extends JPanel implements ActionListener{
                 delayEnd++;
             }
         }else if(whoLose.equals("Alli")){
-            if(delayEnd<500){
+            if(delayEnd>500){
                 double bonus = 0;
                 switch(diff){
                     case "easy":
