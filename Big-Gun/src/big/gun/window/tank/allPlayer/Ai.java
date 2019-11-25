@@ -65,7 +65,6 @@ public class Ai implements ActionListener{
                 }
                 persons.add(new Person(2000+i*200, 4500, CollectionTanks.getName(flag, num), 1));
                 move.add(new HashSet<String>());
-                System.out.println(num);
             }
         }
         
@@ -96,7 +95,6 @@ public class Ai implements ActionListener{
                 }
                 persons.add(new Person(2000+i*200, 200, CollectionTanks.getName(flag, num), 2));
                 move.add(new HashSet<String>());
-                System.out.println(num);
             }
         }
         

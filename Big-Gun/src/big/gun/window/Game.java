@@ -187,6 +187,7 @@ public class Game extends JPanel implements ActionListener{
     
     public void actionPerformed(ActionEvent ae) {
         updateTank();
+        updateBullet();
         map.update();
         map.moveMap(player);
         map.playerCollision(player, bot);

@@ -65,7 +65,6 @@ public class Shell extends GameObject implements Moveable{
         return penetration;
     }
 
-
     public boolean isIsShot() {
         return isShot;
     }
@@ -73,6 +72,5 @@ public class Shell extends GameObject implements Moveable{
     public void setIsShot(boolean isShot) {
         this.isShot = isShot;
     }
-    
     
 }
