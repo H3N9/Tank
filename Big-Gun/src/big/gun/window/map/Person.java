@@ -225,11 +225,11 @@ public class Person extends MapObject {
         }
         double check1 = realDegree-5-wrong;
         double check2 = realDegree+5+wrong;
-        if(check1 < 360){
+        if(check1 < 0){
             check1 = 360+check1;
         }
         if(check2 >= 360){
-            check2 = 360-check2;
+            check2 = check2-360;
         }
         if(getMyTank().getTurret().getRotateHead()+getMyTank().getRotate() < check1){
             return "right";
