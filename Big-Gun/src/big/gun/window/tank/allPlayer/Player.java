@@ -1,11 +1,9 @@
 
 package big.gun.window.tank.allPlayer;
 
-import big.gun.window.SaveGame;
 import big.gun.window.tank.Tank;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
-import java.util.LinkedList;
 
 
 

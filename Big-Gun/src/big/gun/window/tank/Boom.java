@@ -7,7 +7,6 @@ package big.gun.window.tank;
 
 import big.gun.window.Import;
 import java.awt.AlphaComposite;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 

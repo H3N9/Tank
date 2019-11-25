@@ -29,7 +29,7 @@ public class Person extends MapObject {
     private double cblx, cbly, cbrx, cbry;
     private double rndly, rndry;
     private Rectangle2D checkLeft, checkRight, checkBLeft, checkBRight;
-    private int deadLock, leftHit, rightHit;
+    private int deadLock, leftHit, rightHit, wrongShot;
     //private double count;
 
     public Person(double posX, double posY, String name, int tag) {
@@ -57,6 +57,7 @@ public class Person extends MapObject {
         deadLock = 0;
         leftHit = 0;
         rightHit = 0;
+        wrongShot = 0;
 //count = 5;
     }
 
@@ -223,8 +224,8 @@ public class Person extends MapObject {
         else if(tx > myx && ty < myy){
             realDegree = degree;
         }
-        double check1 = realDegree-5-wrong;
-        double check2 = realDegree+5+wrong;
+        double check1 = realDegree-5-wrongShot;
+        double check2 = realDegree+5+wrongShot;
         double atRotate = getMyTank().getTurret().getRotateHead()+getMyTank().getRotate();
         if(check1 < 0){
             check1 = 360+check1;
@@ -244,6 +245,7 @@ public class Person extends MapObject {
             return "left";
         }
         else{
+            wrongShot = Calculate.randomNumber(0, wrong);
             return "shoot";
         }
     }

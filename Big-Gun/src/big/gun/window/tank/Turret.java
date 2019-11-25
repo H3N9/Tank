@@ -3,9 +3,7 @@ package big.gun.window.tank;
 
 import big.gun.window.Import;
 import static big.gun.window.tank.Calculate.*;
-import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.geom.Rectangle2D;
 
 
 public class Turret extends GameObject{
@@ -142,11 +140,11 @@ public class Turret extends GameObject{
     }
 
     public void setRotateHead(double rotateHead) {
-        if(rotateHead < 0){
-            rotateHead = 360+rotateHead;
-        }else if(rotateHead >= 360){
-            rotateHead = rotateHead-360;
-        }
+//        if(rotateHead < 0){
+//            rotateHead = 360+rotateHead;
+//        }else if(rotateHead >= 360){
+//            rotateHead = rotateHead-360;
+//        }
         this.rotateHead = rotateHead;
     }
 

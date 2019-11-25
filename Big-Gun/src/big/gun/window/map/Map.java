@@ -9,9 +9,7 @@ package big.gun.window.map;
  *
  * @author pooh
  */
-import big.gun.window.SaveGame;
 import big.gun.window.tank.*;
-import big.gun.window.Window;
 import big.gun.window.sound.Sound;
 import big.gun.window.tank.allPlayer.Player;
 import big.gun.window.tank.allPlayer.Ai;

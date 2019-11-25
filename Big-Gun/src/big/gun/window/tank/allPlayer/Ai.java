@@ -9,8 +9,6 @@ import big.gun.window.map.Builds;
 import big.gun.window.map.Map;
 import big.gun.window.map.Person;
 import big.gun.window.tank.*;
-import big.gun.window.tank.allPlayer.Player;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.util.LinkedList;
 import java.awt.event.ActionListener;
@@ -109,9 +107,9 @@ public class Ai implements ActionListener{
                 int target = persons.get(i).veiwOfBot(player, persons, i);
                 int wrongShoot = 0;
                 if(difficult.equals("easy"))
-                    wrongShoot = Calculate.randomNumber(0, 10);
+                    wrongShoot = 10;
                 else if(difficult.equals("normal"))
-                    wrongShoot = Calculate.randomNumber(0, 5);
+                    wrongShoot = 5;
                 switch (persons.get(i).shootOnTarGet(player,  persons, target, wrongShoot)) {
                     case "right":
                         move.get(i).add("E");

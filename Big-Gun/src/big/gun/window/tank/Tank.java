@@ -6,21 +6,10 @@
 package big.gun.window.tank;
 
 
-import java.awt.Color;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
 import big.gun.window.Import;
 import big.gun.window.Window;
 import big.gun.window.sound.Sound;
-import static big.gun.window.tank.CollectionTanks.tanks;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 
         
 public class Tank extends GameObject implements Moveable{

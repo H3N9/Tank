@@ -2,14 +2,9 @@
 package big.gun.window;
 
 
-import big.gun.window.map.Builds;
 import big.gun.window.map.Map;
-import big.gun.window.map.Person;
 import big.gun.window.sound.Sound;
-import big.gun.window.tank.Calculate;
 import big.gun.window.tank.CollectionTanks;
-import big.gun.window.tank.Tank;
-import big.gun.window.tank.TestDrawTank;
 import big.gun.window.tank.allPlayer.Player;
 import big.gun.window.tank.allPlayer.Ai;
 import java.awt.Color;
@@ -20,11 +15,6 @@ import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 public class Game extends JPanel implements ActionListener{
@@ -192,6 +182,7 @@ public class Game extends JPanel implements ActionListener{
         map.moveMap(player);
         map.playerCollision(player, bot);
         map.bulletCollision(bot, player);
+        updateBullet();
         hub.update(player, bot);
         FPS();
         if(whoLose.equals("nothing")){
@@ -203,20 +194,6 @@ public class Game extends JPanel implements ActionListener{
     public void gameClose(){
         start.stop();
         bot.getTime().stop();
-    }
-
-    /**
-     * @return the start
-     */
-    public Timer getStart() {
-        return start;
-    }
-
-    /**
-     * @param aStart the start to set
-     */
-    public void setStart(Timer Start) {
-        this.start = Start;
     }
     
 }
