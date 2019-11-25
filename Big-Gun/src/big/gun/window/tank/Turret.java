@@ -3,9 +3,7 @@ package big.gun.window.tank;
 
 import big.gun.window.Import;
 import static big.gun.window.tank.Calculate.*;
-import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.geom.Rectangle2D;
 
 
 public class Turret extends GameObject{

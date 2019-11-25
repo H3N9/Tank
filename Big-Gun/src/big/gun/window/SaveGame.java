@@ -7,8 +7,6 @@ package big.gun.window;
 
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.LinkedList;
 
 
 public class SaveGame {

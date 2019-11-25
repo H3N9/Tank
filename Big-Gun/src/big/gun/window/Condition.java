@@ -8,15 +8,11 @@ package big.gun.window;
 import big.gun.BigGun;
 import big.gun.window.map.Person;
 import big.gun.window.tank.allPlayer.Player;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
-import menu.Home;
-import menu.setting;
 
 
 public class Condition extends KeyAdapter{

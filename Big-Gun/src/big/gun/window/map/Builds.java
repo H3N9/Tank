@@ -9,13 +9,11 @@ package big.gun.window.map;
  *
  * @author pooh
  */
-import big.gun.window.tank.Calculate;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import java.io.*;
 
 public class Builds extends MapObject{
     private Color color;

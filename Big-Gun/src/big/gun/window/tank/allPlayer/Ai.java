@@ -9,8 +9,6 @@ import big.gun.window.map.Builds;
 import big.gun.window.map.Map;
 import big.gun.window.map.Person;
 import big.gun.window.tank.*;
-import big.gun.window.tank.allPlayer.Player;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.util.LinkedList;
 import java.awt.event.ActionListener;
