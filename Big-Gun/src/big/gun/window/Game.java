@@ -191,6 +191,7 @@ public class Game extends JPanel implements ActionListener{
         map.moveMap(player);
         map.playerCollision(player, bot);
         map.bulletCollision(bot, player);
+        updateBullet();
         hub.update(player, bot);
         FPS();
         if(whoLose.equals("nothing")){
@@ -202,20 +203,6 @@ public class Game extends JPanel implements ActionListener{
     public void gameClose(){
         start.stop();
         bot.getTime().stop();
-    }
-
-    /**
-     * @return the start
-     */
-    public Timer getStart() {
-        return start;
-    }
-
-    /**
-     * @param aStart the start to set
-     */
-    public void setStart(Timer Start) {
-        this.start = Start;
     }
     
 }

@@ -12,14 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-public class Shell extends GameObject implements Moveable,ActionListener{
+public class Shell extends GameObject implements Moveable{
     private double damage;
     private double penetration;
-    private Timer time;
     boolean isShot;
     
     public Shell(Tank tank, boolean isShot){
-        time = new Timer(10, this);
         setWidth(5); setHeight(5);
         setPosX(tank.getTurret().getGunPosX()-getWidth()*0.5);
         setPosY(tank.getTurret().getGunPosY());
@@ -58,9 +56,6 @@ public class Shell extends GameObject implements Moveable,ActionListener{
         this.penetration = penetration;
     }
 
-    public void setTime(Timer time) {
-        this.time = time;
-    }
 
     public double getDamage() {
         return damage;
@@ -70,9 +65,6 @@ public class Shell extends GameObject implements Moveable,ActionListener{
         return penetration;
     }
 
-    public Timer getTime() {
-        return time;
-    }
 
     public boolean isIsShot() {
         return isShot;
@@ -82,11 +74,5 @@ public class Shell extends GameObject implements Moveable,ActionListener{
         this.isShot = isShot;
     }
     
-    
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        move();
-    }
     
 }
