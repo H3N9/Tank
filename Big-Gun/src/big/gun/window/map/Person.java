@@ -53,7 +53,7 @@ public class Person extends MapObject {
         cbrx = Calculate.calculateRotateX(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         cbry = Calculate.calculateRotateY(myTank.getPosX()+myTank.getWidth(), myTank.getPosY()+myTank.getHeight()+rndry, myTank.getCenterX()-myTank.getWidth()/4, myTank.getCenterY()-myTank.getWidth()/4, myTank.getRotate());
         checkBRight = new Rectangle2D.Double(cbrx, cbry, myTank.getWidth()/2, myTank.getWidth()/2);
-        
+
         deadLock = 0;
         leftHit = 0;
         rightHit = 0;
