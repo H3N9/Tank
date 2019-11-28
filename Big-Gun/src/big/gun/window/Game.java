@@ -43,7 +43,7 @@ public class Game extends JPanel implements ActionListener{
         Sound.downLoadSound();
         bot = new Ai(amountBout-1, amountBout, player, diff);
         hub = new Hub(player, bot);
-        con = new Condition(player, bot.getPersons(), this);
+        con = new Condition(player, bot.getPersons(), this, diff);
         addKeyListener(con);
         whoLose = "nothing";
         this.diff = diff;
@@ -122,7 +122,6 @@ public class Game extends JPanel implements ActionListener{
                     delay += 5;
                 }
                 else{
-                    con.gotBonus(bonus);
                     g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
                 }
             }
@@ -163,7 +162,6 @@ public class Game extends JPanel implements ActionListener{
                     delay += 5;
                 }
                 else{
-                    con.gotBonus(bonus);
                     g2d.drawString("Press: Enter back to menu", Window.width/2-160, Window.height/2+100);
                 }
             }

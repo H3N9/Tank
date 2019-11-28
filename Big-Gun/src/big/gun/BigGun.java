@@ -16,6 +16,7 @@ public class BigGun {
                 h.setTitle("Big Gun");
                 h.setVisible(true);
                 h.setLocationRelativeTo(null);
+                
             }
         }); 
 //        new Window(1280, 720, "t34", 1, "easy");

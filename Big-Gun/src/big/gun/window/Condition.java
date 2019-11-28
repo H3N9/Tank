@@ -24,12 +24,13 @@ public class Condition extends KeyAdapter{
     private boolean test;
     private double bonus;
     
-    public Condition(Player player, LinkedList<Person> persons, Game game){
+    public Condition(Player player, LinkedList<Person> persons, Game game, String diff){
         this.player = player;
         this.game = game;
         this.persons = persons;
         rect = new Rectangle2D.Double();
         isNextPage = false;
+        setBonus(diff);
     }
     
     public void draw(Graphics2D g2d){
@@ -84,8 +85,18 @@ public class Condition extends KeyAdapter{
         }
     }
     
-    public void gotBonus(double bonus){
-        this.bonus = bonus;
+    public void setBonus(String diff){
+        switch(diff){
+            case "easy":
+                bonus = 1;
+                break;
+            case "normal":
+                bonus = 1.2;
+                break;
+            case "hard":
+                bonus = 1.5;
+                break;    
+        }
     }
 
     
